@@ -5,7 +5,7 @@
 <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="Start" href="index.html">
-<link rel="previous" href="Digest.html">
+<link rel="previous" href="Dynarray.html">
 <link rel="next" href="Dynlink_types.html">
 <link rel="Up" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
@@ -16,27 +16,38 @@
 <link title="Arg" rel="Chapter" href="Arg.html">
 <link title="Array" rel="Chapter" href="Array.html">
 <link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
+<link title="Atomic" rel="Chapter" href="Atomic.html">
+<link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
+<link title="Bytes" rel="Chapter" href="Bytes.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
 <link title="Digest" rel="Chapter" href="Digest.html">
+<link title="Domain" rel="Chapter" href="Domain.html">
+<link title="Dynarray" rel="Chapter" href="Dynarray.html">
 <link title="Dynlink" rel="Chapter" href="Dynlink.html">
 <link title="Dynlink_types" rel="Chapter" href="Dynlink_types.html">
 <link title="Effect" rel="Chapter" href="Effect.html">
 <link title="Either" rel="Chapter" href="Either.html">
+<link title="Ephemeron" rel="Chapter" href="Ephemeron.html">
 <link title="Event" rel="Chapter" href="Event.html">
 <link title="Filename" rel="Chapter" href="Filename.html">
 <link title="Float" rel="Chapter" href="Float.html">
 <link title="Fun" rel="Chapter" href="Fun.html">
 <link title="Gc" rel="Chapter" href="Gc.html">
+<link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
 <link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
+<link title="List" rel="Chapter" href="List.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
+<link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
 <link title="Mutex" rel="Chapter" href="Mutex.html">
 <link title="Nativeint" rel="Chapter" href="Nativeint.html">
@@ -47,24 +58,31 @@
 <link title="Parsing" rel="Chapter" href="Parsing.html">
 <link title="Printexc" rel="Chapter" href="Printexc.html">
 <link title="Printf" rel="Chapter" href="Printf.html">
+<link title="Queue" rel="Chapter" href="Queue.html">
 <link title="Random" rel="Chapter" href="Random.html">
 <link title="Result" rel="Chapter" href="Result.html">
 <link title="Scanf" rel="Chapter" href="Scanf.html">
 <link title="Semaphore" rel="Chapter" href="Semaphore.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
 <link title="Set" rel="Chapter" href="Set.html">
+<link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
 <link title="Std_exit" rel="Chapter" href="Std_exit.html">
 <link title="Str" rel="Chapter" href="Str.html">
+<link title="String" rel="Chapter" href="String.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Type" rel="Chapter" href="Type.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
-<link title="Unix" rel="Chapter" href="Unix.html"><link title="Dynamic loading of compiled files" rel="Section" href="#1_Dynamicloadingofcompiledfiles">
+<link title="Unix" rel="Chapter" href="Unix.html">
+<link title="Weak" rel="Chapter" href="Weak.html"><link title="Dynamic loading of compiled files" rel="Section" href="#1_Dynamicloadingofcompiledfiles">
 <link title="Access control" rel="Section" href="#1_Accesscontrol">
 <link title="Error reporting" rel="Section" href="#1_Errorreporting">
 <title>Dynlink</title>
 </head>
 <body>
-<div class="navbar"><a class="pre" href="Digest.html" title="Digest">Previous</a>
+<div class="navbar"><a class="pre" href="Dynarray.html" title="Dynarray">Previous</a>
 &nbsp;<a class="up" href="index.html" title="Index">Up</a>
 &nbsp;<a class="post" href="Dynlink_types.html" title="Dynlink_types">Next</a>
 </div>
@@ -84,7 +102,7 @@
 </div>
 </div>
 <h2 id="1_Dynamicloadingofcompiledfiles">Dynamic loading of compiled files</h2>
-<pre><span id="VALloadfile"><span class="keyword">val</span> loadfile</span> : <code class="type">string -> unit</code></pre><div class="info ">
+<pre><span id="VALloadfile"><span class="keyword">val</span> loadfile</span> : <code class="type">string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>In bytecode: load the given bytecode object file (<code class="code">.cmo</code> file) or
     bytecode library file (<code class="code">.cma</code> file), and link it with the running
@@ -108,7 +126,7 @@
 </div>
 </div>
 
-<pre><span id="VALloadfile_private"><span class="keyword">val</span> loadfile_private</span> : <code class="type">string -> unit</code></pre><div class="info ">
+<pre><span id="VALloadfile_private"><span class="keyword">val</span> loadfile_private</span> : <code class="type">string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">loadfile</code>, except that the compilation units just loaded
     are hidden (cannot be referenced) from other modules dynamically
@@ -133,14 +151,14 @@
 </div>
 </div>
 
-<pre><span id="VALadapt_filename"><span class="keyword">val</span> adapt_filename</span> : <code class="type">string -> string</code></pre><div class="info ">
+<pre><span id="VALadapt_filename"><span class="keyword">val</span> adapt_filename</span> : <code class="type">string -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>In bytecode, the identity function. In native code, replace the last
     extension with <code class="code">.cmxs</code>.</p>
 </div>
 </div>
 <h2 id="1_Accesscontrol">Access control</h2>
-<pre><span id="VALset_allowed_units"><span class="keyword">val</span> set_allowed_units</span> : <code class="type">string list -> unit</code></pre><div class="info ">
+<pre><span id="VALset_allowed_units"><span class="keyword">val</span> set_allowed_units</span> : <code class="type">string list -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Set the list of compilation units that may be referenced from units that
     are dynamically loaded in the future to be exactly the given value.</p>
@@ -156,7 +174,7 @@
 </div>
 </div>
 
-<pre><span id="VALallow_only"><span class="keyword">val</span> allow_only</span> : <code class="type">string list -> unit</code></pre><div class="info ">
+<pre><span id="VALallow_only"><span class="keyword">val</span> allow_only</span> : <code class="type">string list -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">allow_only units</code> sets the list of allowed units to be the intersection
     of the existing allowed units and the given list of units.  As such it
@@ -164,7 +182,7 @@
 </div>
 </div>
 
-<pre><span id="VALprohibit"><span class="keyword">val</span> prohibit</span> : <code class="type">string list -> unit</code></pre><div class="info ">
+<pre><span id="VALprohibit"><span class="keyword">val</span> prohibit</span> : <code class="type">string list -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">prohibit units</code> prohibits dynamically-linked units from referencing
     the units named in list <code class="code">units</code> by removing such units from the allowed
@@ -173,14 +191,14 @@
 </div>
 </div>
 
-<pre><span id="VALmain_program_units"><span class="keyword">val</span> main_program_units</span> : <code class="type">unit -> string list</code></pre><div class="info ">
+<pre><span id="VALmain_program_units"><span class="keyword">val</span> main_program_units</span> : <code class="type">unit -&gt; string list</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the list of compilation units that form the main program (i.e.
     are not dynamically linked).</p>
 </div>
 </div>
 
-<pre><span id="VALpublic_dynamically_loaded_units"><span class="keyword">val</span> public_dynamically_loaded_units</span> : <code class="type">unit -> string list</code></pre><div class="info ">
+<pre><span id="VALpublic_dynamically_loaded_units"><span class="keyword">val</span> public_dynamically_loaded_units</span> : <code class="type">unit -&gt; string list</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the list of compilation units that have been dynamically loaded via
     <code class="code">loadfile</code> (and not via <code class="code">loadfile_private</code>).  Note that compilation units
@@ -188,7 +206,7 @@
 </div>
 </div>
 
-<pre><span id="VALall_units"><span class="keyword">val</span> all_units</span> : <code class="type">unit -> string list</code></pre><div class="info ">
+<pre><span id="VALall_units"><span class="keyword">val</span> all_units</span> : <code class="type">unit -&gt; string list</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the list of compilation units that form the main program together
     with those that have been dynamically loaded via <code class="code">loadfile</code> (and not via
@@ -196,7 +214,7 @@
 </div>
 </div>
 
-<pre><span id="VALallow_unsafe_modules"><span class="keyword">val</span> allow_unsafe_modules</span> : <code class="type">bool -> unit</code></pre><div class="info ">
+<pre><span id="VALallow_unsafe_modules"><span class="keyword">val</span> allow_unsafe_modules</span> : <code class="type">bool -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Govern whether unsafe object files are allowed to be
     dynamically linked. A compilation unit is 'unsafe' if it contains
@@ -324,7 +342,7 @@
 </div>
 </div>
 
-<pre><span id="VALerror_message"><span class="keyword">val</span> error_message</span> : <code class="type"><a href="Dynlink.html#TYPEerror">error</a> -> string</code></pre><div class="info ">
+<pre><span id="VALerror_message"><span class="keyword">val</span> error_message</span> : <code class="type"><a href="Dynlink.html#TYPEerror">error</a> -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Convert an error description to a printable message.</p>
 </div>

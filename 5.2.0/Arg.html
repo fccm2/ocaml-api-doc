@@ -15,27 +15,38 @@
 <link title="Arg" rel="Chapter" href="Arg.html">
 <link title="Array" rel="Chapter" href="Array.html">
 <link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
+<link title="Atomic" rel="Chapter" href="Atomic.html">
+<link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
+<link title="Bytes" rel="Chapter" href="Bytes.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
 <link title="Digest" rel="Chapter" href="Digest.html">
+<link title="Domain" rel="Chapter" href="Domain.html">
+<link title="Dynarray" rel="Chapter" href="Dynarray.html">
 <link title="Dynlink" rel="Chapter" href="Dynlink.html">
 <link title="Dynlink_types" rel="Chapter" href="Dynlink_types.html">
 <link title="Effect" rel="Chapter" href="Effect.html">
 <link title="Either" rel="Chapter" href="Either.html">
+<link title="Ephemeron" rel="Chapter" href="Ephemeron.html">
 <link title="Event" rel="Chapter" href="Event.html">
 <link title="Filename" rel="Chapter" href="Filename.html">
 <link title="Float" rel="Chapter" href="Float.html">
 <link title="Fun" rel="Chapter" href="Fun.html">
 <link title="Gc" rel="Chapter" href="Gc.html">
+<link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
 <link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
+<link title="List" rel="Chapter" href="List.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
+<link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
 <link title="Mutex" rel="Chapter" href="Mutex.html">
 <link title="Nativeint" rel="Chapter" href="Nativeint.html">
@@ -46,18 +57,25 @@
 <link title="Parsing" rel="Chapter" href="Parsing.html">
 <link title="Printexc" rel="Chapter" href="Printexc.html">
 <link title="Printf" rel="Chapter" href="Printf.html">
+<link title="Queue" rel="Chapter" href="Queue.html">
 <link title="Random" rel="Chapter" href="Random.html">
 <link title="Result" rel="Chapter" href="Result.html">
 <link title="Scanf" rel="Chapter" href="Scanf.html">
 <link title="Semaphore" rel="Chapter" href="Semaphore.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
 <link title="Set" rel="Chapter" href="Set.html">
+<link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
 <link title="Std_exit" rel="Chapter" href="Std_exit.html">
 <link title="Str" rel="Chapter" href="Str.html">
+<link title="String" rel="Chapter" href="String.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Type" rel="Chapter" href="Type.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
-<link title="Unix" rel="Chapter" href="Unix.html"><title>Arg</title>
+<link title="Unix" rel="Chapter" href="Unix.html">
+<link title="Weak" rel="Chapter" href="Weak.html"><title>Arg</title>
 </head>
 <body>
 <div class="navbar">&nbsp;<a class="up" href="index.html" title="Index">Up</a>
@@ -131,7 +149,7 @@
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTspec.Unit"><span class="constructor">Unit</span></span> <span class="keyword">of</span> <code class="type">(unit -> unit)</code></code></td>
+<code><span id="TYPEELTspec.Unit"><span class="constructor">Unit</span></span> <span class="keyword">of</span> <code class="type">(unit -&gt; unit)</code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 <div class="info-desc">
 <p>Call the function with unit argument</p>
@@ -143,7 +161,7 @@
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTspec.Bool"><span class="constructor">Bool</span></span> <span class="keyword">of</span> <code class="type">(bool -> unit)</code></code></td>
+<code><span id="TYPEELTspec.Bool"><span class="constructor">Bool</span></span> <span class="keyword">of</span> <code class="type">(bool -&gt; unit)</code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 <div class="info-desc">
 <p>Call the function with a bool argument</p>
@@ -179,7 +197,7 @@
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTspec.String"><span class="constructor">String</span></span> <span class="keyword">of</span> <code class="type">(string -> unit)</code></code></td>
+<code><span id="TYPEELTspec.String"><span class="constructor">String</span></span> <span class="keyword">of</span> <code class="type">(string -&gt; unit)</code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 <div class="info-desc">
 <p>Call the function with a string argument</p>
@@ -203,7 +221,7 @@
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTspec.Int"><span class="constructor">Int</span></span> <span class="keyword">of</span> <code class="type">(int -> unit)</code></code></td>
+<code><span id="TYPEELTspec.Int"><span class="constructor">Int</span></span> <span class="keyword">of</span> <code class="type">(int -&gt; unit)</code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 <div class="info-desc">
 <p>Call the function with an int argument</p>
@@ -227,7 +245,7 @@
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTspec.Float"><span class="constructor">Float</span></span> <span class="keyword">of</span> <code class="type">(float -> unit)</code></code></td>
+<code><span id="TYPEELTspec.Float"><span class="constructor">Float</span></span> <span class="keyword">of</span> <code class="type">(float -&gt; unit)</code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 <div class="info-desc">
 <p>Call the function with a float argument</p>
@@ -264,7 +282,7 @@
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTspec.Symbol"><span class="constructor">Symbol</span></span> <span class="keyword">of</span> <code class="type">string list * (string -> unit)</code></code></td>
+<code><span id="TYPEELTspec.Symbol"><span class="constructor">Symbol</span></span> <span class="keyword">of</span> <code class="type">string list * (string -&gt; unit)</code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 <div class="info-desc">
 <p>Take one of the symbols as argument and
@@ -277,7 +295,7 @@
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTspec.Rest"><span class="constructor">Rest</span></span> <span class="keyword">of</span> <code class="type">(string -> unit)</code></code></td>
+<code><span id="TYPEELTspec.Rest"><span class="constructor">Rest</span></span> <span class="keyword">of</span> <code class="type">(string -&gt; unit)</code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 <div class="info-desc">
 <p>Stop interpreting keywords and call the
@@ -290,7 +308,7 @@
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTspec.Rest_all"><span class="constructor">Rest_all</span></span> <span class="keyword">of</span> <code class="type">(string list -> unit)</code></code></td>
+<code><span id="TYPEELTspec.Rest_all"><span class="constructor">Rest_all</span></span> <span class="keyword">of</span> <code class="type">(string list -&gt; unit)</code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 <div class="info-desc">
 <p>Stop interpreting keywords and call the
@@ -303,7 +321,7 @@
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTspec.Expand"><span class="constructor">Expand</span></span> <span class="keyword">of</span> <code class="type">(string -> string array)</code></code></td>
+<code><span id="TYPEELTspec.Expand"><span class="constructor">Expand</span></span> <span class="keyword">of</span> <code class="type">(string -&gt; string array)</code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 <div class="info-desc">
 <p>If the remaining arguments to process
@@ -335,10 +353,10 @@
 <pre><span id="TYPEusage_msg"><span class="keyword">type</span> <code class="type"></code>usage_msg</span> = <code class="type">string</code> </pre>
 
 
-<pre><span id="TYPEanon_fun"><span class="keyword">type</span> <code class="type"></code>anon_fun</span> = <code class="type">string -> unit</code> </pre>
+<pre><span id="TYPEanon_fun"><span class="keyword">type</span> <code class="type"></code>anon_fun</span> = <code class="type">string -&gt; unit</code> </pre>
 
 
-<pre><span id="VALparse"><span class="keyword">val</span> parse</span> : <code class="type">(<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list -> <a href="Arg.html#TYPEanon_fun">anon_fun</a> -> <a href="Arg.html#TYPEusage_msg">usage_msg</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALparse"><span class="keyword">val</span> parse</span> : <code class="type">(<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list -&gt; <a href="Arg.html#TYPEanon_fun">anon_fun</a> -&gt; <a href="Arg.html#TYPEusage_msg">usage_msg</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Arg.parse speclist anon_fun usage_msg</code> parses the command line.
     <code class="code">speclist</code> is a list of triples <code class="code">(key, spec, doc)</code>.
@@ -369,7 +387,7 @@
 </div>
 </div>
 
-<pre><span id="VALparse_dynamic"><span class="keyword">val</span> parse_dynamic</span> : <code class="type">(<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list Stdlib.ref -><br>       <a href="Arg.html#TYPEanon_fun">anon_fun</a> -> <a href="Arg.html#TYPEusage_msg">usage_msg</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALparse_dynamic"><span class="keyword">val</span> parse_dynamic</span> : <code class="type">(<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list Stdlib.ref -&gt;<br>       <a href="Arg.html#TYPEanon_fun">anon_fun</a> -&gt; <a href="Arg.html#TYPEusage_msg">usage_msg</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Arg.html#VALparse"><code class="code">Arg.parse</code></a>, except that the <code class="code">speclist</code> argument is a reference
     and may be updated during the parsing. A typical use for this feature
@@ -384,7 +402,7 @@
 </ul>
 </div>
 
-<pre><span id="VALparse_argv"><span class="keyword">val</span> parse_argv</span> : <code class="type">?current:int Stdlib.ref -><br>       string array -><br>       (<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list -> <a href="Arg.html#TYPEanon_fun">anon_fun</a> -> <a href="Arg.html#TYPEusage_msg">usage_msg</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALparse_argv"><span class="keyword">val</span> parse_argv</span> : <code class="type">?current:int Stdlib.ref -&gt;<br>       string array -&gt;<br>       (<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list -&gt; <a href="Arg.html#TYPEanon_fun">anon_fun</a> -&gt; <a href="Arg.html#TYPEusage_msg">usage_msg</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Arg.parse_argv ~current args speclist anon_fun usage_msg</code> parses
   the array <code class="code">args</code> as if it were the command line.  It uses and updates
@@ -398,7 +416,7 @@
 </div>
 </div>
 
-<pre><span id="VALparse_argv_dynamic"><span class="keyword">val</span> parse_argv_dynamic</span> : <code class="type">?current:int Stdlib.ref -><br>       string array -><br>       (<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list Stdlib.ref -><br>       <a href="Arg.html#TYPEanon_fun">anon_fun</a> -> string -> unit</code></pre><div class="info ">
+<pre><span id="VALparse_argv_dynamic"><span class="keyword">val</span> parse_argv_dynamic</span> : <code class="type">?current:int Stdlib.ref -&gt;<br>       string array -&gt;<br>       (<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list Stdlib.ref -&gt;<br>       <a href="Arg.html#TYPEanon_fun">anon_fun</a> -&gt; string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Arg.html#VALparse_argv"><code class="code">Arg.parse_argv</code></a>, except that the <code class="code">speclist</code> argument is a
     reference and may be updated during the parsing.
@@ -409,7 +427,7 @@
 </ul>
 </div>
 
-<pre><span id="VALparse_and_expand_argv_dynamic"><span class="keyword">val</span> parse_and_expand_argv_dynamic</span> : <code class="type">int Stdlib.ref -><br>       string array Stdlib.ref -><br>       (<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list Stdlib.ref -><br>       <a href="Arg.html#TYPEanon_fun">anon_fun</a> -> string -> unit</code></pre><div class="info ">
+<pre><span id="VALparse_and_expand_argv_dynamic"><span class="keyword">val</span> parse_and_expand_argv_dynamic</span> : <code class="type">int Stdlib.ref -&gt;<br>       string array Stdlib.ref -&gt;<br>       (<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list Stdlib.ref -&gt;<br>       <a href="Arg.html#TYPEanon_fun">anon_fun</a> -&gt; string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Arg.html#VALparse_argv_dynamic"><code class="code">Arg.parse_argv_dynamic</code></a>, except that the <code class="code">argv</code> argument is a
     reference and may be updated during the parsing of <code class="code">Expand</code> arguments.
@@ -420,7 +438,7 @@
 </ul>
 </div>
 
-<pre><span id="VALparse_expand"><span class="keyword">val</span> parse_expand</span> : <code class="type">(<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list -> <a href="Arg.html#TYPEanon_fun">anon_fun</a> -> <a href="Arg.html#TYPEusage_msg">usage_msg</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALparse_expand"><span class="keyword">val</span> parse_expand</span> : <code class="type">(<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list -&gt; <a href="Arg.html#TYPEanon_fun">anon_fun</a> -&gt; <a href="Arg.html#TYPEusage_msg">usage_msg</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Arg.html#VALparse"><code class="code">Arg.parse</code></a>, except that the <code class="code">Expand</code> arguments are allowed and
     the <a href="Arg.html#VALcurrent"><code class="code">Arg.current</code></a> reference is not updated.</p>
@@ -446,7 +464,7 @@
 </div>
 </div>
 
-<pre><span id="VALusage"><span class="keyword">val</span> usage</span> : <code class="type">(<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list -> <a href="Arg.html#TYPEusage_msg">usage_msg</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALusage"><span class="keyword">val</span> usage</span> : <code class="type">(<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list -&gt; <a href="Arg.html#TYPEusage_msg">usage_msg</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Arg.usage speclist usage_msg</code> prints to standard error
     an error message that includes the list of valid options.  This is
@@ -455,14 +473,14 @@
 </div>
 </div>
 
-<pre><span id="VALusage_string"><span class="keyword">val</span> usage_string</span> : <code class="type">(<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list -> <a href="Arg.html#TYPEusage_msg">usage_msg</a> -> string</code></pre><div class="info ">
+<pre><span id="VALusage_string"><span class="keyword">val</span> usage_string</span> : <code class="type">(<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list -&gt; <a href="Arg.html#TYPEusage_msg">usage_msg</a> -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Returns the message that would have been printed by <a href="Arg.html#VALusage"><code class="code">Arg.usage</code></a>,
     if provided with the same parameters.</p>
 </div>
 </div>
 
-<pre><span id="VALalign"><span class="keyword">val</span> align</span> : <code class="type">?limit:int -><br>       (<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list -> (<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list</code></pre><div class="info ">
+<pre><span id="VALalign"><span class="keyword">val</span> align</span> : <code class="type">?limit:int -&gt;<br>       (<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list -&gt; (<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list</code></pre><div class="info ">
 <div class="info-desc">
 <p>Align the documentation strings by inserting spaces at the first alignment
     separator (tab or, if tab is not found, space), according to the length of
@@ -484,7 +502,7 @@
 </div>
 </div>
 
-<pre><span id="VALread_arg"><span class="keyword">val</span> read_arg</span> : <code class="type">string -> string array</code></pre><div class="info ">
+<pre><span id="VALread_arg"><span class="keyword">val</span> read_arg</span> : <code class="type">string -&gt; string array</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Arg.read_arg file</code> reads newline-terminated command line arguments from
     file <code class="code">file</code>.</p>
@@ -494,7 +512,7 @@
 </ul>
 </div>
 
-<pre><span id="VALread_arg0"><span class="keyword">val</span> read_arg0</span> : <code class="type">string -> string array</code></pre><div class="info ">
+<pre><span id="VALread_arg0"><span class="keyword">val</span> read_arg0</span> : <code class="type">string -&gt; string array</code></pre><div class="info ">
 <div class="info-desc">
 <p>Identical to <a href="Arg.html#VALread_arg"><code class="code">Arg.read_arg</code></a> but assumes null character terminated command
     line arguments.</p>
@@ -504,7 +522,7 @@
 </ul>
 </div>
 
-<pre><span id="VALwrite_arg"><span class="keyword">val</span> write_arg</span> : <code class="type">string -> string array -> unit</code></pre><div class="info ">
+<pre><span id="VALwrite_arg"><span class="keyword">val</span> write_arg</span> : <code class="type">string -&gt; string array -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Arg.write_arg file args</code> writes the arguments <code class="code">args</code> newline-terminated
     into the file <code class="code">file</code>. If any of the arguments in <code class="code">args</code> contains a
@@ -515,7 +533,7 @@
 </ul>
 </div>
 
-<pre><span id="VALwrite_arg0"><span class="keyword">val</span> write_arg0</span> : <code class="type">string -> string array -> unit</code></pre><div class="info ">
+<pre><span id="VALwrite_arg0"><span class="keyword">val</span> write_arg0</span> : <code class="type">string -&gt; string array -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Identical to <a href="Arg.html#VALwrite_arg"><code class="code">Arg.write_arg</code></a> but uses the null character for terminator
     instead of newline.</p>

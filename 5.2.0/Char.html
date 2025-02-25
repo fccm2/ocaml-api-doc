@@ -16,27 +16,38 @@
 <link title="Arg" rel="Chapter" href="Arg.html">
 <link title="Array" rel="Chapter" href="Array.html">
 <link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
+<link title="Atomic" rel="Chapter" href="Atomic.html">
+<link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
+<link title="Bytes" rel="Chapter" href="Bytes.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
 <link title="Digest" rel="Chapter" href="Digest.html">
+<link title="Domain" rel="Chapter" href="Domain.html">
+<link title="Dynarray" rel="Chapter" href="Dynarray.html">
 <link title="Dynlink" rel="Chapter" href="Dynlink.html">
 <link title="Dynlink_types" rel="Chapter" href="Dynlink_types.html">
 <link title="Effect" rel="Chapter" href="Effect.html">
 <link title="Either" rel="Chapter" href="Either.html">
+<link title="Ephemeron" rel="Chapter" href="Ephemeron.html">
 <link title="Event" rel="Chapter" href="Event.html">
 <link title="Filename" rel="Chapter" href="Filename.html">
 <link title="Float" rel="Chapter" href="Float.html">
 <link title="Fun" rel="Chapter" href="Fun.html">
 <link title="Gc" rel="Chapter" href="Gc.html">
+<link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
 <link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
+<link title="List" rel="Chapter" href="List.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
+<link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
 <link title="Mutex" rel="Chapter" href="Mutex.html">
 <link title="Nativeint" rel="Chapter" href="Nativeint.html">
@@ -47,18 +58,25 @@
 <link title="Parsing" rel="Chapter" href="Parsing.html">
 <link title="Printexc" rel="Chapter" href="Printexc.html">
 <link title="Printf" rel="Chapter" href="Printf.html">
+<link title="Queue" rel="Chapter" href="Queue.html">
 <link title="Random" rel="Chapter" href="Random.html">
 <link title="Result" rel="Chapter" href="Result.html">
 <link title="Scanf" rel="Chapter" href="Scanf.html">
 <link title="Semaphore" rel="Chapter" href="Semaphore.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
 <link title="Set" rel="Chapter" href="Set.html">
+<link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
 <link title="Std_exit" rel="Chapter" href="Std_exit.html">
 <link title="Str" rel="Chapter" href="Str.html">
+<link title="String" rel="Chapter" href="String.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Type" rel="Chapter" href="Type.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
-<link title="Unix" rel="Chapter" href="Unix.html"><title>Char</title>
+<link title="Unix" rel="Chapter" href="Unix.html">
+<link title="Weak" rel="Chapter" href="Weak.html"><title>Char</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Callback.html" title="Callback">Previous</a>
@@ -74,13 +92,13 @@
 </div>
 <hr width="100%">
 
-<pre><span id="VALcode"><span class="keyword">val</span> code</span> : <code class="type">char -> int</code></pre><div class="info ">
+<pre><span id="VALcode"><span class="keyword">val</span> code</span> : <code class="type">char -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the ASCII code of the argument.</p>
 </div>
 </div>
 
-<pre><span id="VALchr"><span class="keyword">val</span> chr</span> : <code class="type">int -> char</code></pre><div class="info ">
+<pre><span id="VALchr"><span class="keyword">val</span> chr</span> : <code class="type">int -&gt; char</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the character with the given ASCII code.</p>
 </div>
@@ -90,7 +108,7 @@
 </ul>
 </div>
 
-<pre><span id="VALescaped"><span class="keyword">val</span> escaped</span> : <code class="type">char -> string</code></pre><div class="info ">
+<pre><span id="VALescaped"><span class="keyword">val</span> escaped</span> : <code class="type">char -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return a string representing the given character,
     with special characters escaped following the lexical conventions
@@ -100,7 +118,7 @@
 </div>
 </div>
 
-<pre><span id="VALlowercase_ascii"><span class="keyword">val</span> lowercase_ascii</span> : <code class="type">char -> char</code></pre><div class="info ">
+<pre><span id="VALlowercase_ascii"><span class="keyword">val</span> lowercase_ascii</span> : <code class="type">char -&gt; char</code></pre><div class="info ">
 <div class="info-desc">
 <p>Convert the given character to its equivalent lowercase character,
    using the US-ASCII character set.</p>
@@ -110,7 +128,7 @@
 </ul>
 </div>
 
-<pre><span id="VALuppercase_ascii"><span class="keyword">val</span> uppercase_ascii</span> : <code class="type">char -> char</code></pre><div class="info ">
+<pre><span id="VALuppercase_ascii"><span class="keyword">val</span> uppercase_ascii</span> : <code class="type">char -&gt; char</code></pre><div class="info ">
 <div class="info-desc">
 <p>Convert the given character to its equivalent uppercase character,
    using the US-ASCII character set.</p>
@@ -128,16 +146,16 @@
 </div>
 
 
-<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Char.html#TYPEt">t</a> -> <a href="Char.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Char.html#TYPEt">t</a> -&gt; <a href="Char.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>The comparison function for characters, with the same specification as
     <code class="code">Stdlib.compare</code>.  Along with the type <code class="code">t</code>, this function <code class="code">compare</code>
     allows the module <code class="code">Char</code> to be passed as argument to the functors
-    <a href="Set.Make.html"><code class="code">Set.Make</code></a> and <code class="code">Map.Make</code>.</p>
+    <a href="Set.Make.html"><code class="code">Set.Make</code></a> and <a href="Map.Make.html"><code class="code">Map.Make</code></a>.</p>
 </div>
 </div>
 
-<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type"><a href="Char.html#TYPEt">t</a> -> <a href="Char.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type"><a href="Char.html#TYPEt">t</a> -&gt; <a href="Char.html#TYPEt">t</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>The equal function for chars.</p>
 </div>
@@ -146,22 +164,22 @@
 </ul>
 </div>
 
-<pre><span id="VALseeded_hash"><span class="keyword">val</span> seeded_hash</span> : <code class="type">int -> <a href="Char.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<pre><span id="VALseeded_hash"><span class="keyword">val</span> seeded_hash</span> : <code class="type">int -&gt; <a href="Char.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>A seeded hash function for characters, with the same output value as
-    <code class="code">Hashtbl.seeded_hash</code>. This function allows this module to be passed as
-    argument to the functor <code class="code">Hashtbl.MakeSeeded</code>.</p>
+    <a href="Hashtbl.html#VALseeded_hash"><code class="code">Hashtbl.seeded_hash</code></a>. This function allows this module to be passed as
+    argument to the functor <a href="Hashtbl.MakeSeeded.html"><code class="code">Hashtbl.MakeSeeded</code></a>.</p>
 </div>
 <ul class="info-attributes">
 <li><b>Since</b> 5.1</li>
 </ul>
 </div>
 
-<pre><span id="VALhash"><span class="keyword">val</span> hash</span> : <code class="type"><a href="Char.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<pre><span id="VALhash"><span class="keyword">val</span> hash</span> : <code class="type"><a href="Char.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>An unseeded hash function for characters, with the same output value as
-    <code class="code">Hashtbl.hash</code>. This function allows this module to be passed as argument
-    to the functor <code class="code">Hashtbl.Make</code>.</p>
+    <a href="Hashtbl.html#VALhash"><code class="code">Hashtbl.hash</code></a>. This function allows this module to be passed as argument
+    to the functor <a href="Hashtbl.Make.html"><code class="code">Hashtbl.Make</code></a>.</p>
 </div>
 <ul class="info-attributes">
 <li><b>Since</b> 5.1</li>

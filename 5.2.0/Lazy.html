@@ -16,27 +16,38 @@
 <link title="Arg" rel="Chapter" href="Arg.html">
 <link title="Array" rel="Chapter" href="Array.html">
 <link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
+<link title="Atomic" rel="Chapter" href="Atomic.html">
+<link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
+<link title="Bytes" rel="Chapter" href="Bytes.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
 <link title="Digest" rel="Chapter" href="Digest.html">
+<link title="Domain" rel="Chapter" href="Domain.html">
+<link title="Dynarray" rel="Chapter" href="Dynarray.html">
 <link title="Dynlink" rel="Chapter" href="Dynlink.html">
 <link title="Dynlink_types" rel="Chapter" href="Dynlink_types.html">
 <link title="Effect" rel="Chapter" href="Effect.html">
 <link title="Either" rel="Chapter" href="Either.html">
+<link title="Ephemeron" rel="Chapter" href="Ephemeron.html">
 <link title="Event" rel="Chapter" href="Event.html">
 <link title="Filename" rel="Chapter" href="Filename.html">
 <link title="Float" rel="Chapter" href="Float.html">
 <link title="Fun" rel="Chapter" href="Fun.html">
 <link title="Gc" rel="Chapter" href="Gc.html">
+<link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
 <link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
+<link title="List" rel="Chapter" href="List.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
+<link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
 <link title="Mutex" rel="Chapter" href="Mutex.html">
 <link title="Nativeint" rel="Chapter" href="Nativeint.html">
@@ -47,18 +58,25 @@
 <link title="Parsing" rel="Chapter" href="Parsing.html">
 <link title="Printexc" rel="Chapter" href="Printexc.html">
 <link title="Printf" rel="Chapter" href="Printf.html">
+<link title="Queue" rel="Chapter" href="Queue.html">
 <link title="Random" rel="Chapter" href="Random.html">
 <link title="Result" rel="Chapter" href="Result.html">
 <link title="Scanf" rel="Chapter" href="Scanf.html">
 <link title="Semaphore" rel="Chapter" href="Semaphore.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
 <link title="Set" rel="Chapter" href="Set.html">
+<link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
 <link title="Std_exit" rel="Chapter" href="Std_exit.html">
 <link title="Str" rel="Chapter" href="Str.html">
+<link title="String" rel="Chapter" href="String.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Type" rel="Chapter" href="Type.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
-<link title="Unix" rel="Chapter" href="Unix.html"><link title="Iterators" rel="Section" href="#1_Iterators">
+<link title="Unix" rel="Chapter" href="Unix.html">
+<link title="Weak" rel="Chapter" href="Weak.html"><link title="Iterators" rel="Section" href="#1_Iterators">
 <link title="Reasoning on already-forced suspensions" rel="Section" href="#1_Reasoningonalreadyforcedsuspensions">
 <link title="Advanced" rel="Section" href="#1_Advanced">
 <title>Lazy</title>
@@ -128,7 +146,7 @@
 </div>
 </div>
 
-<pre><span id="VALforce"><span class="keyword">val</span> force</span> : <code class="type">'a <a href="Lazy.html#TYPEt">t</a> -> 'a</code></pre><div class="info ">
+<pre><span id="VALforce"><span class="keyword">val</span> force</span> : <code class="type">'a <a href="Lazy.html#TYPEt">t</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">force x</code> forces the suspension <code class="code">x</code> and returns its result. If <code class="code">x</code> has
     already been forced, <code class="code">Lazy.force x</code> returns the same value again without
@@ -140,7 +158,7 @@
 </ul>
 </div>
 <h2 id="1_Iterators">Iterators</h2>
-<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">('a -> 'b) -> 'a <a href="Lazy.html#TYPEt">t</a> -> 'b <a href="Lazy.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">('a -&gt; 'b) -&gt; 'a <a href="Lazy.html#TYPEt">t</a> -&gt; 'b <a href="Lazy.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">map f x</code> returns a suspension that, when forced,
     forces <code class="code">x</code> and applies <code class="code">f</code> to its value.</p>
@@ -152,7 +170,7 @@
 </ul>
 </div>
 <h2 id="1_Reasoningonalreadyforcedsuspensions">Reasoning on already-forced suspensions</h2>
-<pre><span id="VALis_val"><span class="keyword">val</span> is_val</span> : <code class="type">'a <a href="Lazy.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALis_val"><span class="keyword">val</span> is_val</span> : <code class="type">'a <a href="Lazy.html#TYPEt">t</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">is_val x</code> returns <code class="code">true</code> if <code class="code">x</code> has already been forced and
     did not raise an exception.</p>
@@ -162,7 +180,7 @@
 </ul>
 </div>
 
-<pre><span id="VALfrom_val"><span class="keyword">val</span> from_val</span> : <code class="type">'a -> 'a <a href="Lazy.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALfrom_val"><span class="keyword">val</span> from_val</span> : <code class="type">'a -&gt; 'a <a href="Lazy.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">from_val v</code> evaluates <code class="code">v</code> first (as any function would) and returns
     an already-forced suspension of its result.
@@ -174,7 +192,7 @@
 </ul>
 </div>
 
-<pre><span id="VALmap_val"><span class="keyword">val</span> map_val</span> : <code class="type">('a -> 'b) -> 'a <a href="Lazy.html#TYPEt">t</a> -> 'b <a href="Lazy.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALmap_val"><span class="keyword">val</span> map_val</span> : <code class="type">('a -&gt; 'b) -&gt; 'a <a href="Lazy.html#TYPEt">t</a> -&gt; 'b <a href="Lazy.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">map_val f x</code> applies <code class="code">f</code> directly if <code class="code">x</code> is already forced,
    otherwise it behaves as <code class="code">map f x</code>.</p>
@@ -197,7 +215,7 @@
 <p>The following definitions are for advanced uses only; they require
    familiarity with the lazy compilation scheme to be used appropriately.</p>
 
-<pre><span id="VALfrom_fun"><span class="keyword">val</span> from_fun</span> : <code class="type">(unit -> 'a) -> 'a <a href="Lazy.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALfrom_fun"><span class="keyword">val</span> from_fun</span> : <code class="type">(unit -&gt; 'a) -&gt; 'a <a href="Lazy.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">from_fun f</code> is the same as <code class="code">lazy (f ())</code> but slightly more efficient.</p>
 
@@ -210,7 +228,7 @@
 </ul>
 </div>
 
-<pre><span id="VALforce_val"><span class="keyword">val</span> force_val</span> : <code class="type">'a <a href="Lazy.html#TYPEt">t</a> -> 'a</code></pre><div class="info ">
+<pre><span id="VALforce_val"><span class="keyword">val</span> force_val</span> : <code class="type">'a <a href="Lazy.html#TYPEt">t</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">force_val x</code> forces the suspension <code class="code">x</code> and returns its result.  If <code class="code">x</code>
     has already been forced, <code class="code">force_val x</code> returns the same value again

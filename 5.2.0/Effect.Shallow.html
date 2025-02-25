@@ -15,27 +15,38 @@
 <link title="Arg" rel="Chapter" href="Arg.html">
 <link title="Array" rel="Chapter" href="Array.html">
 <link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
+<link title="Atomic" rel="Chapter" href="Atomic.html">
+<link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
+<link title="Bytes" rel="Chapter" href="Bytes.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
 <link title="Digest" rel="Chapter" href="Digest.html">
+<link title="Domain" rel="Chapter" href="Domain.html">
+<link title="Dynarray" rel="Chapter" href="Dynarray.html">
 <link title="Dynlink" rel="Chapter" href="Dynlink.html">
 <link title="Dynlink_types" rel="Chapter" href="Dynlink_types.html">
 <link title="Effect" rel="Chapter" href="Effect.html">
 <link title="Either" rel="Chapter" href="Either.html">
+<link title="Ephemeron" rel="Chapter" href="Ephemeron.html">
 <link title="Event" rel="Chapter" href="Event.html">
 <link title="Filename" rel="Chapter" href="Filename.html">
 <link title="Float" rel="Chapter" href="Float.html">
 <link title="Fun" rel="Chapter" href="Fun.html">
 <link title="Gc" rel="Chapter" href="Gc.html">
+<link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
 <link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
+<link title="List" rel="Chapter" href="List.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
+<link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
 <link title="Mutex" rel="Chapter" href="Mutex.html">
 <link title="Nativeint" rel="Chapter" href="Nativeint.html">
@@ -46,18 +57,25 @@
 <link title="Parsing" rel="Chapter" href="Parsing.html">
 <link title="Printexc" rel="Chapter" href="Printexc.html">
 <link title="Printf" rel="Chapter" href="Printf.html">
+<link title="Queue" rel="Chapter" href="Queue.html">
 <link title="Random" rel="Chapter" href="Random.html">
 <link title="Result" rel="Chapter" href="Result.html">
 <link title="Scanf" rel="Chapter" href="Scanf.html">
 <link title="Semaphore" rel="Chapter" href="Semaphore.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
 <link title="Set" rel="Chapter" href="Set.html">
+<link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
 <link title="Std_exit" rel="Chapter" href="Std_exit.html">
 <link title="Str" rel="Chapter" href="Str.html">
+<link title="String" rel="Chapter" href="String.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Type" rel="Chapter" href="Type.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
-<link title="Unix" rel="Chapter" href="Unix.html"><title>Effect.Shallow</title>
+<link title="Unix" rel="Chapter" href="Unix.html">
+<link title="Weak" rel="Chapter" href="Weak.html"><title>Effect.Shallow</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Effect.Deep.html" title="Effect.Deep">Previous</a>
@@ -76,7 +94,7 @@
 </div>
 
 
-<pre><span id="VALfiber"><span class="keyword">val</span> fiber</span> : <code class="type">('a -> 'b) -> ('a, 'b) <a href="Effect.Shallow.html#TYPEcontinuation">continuation</a></code></pre><div class="info ">
+<pre><span id="VALfiber"><span class="keyword">val</span> fiber</span> : <code class="type">('a -&gt; 'b) -&gt; ('a, 'b) <a href="Effect.Shallow.html#TYPEcontinuation">continuation</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">fiber f</code> constructs a continuation that runs the computation <code class="code">f</code>.</p>
 </div>
@@ -87,21 +105,21 @@
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELThandler.retc">retc</span>&nbsp;: <code class="type">'a -> 'b</code>;</code></td>
+<code><span id="TYPEELThandler.retc">retc</span>&nbsp;: <code class="type">'a -&gt; 'b</code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELThandler.exnc">exnc</span>&nbsp;: <code class="type">exn -> 'b</code>;</code></td>
+<code><span id="TYPEELThandler.exnc">exnc</span>&nbsp;: <code class="type">exn -&gt; 'b</code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELThandler.effc">effc</span>&nbsp;: <code class="type">'c. 'c <a href="Effect.html#TYPEt">Effect.t</a> -> (('c, 'a) <a href="Effect.Shallow.html#TYPEcontinuation">continuation</a> -> 'b) option</code>;</code></td>
+<code><span id="TYPEELThandler.effc">effc</span>&nbsp;: <code class="type">'c. 'c <a href="Effect.html#TYPEt">Effect.t</a> -&gt; (('c, 'a) <a href="Effect.Shallow.html#TYPEcontinuation">continuation</a> -&gt; 'b) option</code>;</code></td>
 
 </tr></table>
 <code>}</code>
@@ -115,7 +133,7 @@
 </div>
 
 
-<pre><span id="VALcontinue_with"><span class="keyword">val</span> continue_with</span> : <code class="type">('c, 'a) <a href="Effect.Shallow.html#TYPEcontinuation">continuation</a> -><br>       'c -> ('a, 'b) <a href="Effect.Shallow.html#TYPEhandler">handler</a> -> 'b</code></pre><div class="info ">
+<pre><span id="VALcontinue_with"><span class="keyword">val</span> continue_with</span> : <code class="type">('c, 'a) <a href="Effect.Shallow.html#TYPEcontinuation">continuation</a> -&gt;<br>       'c -&gt; ('a, 'b) <a href="Effect.Shallow.html#TYPEhandler">handler</a> -&gt; 'b</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">continue_with k v h</code> resumes the continuation <code class="code">k</code> with value <code class="code">v</code> with
       the handler <code class="code">h</code>.</p>
@@ -126,7 +144,7 @@
 </ul>
 </div>
 
-<pre><span id="VALdiscontinue_with"><span class="keyword">val</span> discontinue_with</span> : <code class="type">('c, 'a) <a href="Effect.Shallow.html#TYPEcontinuation">continuation</a> -><br>       exn -> ('a, 'b) <a href="Effect.Shallow.html#TYPEhandler">handler</a> -> 'b</code></pre><div class="info ">
+<pre><span id="VALdiscontinue_with"><span class="keyword">val</span> discontinue_with</span> : <code class="type">('c, 'a) <a href="Effect.Shallow.html#TYPEcontinuation">continuation</a> -&gt;<br>       exn -&gt; ('a, 'b) <a href="Effect.Shallow.html#TYPEhandler">handler</a> -&gt; 'b</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">discontinue_with k e h</code> resumes the continuation <code class="code">k</code> by raising the
       exception <code class="code">e</code> with the handler <code class="code">h</code>.</p>
@@ -137,7 +155,7 @@
 </ul>
 </div>
 
-<pre><span id="VALdiscontinue_with_backtrace"><span class="keyword">val</span> discontinue_with_backtrace</span> : <code class="type">('a, 'b) <a href="Effect.Shallow.html#TYPEcontinuation">continuation</a> -><br>       exn -> Stdlib.Printexc.raw_backtrace -> ('b, 'c) <a href="Effect.Shallow.html#TYPEhandler">handler</a> -> 'c</code></pre><div class="info ">
+<pre><span id="VALdiscontinue_with_backtrace"><span class="keyword">val</span> discontinue_with_backtrace</span> : <code class="type">('a, 'b) <a href="Effect.Shallow.html#TYPEcontinuation">continuation</a> -&gt;<br>       exn -&gt; Stdlib.Printexc.raw_backtrace -&gt; ('b, 'c) <a href="Effect.Shallow.html#TYPEhandler">handler</a> -&gt; 'c</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">discontinue_with k e bt h</code> resumes the continuation <code class="code">k</code> by raising the
       exception <code class="code">e</code> with the handler <code class="code">h</code> using the raw backtrace <code class="code">bt</code> as the
@@ -149,7 +167,7 @@
 </ul>
 </div>
 
-<pre><span id="VALget_callstack"><span class="keyword">val</span> get_callstack</span> : <code class="type">('a, 'b) <a href="Effect.Shallow.html#TYPEcontinuation">continuation</a> -> int -> Stdlib.Printexc.raw_backtrace</code></pre><div class="info ">
+<pre><span id="VALget_callstack"><span class="keyword">val</span> get_callstack</span> : <code class="type">('a, 'b) <a href="Effect.Shallow.html#TYPEcontinuation">continuation</a> -&gt; int -&gt; Stdlib.Printexc.raw_backtrace</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">get_callstack c n</code> returns a description of the top of the call stack on
       the continuation <code class="code">c</code>, with at most <code class="code">n</code> entries.</p>

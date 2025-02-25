@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Fun.html">
-<link rel="next" href="In_channel.html">
+<link rel="next" href="Hashtbl.html">
 <link rel="Up" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
@@ -16,27 +16,38 @@
 <link title="Arg" rel="Chapter" href="Arg.html">
 <link title="Array" rel="Chapter" href="Array.html">
 <link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
+<link title="Atomic" rel="Chapter" href="Atomic.html">
+<link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
+<link title="Bytes" rel="Chapter" href="Bytes.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
 <link title="Digest" rel="Chapter" href="Digest.html">
+<link title="Domain" rel="Chapter" href="Domain.html">
+<link title="Dynarray" rel="Chapter" href="Dynarray.html">
 <link title="Dynlink" rel="Chapter" href="Dynlink.html">
 <link title="Dynlink_types" rel="Chapter" href="Dynlink_types.html">
 <link title="Effect" rel="Chapter" href="Effect.html">
 <link title="Either" rel="Chapter" href="Either.html">
+<link title="Ephemeron" rel="Chapter" href="Ephemeron.html">
 <link title="Event" rel="Chapter" href="Event.html">
 <link title="Filename" rel="Chapter" href="Filename.html">
 <link title="Float" rel="Chapter" href="Float.html">
 <link title="Fun" rel="Chapter" href="Fun.html">
 <link title="Gc" rel="Chapter" href="Gc.html">
+<link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
 <link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
+<link title="List" rel="Chapter" href="List.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
+<link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
 <link title="Mutex" rel="Chapter" href="Mutex.html">
 <link title="Nativeint" rel="Chapter" href="Nativeint.html">
@@ -47,23 +58,30 @@
 <link title="Parsing" rel="Chapter" href="Parsing.html">
 <link title="Printexc" rel="Chapter" href="Printexc.html">
 <link title="Printf" rel="Chapter" href="Printf.html">
+<link title="Queue" rel="Chapter" href="Queue.html">
 <link title="Random" rel="Chapter" href="Random.html">
 <link title="Result" rel="Chapter" href="Result.html">
 <link title="Scanf" rel="Chapter" href="Scanf.html">
 <link title="Semaphore" rel="Chapter" href="Semaphore.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
 <link title="Set" rel="Chapter" href="Set.html">
+<link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
 <link title="Std_exit" rel="Chapter" href="Std_exit.html">
 <link title="Str" rel="Chapter" href="Str.html">
+<link title="String" rel="Chapter" href="String.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Type" rel="Chapter" href="Type.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
-<link title="Unix" rel="Chapter" href="Unix.html"><title>Gc</title>
+<link title="Unix" rel="Chapter" href="Unix.html">
+<link title="Weak" rel="Chapter" href="Weak.html"><title>Gc</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Fun.html" title="Fun">Previous</a>
 &nbsp;<a class="up" href="index.html" title="Index">Up</a>
-&nbsp;<a class="post" href="In_channel.html" title="In_channel">Next</a>
+&nbsp;<a class="post" href="Hashtbl.html" title="Hashtbl">Next</a>
 </div>
 <h1>Module <a href="type_Gc.html">Gc</a></h1>
 
@@ -563,7 +581,7 @@
 </div>
 
 
-<pre><span id="VALstat"><span class="keyword">val</span> stat</span> : <code class="type">unit -> <a href="Gc.html#TYPEstat">stat</a></code></pre><div class="info ">
+<pre><span id="VALstat"><span class="keyword">val</span> stat</span> : <code class="type">unit -&gt; <a href="Gc.html#TYPEstat">stat</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the current values of the memory management counters in a
    <code class="code">stat</code> record that represent the program's total memory stats.
@@ -571,7 +589,7 @@
 </div>
 </div>
 
-<pre><span id="VALquick_stat"><span class="keyword">val</span> quick_stat</span> : <code class="type">unit -> <a href="Gc.html#TYPEstat">stat</a></code></pre><div class="info ">
+<pre><span id="VALquick_stat"><span class="keyword">val</span> quick_stat</span> : <code class="type">unit -&gt; <a href="Gc.html#TYPEstat">stat</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">stat</code> except that <code class="code">live_words</code>, <code class="code">live_blocks</code>, <code class="code">free_words</code>,
     <code class="code">free_blocks</code>, <code class="code">largest_free</code>, and <code class="code">fragments</code> are set to 0. Due to
@@ -582,7 +600,7 @@
 </div>
 </div>
 
-<pre><span id="VALcounters"><span class="keyword">val</span> counters</span> : <code class="type">unit -> float * float * float</code></pre><div class="info ">
+<pre><span id="VALcounters"><span class="keyword">val</span> counters</span> : <code class="type">unit -&gt; float * float * float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return <code class="code">(minor_words, promoted_words, major_words)</code> for the current
     domain or potentially previous domains.  This function is as fast as
@@ -590,7 +608,7 @@
 </div>
 </div>
 
-<pre><span id="VALminor_words"><span class="keyword">val</span> minor_words</span> : <code class="type">unit -> float</code></pre><div class="info ">
+<pre><span id="VALminor_words"><span class="keyword">val</span> minor_words</span> : <code class="type">unit -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Number of words allocated in the minor heap by this domain or potentially
     previous domains. This number is accurate in byte-code programs, but
@@ -603,26 +621,26 @@
 </ul>
 </div>
 
-<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">unit -> <a href="Gc.html#TYPEcontrol">control</a></code></pre><div class="info ">
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">unit -&gt; <a href="Gc.html#TYPEcontrol">control</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the current values of the GC parameters in a <code class="code">control</code> record.</p>
 </div>
 </div>
 
-<pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type"><a href="Gc.html#TYPEcontrol">control</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type"><a href="Gc.html#TYPEcontrol">control</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">set r</code> changes the GC parameters according to the <code class="code">control</code> record <code class="code">r</code>.
    The normal usage is: <code class="code">Gc.set { (Gc.get()) with Gc.verbose = 0x00d }</code></p>
 </div>
 </div>
 
-<pre><span id="VALminor"><span class="keyword">val</span> minor</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALminor"><span class="keyword">val</span> minor</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Trigger a minor collection.</p>
 </div>
 </div>
 
-<pre><span id="VALmajor_slice"><span class="keyword">val</span> major_slice</span> : <code class="type">int -> int</code></pre><div class="info ">
+<pre><span id="VALmajor_slice"><span class="keyword">val</span> major_slice</span> : <code class="type">int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">major_slice n</code>
     Do a minor collection and a slice of major collection. <code class="code">n</code> is the
@@ -633,13 +651,13 @@
 </div>
 </div>
 
-<pre><span id="VALmajor"><span class="keyword">val</span> major</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALmajor"><span class="keyword">val</span> major</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Do a minor collection and finish the current major collection cycle.</p>
 </div>
 </div>
 
-<pre><span id="VALfull_major"><span class="keyword">val</span> full_major</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALfull_major"><span class="keyword">val</span> full_major</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Do a minor collection, finish the current major collection cycle,
    and perform a complete new cycle.  This will collect all currently
@@ -647,21 +665,21 @@
 </div>
 </div>
 
-<pre><span id="VALcompact"><span class="keyword">val</span> compact</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALcompact"><span class="keyword">val</span> compact</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Perform a full major collection and compact the heap.  Note that heap
    compaction is a lengthy operation.</p>
 </div>
 </div>
 
-<pre><span id="VALprint_stat"><span class="keyword">val</span> print_stat</span> : <code class="type">Stdlib.out_channel -> unit</code></pre><div class="info ">
+<pre><span id="VALprint_stat"><span class="keyword">val</span> print_stat</span> : <code class="type">Stdlib.out_channel -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Print the current values of the memory management counters (in
    human-readable form) of the total program into the channel argument.</p>
 </div>
 </div>
 
-<pre><span id="VALallocated_bytes"><span class="keyword">val</span> allocated_bytes</span> : <code class="type">unit -> float</code></pre><div class="info ">
+<pre><span id="VALallocated_bytes"><span class="keyword">val</span> allocated_bytes</span> : <code class="type">unit -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the number of bytes allocated by this domain and potentially
    a previous domain. It is returned as a <code class="code">float</code> to avoid overflow problems
@@ -669,7 +687,7 @@
 </div>
 </div>
 
-<pre><span id="VALget_minor_free"><span class="keyword">val</span> get_minor_free</span> : <code class="type">unit -> int</code></pre><div class="info ">
+<pre><span id="VALget_minor_free"><span class="keyword">val</span> get_minor_free</span> : <code class="type">unit -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the current size of the free space inside the minor heap of this
    domain.</p>
@@ -679,7 +697,7 @@
 </ul>
 </div>
 
-<pre><span id="VALfinalise"><span class="keyword">val</span> finalise</span> : <code class="type">('a -> unit) -> 'a -> unit</code></pre><div class="info ">
+<pre><span id="VALfinalise"><span class="keyword">val</span> finalise</span> : <code class="type">('a -&gt; unit) -&gt; 'a -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">finalise f v</code> registers <code class="code">f</code> as a finalisation function for <code class="code">v</code>.
    <code class="code">v</code> must be heap-allocated.  <code class="code">f</code> will be called with <code class="code">v</code> as
@@ -740,13 +758,13 @@
    <code class="code">Invalid_argument</code>, but you should still avoid calling <code class="code">finalise</code>
    on lazy values.</p>
 
-<p>The results of calling <code class="code">String.make</code>, <code class="code">Bytes.make</code>, <code class="code">Bytes.create</code>,
+<p>The results of calling <a href="String.html#VALmake"><code class="code">String.make</code></a>, <a href="Bytes.html#VALmake"><code class="code">Bytes.make</code></a>, <a href="Bytes.html#VALcreate"><code class="code">Bytes.create</code></a>,
    <a href="Array.html#VALmake"><code class="code">Array.make</code></a>, and <code class="code">Stdlib.ref</code> are guaranteed to be
    heap-allocated and non-constant except when the length argument is <code class="code">0</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALfinalise_last"><span class="keyword">val</span> finalise_last</span> : <code class="type">(unit -> unit) -> 'a -> unit</code></pre><div class="info ">
+<pre><span id="VALfinalise_last"><span class="keyword">val</span> finalise_last</span> : <code class="type">(unit -&gt; unit) -&gt; 'a -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>same as <a href="Gc.html#VALfinalise"><code class="code">Gc.finalise</code></a> except the value is not given as argument. So
     you can't use the given value for the computation of the
@@ -764,7 +782,7 @@
 </ul>
 </div>
 
-<pre><span id="VALfinalise_release"><span class="keyword">val</span> finalise_release</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALfinalise_release"><span class="keyword">val</span> finalise_release</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>A finalisation function may call <code class="code">finalise_release</code> to tell the
     GC that it can launch the next finalisation function without waiting
@@ -782,7 +800,7 @@
 </div>
 
 
-<pre><span id="VALcreate_alarm"><span class="keyword">val</span> create_alarm</span> : <code class="type">(unit -> unit) -> <a href="Gc.html#TYPEalarm">alarm</a></code></pre><div class="info ">
+<pre><span id="VALcreate_alarm"><span class="keyword">val</span> create_alarm</span> : <code class="type">(unit -&gt; unit) -&gt; <a href="Gc.html#TYPEalarm">alarm</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">create_alarm f</code> will arrange for <code class="code">f</code> to be called at the end of
    major GC cycles, not caused by <code class="code">f</code> itself, starting with the
@@ -809,15 +827,15 @@
    </code></pre></div>
 </div>
 
-<pre><span id="VALdelete_alarm"><span class="keyword">val</span> delete_alarm</span> : <code class="type"><a href="Gc.html#TYPEalarm">alarm</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALdelete_alarm"><span class="keyword">val</span> delete_alarm</span> : <code class="type"><a href="Gc.html#TYPEalarm">alarm</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">delete_alarm a</code> will stop the calls to the function associated
    to <code class="code">a</code>. Calling <code class="code">delete_alarm a</code> again has no effect.</p>
 </div>
 </div>
 
-<pre><span id="VALeventlog_pause"><span class="keyword">val</span> eventlog_pause</span> : <code class="type">unit -> unit</code></pre>
-<pre><span id="VALeventlog_resume"><span class="keyword">val</span> eventlog_resume</span> : <code class="type">unit -> unit</code></pre>
+<pre><span id="VALeventlog_pause"><span class="keyword">val</span> eventlog_pause</span> : <code class="type">unit -&gt; unit</code></pre>
+<pre><span id="VALeventlog_resume"><span class="keyword">val</span> eventlog_resume</span> : <code class="type">unit -&gt; unit</code></pre>
 <pre><span id="MODULEMemprof"><span class="keyword">module</span> <a href="Gc.Memprof.html">Memprof</a></span>: <code class="code">sig</code> <a href="Gc.Memprof.html">..</a> <code class="code">end</code></pre><div class="info">
 <p><code class="code">Memprof</code> is a profiling engine which randomly samples allocated
    memory words.</p>

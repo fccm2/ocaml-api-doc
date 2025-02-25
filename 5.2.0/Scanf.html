@@ -16,27 +16,38 @@
 <link title="Arg" rel="Chapter" href="Arg.html">
 <link title="Array" rel="Chapter" href="Array.html">
 <link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
+<link title="Atomic" rel="Chapter" href="Atomic.html">
+<link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
+<link title="Bytes" rel="Chapter" href="Bytes.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
 <link title="Digest" rel="Chapter" href="Digest.html">
+<link title="Domain" rel="Chapter" href="Domain.html">
+<link title="Dynarray" rel="Chapter" href="Dynarray.html">
 <link title="Dynlink" rel="Chapter" href="Dynlink.html">
 <link title="Dynlink_types" rel="Chapter" href="Dynlink_types.html">
 <link title="Effect" rel="Chapter" href="Effect.html">
 <link title="Either" rel="Chapter" href="Either.html">
+<link title="Ephemeron" rel="Chapter" href="Ephemeron.html">
 <link title="Event" rel="Chapter" href="Event.html">
 <link title="Filename" rel="Chapter" href="Filename.html">
 <link title="Float" rel="Chapter" href="Float.html">
 <link title="Fun" rel="Chapter" href="Fun.html">
 <link title="Gc" rel="Chapter" href="Gc.html">
+<link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
 <link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
+<link title="List" rel="Chapter" href="List.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
+<link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
 <link title="Mutex" rel="Chapter" href="Mutex.html">
 <link title="Nativeint" rel="Chapter" href="Nativeint.html">
@@ -47,18 +58,25 @@
 <link title="Parsing" rel="Chapter" href="Parsing.html">
 <link title="Printexc" rel="Chapter" href="Printexc.html">
 <link title="Printf" rel="Chapter" href="Printf.html">
+<link title="Queue" rel="Chapter" href="Queue.html">
 <link title="Random" rel="Chapter" href="Random.html">
 <link title="Result" rel="Chapter" href="Result.html">
 <link title="Scanf" rel="Chapter" href="Scanf.html">
 <link title="Semaphore" rel="Chapter" href="Semaphore.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
 <link title="Set" rel="Chapter" href="Set.html">
+<link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
 <link title="Std_exit" rel="Chapter" href="Std_exit.html">
 <link title="Str" rel="Chapter" href="Str.html">
+<link title="String" rel="Chapter" href="String.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Type" rel="Chapter" href="Type.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
-<link title="Unix" rel="Chapter" href="Unix.html"><link title="Introduction" rel="Section" href="#1_Introduction">
+<link title="Unix" rel="Chapter" href="Unix.html">
+<link title="Weak" rel="Chapter" href="Weak.html"><link title="Introduction" rel="Section" href="#1_Introduction">
 <link title="Formatted input channel" rel="Section" href="#1_Formattedinputchannel">
 <link title="Type of formatted input functions" rel="Section" href="#1_Typeofformattedinputfunctions">
 <link title="The general formatted input function" rel="Section" href="#1_Thegeneralformattedinputfunction">
@@ -151,7 +169,7 @@
       a <a href="Mutex.html#TYPEt"><code class="code">Mutex.t</code></a>).</p>
 <h2 id="1_Formattedinputchannel">Formatted input channel</h2>
 <pre><span id="MODULEScanning"><span class="keyword">module</span> <a href="Scanf.Scanning.html">Scanning</a></span>: <code class="code">sig</code> <a href="Scanf.Scanning.html">..</a> <code class="code">end</code></pre><h2 id="1_Typeofformattedinputfunctions">Type of formatted input functions</h2>
-<pre><span id="TYPEscanner"><span class="keyword">type</span> <code class="type">('a, 'b, 'c, 'd)</code> scanner</span> = <code class="type">('a, <a href="Scanf.Scanning.html#TYPEin_channel">Scanning.in_channel</a>, 'b, 'c, 'a -> 'd, 'd) Stdlib.format6 -> 'c</code> </pre>
+<pre><span id="TYPEscanner"><span class="keyword">type</span> <code class="type">('a, 'b, 'c, 'd)</code> scanner</span> = <code class="type">('a, <a href="Scanf.Scanning.html#TYPEin_channel">Scanning.in_channel</a>, 'b, 'c, 'a -&gt; 'd, 'd) Stdlib.format6 -&gt; 'c</code> </pre>
 <div class="info ">
 <div class="info-desc">
 <p>The type of formatted input scanners: <code class="code">('a, 'b, 'c, 'd) scanner</code>
@@ -180,7 +198,7 @@
 </div>
 
 
-<pre><span id="TYPEscanner_opt"><span class="keyword">type</span> <code class="type">('a, 'b, 'c, 'd)</code> scanner_opt</span> = <code class="type">('a, <a href="Scanf.Scanning.html#TYPEin_channel">Scanning.in_channel</a>, 'b, 'c, 'a -> 'd option, 'd) Stdlib.format6 -><br>       'c</code> </pre>
+<pre><span id="TYPEscanner_opt"><span class="keyword">type</span> <code class="type">('a, 'b, 'c, 'd)</code> scanner_opt</span> = <code class="type">('a, <a href="Scanf.Scanning.html#TYPEin_channel">Scanning.in_channel</a>, 'b, 'c, 'a -&gt; 'd option, 'd) Stdlib.format6 -&gt;<br>       'c</code> </pre>
 
 
 <pre><span id="EXCEPTIONScan_failure"><span class="keyword">exception</span> Scan_failure</span> <span class="keyword">of</span> <code class="type">string</code></pre>
@@ -192,7 +210,7 @@
 </div>
 </div>
 <h2 id="1_Thegeneralformattedinputfunction">The general formatted input function</h2>
-<pre><span id="VALbscanf"><span class="keyword">val</span> bscanf</span> : <code class="type"><a href="Scanf.Scanning.html#TYPEin_channel">Scanning.in_channel</a> -> ('a, 'b, 'c, 'd) <a href="Scanf.html#TYPEscanner">scanner</a></code></pre><p><code class="code">bscanf ic fmt r1 ... rN f</code> reads characters from the
+<pre><span id="VALbscanf"><span class="keyword">val</span> bscanf</span> : <code class="type"><a href="Scanf.Scanning.html#TYPEin_channel">Scanning.in_channel</a> -&gt; ('a, 'b, 'c, 'd) <a href="Scanf.html#TYPEscanner">scanner</a></code></pre><p><code class="code">bscanf ic fmt r1 ... rN f</code> reads characters from the
     <a href="Scanf.Scanning.html#TYPEin_channel"><code class="code">Scanf.Scanning.in_channel</code></a> formatted input channel <code class="code">ic</code> and converts them to
     values according to format string <code class="code">fmt</code>.
     As a final step, receiver function <code class="code">f</code> is applied to the values read and
@@ -205,7 +223,7 @@
     argument corresponding to the <code class="code">%r</code> conversions specified in the format
     string.</p>
 
-<pre><span id="VALbscanf_opt"><span class="keyword">val</span> bscanf_opt</span> : <code class="type"><a href="Scanf.Scanning.html#TYPEin_channel">Scanning.in_channel</a> -> ('a, 'b, 'c, 'd) <a href="Scanf.html#TYPEscanner_opt">scanner_opt</a></code></pre><div class="info ">
+<pre><span id="VALbscanf_opt"><span class="keyword">val</span> bscanf_opt</span> : <code class="type"><a href="Scanf.Scanning.html#TYPEin_channel">Scanning.in_channel</a> -&gt; ('a, 'b, 'c, 'd) <a href="Scanf.html#TYPEscanner_opt">scanner_opt</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Scanf.html#VALbscanf"><code class="code">Scanf.bscanf</code></a>, but returns <code class="code">None</code> in case of scanning failure.</p>
 </div>
@@ -423,13 +441,13 @@
     simply returns the characters read so far, or <code class="code">""</code> if none were ever read.</li>
 </ul>
 <h2 id="1_Specialisedformattedinputfunctions">Specialised formatted input functions</h2>
-<pre><span id="VALsscanf"><span class="keyword">val</span> sscanf</span> : <code class="type">string -> ('a, 'b, 'c, 'd) <a href="Scanf.html#TYPEscanner">scanner</a></code></pre><div class="info ">
+<pre><span id="VALsscanf"><span class="keyword">val</span> sscanf</span> : <code class="type">string -&gt; ('a, 'b, 'c, 'd) <a href="Scanf.html#TYPEscanner">scanner</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Scanf.html#VALbscanf"><code class="code">Scanf.bscanf</code></a>, but reads from the given string.</p>
 </div>
 </div>
 
-<pre><span id="VALsscanf_opt"><span class="keyword">val</span> sscanf_opt</span> : <code class="type">string -> ('a, 'b, 'c, 'd) <a href="Scanf.html#TYPEscanner_opt">scanner_opt</a></code></pre><div class="info ">
+<pre><span id="VALsscanf_opt"><span class="keyword">val</span> sscanf_opt</span> : <code class="type">string -&gt; ('a, 'b, 'c, 'd) <a href="Scanf.html#TYPEscanner_opt">scanner_opt</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Scanf.html#VALsscanf"><code class="code">Scanf.sscanf</code></a>, but returns <code class="code">None</code> in case of scanning failure.</p>
 </div>
@@ -454,7 +472,7 @@
 </ul>
 </div>
 
-<pre><span id="VALkscanf"><span class="keyword">val</span> kscanf</span> : <code class="type"><a href="Scanf.Scanning.html#TYPEin_channel">Scanning.in_channel</a> -><br>       (<a href="Scanf.Scanning.html#TYPEin_channel">Scanning.in_channel</a> -> exn -> 'd) -> ('a, 'b, 'c, 'd) <a href="Scanf.html#TYPEscanner">scanner</a></code></pre><div class="info ">
+<pre><span id="VALkscanf"><span class="keyword">val</span> kscanf</span> : <code class="type"><a href="Scanf.Scanning.html#TYPEin_channel">Scanning.in_channel</a> -&gt;<br>       (<a href="Scanf.Scanning.html#TYPEin_channel">Scanning.in_channel</a> -&gt; exn -&gt; 'd) -&gt; ('a, 'b, 'c, 'd) <a href="Scanf.html#TYPEscanner">scanner</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Scanf.html#VALbscanf"><code class="code">Scanf.bscanf</code></a>, but takes an additional function argument
     <code class="code">ef</code> that is called in case of error: if the scanning process or
@@ -464,7 +482,7 @@
 </div>
 </div>
 
-<pre><span id="VALksscanf"><span class="keyword">val</span> ksscanf</span> : <code class="type">string -><br>       (<a href="Scanf.Scanning.html#TYPEin_channel">Scanning.in_channel</a> -> exn -> 'd) -> ('a, 'b, 'c, 'd) <a href="Scanf.html#TYPEscanner">scanner</a></code></pre><div class="info ">
+<pre><span id="VALksscanf"><span class="keyword">val</span> ksscanf</span> : <code class="type">string -&gt;<br>       (<a href="Scanf.Scanning.html#TYPEin_channel">Scanning.in_channel</a> -&gt; exn -&gt; 'd) -&gt; ('a, 'b, 'c, 'd) <a href="Scanf.html#TYPEscanner">scanner</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Scanf.html#VALkscanf"><code class="code">Scanf.kscanf</code></a> but reads from the given string.</p>
 </div>
@@ -473,7 +491,7 @@
 </ul>
 </div>
 <h2 id="1_Readingformatstringsfrominput">Reading format strings from input</h2>
-<pre><span id="VALbscanf_format"><span class="keyword">val</span> bscanf_format</span> : <code class="type"><a href="Scanf.Scanning.html#TYPEin_channel">Scanning.in_channel</a> -><br>       ('a, 'b, 'c, 'd, 'e, 'f) Stdlib.format6 -><br>       (('a, 'b, 'c, 'd, 'e, 'f) Stdlib.format6 -> 'g) -> 'g</code></pre><div class="info ">
+<pre><span id="VALbscanf_format"><span class="keyword">val</span> bscanf_format</span> : <code class="type"><a href="Scanf.Scanning.html#TYPEin_channel">Scanning.in_channel</a> -&gt;<br>       ('a, 'b, 'c, 'd, 'e, 'f) Stdlib.format6 -&gt;<br>       (('a, 'b, 'c, 'd, 'e, 'f) Stdlib.format6 -&gt; 'g) -&gt; 'g</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">bscanf_format ic fmt f</code> reads a format string token from the formatted
     input channel <code class="code">ic</code>, according to the given format string <code class="code">fmt</code>, and
@@ -486,7 +504,7 @@
 </ul>
 </div>
 
-<pre><span id="VALsscanf_format"><span class="keyword">val</span> sscanf_format</span> : <code class="type">string -><br>       ('a, 'b, 'c, 'd, 'e, 'f) Stdlib.format6 -><br>       (('a, 'b, 'c, 'd, 'e, 'f) Stdlib.format6 -> 'g) -> 'g</code></pre><div class="info ">
+<pre><span id="VALsscanf_format"><span class="keyword">val</span> sscanf_format</span> : <code class="type">string -&gt;<br>       ('a, 'b, 'c, 'd, 'e, 'f) Stdlib.format6 -&gt;<br>       (('a, 'b, 'c, 'd, 'e, 'f) Stdlib.format6 -&gt; 'g) -&gt; 'g</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Scanf.html#VALbscanf_format"><code class="code">Scanf.bscanf_format</code></a>, but reads from the given string.</p>
 </div>
@@ -495,7 +513,7 @@
 </ul>
 </div>
 
-<pre><span id="VALformat_from_string"><span class="keyword">val</span> format_from_string</span> : <code class="type">string -><br>       ('a, 'b, 'c, 'd, 'e, 'f) Stdlib.format6 -><br>       ('a, 'b, 'c, 'd, 'e, 'f) Stdlib.format6</code></pre><div class="info ">
+<pre><span id="VALformat_from_string"><span class="keyword">val</span> format_from_string</span> : <code class="type">string -&gt;<br>       ('a, 'b, 'c, 'd, 'e, 'f) Stdlib.format6 -&gt;<br>       ('a, 'b, 'c, 'd, 'e, 'f) Stdlib.format6</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">format_from_string s fmt</code> converts a string argument to a format string,
     according to the given format string <code class="code">fmt</code>.</p>
@@ -507,7 +525,7 @@
 </ul>
 </div>
 
-<pre><span id="VALunescaped"><span class="keyword">val</span> unescaped</span> : <code class="type">string -> string</code></pre><div class="info ">
+<pre><span id="VALunescaped"><span class="keyword">val</span> unescaped</span> : <code class="type">string -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">unescaped s</code> return a copy of <code class="code">s</code> with escape sequences (according to
     the lexical conventions of OCaml) replaced by their corresponding special

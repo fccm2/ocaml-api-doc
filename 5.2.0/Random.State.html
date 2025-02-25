@@ -14,27 +14,38 @@
 <link title="Arg" rel="Chapter" href="Arg.html">
 <link title="Array" rel="Chapter" href="Array.html">
 <link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
+<link title="Atomic" rel="Chapter" href="Atomic.html">
+<link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
+<link title="Bytes" rel="Chapter" href="Bytes.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
 <link title="Digest" rel="Chapter" href="Digest.html">
+<link title="Domain" rel="Chapter" href="Domain.html">
+<link title="Dynarray" rel="Chapter" href="Dynarray.html">
 <link title="Dynlink" rel="Chapter" href="Dynlink.html">
 <link title="Dynlink_types" rel="Chapter" href="Dynlink_types.html">
 <link title="Effect" rel="Chapter" href="Effect.html">
 <link title="Either" rel="Chapter" href="Either.html">
+<link title="Ephemeron" rel="Chapter" href="Ephemeron.html">
 <link title="Event" rel="Chapter" href="Event.html">
 <link title="Filename" rel="Chapter" href="Filename.html">
 <link title="Float" rel="Chapter" href="Float.html">
 <link title="Fun" rel="Chapter" href="Fun.html">
 <link title="Gc" rel="Chapter" href="Gc.html">
+<link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
 <link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
+<link title="List" rel="Chapter" href="List.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
+<link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
 <link title="Mutex" rel="Chapter" href="Mutex.html">
 <link title="Nativeint" rel="Chapter" href="Nativeint.html">
@@ -45,18 +56,25 @@
 <link title="Parsing" rel="Chapter" href="Parsing.html">
 <link title="Printexc" rel="Chapter" href="Printexc.html">
 <link title="Printf" rel="Chapter" href="Printf.html">
+<link title="Queue" rel="Chapter" href="Queue.html">
 <link title="Random" rel="Chapter" href="Random.html">
 <link title="Result" rel="Chapter" href="Result.html">
 <link title="Scanf" rel="Chapter" href="Scanf.html">
 <link title="Semaphore" rel="Chapter" href="Semaphore.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
 <link title="Set" rel="Chapter" href="Set.html">
+<link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
 <link title="Std_exit" rel="Chapter" href="Std_exit.html">
 <link title="Str" rel="Chapter" href="Str.html">
+<link title="String" rel="Chapter" href="String.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Type" rel="Chapter" href="Type.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
-<link title="Unix" rel="Chapter" href="Unix.html"><title>Random.State</title>
+<link title="Unix" rel="Chapter" href="Unix.html">
+<link title="Weak" rel="Chapter" href="Weak.html"><title>Random.State</title>
 </head>
 <body>
 <div class="navbar">&nbsp;<a class="up" href="Random.html" title="Random">Up</a>
@@ -73,13 +91,13 @@
 </div>
 
 
-<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type">int array -> <a href="Random.State.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type">int array -&gt; <a href="Random.State.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Create a new state and initialize it with the given seed.</p>
 </div>
 </div>
 
-<pre><span id="VALmake_self_init"><span class="keyword">val</span> make_self_init</span> : <code class="type">unit -> <a href="Random.State.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALmake_self_init"><span class="keyword">val</span> make_self_init</span> : <code class="type">unit -&gt; <a href="Random.State.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Create a new state and initialize it with a random seed chosen
       in a system-dependent way.
@@ -87,34 +105,34 @@
 </div>
 </div>
 
-<pre><span id="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> <a href="Random.State.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; <a href="Random.State.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return a copy of the given state.</p>
 </div>
 </div>
 
-<pre><span id="VALbits"><span class="keyword">val</span> bits</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> int</code></pre>
-<pre><span id="VALint"><span class="keyword">val</span> int</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> int -> int</code></pre>
-<pre><span id="VALfull_int"><span class="keyword">val</span> full_int</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> int -> int</code></pre>
-<pre><span id="VALint_in_range"><span class="keyword">val</span> int_in_range</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> min:int -> max:int -> int</code></pre>
-<pre><span id="VALint32"><span class="keyword">val</span> int32</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> Stdlib.Int32.t -> Stdlib.Int32.t</code></pre>
-<pre><span id="VALint32_in_range"><span class="keyword">val</span> int32_in_range</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> min:int32 -> max:int32 -> int32</code></pre>
-<pre><span id="VALnativeint"><span class="keyword">val</span> nativeint</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> Stdlib.Nativeint.t -> Stdlib.Nativeint.t</code></pre>
-<pre><span id="VALnativeint_in_range"><span class="keyword">val</span> nativeint_in_range</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> min:nativeint -> max:nativeint -> nativeint</code></pre>
-<pre><span id="VALint64"><span class="keyword">val</span> int64</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> Stdlib.Int64.t -> Stdlib.Int64.t</code></pre>
-<pre><span id="VALint64_in_range"><span class="keyword">val</span> int64_in_range</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> min:int64 -> max:int64 -> int64</code></pre>
-<pre><span id="VALfloat"><span class="keyword">val</span> float</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> float -> float</code></pre>
-<pre><span id="VALbool"><span class="keyword">val</span> bool</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> bool</code></pre>
-<pre><span id="VALbits32"><span class="keyword">val</span> bits32</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> Stdlib.Int32.t</code></pre>
-<pre><span id="VALbits64"><span class="keyword">val</span> bits64</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> Stdlib.Int64.t</code></pre>
-<pre><span id="VALnativebits"><span class="keyword">val</span> nativebits</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> Stdlib.Nativeint.t</code></pre><div class="info ">
+<pre><span id="VALbits"><span class="keyword">val</span> bits</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; int</code></pre>
+<pre><span id="VALint"><span class="keyword">val</span> int</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; int -&gt; int</code></pre>
+<pre><span id="VALfull_int"><span class="keyword">val</span> full_int</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; int -&gt; int</code></pre>
+<pre><span id="VALint_in_range"><span class="keyword">val</span> int_in_range</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; min:int -&gt; max:int -&gt; int</code></pre>
+<pre><span id="VALint32"><span class="keyword">val</span> int32</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; Stdlib.Int32.t -&gt; Stdlib.Int32.t</code></pre>
+<pre><span id="VALint32_in_range"><span class="keyword">val</span> int32_in_range</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; min:int32 -&gt; max:int32 -&gt; int32</code></pre>
+<pre><span id="VALnativeint"><span class="keyword">val</span> nativeint</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; Stdlib.Nativeint.t -&gt; Stdlib.Nativeint.t</code></pre>
+<pre><span id="VALnativeint_in_range"><span class="keyword">val</span> nativeint_in_range</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; min:nativeint -&gt; max:nativeint -&gt; nativeint</code></pre>
+<pre><span id="VALint64"><span class="keyword">val</span> int64</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; Stdlib.Int64.t -&gt; Stdlib.Int64.t</code></pre>
+<pre><span id="VALint64_in_range"><span class="keyword">val</span> int64_in_range</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; min:int64 -&gt; max:int64 -&gt; int64</code></pre>
+<pre><span id="VALfloat"><span class="keyword">val</span> float</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; float -&gt; float</code></pre>
+<pre><span id="VALbool"><span class="keyword">val</span> bool</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; bool</code></pre>
+<pre><span id="VALbits32"><span class="keyword">val</span> bits32</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; Stdlib.Int32.t</code></pre>
+<pre><span id="VALbits64"><span class="keyword">val</span> bits64</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; Stdlib.Int64.t</code></pre>
+<pre><span id="VALnativebits"><span class="keyword">val</span> nativebits</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; Stdlib.Nativeint.t</code></pre><div class="info ">
 <div class="info-desc">
 <p>These functions are the same as the basic functions, except that they
       use (and update) the given PRNG state instead of the default one.</p>
 </div>
 </div>
 
-<pre><span id="VALsplit"><span class="keyword">val</span> split</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> <a href="Random.State.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALsplit"><span class="keyword">val</span> split</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; <a href="Random.State.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Draw a fresh PRNG state from the given PRNG state.
       (The given PRNG state is modified.)
@@ -127,7 +145,7 @@
 </ul>
 </div>
 
-<pre><span id="VALto_binary_string"><span class="keyword">val</span> to_binary_string</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> string</code></pre><div class="info ">
+<pre><span id="VALto_binary_string"><span class="keyword">val</span> to_binary_string</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Serializes the PRNG state into an immutable sequence of bytes.
       See <a href="Random.State.html#VALof_binary_string"><code class="code">Random.State.of_binary_string</code></a> for deserialization.</p>
@@ -143,7 +161,7 @@
 </ul>
 </div>
 
-<pre><span id="VALof_binary_string"><span class="keyword">val</span> of_binary_string</span> : <code class="type">string -> <a href="Random.State.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALof_binary_string"><span class="keyword">val</span> of_binary_string</span> : <code class="type">string -&gt; <a href="Random.State.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Deserializes a byte sequence obtained by calling
       <a href="Random.State.html#VALto_binary_string"><code class="code">Random.State.to_binary_string</code></a>. The resulting PRNG state will produce the

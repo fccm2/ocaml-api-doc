@@ -16,27 +16,38 @@
 <link title="Arg" rel="Chapter" href="Arg.html">
 <link title="Array" rel="Chapter" href="Array.html">
 <link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
+<link title="Atomic" rel="Chapter" href="Atomic.html">
+<link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
+<link title="Bytes" rel="Chapter" href="Bytes.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
 <link title="Digest" rel="Chapter" href="Digest.html">
+<link title="Domain" rel="Chapter" href="Domain.html">
+<link title="Dynarray" rel="Chapter" href="Dynarray.html">
 <link title="Dynlink" rel="Chapter" href="Dynlink.html">
 <link title="Dynlink_types" rel="Chapter" href="Dynlink_types.html">
 <link title="Effect" rel="Chapter" href="Effect.html">
 <link title="Either" rel="Chapter" href="Either.html">
+<link title="Ephemeron" rel="Chapter" href="Ephemeron.html">
 <link title="Event" rel="Chapter" href="Event.html">
 <link title="Filename" rel="Chapter" href="Filename.html">
 <link title="Float" rel="Chapter" href="Float.html">
 <link title="Fun" rel="Chapter" href="Fun.html">
 <link title="Gc" rel="Chapter" href="Gc.html">
+<link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
 <link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
+<link title="List" rel="Chapter" href="List.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
+<link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
 <link title="Mutex" rel="Chapter" href="Mutex.html">
 <link title="Nativeint" rel="Chapter" href="Nativeint.html">
@@ -47,18 +58,25 @@
 <link title="Parsing" rel="Chapter" href="Parsing.html">
 <link title="Printexc" rel="Chapter" href="Printexc.html">
 <link title="Printf" rel="Chapter" href="Printf.html">
+<link title="Queue" rel="Chapter" href="Queue.html">
 <link title="Random" rel="Chapter" href="Random.html">
 <link title="Result" rel="Chapter" href="Result.html">
 <link title="Scanf" rel="Chapter" href="Scanf.html">
 <link title="Semaphore" rel="Chapter" href="Semaphore.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
 <link title="Set" rel="Chapter" href="Set.html">
+<link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
 <link title="Std_exit" rel="Chapter" href="Std_exit.html">
 <link title="Str" rel="Chapter" href="Str.html">
+<link title="String" rel="Chapter" href="String.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Type" rel="Chapter" href="Type.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
-<link title="Unix" rel="Chapter" href="Unix.html"><title>Obj</title>
+<link title="Unix" rel="Chapter" href="Unix.html">
+<link title="Weak" rel="Chapter" href="Weak.html"><title>Obj</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Nativeint.html" title="Nativeint">Previous</a>
@@ -82,14 +100,14 @@
 <pre><span id="TYPEraw_data"><span class="keyword">type</span> <code class="type"></code>raw_data</span> = <code class="type">nativeint</code> </pre>
 
 
-<pre><span id="VALrepr"><span class="keyword">val</span> repr</span> : <code class="type">'a -> <a href="Obj.html#TYPEt">t</a></code></pre>
-<pre><span id="VALobj"><span class="keyword">val</span> obj</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -> 'a</code></pre>
-<pre><span id="VALmagic"><span class="keyword">val</span> magic</span> : <code class="type">'a -> 'b</code></pre>
-<pre><span id="VALis_block"><span class="keyword">val</span> is_block</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -> bool</code></pre>
-<pre><span id="VALis_int"><span class="keyword">val</span> is_int</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -> bool</code></pre>
-<pre><span id="VALtag"><span class="keyword">val</span> tag</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -> int</code></pre>
-<pre><span id="VALsize"><span class="keyword">val</span> size</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -> int</code></pre>
-<pre><span id="VALreachable_words"><span class="keyword">val</span> reachable_words</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<pre><span id="VALrepr"><span class="keyword">val</span> repr</span> : <code class="type">'a -&gt; <a href="Obj.html#TYPEt">t</a></code></pre>
+<pre><span id="VALobj"><span class="keyword">val</span> obj</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; 'a</code></pre>
+<pre><span id="VALmagic"><span class="keyword">val</span> magic</span> : <code class="type">'a -&gt; 'b</code></pre>
+<pre><span id="VALis_block"><span class="keyword">val</span> is_block</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; bool</code></pre>
+<pre><span id="VALis_int"><span class="keyword">val</span> is_int</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; bool</code></pre>
+<pre><span id="VALtag"><span class="keyword">val</span> tag</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; int</code></pre>
+<pre><span id="VALsize"><span class="keyword">val</span> size</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; int</code></pre>
+<pre><span id="VALreachable_words"><span class="keyword">val</span> reachable_words</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Computes the total size (in words, including the headers) of all
      heap blocks accessible from the argument.  Statically
@@ -100,8 +118,8 @@
 </ul>
 </div>
 
-<pre><span id="VALfield"><span class="keyword">val</span> field</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -> int -> <a href="Obj.html#TYPEt">t</a></code></pre>
-<pre><span id="VALset_field"><span class="keyword">val</span> set_field</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -> int -> <a href="Obj.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALfield"><span class="keyword">val</span> field</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; int -&gt; <a href="Obj.html#TYPEt">t</a></code></pre>
+<pre><span id="VALset_field"><span class="keyword">val</span> set_field</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; int -&gt; <a href="Obj.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>When using flambda:</p>
 
@@ -117,14 +135,14 @@
 </div>
 </div>
 
-<pre><span id="VALdouble_field"><span class="keyword">val</span> double_field</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -> int -> float</code></pre>
-<pre><span id="VALset_double_field"><span class="keyword">val</span> set_double_field</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -> int -> float -> unit</code></pre>
-<pre><span id="VALraw_field"><span class="keyword">val</span> raw_field</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -> int -> <a href="Obj.html#TYPEraw_data">raw_data</a></code></pre>
-<pre><span id="VALset_raw_field"><span class="keyword">val</span> set_raw_field</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -> int -> <a href="Obj.html#TYPEraw_data">raw_data</a> -> unit</code></pre>
-<pre><span id="VALnew_block"><span class="keyword">val</span> new_block</span> : <code class="type">int -> int -> <a href="Obj.html#TYPEt">t</a></code></pre>
-<pre><span id="VALdup"><span class="keyword">val</span> dup</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -> <a href="Obj.html#TYPEt">t</a></code></pre>
-<pre><span id="VALadd_offset"><span class="keyword">val</span> add_offset</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -> Stdlib.Int32.t -> <a href="Obj.html#TYPEt">t</a></code></pre>
-<pre><span id="VALwith_tag"><span class="keyword">val</span> with_tag</span> : <code class="type">int -> <a href="Obj.html#TYPEt">t</a> -> <a href="Obj.html#TYPEt">t</a></code></pre>
+<pre><span id="VALdouble_field"><span class="keyword">val</span> double_field</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; int -&gt; float</code></pre>
+<pre><span id="VALset_double_field"><span class="keyword">val</span> set_double_field</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; int -&gt; float -&gt; unit</code></pre>
+<pre><span id="VALraw_field"><span class="keyword">val</span> raw_field</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; int -&gt; <a href="Obj.html#TYPEraw_data">raw_data</a></code></pre>
+<pre><span id="VALset_raw_field"><span class="keyword">val</span> set_raw_field</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; int -&gt; <a href="Obj.html#TYPEraw_data">raw_data</a> -&gt; unit</code></pre>
+<pre><span id="VALnew_block"><span class="keyword">val</span> new_block</span> : <code class="type">int -&gt; int -&gt; <a href="Obj.html#TYPEt">t</a></code></pre>
+<pre><span id="VALdup"><span class="keyword">val</span> dup</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; <a href="Obj.html#TYPEt">t</a></code></pre>
+<pre><span id="VALadd_offset"><span class="keyword">val</span> add_offset</span> : <code class="type"><a href="Obj.html#TYPEt">t</a> -&gt; Stdlib.Int32.t -&gt; <a href="Obj.html#TYPEt">t</a></code></pre>
+<pre><span id="VALwith_tag"><span class="keyword">val</span> with_tag</span> : <code class="type">int -&gt; <a href="Obj.html#TYPEt">t</a> -&gt; <a href="Obj.html#TYPEt">t</a></code></pre>
 <pre><span id="VALfirst_non_constant_constructor_tag"><span class="keyword">val</span> first_non_constant_constructor_tag</span> : <code class="type">int</code></pre>
 <pre><span id="VALlast_non_constant_constructor_tag"><span class="keyword">val</span> last_non_constant_constructor_tag</span> : <code class="type">int</code></pre>
 <pre><span id="VALforcing_tag"><span class="keyword">val</span> forcing_tag</span> : <code class="type">int</code></pre>

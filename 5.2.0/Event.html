@@ -5,7 +5,7 @@
 <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="Start" href="index.html">
-<link rel="previous" href="Either.html">
+<link rel="previous" href="Ephemeron.html">
 <link rel="next" href="Filename.html">
 <link rel="Up" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
@@ -16,27 +16,38 @@
 <link title="Arg" rel="Chapter" href="Arg.html">
 <link title="Array" rel="Chapter" href="Array.html">
 <link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
+<link title="Atomic" rel="Chapter" href="Atomic.html">
+<link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
+<link title="Bytes" rel="Chapter" href="Bytes.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
 <link title="Digest" rel="Chapter" href="Digest.html">
+<link title="Domain" rel="Chapter" href="Domain.html">
+<link title="Dynarray" rel="Chapter" href="Dynarray.html">
 <link title="Dynlink" rel="Chapter" href="Dynlink.html">
 <link title="Dynlink_types" rel="Chapter" href="Dynlink_types.html">
 <link title="Effect" rel="Chapter" href="Effect.html">
 <link title="Either" rel="Chapter" href="Either.html">
+<link title="Ephemeron" rel="Chapter" href="Ephemeron.html">
 <link title="Event" rel="Chapter" href="Event.html">
 <link title="Filename" rel="Chapter" href="Filename.html">
 <link title="Float" rel="Chapter" href="Float.html">
 <link title="Fun" rel="Chapter" href="Fun.html">
 <link title="Gc" rel="Chapter" href="Gc.html">
+<link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
 <link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
+<link title="List" rel="Chapter" href="List.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
+<link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
 <link title="Mutex" rel="Chapter" href="Mutex.html">
 <link title="Nativeint" rel="Chapter" href="Nativeint.html">
@@ -47,21 +58,28 @@
 <link title="Parsing" rel="Chapter" href="Parsing.html">
 <link title="Printexc" rel="Chapter" href="Printexc.html">
 <link title="Printf" rel="Chapter" href="Printf.html">
+<link title="Queue" rel="Chapter" href="Queue.html">
 <link title="Random" rel="Chapter" href="Random.html">
 <link title="Result" rel="Chapter" href="Result.html">
 <link title="Scanf" rel="Chapter" href="Scanf.html">
 <link title="Semaphore" rel="Chapter" href="Semaphore.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
 <link title="Set" rel="Chapter" href="Set.html">
+<link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
 <link title="Std_exit" rel="Chapter" href="Std_exit.html">
 <link title="Str" rel="Chapter" href="Str.html">
+<link title="String" rel="Chapter" href="String.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Type" rel="Chapter" href="Type.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
-<link title="Unix" rel="Chapter" href="Unix.html"><title>Event</title>
+<link title="Unix" rel="Chapter" href="Unix.html">
+<link title="Weak" rel="Chapter" href="Weak.html"><title>Event</title>
 </head>
 <body>
-<div class="navbar"><a class="pre" href="Either.html" title="Either">Previous</a>
+<div class="navbar"><a class="pre" href="Ephemeron.html" title="Ephemeron">Previous</a>
 &nbsp;<a class="up" href="index.html" title="Index">Up</a>
 &nbsp;<a class="post" href="Filename.html" title="Filename">Next</a>
 </div>
@@ -87,7 +105,7 @@
 </div>
 
 
-<pre><span id="VALnew_channel"><span class="keyword">val</span> new_channel</span> : <code class="type">unit -> 'a <a href="Event.html#TYPEchannel">channel</a></code></pre><div class="info ">
+<pre><span id="VALnew_channel"><span class="keyword">val</span> new_channel</span> : <code class="type">unit -&gt; 'a <a href="Event.html#TYPEchannel">channel</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return a new channel.</p>
 </div>
@@ -101,14 +119,14 @@
 </div>
 
 
-<pre><span id="VALsend"><span class="keyword">val</span> send</span> : <code class="type">'a <a href="Event.html#TYPEchannel">channel</a> -> 'a -> unit <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
+<pre><span id="VALsend"><span class="keyword">val</span> send</span> : <code class="type">'a <a href="Event.html#TYPEchannel">channel</a> -&gt; 'a -&gt; unit <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">send ch v</code> returns the event consisting in sending the value <code class="code">v</code>
    over the channel <code class="code">ch</code>. The result value of this event is <code class="code">()</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALreceive"><span class="keyword">val</span> receive</span> : <code class="type">'a <a href="Event.html#TYPEchannel">channel</a> -> 'a <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
+<pre><span id="VALreceive"><span class="keyword">val</span> receive</span> : <code class="type">'a <a href="Event.html#TYPEchannel">channel</a> -&gt; 'a <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">receive ch</code> returns the event consisting in receiving a value
    from the channel <code class="code">ch</code>. The result value of this event is the
@@ -116,21 +134,21 @@
 </div>
 </div>
 
-<pre><span id="VALalways"><span class="keyword">val</span> always</span> : <code class="type">'a -> 'a <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
+<pre><span id="VALalways"><span class="keyword">val</span> always</span> : <code class="type">'a -&gt; 'a <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">always v</code> returns an event that is always ready for
    synchronization.  The result value of this event is <code class="code">v</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALchoose"><span class="keyword">val</span> choose</span> : <code class="type">'a <a href="Event.html#TYPEevent">event</a> list -> 'a <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
+<pre><span id="VALchoose"><span class="keyword">val</span> choose</span> : <code class="type">'a <a href="Event.html#TYPEevent">event</a> list -&gt; 'a <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">choose evl</code> returns the event that is the alternative of
    all the events in the list <code class="code">evl</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALwrap"><span class="keyword">val</span> wrap</span> : <code class="type">'a <a href="Event.html#TYPEevent">event</a> -> ('a -> 'b) -> 'b <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
+<pre><span id="VALwrap"><span class="keyword">val</span> wrap</span> : <code class="type">'a <a href="Event.html#TYPEevent">event</a> -&gt; ('a -&gt; 'b) -&gt; 'b <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">wrap ev fn</code> returns the event that performs the same communications
    as <code class="code">ev</code>, then applies the post-processing function <code class="code">fn</code>
@@ -138,7 +156,7 @@
 </div>
 </div>
 
-<pre><span id="VALwrap_abort"><span class="keyword">val</span> wrap_abort</span> : <code class="type">'a <a href="Event.html#TYPEevent">event</a> -> (unit -> unit) -> 'a <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
+<pre><span id="VALwrap_abort"><span class="keyword">val</span> wrap_abort</span> : <code class="type">'a <a href="Event.html#TYPEevent">event</a> -&gt; (unit -&gt; unit) -&gt; 'a <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">wrap_abort ev fn</code> returns the event that performs
    the same communications as <code class="code">ev</code>, but if it is not selected
@@ -146,7 +164,7 @@
 </div>
 </div>
 
-<pre><span id="VALguard"><span class="keyword">val</span> guard</span> : <code class="type">(unit -> 'a <a href="Event.html#TYPEevent">event</a>) -> 'a <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
+<pre><span id="VALguard"><span class="keyword">val</span> guard</span> : <code class="type">(unit -&gt; 'a <a href="Event.html#TYPEevent">event</a>) -&gt; 'a <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">guard fn</code> returns the event that, when synchronized, computes
    <code class="code">fn()</code> and behaves as the resulting event. This enables
@@ -155,7 +173,7 @@
 </div>
 </div>
 
-<pre><span id="VALsync"><span class="keyword">val</span> sync</span> : <code class="type">'a <a href="Event.html#TYPEevent">event</a> -> 'a</code></pre><div class="info ">
+<pre><span id="VALsync"><span class="keyword">val</span> sync</span> : <code class="type">'a <a href="Event.html#TYPEevent">event</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>'Synchronize' on an event: offer all the communication
    possibilities specified in the event to the outside world,
@@ -164,14 +182,14 @@
 </div>
 </div>
 
-<pre><span id="VALselect"><span class="keyword">val</span> select</span> : <code class="type">'a <a href="Event.html#TYPEevent">event</a> list -> 'a</code></pre><div class="info ">
+<pre><span id="VALselect"><span class="keyword">val</span> select</span> : <code class="type">'a <a href="Event.html#TYPEevent">event</a> list -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>'Synchronize' on an alternative of events.
    <code class="code">select evl</code> is shorthand for <code class="code">sync(choose evl)</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALpoll"><span class="keyword">val</span> poll</span> : <code class="type">'a <a href="Event.html#TYPEevent">event</a> -> 'a option</code></pre><div class="info ">
+<pre><span id="VALpoll"><span class="keyword">val</span> poll</span> : <code class="type">'a <a href="Event.html#TYPEevent">event</a> -&gt; 'a option</code></pre><div class="info ">
 <div class="info-desc">
 <p>Non-blocking version of <a href="Event.html#VALsync"><code class="code">Event.sync</code></a>: offer all the communication
    possibilities specified in the event to the outside world,

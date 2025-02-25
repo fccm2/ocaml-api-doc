@@ -16,27 +16,38 @@
 <link title="Arg" rel="Chapter" href="Arg.html">
 <link title="Array" rel="Chapter" href="Array.html">
 <link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
+<link title="Atomic" rel="Chapter" href="Atomic.html">
+<link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
+<link title="Bytes" rel="Chapter" href="Bytes.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
 <link title="Digest" rel="Chapter" href="Digest.html">
+<link title="Domain" rel="Chapter" href="Domain.html">
+<link title="Dynarray" rel="Chapter" href="Dynarray.html">
 <link title="Dynlink" rel="Chapter" href="Dynlink.html">
 <link title="Dynlink_types" rel="Chapter" href="Dynlink_types.html">
 <link title="Effect" rel="Chapter" href="Effect.html">
 <link title="Either" rel="Chapter" href="Either.html">
+<link title="Ephemeron" rel="Chapter" href="Ephemeron.html">
 <link title="Event" rel="Chapter" href="Event.html">
 <link title="Filename" rel="Chapter" href="Filename.html">
 <link title="Float" rel="Chapter" href="Float.html">
 <link title="Fun" rel="Chapter" href="Fun.html">
 <link title="Gc" rel="Chapter" href="Gc.html">
+<link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
 <link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
+<link title="List" rel="Chapter" href="List.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
+<link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
 <link title="Mutex" rel="Chapter" href="Mutex.html">
 <link title="Nativeint" rel="Chapter" href="Nativeint.html">
@@ -47,18 +58,25 @@
 <link title="Parsing" rel="Chapter" href="Parsing.html">
 <link title="Printexc" rel="Chapter" href="Printexc.html">
 <link title="Printf" rel="Chapter" href="Printf.html">
+<link title="Queue" rel="Chapter" href="Queue.html">
 <link title="Random" rel="Chapter" href="Random.html">
 <link title="Result" rel="Chapter" href="Result.html">
 <link title="Scanf" rel="Chapter" href="Scanf.html">
 <link title="Semaphore" rel="Chapter" href="Semaphore.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
 <link title="Set" rel="Chapter" href="Set.html">
+<link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
 <link title="Std_exit" rel="Chapter" href="Std_exit.html">
 <link title="Str" rel="Chapter" href="Str.html">
+<link title="String" rel="Chapter" href="String.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Type" rel="Chapter" href="Type.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
-<link title="Unix" rel="Chapter" href="Unix.html"><link title="Channels" rel="Section" href="#channels">
+<link title="Unix" rel="Chapter" href="Unix.html">
+<link title="Weak" rel="Chapter" href="Weak.html"><link title="Channels" rel="Section" href="#channels">
 <link title="Output" rel="Section" href="#output">
 <link title="Advanced output" rel="Section" href="#advanced_output">
 <link title="Flushing" rel="Section" href="#flushing">
@@ -225,7 +243,7 @@
 </div>
 </div>
 
-<pre><span id="VALopen_bin"><span class="keyword">val</span> open_bin</span> : <code class="type">string -> <a href="Out_channel.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALopen_bin"><span class="keyword">val</span> open_bin</span> : <code class="type">string -&gt; <a href="Out_channel.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Open the named file for writing, and return a new output channel on that
     file, positioned at the beginning of the file. The file is truncated to zero
@@ -233,7 +251,7 @@
 </div>
 </div>
 
-<pre><span id="VALopen_text"><span class="keyword">val</span> open_text</span> : <code class="type">string -> <a href="Out_channel.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALopen_text"><span class="keyword">val</span> open_text</span> : <code class="type">string -&gt; <a href="Out_channel.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Out_channel.html#VALopen_bin"><code class="code">Out_channel.open_bin</code></a>, but the file is opened in text mode, so that newline
     translation takes place during writes. On operating systems that do not
@@ -242,7 +260,7 @@
 </div>
 </div>
 
-<pre><span id="VALopen_gen"><span class="keyword">val</span> open_gen</span> : <code class="type"><a href="Out_channel.html#TYPEopen_flag">open_flag</a> list -> int -> string -> <a href="Out_channel.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALopen_gen"><span class="keyword">val</span> open_gen</span> : <code class="type"><a href="Out_channel.html#TYPEopen_flag">open_flag</a> list -&gt; int -&gt; string -&gt; <a href="Out_channel.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">open_gen mode perm filename</code> opens the named file for writing, as described
     above. The extra argument <code class="code">mode</code> specifies the opening mode. The extra
@@ -252,7 +270,7 @@
 </div>
 </div>
 
-<pre><span id="VALwith_open_bin"><span class="keyword">val</span> with_open_bin</span> : <code class="type">string -> (<a href="Out_channel.html#TYPEt">t</a> -> 'a) -> 'a</code></pre><div class="info ">
+<pre><span id="VALwith_open_bin"><span class="keyword">val</span> with_open_bin</span> : <code class="type">string -&gt; (<a href="Out_channel.html#TYPEt">t</a> -&gt; 'a) -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">with_open_bin fn f</code> opens a channel <code class="code">oc</code> on file <code class="code">fn</code> and returns <code class="code">f
     oc</code>. After <code class="code">f</code> returns, either with a value or by raising an exception, <code class="code">oc</code>
@@ -260,21 +278,21 @@
 </div>
 </div>
 
-<pre><span id="VALwith_open_text"><span class="keyword">val</span> with_open_text</span> : <code class="type">string -> (<a href="Out_channel.html#TYPEt">t</a> -> 'a) -> 'a</code></pre><div class="info ">
+<pre><span id="VALwith_open_text"><span class="keyword">val</span> with_open_text</span> : <code class="type">string -&gt; (<a href="Out_channel.html#TYPEt">t</a> -&gt; 'a) -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Like <a href="Out_channel.html#VALwith_open_bin"><code class="code">Out_channel.with_open_bin</code></a>, but the channel is opened in text mode (see
     <a href="Out_channel.html#VALopen_text"><code class="code">Out_channel.open_text</code></a>).</p>
 </div>
 </div>
 
-<pre><span id="VALwith_open_gen"><span class="keyword">val</span> with_open_gen</span> : <code class="type"><a href="Out_channel.html#TYPEopen_flag">open_flag</a> list -> int -> string -> (<a href="Out_channel.html#TYPEt">t</a> -> 'a) -> 'a</code></pre><div class="info ">
+<pre><span id="VALwith_open_gen"><span class="keyword">val</span> with_open_gen</span> : <code class="type"><a href="Out_channel.html#TYPEopen_flag">open_flag</a> list -&gt; int -&gt; string -&gt; (<a href="Out_channel.html#TYPEt">t</a> -&gt; 'a) -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Like <a href="Out_channel.html#VALwith_open_bin"><code class="code">Out_channel.with_open_bin</code></a>, but can specify the opening mode and file permission,
     in case the file must be created (see <a href="Out_channel.html#VALopen_gen"><code class="code">Out_channel.open_gen</code></a>).</p>
 </div>
 </div>
 
-<pre><span id="VALclose"><span class="keyword">val</span> close</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALclose"><span class="keyword">val</span> close</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Close the given channel, flushing all buffered write operations.  Output
     functions raise a <code class="code">Sys_error</code> exception when they are applied to a closed
@@ -284,38 +302,38 @@
 </div>
 </div>
 
-<pre><span id="VALclose_noerr"><span class="keyword">val</span> close_noerr</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALclose_noerr"><span class="keyword">val</span> close_noerr</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Out_channel.html#VALclose"><code class="code">Out_channel.close</code></a>, but ignore all errors.</p>
 </div>
 </div>
 <h2 id="output">Output</h2>
-<pre><span id="VALoutput_char"><span class="keyword">val</span> output_char</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -> char -> unit</code></pre><div class="info ">
+<pre><span id="VALoutput_char"><span class="keyword">val</span> output_char</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -&gt; char -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Write the character on the given output channel.</p>
 </div>
 </div>
 
-<pre><span id="VALoutput_byte"><span class="keyword">val</span> output_byte</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALoutput_byte"><span class="keyword">val</span> output_byte</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Write one 8-bit integer (as the single character with that code) on the
     given output channel. The given integer is taken modulo 256.</p>
 </div>
 </div>
 
-<pre><span id="VALoutput_string"><span class="keyword">val</span> output_string</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -> string -> unit</code></pre><div class="info ">
+<pre><span id="VALoutput_string"><span class="keyword">val</span> output_string</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -&gt; string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Write the string on the given output channel.</p>
 </div>
 </div>
 
-<pre><span id="VALoutput_bytes"><span class="keyword">val</span> output_bytes</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -> bytes -> unit</code></pre><div class="info ">
+<pre><span id="VALoutput_bytes"><span class="keyword">val</span> output_bytes</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -&gt; bytes -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Write the byte sequence on the given output channel.</p>
 </div>
 </div>
 <h2 id="advanced_output">Advanced output</h2>
-<pre><span id="VALoutput"><span class="keyword">val</span> output</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -> bytes -> int -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALoutput"><span class="keyword">val</span> output</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -&gt; bytes -&gt; int -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">output oc buf pos len</code> writes <code class="code">len</code> characters from byte sequence <code class="code">buf</code>,
     starting at offset <code class="code">pos</code>, to the given output channel <code class="code">oc</code>.</p>
@@ -326,14 +344,14 @@
 </ul>
 </div>
 
-<pre><span id="VALoutput_substring"><span class="keyword">val</span> output_substring</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -> string -> int -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALoutput_substring"><span class="keyword">val</span> output_substring</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -&gt; string -&gt; int -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Out_channel.html#VALoutput"><code class="code">Out_channel.output</code></a> but take a string as argument instead of a byte
     sequence.</p>
 </div>
 </div>
 
-<pre><span id="VALoutput_bigarray"><span class="keyword">val</span> output_bigarray</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -><br>       ('a, Stdlib.Bigarray.int8_unsigned_elt, Stdlib.Bigarray.c_layout)<br>       Stdlib.Bigarray.Array1.t -> int -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALoutput_bigarray"><span class="keyword">val</span> output_bigarray</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -&gt;<br>       ('a, Stdlib.Bigarray.int8_unsigned_elt, Stdlib.Bigarray.c_layout)<br>       Stdlib.Bigarray.Array1.t -&gt; int -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Out_channel.html#VALoutput"><code class="code">Out_channel.output</code></a> but take the data from a bigarray.</p>
 </div>
@@ -342,7 +360,7 @@
 </ul>
 </div>
 <h2 id="flushing">Flushing</h2>
-<pre><span id="VALflush"><span class="keyword">val</span> flush</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALflush"><span class="keyword">val</span> flush</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Flush the buffer associated with the given output channel, performing all
     pending writes on that channel.  Interactive programs must be careful about
@@ -350,13 +368,13 @@
 </div>
 </div>
 
-<pre><span id="VALflush_all"><span class="keyword">val</span> flush_all</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALflush_all"><span class="keyword">val</span> flush_all</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Flush all open output channels; ignore errors.</p>
 </div>
 </div>
 <h2 id="seeking">Seeking</h2>
-<pre><span id="VALseek"><span class="keyword">val</span> seek</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -> int64 -> unit</code></pre><div class="info ">
+<pre><span id="VALseek"><span class="keyword">val</span> seek</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -&gt; int64 -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">seek chan pos</code> sets the current writing position to <code class="code">pos</code> for channel
     <code class="code">chan</code>. This works only for regular files. On files of other kinds (such as
@@ -364,7 +382,7 @@
 </div>
 </div>
 
-<pre><span id="VALpos"><span class="keyword">val</span> pos</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -> int64</code></pre><div class="info ">
+<pre><span id="VALpos"><span class="keyword">val</span> pos</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -&gt; int64</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the current writing position for the given channel.  Does not work on
     channels opened with the <code class="code">Open_append</code> flag (returns unspecified results).</p>
@@ -377,7 +395,7 @@
 </div>
 </div>
 <h2 id="attributes">Attributes</h2>
-<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -> int64</code></pre><div class="info ">
+<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -&gt; int64</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the size (number of characters) of the regular file on which the
     given channel is opened.  If the channel is opened on a file that is not a
@@ -385,7 +403,7 @@
 </div>
 </div>
 
-<pre><span id="VALset_binary_mode"><span class="keyword">val</span> set_binary_mode</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -> bool -> unit</code></pre><div class="info ">
+<pre><span id="VALset_binary_mode"><span class="keyword">val</span> set_binary_mode</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -&gt; bool -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">set_binary_mode oc true</code> sets the channel <code class="code">oc</code> to binary mode: no
     translations take place during output.</p>
@@ -400,7 +418,7 @@
 </div>
 </div>
 
-<pre><span id="VALis_binary_mode"><span class="keyword">val</span> is_binary_mode</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALis_binary_mode"><span class="keyword">val</span> is_binary_mode</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">is_binary_mode oc</code> returns whether the channel <code class="code">oc</code> is in binary mode
     (see <a href="Out_channel.html#VALset_binary_mode"><code class="code">Out_channel.set_binary_mode</code></a>).</p>
@@ -410,7 +428,7 @@
 </ul>
 </div>
 
-<pre><span id="VALset_buffered"><span class="keyword">val</span> set_buffered</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -> bool -> unit</code></pre><div class="info ">
+<pre><span id="VALset_buffered"><span class="keyword">val</span> set_buffered</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -&gt; bool -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">set_buffered oc true</code> sets the channel <code class="code">oc</code> to <em>buffered</em> mode. In this
     mode, data output on <code class="code">oc</code> will be buffered until either the internal buffer
@@ -425,14 +443,14 @@
 </div>
 </div>
 
-<pre><span id="VALis_buffered"><span class="keyword">val</span> is_buffered</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALis_buffered"><span class="keyword">val</span> is_buffered</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">is_buffered oc</code> returns whether the channel <code class="code">oc</code> is buffered (see
     <a href="Out_channel.html#VALset_buffered"><code class="code">Out_channel.set_buffered</code></a>).</p>
 </div>
 </div>
 
-<pre><span id="VALisatty"><span class="keyword">val</span> isatty</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALisatty"><span class="keyword">val</span> isatty</span> : <code class="type"><a href="Out_channel.html#TYPEt">t</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">isatty oc</code> is <code class="code">true</code> if <code class="code">oc</code> refers to a terminal or console window,
     <code class="code">false</code> otherwise.</p>

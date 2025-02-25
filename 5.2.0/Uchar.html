@@ -5,7 +5,7 @@
 <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="Start" href="index.html">
-<link rel="previous" href="Sys.html">
+<link rel="previous" href="Type.html">
 <link rel="next" href="Unit.html">
 <link rel="Up" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
@@ -16,27 +16,38 @@
 <link title="Arg" rel="Chapter" href="Arg.html">
 <link title="Array" rel="Chapter" href="Array.html">
 <link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
+<link title="Atomic" rel="Chapter" href="Atomic.html">
+<link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
+<link title="Bytes" rel="Chapter" href="Bytes.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
 <link title="Digest" rel="Chapter" href="Digest.html">
+<link title="Domain" rel="Chapter" href="Domain.html">
+<link title="Dynarray" rel="Chapter" href="Dynarray.html">
 <link title="Dynlink" rel="Chapter" href="Dynlink.html">
 <link title="Dynlink_types" rel="Chapter" href="Dynlink_types.html">
 <link title="Effect" rel="Chapter" href="Effect.html">
 <link title="Either" rel="Chapter" href="Either.html">
+<link title="Ephemeron" rel="Chapter" href="Ephemeron.html">
 <link title="Event" rel="Chapter" href="Event.html">
 <link title="Filename" rel="Chapter" href="Filename.html">
 <link title="Float" rel="Chapter" href="Float.html">
 <link title="Fun" rel="Chapter" href="Fun.html">
 <link title="Gc" rel="Chapter" href="Gc.html">
+<link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
 <link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
+<link title="List" rel="Chapter" href="List.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
+<link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
 <link title="Mutex" rel="Chapter" href="Mutex.html">
 <link title="Nativeint" rel="Chapter" href="Nativeint.html">
@@ -47,22 +58,29 @@
 <link title="Parsing" rel="Chapter" href="Parsing.html">
 <link title="Printexc" rel="Chapter" href="Printexc.html">
 <link title="Printf" rel="Chapter" href="Printf.html">
+<link title="Queue" rel="Chapter" href="Queue.html">
 <link title="Random" rel="Chapter" href="Random.html">
 <link title="Result" rel="Chapter" href="Result.html">
 <link title="Scanf" rel="Chapter" href="Scanf.html">
 <link title="Semaphore" rel="Chapter" href="Semaphore.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
 <link title="Set" rel="Chapter" href="Set.html">
+<link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
 <link title="Std_exit" rel="Chapter" href="Std_exit.html">
 <link title="Str" rel="Chapter" href="Str.html">
+<link title="String" rel="Chapter" href="String.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Type" rel="Chapter" href="Type.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
-<link title="Unix" rel="Chapter" href="Unix.html"><link title="UTF codecs tools" rel="Section" href="#utf">
+<link title="Unix" rel="Chapter" href="Unix.html">
+<link title="Weak" rel="Chapter" href="Weak.html"><link title="UTF codecs tools" rel="Section" href="#utf">
 <title>Uchar</title>
 </head>
 <body>
-<div class="navbar"><a class="pre" href="Sys.html" title="Sys">Previous</a>
+<div class="navbar"><a class="pre" href="Type.html" title="Type">Previous</a>
 &nbsp;<a class="up" href="index.html" title="Index">Up</a>
 &nbsp;<a class="post" href="Unit.html" title="Unit">Next</a>
 </div>
@@ -125,7 +143,7 @@
 </ul>
 </div>
 
-<pre><span id="VALsucc"><span class="keyword">val</span> succ</span> : <code class="type"><a href="Uchar.html#TYPEt">t</a> -> <a href="Uchar.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALsucc"><span class="keyword">val</span> succ</span> : <code class="type"><a href="Uchar.html#TYPEt">t</a> -&gt; <a href="Uchar.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">succ u</code> is the scalar value after <code class="code">u</code> in the set of Unicode scalar
     values.</p>
@@ -135,7 +153,7 @@
 </ul>
 </div>
 
-<pre><span id="VALpred"><span class="keyword">val</span> pred</span> : <code class="type"><a href="Uchar.html#TYPEt">t</a> -> <a href="Uchar.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALpred"><span class="keyword">val</span> pred</span> : <code class="type"><a href="Uchar.html#TYPEt">t</a> -&gt; <a href="Uchar.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pred u</code> is the scalar value before <code class="code">u</code> in the set of Unicode scalar
     values.</p>
@@ -145,14 +163,14 @@
 </ul>
 </div>
 
-<pre><span id="VALis_valid"><span class="keyword">val</span> is_valid</span> : <code class="type">int -> bool</code></pre><div class="info ">
+<pre><span id="VALis_valid"><span class="keyword">val</span> is_valid</span> : <code class="type">int -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">is_valid n</code> is <code class="code">true</code> if and only if <code class="code">n</code> is a Unicode scalar value
     (i.e. in the ranges <code class="code">0x0000</code>...<code class="code">0xD7FF</code> or <code class="code">0xE000</code>...<code class="code">0x10FFFF</code>).</p>
 </div>
 </div>
 
-<pre><span id="VALof_int"><span class="keyword">val</span> of_int</span> : <code class="type">int -> <a href="Uchar.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALof_int"><span class="keyword">val</span> of_int</span> : <code class="type">int -&gt; <a href="Uchar.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">of_int i</code> is <code class="code">i</code> as a Unicode character.</p>
 </div>
@@ -161,25 +179,25 @@
 </ul>
 </div>
 
-<pre><span id="VALto_int"><span class="keyword">val</span> to_int</span> : <code class="type"><a href="Uchar.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<pre><span id="VALto_int"><span class="keyword">val</span> to_int</span> : <code class="type"><a href="Uchar.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">to_int u</code> is <code class="code">u</code> as an integer.</p>
 </div>
 </div>
 
-<pre><span id="VALis_char"><span class="keyword">val</span> is_char</span> : <code class="type"><a href="Uchar.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALis_char"><span class="keyword">val</span> is_char</span> : <code class="type"><a href="Uchar.html#TYPEt">t</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">is_char u</code> is <code class="code">true</code> if and only if <code class="code">u</code> is a latin1 OCaml character.</p>
 </div>
 </div>
 
-<pre><span id="VALof_char"><span class="keyword">val</span> of_char</span> : <code class="type">char -> <a href="Uchar.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALof_char"><span class="keyword">val</span> of_char</span> : <code class="type">char -&gt; <a href="Uchar.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">of_char c</code> is <code class="code">c</code> as a Unicode character.</p>
 </div>
 </div>
 
-<pre><span id="VALto_char"><span class="keyword">val</span> to_char</span> : <code class="type"><a href="Uchar.html#TYPEt">t</a> -> char</code></pre><div class="info ">
+<pre><span id="VALto_char"><span class="keyword">val</span> to_char</span> : <code class="type"><a href="Uchar.html#TYPEt">t</a> -&gt; char</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">to_char u</code> is <code class="code">u</code> as an OCaml latin1 character.</p>
 </div>
@@ -188,19 +206,19 @@
 </ul>
 </div>
 
-<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type"><a href="Uchar.html#TYPEt">t</a> -> <a href="Uchar.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type"><a href="Uchar.html#TYPEt">t</a> -&gt; <a href="Uchar.html#TYPEt">t</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">equal u u'</code> is <code class="code">u = u'</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Uchar.html#TYPEt">t</a> -> <a href="Uchar.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Uchar.html#TYPEt">t</a> -&gt; <a href="Uchar.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">compare u u'</code> is <code class="code">Stdlib.compare u u'</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALhash"><span class="keyword">val</span> hash</span> : <code class="type"><a href="Uchar.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<pre><span id="VALhash"><span class="keyword">val</span> hash</span> : <code class="type"><a href="Uchar.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">hash u</code> associates a non-negative integer to <code class="code">u</code>.</p>
 </div>
@@ -215,21 +233,21 @@
 </div>
 
 
-<pre><span id="VALutf_decode_is_valid"><span class="keyword">val</span> utf_decode_is_valid</span> : <code class="type"><a href="Uchar.html#TYPEutf_decode">utf_decode</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALutf_decode_is_valid"><span class="keyword">val</span> utf_decode_is_valid</span> : <code class="type"><a href="Uchar.html#TYPEutf_decode">utf_decode</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">utf_decode_is_valid d</code> is <code class="code">true</code> if and only if <code class="code">d</code> holds a valid
     decode.</p>
 </div>
 </div>
 
-<pre><span id="VALutf_decode_uchar"><span class="keyword">val</span> utf_decode_uchar</span> : <code class="type"><a href="Uchar.html#TYPEutf_decode">utf_decode</a> -> <a href="Uchar.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALutf_decode_uchar"><span class="keyword">val</span> utf_decode_uchar</span> : <code class="type"><a href="Uchar.html#TYPEutf_decode">utf_decode</a> -&gt; <a href="Uchar.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">utf_decode_uchar d</code> is the Unicode character decoded by <code class="code">d</code> if
     <code class="code">utf_decode_is_valid d</code> is <code class="code">true</code> and <a href="Uchar.html#VALrep"><code class="code">Uchar.rep</code></a> otherwise.</p>
 </div>
 </div>
 
-<pre><span id="VALutf_decode_length"><span class="keyword">val</span> utf_decode_length</span> : <code class="type"><a href="Uchar.html#TYPEutf_decode">utf_decode</a> -> int</code></pre><div class="info ">
+<pre><span id="VALutf_decode_length"><span class="keyword">val</span> utf_decode_length</span> : <code class="type"><a href="Uchar.html#TYPEutf_decode">utf_decode</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">utf_decode_length d</code> is the number of elements from the source
     that were consumed by the decode <code class="code">d</code>. This is always strictly
@@ -239,7 +257,7 @@
 </div>
 </div>
 
-<pre><span id="VALutf_decode"><span class="keyword">val</span> utf_decode</span> : <code class="type">int -> <a href="Uchar.html#TYPEt">t</a> -> <a href="Uchar.html#TYPEutf_decode">utf_decode</a></code></pre><div class="info ">
+<pre><span id="VALutf_decode"><span class="keyword">val</span> utf_decode</span> : <code class="type">int -&gt; <a href="Uchar.html#TYPEt">t</a> -&gt; <a href="Uchar.html#TYPEutf_decode">utf_decode</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">utf_decode n u</code> is a valid UTF decode for <code class="code">u</code> that consumed <code class="code">n</code>
     elements from the source for decoding. <code class="code">n</code> must be positive and
@@ -247,7 +265,7 @@
 </div>
 </div>
 
-<pre><span id="VALutf_decode_invalid"><span class="keyword">val</span> utf_decode_invalid</span> : <code class="type">int -> <a href="Uchar.html#TYPEutf_decode">utf_decode</a></code></pre><div class="info ">
+<pre><span id="VALutf_decode_invalid"><span class="keyword">val</span> utf_decode_invalid</span> : <code class="type">int -&gt; <a href="Uchar.html#TYPEutf_decode">utf_decode</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">utf_decode_invalid n</code> is an invalid UTF decode that consumed <code class="code">n</code>
     elements from the source to error. <code class="code">n</code> must be positive and
@@ -256,14 +274,14 @@
 </div>
 </div>
 
-<pre><span id="VALutf_8_byte_length"><span class="keyword">val</span> utf_8_byte_length</span> : <code class="type"><a href="Uchar.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<pre><span id="VALutf_8_byte_length"><span class="keyword">val</span> utf_8_byte_length</span> : <code class="type"><a href="Uchar.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">utf_8_byte_length u</code> is the number of bytes needed to encode
     <code class="code">u</code> in UTF-8.</p>
 </div>
 </div>
 
-<pre><span id="VALutf_16_byte_length"><span class="keyword">val</span> utf_16_byte_length</span> : <code class="type"><a href="Uchar.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<pre><span id="VALutf_16_byte_length"><span class="keyword">val</span> utf_16_byte_length</span> : <code class="type"><a href="Uchar.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">utf_16_byte_length u</code> is the number of bytes needed to encode
     <code class="code">u</code> in UTF-16.</p>

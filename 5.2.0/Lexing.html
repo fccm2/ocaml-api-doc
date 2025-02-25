@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Lazy.html">
-<link rel="next" href="Marshal.html">
+<link rel="next" href="List.html">
 <link rel="Up" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
@@ -16,27 +16,38 @@
 <link title="Arg" rel="Chapter" href="Arg.html">
 <link title="Array" rel="Chapter" href="Array.html">
 <link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
+<link title="Atomic" rel="Chapter" href="Atomic.html">
+<link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
+<link title="Bytes" rel="Chapter" href="Bytes.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
 <link title="Digest" rel="Chapter" href="Digest.html">
+<link title="Domain" rel="Chapter" href="Domain.html">
+<link title="Dynarray" rel="Chapter" href="Dynarray.html">
 <link title="Dynlink" rel="Chapter" href="Dynlink.html">
 <link title="Dynlink_types" rel="Chapter" href="Dynlink_types.html">
 <link title="Effect" rel="Chapter" href="Effect.html">
 <link title="Either" rel="Chapter" href="Either.html">
+<link title="Ephemeron" rel="Chapter" href="Ephemeron.html">
 <link title="Event" rel="Chapter" href="Event.html">
 <link title="Filename" rel="Chapter" href="Filename.html">
 <link title="Float" rel="Chapter" href="Float.html">
 <link title="Fun" rel="Chapter" href="Fun.html">
 <link title="Gc" rel="Chapter" href="Gc.html">
+<link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
 <link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
+<link title="List" rel="Chapter" href="List.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
+<link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
 <link title="Mutex" rel="Chapter" href="Mutex.html">
 <link title="Nativeint" rel="Chapter" href="Nativeint.html">
@@ -47,18 +58,25 @@
 <link title="Parsing" rel="Chapter" href="Parsing.html">
 <link title="Printexc" rel="Chapter" href="Printexc.html">
 <link title="Printf" rel="Chapter" href="Printf.html">
+<link title="Queue" rel="Chapter" href="Queue.html">
 <link title="Random" rel="Chapter" href="Random.html">
 <link title="Result" rel="Chapter" href="Result.html">
 <link title="Scanf" rel="Chapter" href="Scanf.html">
 <link title="Semaphore" rel="Chapter" href="Semaphore.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
 <link title="Set" rel="Chapter" href="Set.html">
+<link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
 <link title="Std_exit" rel="Chapter" href="Std_exit.html">
 <link title="Str" rel="Chapter" href="Str.html">
+<link title="String" rel="Chapter" href="String.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Type" rel="Chapter" href="Type.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
-<link title="Unix" rel="Chapter" href="Unix.html"><link title="Positions" rel="Section" href="#1_Positions">
+<link title="Unix" rel="Chapter" href="Unix.html">
+<link title="Weak" rel="Chapter" href="Weak.html"><link title="Positions" rel="Section" href="#1_Positions">
 <link title="Lexer buffers" rel="Section" href="#1_Lexerbuffers">
 <link title="Functions for lexer semantic actions" rel="Section" href="#1_Functionsforlexersemanticactions">
 <link title="Miscellaneous functions" rel="Section" href="#1_Miscellaneousfunctions">
@@ -67,7 +85,7 @@
 <body>
 <div class="navbar"><a class="pre" href="Lazy.html" title="Lazy">Previous</a>
 &nbsp;<a class="up" href="index.html" title="Index">Up</a>
-&nbsp;<a class="post" href="Marshal.html" title="Marshal">Next</a>
+&nbsp;<a class="post" href="List.html" title="List">Next</a>
 </div>
 <h1>Module <a href="type_Lexing.html">Lexing</a></h1>
 
@@ -139,7 +157,7 @@
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTlexbuf.refill_buff">refill_buff</span>&nbsp;: <code class="type"><a href="Lexing.html#TYPElexbuf">lexbuf</a> -> unit</code>;</code></td>
+<code><span id="TYPEELTlexbuf.refill_buff">refill_buff</span>&nbsp;: <code class="type"><a href="Lexing.html#TYPElexbuf">lexbuf</a> -&gt; unit</code>;</code></td>
 
 </tr>
 <tr>
@@ -254,7 +272,7 @@
 </div>
 
 
-<pre><span id="VALfrom_channel"><span class="keyword">val</span> from_channel</span> : <code class="type">?with_positions:bool -> Stdlib.in_channel -> <a href="Lexing.html#TYPElexbuf">lexbuf</a></code></pre><div class="info ">
+<pre><span id="VALfrom_channel"><span class="keyword">val</span> from_channel</span> : <code class="type">?with_positions:bool -&gt; Stdlib.in_channel -&gt; <a href="Lexing.html#TYPElexbuf">lexbuf</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Create a lexer buffer on the given input channel.
    <code class="code">Lexing.from_channel inchan</code> returns a lexer buffer which reads
@@ -262,7 +280,7 @@
 </div>
 </div>
 
-<pre><span id="VALfrom_string"><span class="keyword">val</span> from_string</span> : <code class="type">?with_positions:bool -> string -> <a href="Lexing.html#TYPElexbuf">lexbuf</a></code></pre><div class="info ">
+<pre><span id="VALfrom_string"><span class="keyword">val</span> from_string</span> : <code class="type">?with_positions:bool -&gt; string -&gt; <a href="Lexing.html#TYPElexbuf">lexbuf</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Create a lexer buffer which reads from
    the given string. Reading starts from the first character in
@@ -271,7 +289,7 @@
 </div>
 </div>
 
-<pre><span id="VALfrom_function"><span class="keyword">val</span> from_function</span> : <code class="type">?with_positions:bool -> (bytes -> int -> int) -> <a href="Lexing.html#TYPElexbuf">lexbuf</a></code></pre><div class="info ">
+<pre><span id="VALfrom_function"><span class="keyword">val</span> from_function</span> : <code class="type">?with_positions:bool -&gt; (bytes -&gt; int -&gt; int) -&gt; <a href="Lexing.html#TYPElexbuf">lexbuf</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Create a lexer buffer with the given function as its reading method.
    When the scanner needs more characters, it will call the given
@@ -282,7 +300,7 @@
 </div>
 </div>
 
-<pre><span id="VALset_position"><span class="keyword">val</span> set_position</span> : <code class="type"><a href="Lexing.html#TYPElexbuf">lexbuf</a> -> <a href="Lexing.html#TYPEposition">position</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALset_position"><span class="keyword">val</span> set_position</span> : <code class="type"><a href="Lexing.html#TYPElexbuf">lexbuf</a> -&gt; <a href="Lexing.html#TYPEposition">position</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Set the initial tracked input position for <code class="code">lexbuf</code> to a custom value.
    Ignores <code class="code">pos_fname</code>. See <a href="Lexing.html#VALset_filename"><code class="code">Lexing.set_filename</code></a> for changing this field.</p>
@@ -292,7 +310,7 @@
 </ul>
 </div>
 
-<pre><span id="VALset_filename"><span class="keyword">val</span> set_filename</span> : <code class="type"><a href="Lexing.html#TYPElexbuf">lexbuf</a> -> string -> unit</code></pre><div class="info ">
+<pre><span id="VALset_filename"><span class="keyword">val</span> set_filename</span> : <code class="type"><a href="Lexing.html#TYPElexbuf">lexbuf</a> -&gt; string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Set filename in the initial tracked position to <code class="code">file</code> in
    <code class="code">lexbuf</code>.</p>
@@ -302,7 +320,7 @@
 </ul>
 </div>
 
-<pre><span id="VALwith_positions"><span class="keyword">val</span> with_positions</span> : <code class="type"><a href="Lexing.html#TYPElexbuf">lexbuf</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALwith_positions"><span class="keyword">val</span> with_positions</span> : <code class="type"><a href="Lexing.html#TYPElexbuf">lexbuf</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Tell whether the lexer buffer keeps track of position fields
     <code class="code">lex_curr_p</code> / <code class="code">lex_start_p</code>, as determined by the corresponding
@@ -323,21 +341,21 @@
    <code class="code">ocamllex</code>, is bound to the lexer buffer passed to the parsing
    function.</p>
 
-<pre><span id="VALlexeme"><span class="keyword">val</span> lexeme</span> : <code class="type"><a href="Lexing.html#TYPElexbuf">lexbuf</a> -> string</code></pre><div class="info ">
+<pre><span id="VALlexeme"><span class="keyword">val</span> lexeme</span> : <code class="type"><a href="Lexing.html#TYPElexbuf">lexbuf</a> -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Lexing.lexeme lexbuf</code> returns the string matched by
            the regular expression.</p>
 </div>
 </div>
 
-<pre><span id="VALlexeme_char"><span class="keyword">val</span> lexeme_char</span> : <code class="type"><a href="Lexing.html#TYPElexbuf">lexbuf</a> -> int -> char</code></pre><div class="info ">
+<pre><span id="VALlexeme_char"><span class="keyword">val</span> lexeme_char</span> : <code class="type"><a href="Lexing.html#TYPElexbuf">lexbuf</a> -&gt; int -&gt; char</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Lexing.lexeme_char lexbuf i</code> returns character number <code class="code">i</code> in
    the matched string.</p>
 </div>
 </div>
 
-<pre><span id="VALlexeme_start"><span class="keyword">val</span> lexeme_start</span> : <code class="type"><a href="Lexing.html#TYPElexbuf">lexbuf</a> -> int</code></pre><div class="info ">
+<pre><span id="VALlexeme_start"><span class="keyword">val</span> lexeme_start</span> : <code class="type"><a href="Lexing.html#TYPElexbuf">lexbuf</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Lexing.lexeme_start lexbuf</code> returns the offset in the
    input stream of the first character of the matched string.
@@ -345,7 +363,7 @@
 </div>
 </div>
 
-<pre><span id="VALlexeme_end"><span class="keyword">val</span> lexeme_end</span> : <code class="type"><a href="Lexing.html#TYPElexbuf">lexbuf</a> -> int</code></pre><div class="info ">
+<pre><span id="VALlexeme_end"><span class="keyword">val</span> lexeme_end</span> : <code class="type"><a href="Lexing.html#TYPElexbuf">lexbuf</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Lexing.lexeme_end lexbuf</code> returns the offset in the input stream
    of the character following the last character of the matched
@@ -353,7 +371,7 @@
 </div>
 </div>
 
-<pre><span id="VALlexeme_start_p"><span class="keyword">val</span> lexeme_start_p</span> : <code class="type"><a href="Lexing.html#TYPElexbuf">lexbuf</a> -> <a href="Lexing.html#TYPEposition">position</a></code></pre><div class="info ">
+<pre><span id="VALlexeme_start_p"><span class="keyword">val</span> lexeme_start_p</span> : <code class="type"><a href="Lexing.html#TYPElexbuf">lexbuf</a> -&gt; <a href="Lexing.html#TYPEposition">position</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Like <code class="code">lexeme_start</code>, but return a complete <code class="code">position</code> instead
     of an offset.  When position tracking is disabled, the function
@@ -361,7 +379,7 @@
 </div>
 </div>
 
-<pre><span id="VALlexeme_end_p"><span class="keyword">val</span> lexeme_end_p</span> : <code class="type"><a href="Lexing.html#TYPElexbuf">lexbuf</a> -> <a href="Lexing.html#TYPEposition">position</a></code></pre><div class="info ">
+<pre><span id="VALlexeme_end_p"><span class="keyword">val</span> lexeme_end_p</span> : <code class="type"><a href="Lexing.html#TYPElexbuf">lexbuf</a> -&gt; <a href="Lexing.html#TYPEposition">position</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Like <code class="code">lexeme_end</code>, but return a complete <code class="code">position</code> instead
     of an offset.  When position tracking is disabled, the function
@@ -369,7 +387,7 @@
 </div>
 </div>
 
-<pre><span id="VALnew_line"><span class="keyword">val</span> new_line</span> : <code class="type"><a href="Lexing.html#TYPElexbuf">lexbuf</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALnew_line"><span class="keyword">val</span> new_line</span> : <code class="type"><a href="Lexing.html#TYPElexbuf">lexbuf</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Update the <code class="code">lex_curr_p</code> field of the lexbuf to reflect the start
     of a new line.  You can call this function in the semantic action
@@ -381,7 +399,7 @@
 </ul>
 </div>
 <h2 id="1_Miscellaneousfunctions">Miscellaneous functions</h2>
-<pre><span id="VALflush_input"><span class="keyword">val</span> flush_input</span> : <code class="type"><a href="Lexing.html#TYPElexbuf">lexbuf</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALflush_input"><span class="keyword">val</span> flush_input</span> : <code class="type"><a href="Lexing.html#TYPElexbuf">lexbuf</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Discard the contents of the buffer and reset the current
     position to 0.  The next use of the lexbuf will trigger a

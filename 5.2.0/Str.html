@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Std_exit.html">
-<link rel="next" href="Sys.html">
+<link rel="next" href="String.html">
 <link rel="Up" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
@@ -16,27 +16,38 @@
 <link title="Arg" rel="Chapter" href="Arg.html">
 <link title="Array" rel="Chapter" href="Array.html">
 <link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
+<link title="Atomic" rel="Chapter" href="Atomic.html">
+<link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
+<link title="Bytes" rel="Chapter" href="Bytes.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
 <link title="Digest" rel="Chapter" href="Digest.html">
+<link title="Domain" rel="Chapter" href="Domain.html">
+<link title="Dynarray" rel="Chapter" href="Dynarray.html">
 <link title="Dynlink" rel="Chapter" href="Dynlink.html">
 <link title="Dynlink_types" rel="Chapter" href="Dynlink_types.html">
 <link title="Effect" rel="Chapter" href="Effect.html">
 <link title="Either" rel="Chapter" href="Either.html">
+<link title="Ephemeron" rel="Chapter" href="Ephemeron.html">
 <link title="Event" rel="Chapter" href="Event.html">
 <link title="Filename" rel="Chapter" href="Filename.html">
 <link title="Float" rel="Chapter" href="Float.html">
 <link title="Fun" rel="Chapter" href="Fun.html">
 <link title="Gc" rel="Chapter" href="Gc.html">
+<link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
 <link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
+<link title="List" rel="Chapter" href="List.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
+<link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
 <link title="Mutex" rel="Chapter" href="Mutex.html">
 <link title="Nativeint" rel="Chapter" href="Nativeint.html">
@@ -47,18 +58,25 @@
 <link title="Parsing" rel="Chapter" href="Parsing.html">
 <link title="Printexc" rel="Chapter" href="Printexc.html">
 <link title="Printf" rel="Chapter" href="Printf.html">
+<link title="Queue" rel="Chapter" href="Queue.html">
 <link title="Random" rel="Chapter" href="Random.html">
 <link title="Result" rel="Chapter" href="Result.html">
 <link title="Scanf" rel="Chapter" href="Scanf.html">
 <link title="Semaphore" rel="Chapter" href="Semaphore.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
 <link title="Set" rel="Chapter" href="Set.html">
+<link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
 <link title="Std_exit" rel="Chapter" href="Std_exit.html">
 <link title="Str" rel="Chapter" href="Str.html">
+<link title="String" rel="Chapter" href="String.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Type" rel="Chapter" href="Type.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
-<link title="Unix" rel="Chapter" href="Unix.html"><link title="Regular expressions" rel="Section" href="#1_Regularexpressions">
+<link title="Unix" rel="Chapter" href="Unix.html">
+<link title="Weak" rel="Chapter" href="Weak.html"><link title="Regular expressions" rel="Section" href="#1_Regularexpressions">
 <link title="String matching and searching" rel="Section" href="#1_Stringmatchingandsearching">
 <link title="Replacement" rel="Section" href="#1_Replacement">
 <link title="Splitting" rel="Section" href="#1_Splitting">
@@ -68,7 +86,7 @@
 <body>
 <div class="navbar"><a class="pre" href="Std_exit.html" title="Std_exit">Previous</a>
 &nbsp;<a class="up" href="index.html" title="Index">Up</a>
-&nbsp;<a class="post" href="Sys.html" title="Sys">Next</a>
+&nbsp;<a class="post" href="String.html" title="String">Next</a>
 </div>
 <h1>Module <a href="type_Str.html">Str</a></h1>
 
@@ -89,7 +107,7 @@
 </div>
 
 
-<pre><span id="VALregexp"><span class="keyword">val</span> regexp</span> : <code class="type">string -> <a href="Str.html#TYPEregexp">regexp</a></code></pre><div class="info ">
+<pre><span id="VALregexp"><span class="keyword">val</span> regexp</span> : <code class="type">string -&gt; <a href="Str.html#TYPEregexp">regexp</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Compile a regular expression. The following constructs are
     recognized:</p>
@@ -139,7 +157,7 @@
 </div>
 </div>
 
-<pre><span id="VALregexp_case_fold"><span class="keyword">val</span> regexp_case_fold</span> : <code class="type">string -> <a href="Str.html#TYPEregexp">regexp</a></code></pre><div class="info ">
+<pre><span id="VALregexp_case_fold"><span class="keyword">val</span> regexp_case_fold</span> : <code class="type">string -&gt; <a href="Str.html#TYPEregexp">regexp</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">regexp</code>, but the compiled expression will match text
     in a case-insensitive way: uppercase and lowercase letters will
@@ -147,28 +165,28 @@
 </div>
 </div>
 
-<pre><span id="VALquote"><span class="keyword">val</span> quote</span> : <code class="type">string -> string</code></pre><div class="info ">
+<pre><span id="VALquote"><span class="keyword">val</span> quote</span> : <code class="type">string -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Str.quote s</code> returns a regexp string that matches exactly
    <code class="code">s</code> and nothing else.</p>
 </div>
 </div>
 
-<pre><span id="VALregexp_string"><span class="keyword">val</span> regexp_string</span> : <code class="type">string -> <a href="Str.html#TYPEregexp">regexp</a></code></pre><div class="info ">
+<pre><span id="VALregexp_string"><span class="keyword">val</span> regexp_string</span> : <code class="type">string -&gt; <a href="Str.html#TYPEregexp">regexp</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Str.regexp_string s</code> returns a regular expression
    that matches exactly <code class="code">s</code> and nothing else.</p>
 </div>
 </div>
 
-<pre><span id="VALregexp_string_case_fold"><span class="keyword">val</span> regexp_string_case_fold</span> : <code class="type">string -> <a href="Str.html#TYPEregexp">regexp</a></code></pre><div class="info ">
+<pre><span id="VALregexp_string_case_fold"><span class="keyword">val</span> regexp_string_case_fold</span> : <code class="type">string -&gt; <a href="Str.html#TYPEregexp">regexp</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Str.regexp_string_case_fold</code> is similar to <a href="Str.html#VALregexp_string"><code class="code">Str.regexp_string</code></a>,
    but the regexp matches in a case-insensitive way.</p>
 </div>
 </div>
 <h2 id="1_Stringmatchingandsearching">String matching and searching</h2>
-<pre><span id="VALstring_match"><span class="keyword">val</span> string_match</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -> string -> int -> bool</code></pre><div class="info ">
+<pre><span id="VALstring_match"><span class="keyword">val</span> string_match</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -&gt; string -&gt; int -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">string_match r s start</code> tests whether a substring of <code class="code">s</code> that
    starts at position <code class="code">start</code> matches the regular expression <code class="code">r</code>.
@@ -176,7 +194,7 @@
 </div>
 </div>
 
-<pre><span id="VALsearch_forward"><span class="keyword">val</span> search_forward</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -> string -> int -> int</code></pre><div class="info ">
+<pre><span id="VALsearch_forward"><span class="keyword">val</span> search_forward</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -&gt; string -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">search_forward r s start</code> searches the string <code class="code">s</code> for a substring
    matching the regular expression <code class="code">r</code>. The search starts at position
@@ -189,7 +207,7 @@
 </ul>
 </div>
 
-<pre><span id="VALsearch_backward"><span class="keyword">val</span> search_backward</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -> string -> int -> int</code></pre><div class="info ">
+<pre><span id="VALsearch_backward"><span class="keyword">val</span> search_backward</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -&gt; string -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">search_backward r s last</code> searches the string <code class="code">s</code> for a
   substring matching the regular expression <code class="code">r</code>. The search first
@@ -202,7 +220,7 @@
 </ul>
 </div>
 
-<pre><span id="VALstring_partial_match"><span class="keyword">val</span> string_partial_match</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -> string -> int -> bool</code></pre><div class="info ">
+<pre><span id="VALstring_partial_match"><span class="keyword">val</span> string_partial_match</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -&gt; string -&gt; int -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Similar to <a href="Str.html#VALstring_match"><code class="code">Str.string_match</code></a>, but also returns true if
    the argument string is a prefix of a string that matches.
@@ -210,7 +228,7 @@
 </div>
 </div>
 
-<pre><span id="VALmatched_string"><span class="keyword">val</span> matched_string</span> : <code class="type">string -> string</code></pre><div class="info ">
+<pre><span id="VALmatched_string"><span class="keyword">val</span> matched_string</span> : <code class="type">string -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">matched_string s</code> returns the substring of <code class="code">s</code> that was matched
    by the last call to one of the following matching or searching
@@ -243,7 +261,7 @@
 </div>
 </div>
 
-<pre><span id="VALmatch_beginning"><span class="keyword">val</span> match_beginning</span> : <code class="type">unit -> int</code></pre><div class="info ">
+<pre><span id="VALmatch_beginning"><span class="keyword">val</span> match_beginning</span> : <code class="type">unit -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">match_beginning()</code> returns the position of the first character
    of the substring that was matched by the last call to a matching
@@ -251,7 +269,7 @@
 </div>
 </div>
 
-<pre><span id="VALmatch_end"><span class="keyword">val</span> match_end</span> : <code class="type">unit -> int</code></pre><div class="info ">
+<pre><span id="VALmatch_end"><span class="keyword">val</span> match_end</span> : <code class="type">unit -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">match_end()</code> returns the position of the character following the
    last character of the substring that was matched by the last call
@@ -260,7 +278,7 @@
 </div>
 </div>
 
-<pre><span id="VALmatched_group"><span class="keyword">val</span> matched_group</span> : <code class="type">int -> string -> string</code></pre><div class="info ">
+<pre><span id="VALmatched_group"><span class="keyword">val</span> matched_group</span> : <code class="type">int -&gt; string -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">matched_group n s</code> returns the substring of <code class="code">s</code> that was matched
    by the <code class="code">n</code>th group <code class="code">\(...\)</code> of the regular expression that was
@@ -280,7 +298,7 @@
 </ul>
 </div>
 
-<pre><span id="VALgroup_beginning"><span class="keyword">val</span> group_beginning</span> : <code class="type">int -> int</code></pre><div class="info ">
+<pre><span id="VALgroup_beginning"><span class="keyword">val</span> group_beginning</span> : <code class="type">int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">group_beginning n</code> returns the position of the first character
    of the substring that was matched by the <code class="code">n</code>th group of
@@ -296,7 +314,7 @@
 </ul>
 </div>
 
-<pre><span id="VALgroup_end"><span class="keyword">val</span> group_end</span> : <code class="type">int -> int</code></pre><div class="info ">
+<pre><span id="VALgroup_end"><span class="keyword">val</span> group_end</span> : <code class="type">int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">group_end n</code> returns
    the position of the character following the last character of
@@ -313,7 +331,7 @@
 </ul>
 </div>
 <h2 id="1_Replacement">Replacement</h2>
-<pre><span id="VALglobal_replace"><span class="keyword">val</span> global_replace</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -> string -> string -> string</code></pre><div class="info ">
+<pre><span id="VALglobal_replace"><span class="keyword">val</span> global_replace</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -&gt; string -&gt; string -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">global_replace regexp templ s</code> returns a string identical to <code class="code">s</code>,
    except that all substrings of <code class="code">s</code> that match <code class="code">regexp</code> have been
@@ -324,14 +342,14 @@
 </div>
 </div>
 
-<pre><span id="VALreplace_first"><span class="keyword">val</span> replace_first</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -> string -> string -> string</code></pre><div class="info ">
+<pre><span id="VALreplace_first"><span class="keyword">val</span> replace_first</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -&gt; string -&gt; string -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Str.html#VALglobal_replace"><code class="code">Str.global_replace</code></a>, except that only the first substring
    matching the regular expression is replaced.</p>
 </div>
 </div>
 
-<pre><span id="VALglobal_substitute"><span class="keyword">val</span> global_substitute</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -> (string -> string) -> string -> string</code></pre><div class="info ">
+<pre><span id="VALglobal_substitute"><span class="keyword">val</span> global_substitute</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -&gt; (string -&gt; string) -&gt; string -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">global_substitute regexp subst s</code> returns a string identical
    to <code class="code">s</code>, except that all substrings of <code class="code">s</code> that match <code class="code">regexp</code>
@@ -341,14 +359,14 @@
 </div>
 </div>
 
-<pre><span id="VALsubstitute_first"><span class="keyword">val</span> substitute_first</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -> (string -> string) -> string -> string</code></pre><div class="info ">
+<pre><span id="VALsubstitute_first"><span class="keyword">val</span> substitute_first</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -&gt; (string -&gt; string) -&gt; string -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Str.html#VALglobal_substitute"><code class="code">Str.global_substitute</code></a>, except that only the first substring
    matching the regular expression is replaced.</p>
 </div>
 </div>
 
-<pre><span id="VALreplace_matched"><span class="keyword">val</span> replace_matched</span> : <code class="type">string -> string -> string</code></pre><div class="info ">
+<pre><span id="VALreplace_matched"><span class="keyword">val</span> replace_matched</span> : <code class="type">string -&gt; string -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">replace_matched repl s</code> returns the replacement text <code class="code">repl</code>
    in which <code class="code">\1</code>, <code class="code">\2</code>, etc. have been replaced by the text
@@ -360,7 +378,7 @@
 </div>
 </div>
 <h2 id="1_Splitting">Splitting</h2>
-<pre><span id="VALsplit"><span class="keyword">val</span> split</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -> string -> string list</code></pre><div class="info ">
+<pre><span id="VALsplit"><span class="keyword">val</span> split</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -&gt; string -&gt; string list</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">split r s</code> splits <code class="code">s</code> into substrings, taking as delimiters
    the substrings that match <code class="code">r</code>, and returns the list of substrings.
@@ -370,14 +388,14 @@
 </div>
 </div>
 
-<pre><span id="VALbounded_split"><span class="keyword">val</span> bounded_split</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -> string -> int -> string list</code></pre><div class="info ">
+<pre><span id="VALbounded_split"><span class="keyword">val</span> bounded_split</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -&gt; string -&gt; int -&gt; string list</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Str.html#VALsplit"><code class="code">Str.split</code></a>, but splits into at most <code class="code">n</code> substrings,
    where <code class="code">n</code> is the extra integer parameter.</p>
 </div>
 </div>
 
-<pre><span id="VALsplit_delim"><span class="keyword">val</span> split_delim</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -> string -> string list</code></pre><div class="info ">
+<pre><span id="VALsplit_delim"><span class="keyword">val</span> split_delim</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -&gt; string -&gt; string list</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Str.html#VALsplit"><code class="code">Str.split</code></a> but occurrences of the
    delimiter at the beginning and at the end of the string are
@@ -388,7 +406,7 @@
 </div>
 </div>
 
-<pre><span id="VALbounded_split_delim"><span class="keyword">val</span> bounded_split_delim</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -> string -> int -> string list</code></pre><div class="info ">
+<pre><span id="VALbounded_split_delim"><span class="keyword">val</span> bounded_split_delim</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -&gt; string -&gt; int -&gt; string list</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Str.html#VALbounded_split"><code class="code">Str.bounded_split</code></a>, but occurrences of the
    delimiter at the beginning and at the end of the string are
@@ -414,7 +432,7 @@
 
 
 
-<pre><span id="VALfull_split"><span class="keyword">val</span> full_split</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -> string -> <a href="Str.html#TYPEsplit_result">split_result</a> list</code></pre><div class="info ">
+<pre><span id="VALfull_split"><span class="keyword">val</span> full_split</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -&gt; string -&gt; <a href="Str.html#TYPEsplit_result">split_result</a> list</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Str.html#VALsplit_delim"><code class="code">Str.split_delim</code></a>, but returns
    the delimiters as well as the substrings contained between
@@ -425,7 +443,7 @@
 </div>
 </div>
 
-<pre><span id="VALbounded_full_split"><span class="keyword">val</span> bounded_full_split</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -> string -> int -> <a href="Str.html#TYPEsplit_result">split_result</a> list</code></pre><div class="info ">
+<pre><span id="VALbounded_full_split"><span class="keyword">val</span> bounded_full_split</span> : <code class="type"><a href="Str.html#TYPEregexp">regexp</a> -&gt; string -&gt; int -&gt; <a href="Str.html#TYPEsplit_result">split_result</a> list</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Str.html#VALbounded_split_delim"><code class="code">Str.bounded_split_delim</code></a>, but returns
    the delimiters as well as the substrings contained between
@@ -434,7 +452,7 @@
 </div>
 </div>
 <h2 id="1_Extractingsubstrings">Extracting substrings</h2>
-<pre><span id="VALstring_before"><span class="keyword">val</span> string_before</span> : <code class="type">string -> int -> string</code></pre><div class="info ">
+<pre><span id="VALstring_before"><span class="keyword">val</span> string_before</span> : <code class="type">string -&gt; int -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">string_before s n</code> returns the substring of all characters of <code class="code">s</code>
    that precede position <code class="code">n</code> (excluding the character at
@@ -442,7 +460,7 @@
 </div>
 </div>
 
-<pre><span id="VALstring_after"><span class="keyword">val</span> string_after</span> : <code class="type">string -> int -> string</code></pre><div class="info ">
+<pre><span id="VALstring_after"><span class="keyword">val</span> string_after</span> : <code class="type">string -&gt; int -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">string_after s n</code> returns the substring of all characters of <code class="code">s</code>
    that follow position <code class="code">n</code> (including the character at
@@ -450,14 +468,14 @@
 </div>
 </div>
 
-<pre><span id="VALfirst_chars"><span class="keyword">val</span> first_chars</span> : <code class="type">string -> int -> string</code></pre><div class="info ">
+<pre><span id="VALfirst_chars"><span class="keyword">val</span> first_chars</span> : <code class="type">string -&gt; int -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">first_chars s n</code> returns the first <code class="code">n</code> characters of <code class="code">s</code>.
    This is the same function as <a href="Str.html#VALstring_before"><code class="code">Str.string_before</code></a>.</p>
 </div>
 </div>
 
-<pre><span id="VALlast_chars"><span class="keyword">val</span> last_chars</span> : <code class="type">string -> int -> string</code></pre><div class="info ">
+<pre><span id="VALlast_chars"><span class="keyword">val</span> last_chars</span> : <code class="type">string -&gt; int -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">last_chars s n</code> returns the last <code class="code">n</code> characters of <code class="code">s</code>.</p>
 </div>

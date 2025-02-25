@@ -16,27 +16,38 @@
 <link title="Arg" rel="Chapter" href="Arg.html">
 <link title="Array" rel="Chapter" href="Array.html">
 <link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
+<link title="Atomic" rel="Chapter" href="Atomic.html">
+<link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
+<link title="Bytes" rel="Chapter" href="Bytes.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
 <link title="Digest" rel="Chapter" href="Digest.html">
+<link title="Domain" rel="Chapter" href="Domain.html">
+<link title="Dynarray" rel="Chapter" href="Dynarray.html">
 <link title="Dynlink" rel="Chapter" href="Dynlink.html">
 <link title="Dynlink_types" rel="Chapter" href="Dynlink_types.html">
 <link title="Effect" rel="Chapter" href="Effect.html">
 <link title="Either" rel="Chapter" href="Either.html">
+<link title="Ephemeron" rel="Chapter" href="Ephemeron.html">
 <link title="Event" rel="Chapter" href="Event.html">
 <link title="Filename" rel="Chapter" href="Filename.html">
 <link title="Float" rel="Chapter" href="Float.html">
 <link title="Fun" rel="Chapter" href="Fun.html">
 <link title="Gc" rel="Chapter" href="Gc.html">
+<link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
 <link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
+<link title="List" rel="Chapter" href="List.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
+<link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
 <link title="Mutex" rel="Chapter" href="Mutex.html">
 <link title="Nativeint" rel="Chapter" href="Nativeint.html">
@@ -47,18 +58,25 @@
 <link title="Parsing" rel="Chapter" href="Parsing.html">
 <link title="Printexc" rel="Chapter" href="Printexc.html">
 <link title="Printf" rel="Chapter" href="Printf.html">
+<link title="Queue" rel="Chapter" href="Queue.html">
 <link title="Random" rel="Chapter" href="Random.html">
 <link title="Result" rel="Chapter" href="Result.html">
 <link title="Scanf" rel="Chapter" href="Scanf.html">
 <link title="Semaphore" rel="Chapter" href="Semaphore.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
 <link title="Set" rel="Chapter" href="Set.html">
+<link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
 <link title="Std_exit" rel="Chapter" href="Std_exit.html">
 <link title="Str" rel="Chapter" href="Str.html">
+<link title="String" rel="Chapter" href="String.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Type" rel="Chapter" href="Type.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
-<link title="Unix" rel="Chapter" href="Unix.html"><title>Mutex</title>
+<link title="Unix" rel="Chapter" href="Unix.html">
+<link title="Weak" rel="Chapter" href="Weak.html"><title>Mutex</title>
 </head>
 <body>
 <div class="navbar"><a class="pre" href="Marshal.html" title="Marshal">Previous</a>
@@ -90,13 +108,13 @@
 </div>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -> <a href="Mutex.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -&gt; <a href="Mutex.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return a new mutex.</p>
 </div>
 </div>
 
-<pre><span id="VALlock"><span class="keyword">val</span> lock</span> : <code class="type"><a href="Mutex.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALlock"><span class="keyword">val</span> lock</span> : <code class="type"><a href="Mutex.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Lock the given mutex. Only one thread can have the mutex locked
    at any time. A thread that attempts to lock a mutex already locked
@@ -111,7 +129,7 @@
 </ul>
 </div>
 
-<pre><span id="VALtry_lock"><span class="keyword">val</span> try_lock</span> : <code class="type"><a href="Mutex.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALtry_lock"><span class="keyword">val</span> try_lock</span> : <code class="type"><a href="Mutex.html#TYPEt">t</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Mutex.html#VALlock"><code class="code">Mutex.lock</code></a>, but does not suspend the calling thread if
    the mutex is already locked: just return <code class="code">false</code> immediately
@@ -120,7 +138,7 @@
 </div>
 </div>
 
-<pre><span id="VALunlock"><span class="keyword">val</span> unlock</span> : <code class="type"><a href="Mutex.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALunlock"><span class="keyword">val</span> unlock</span> : <code class="type"><a href="Mutex.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Unlock the given mutex. Other threads suspended trying to lock
    the mutex will restart.  The mutex must have been previously locked
@@ -133,7 +151,7 @@
 </ul>
 </div>
 
-<pre><span id="VALprotect"><span class="keyword">val</span> protect</span> : <code class="type"><a href="Mutex.html#TYPEt">t</a> -> (unit -> 'a) -> 'a</code></pre><div class="info ">
+<pre><span id="VALprotect"><span class="keyword">val</span> protect</span> : <code class="type"><a href="Mutex.html#TYPEt">t</a> -&gt; (unit -&gt; 'a) -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">protect mutex f</code> runs <code class="code">f()</code> in a critical section where <code class="code">mutex</code>
     is locked (using <a href="Mutex.html#VALlock"><code class="code">Mutex.lock</code></a>); it then takes care of releasing <code class="code">mutex</code>,

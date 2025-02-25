@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="Up" href="Type.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Arg" rel="Chapter" href="Arg.html">
+<link title="Array" rel="Chapter" href="Array.html">
+<link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
+<link title="Atomic" rel="Chapter" href="Atomic.html">
+<link title="Bigarray" rel="Chapter" href="Bigarray.html">
+<link title="Bool" rel="Chapter" href="Bool.html">
+<link title="Buffer" rel="Chapter" href="Buffer.html">
+<link title="Bytes" rel="Chapter" href="Bytes.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
+<link title="Callback" rel="Chapter" href="Callback.html">
+<link title="Char" rel="Chapter" href="Char.html">
+<link title="Complex" rel="Chapter" href="Complex.html">
+<link title="Digest" rel="Chapter" href="Digest.html">
+<link title="Domain" rel="Chapter" href="Domain.html">
+<link title="Dynarray" rel="Chapter" href="Dynarray.html">
+<link title="Dynlink" rel="Chapter" href="Dynlink.html">
+<link title="Dynlink_types" rel="Chapter" href="Dynlink_types.html">
+<link title="Effect" rel="Chapter" href="Effect.html">
+<link title="Either" rel="Chapter" href="Either.html">
+<link title="Ephemeron" rel="Chapter" href="Ephemeron.html">
+<link title="Event" rel="Chapter" href="Event.html">
+<link title="Filename" rel="Chapter" href="Filename.html">
+<link title="Float" rel="Chapter" href="Float.html">
+<link title="Fun" rel="Chapter" href="Fun.html">
+<link title="Gc" rel="Chapter" href="Gc.html">
+<link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
+<link title="In_channel" rel="Chapter" href="In_channel.html">
+<link title="Int" rel="Chapter" href="Int.html">
+<link title="Int32" rel="Chapter" href="Int32.html">
+<link title="Int64" rel="Chapter" href="Int64.html">
+<link title="Lazy" rel="Chapter" href="Lazy.html">
+<link title="Lexing" rel="Chapter" href="Lexing.html">
+<link title="List" rel="Chapter" href="List.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
+<link title="Map" rel="Chapter" href="Map.html">
+<link title="Marshal" rel="Chapter" href="Marshal.html">
+<link title="Mutex" rel="Chapter" href="Mutex.html">
+<link title="Nativeint" rel="Chapter" href="Nativeint.html">
+<link title="Obj" rel="Chapter" href="Obj.html">
+<link title="Oo" rel="Chapter" href="Oo.html">
+<link title="Option" rel="Chapter" href="Option.html">
+<link title="Out_channel" rel="Chapter" href="Out_channel.html">
+<link title="Parsing" rel="Chapter" href="Parsing.html">
+<link title="Printexc" rel="Chapter" href="Printexc.html">
+<link title="Printf" rel="Chapter" href="Printf.html">
+<link title="Queue" rel="Chapter" href="Queue.html">
+<link title="Random" rel="Chapter" href="Random.html">
+<link title="Result" rel="Chapter" href="Result.html">
+<link title="Scanf" rel="Chapter" href="Scanf.html">
+<link title="Semaphore" rel="Chapter" href="Semaphore.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
+<link title="Set" rel="Chapter" href="Set.html">
+<link title="Stack" rel="Chapter" href="Stack.html">
+<link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Std_exit" rel="Chapter" href="Std_exit.html">
+<link title="Str" rel="Chapter" href="Str.html">
+<link title="String" rel="Chapter" href="String.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
+<link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Type" rel="Chapter" href="Type.html">
+<link title="Uchar" rel="Chapter" href="Uchar.html">
+<link title="Unit" rel="Chapter" href="Unit.html">
+<link title="Unix" rel="Chapter" href="Unix.html">
+<link title="Weak" rel="Chapter" href="Weak.html"><link title="Type identifiers" rel="Section" href="#ids">
+<link title="Example" rel="Section" href="#example">
+<title>Type.Id</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="Type.html" title="Type">Up</a>
+&nbsp;</div>
+<h1>Module <a href="type_Type.Id.html">Type.Id</a></h1>
+
+<pre><span id="MODULEId"><span class="keyword">module</span> Id</span>: <code class="code">sig</code> <a href="Type.Id.html">..</a> <code class="code">end</code></pre><div class="info module top">
+<div class="info-desc">
+<p>Type identifiers.</p>
+
+<p>A type identifier is a value that denotes a type. Given two type
+    identifiers, they can be tested for <a href="Type.Id.html#VALprovably_equal">equality</a> to
+    prove they denote the same type. Note that:</p>
+
+<ul>
+<li>Unequal identifiers do not imply unequal types: a given type can be
+      denoted by more than one identifier.</li>
+<li>Type identifiers can be marshalled, but they get a new, distinct,
+      identity on unmarshalling, so the equalities are lost.</li>
+</ul>
+<p>See an <a href="Type.Id.html#example">example</a> of use.</p>
+</div>
+</div>
+<hr width="100%">
+<h2 id="ids">Type identifiers</h2>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> </pre>
+<div class="info ">
+<div class="info-desc">
+<p>The type for identifiers for type <code class="code">'a</code>.</p>
+</div>
+</div>
+
+
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type">unit -&gt; 'a <a href="Type.Id.html#TYPEt">t</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">make ()</code> is a new type identifier.</p>
+</div>
+</div>
+
+<pre><span id="VALuid"><span class="keyword">val</span> uid</span> : <code class="type">'a <a href="Type.Id.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">uid id</code> is a runtime unique identifier for <code class="code">id</code>.</p>
+</div>
+</div>
+
+<pre><span id="VALprovably_equal"><span class="keyword">val</span> provably_equal</span> : <code class="type">'a <a href="Type.Id.html#TYPEt">t</a> -&gt; 'b <a href="Type.Id.html#TYPEt">t</a> -&gt; ('a, 'b) <a href="Type.html#TYPEeq">Type.eq</a> option</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">provably_equal i0 i1</code> is <code class="code">Some Equal</code> if identifier <code class="code">i0</code> is equal
+      to <code class="code">i1</code> and <code class="code">None</code> otherwise.</p>
+</div>
+</div>
+<h2 id="example">Example</h2>
+<p>The following shows how type identifiers can be used to
+      implement a simple heterogeneous key-value dictionary. In contrast to
+      <code class="code">Stdlib.Map</code> values whose keys map to a single, homogeneous type of
+      values, this dictionary can associate a different type of value
+      to each key.</p>
+<pre class="codepre"><code class="code">(** Heterogeneous dictionaries. *)
+module Dict : sig
+  type t
+  (** The type for dictionaries. *)
+
+  type 'a key
+  (** The type for keys binding values of type ['a]. *)
+
+  val key : unit -&gt; 'a key
+  (** [key ()] is a new dictionary key. *)
+
+  val empty : t
+  (** [empty] is the empty dictionary. *)
+
+  val add : 'a key -&gt; 'a -&gt; t -&gt; t
+  (** [add k v d] is [d] with [k] bound to [v]. *)
+
+  val remove : 'a key -&gt; t -&gt; t
+  (** [remove k d] is [d] with the last binding of [k] removed. *)
+
+  val find : 'a key -&gt; t -&gt; 'a option
+  (** [find k d] is the binding of [k] in [d], if any. *)
+end = struct
+  type 'a key = 'a Type.Id.t
+  type binding = B : 'a key * 'a -&gt; binding
+  type t = (int * binding) list
+
+  let key () = Type.Id.make ()
+  let empty = []
+  let add k v d = (Type.Id.uid k, B (k, v)) :: d
+  let remove k d = List.remove_assoc (Type.Id.uid k) d
+  let find : type a. a key -&gt; t -&gt; a option = fun k d -&gt;
+    match List.assoc_opt (Type.Id.uid k) d with
+    | None -&gt; None
+    | Some (B (k', v)) -&gt;
+        match Type.Id.provably_equal k k' with
+        | Some Type.Equal -&gt; Some v
+        | None -&gt; assert false
+end
+</code></pre></body></html>
