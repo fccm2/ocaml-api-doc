@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link rel="previous" href="Effect.Deep.html">
+<link rel="Up" href="Effect.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Arg" rel="Chapter" href="Arg.html">
+<link title="Array" rel="Chapter" href="Array.html">
+<link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
+<link title="Bool" rel="Chapter" href="Bool.html">
+<link title="Buffer" rel="Chapter" href="Buffer.html">
+<link title="Callback" rel="Chapter" href="Callback.html">
+<link title="Char" rel="Chapter" href="Char.html">
+<link title="Complex" rel="Chapter" href="Complex.html">
+<link title="Digest" rel="Chapter" href="Digest.html">
+<link title="Dynlink" rel="Chapter" href="Dynlink.html">
+<link title="Dynlink_types" rel="Chapter" href="Dynlink_types.html">
+<link title="Effect" rel="Chapter" href="Effect.html">
+<link title="Either" rel="Chapter" href="Either.html">
+<link title="Event" rel="Chapter" href="Event.html">
+<link title="Filename" rel="Chapter" href="Filename.html">
+<link title="Float" rel="Chapter" href="Float.html">
+<link title="Fun" rel="Chapter" href="Fun.html">
+<link title="Gc" rel="Chapter" href="Gc.html">
+<link title="In_channel" rel="Chapter" href="In_channel.html">
+<link title="Int" rel="Chapter" href="Int.html">
+<link title="Int32" rel="Chapter" href="Int32.html">
+<link title="Int64" rel="Chapter" href="Int64.html">
+<link title="Lazy" rel="Chapter" href="Lazy.html">
+<link title="Lexing" rel="Chapter" href="Lexing.html">
+<link title="Marshal" rel="Chapter" href="Marshal.html">
+<link title="Mutex" rel="Chapter" href="Mutex.html">
+<link title="Nativeint" rel="Chapter" href="Nativeint.html">
+<link title="Obj" rel="Chapter" href="Obj.html">
+<link title="Oo" rel="Chapter" href="Oo.html">
+<link title="Option" rel="Chapter" href="Option.html">
+<link title="Out_channel" rel="Chapter" href="Out_channel.html">
+<link title="Parsing" rel="Chapter" href="Parsing.html">
+<link title="Printexc" rel="Chapter" href="Printexc.html">
+<link title="Printf" rel="Chapter" href="Printf.html">
+<link title="Random" rel="Chapter" href="Random.html">
+<link title="Result" rel="Chapter" href="Result.html">
+<link title="Scanf" rel="Chapter" href="Scanf.html">
+<link title="Semaphore" rel="Chapter" href="Semaphore.html">
+<link title="Set" rel="Chapter" href="Set.html">
+<link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Std_exit" rel="Chapter" href="Std_exit.html">
+<link title="Str" rel="Chapter" href="Str.html">
+<link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Uchar" rel="Chapter" href="Uchar.html">
+<link title="Unit" rel="Chapter" href="Unit.html">
+<link title="Unix" rel="Chapter" href="Unix.html"><title>Effect.Shallow</title>
+</head>
+<body>
+<div class="navbar"><a class="pre" href="Effect.Deep.html" title="Effect.Deep">Previous</a>
+&nbsp;<a class="up" href="Effect.html" title="Effect">Up</a>
+&nbsp;</div>
+<h1>Module <a href="type_Effect.Shallow.html">Effect.Shallow</a></h1>
+
+<pre><span id="MODULEShallow"><span class="keyword">module</span> Shallow</span>: <code class="code">sig</code> <a href="Effect.Shallow.html">..</a> <code class="code">end</code></pre><hr width="100%">
+
+<pre><span id="TYPEcontinuation"><span class="keyword">type</span> <code class="type">('a, 'b)</code> continuation</span> </pre>
+<div class="info ">
+<div class="info-desc">
+<p><code class="code">('a,'b) continuation</code> is a delimited continuation that expects a <code class="code">'a</code>
+      value and returns a <code class="code">'b</code> value.</p>
+</div>
+</div>
+
+
+<pre><span id="VALfiber"><span class="keyword">val</span> fiber</span> : <code class="type">('a -> 'b) -> ('a, 'b) <a href="Effect.Shallow.html#TYPEcontinuation">continuation</a></code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">fiber f</code> constructs a continuation that runs the computation <code class="code">f</code>.</p>
+</div>
+</div>
+
+<pre><code><span id="TYPEhandler"><span class="keyword">type</span> <code class="type">('a, 'b)</code> handler</span> = {</code></pre><table class="typetable">
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELThandler.retc">retc</span>&nbsp;: <code class="type">'a -> 'b</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELThandler.exnc">exnc</span>&nbsp;: <code class="type">exn -> 'b</code>;</code></td>
+
+</tr>
+<tr>
+<td align="left" valign="top" >
+<code>&nbsp;&nbsp;</code></td>
+<td align="left" valign="top" >
+<code><span id="TYPEELThandler.effc">effc</span>&nbsp;: <code class="type">'c. 'c <a href="Effect.html#TYPEt">Effect.t</a> -> (('c, 'a) <a href="Effect.Shallow.html#TYPEcontinuation">continuation</a> -> 'b) option</code>;</code></td>
+
+</tr></table>
+<code>}</code>
+
+<div class="info ">
+<div class="info-desc">
+<p><code class="code">('a,'b) handler</code> is a handler record with three fields -- <code class="code">retc</code>
+      is the value handler, <code class="code">exnc</code> handles exceptions, and <code class="code">effc</code> handles the
+      effects performed by the computation enclosed by the handler.</p>
+</div>
+</div>
+
+
+<pre><span id="VALcontinue_with"><span class="keyword">val</span> continue_with</span> : <code class="type">('c, 'a) <a href="Effect.Shallow.html#TYPEcontinuation">continuation</a> -><br>       'c -> ('a, 'b) <a href="Effect.Shallow.html#TYPEhandler">handler</a> -> 'b</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">continue_with k v h</code> resumes the continuation <code class="code">k</code> with value <code class="code">v</code> with
+      the handler <code class="code">h</code>.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Raises</b> <code>Continuation_already_resumed</code> if the continuation has already been
+      resumed.</li>
+</ul>
+</div>
+
+<pre><span id="VALdiscontinue_with"><span class="keyword">val</span> discontinue_with</span> : <code class="type">('c, 'a) <a href="Effect.Shallow.html#TYPEcontinuation">continuation</a> -><br>       exn -> ('a, 'b) <a href="Effect.Shallow.html#TYPEhandler">handler</a> -> 'b</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">discontinue_with k e h</code> resumes the continuation <code class="code">k</code> by raising the
+      exception <code class="code">e</code> with the handler <code class="code">h</code>.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Raises</b> <code>Continuation_already_resumed</code> if the continuation has already been
+      resumed.</li>
+</ul>
+</div>
+
+<pre><span id="VALdiscontinue_with_backtrace"><span class="keyword">val</span> discontinue_with_backtrace</span> : <code class="type">('a, 'b) <a href="Effect.Shallow.html#TYPEcontinuation">continuation</a> -><br>       exn -> Stdlib.Printexc.raw_backtrace -> ('b, 'c) <a href="Effect.Shallow.html#TYPEhandler">handler</a> -> 'c</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">discontinue_with k e bt h</code> resumes the continuation <code class="code">k</code> by raising the
+      exception <code class="code">e</code> with the handler <code class="code">h</code> using the raw backtrace <code class="code">bt</code> as the
+      origin of the exception.</p>
+</div>
+<ul class="info-attributes">
+<li><b>Raises</b> <code>Continuation_already_resumed</code> if the continuation has already been
+      resumed.</li>
+</ul>
+</div>
+
+<pre><span id="VALget_callstack"><span class="keyword">val</span> get_callstack</span> : <code class="type">('a, 'b) <a href="Effect.Shallow.html#TYPEcontinuation">continuation</a> -> int -> Stdlib.Printexc.raw_backtrace</code></pre><div class="info ">
+<div class="info-desc">
+<p><code class="code">get_callstack c n</code> returns a description of the top of the call stack on
+      the continuation <code class="code">c</code>, with at most <code class="code">n</code> entries.</p>
+</div>
+</div>
+</body></html>

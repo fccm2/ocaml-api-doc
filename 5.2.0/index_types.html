@@ -1,0 +1,791 @@
+<html>
+<head>
+<link rel="stylesheet" href="style.css" type="text/css">
+<meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="Start" href="index.html">
+<link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
+<link title="Index of values" rel=Appendix href="index_values.html">
+<link title="Index of modules" rel=Appendix href="index_modules.html">
+<link title="Index of module types" rel=Appendix href="index_module_types.html">
+<link title="Arg" rel="Chapter" href="Arg.html">
+<link title="Array" rel="Chapter" href="Array.html">
+<link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
+<link title="Bool" rel="Chapter" href="Bool.html">
+<link title="Buffer" rel="Chapter" href="Buffer.html">
+<link title="Callback" rel="Chapter" href="Callback.html">
+<link title="Char" rel="Chapter" href="Char.html">
+<link title="Complex" rel="Chapter" href="Complex.html">
+<link title="Digest" rel="Chapter" href="Digest.html">
+<link title="Dynlink" rel="Chapter" href="Dynlink.html">
+<link title="Dynlink_types" rel="Chapter" href="Dynlink_types.html">
+<link title="Effect" rel="Chapter" href="Effect.html">
+<link title="Either" rel="Chapter" href="Either.html">
+<link title="Event" rel="Chapter" href="Event.html">
+<link title="Filename" rel="Chapter" href="Filename.html">
+<link title="Float" rel="Chapter" href="Float.html">
+<link title="Fun" rel="Chapter" href="Fun.html">
+<link title="Gc" rel="Chapter" href="Gc.html">
+<link title="In_channel" rel="Chapter" href="In_channel.html">
+<link title="Int" rel="Chapter" href="Int.html">
+<link title="Int32" rel="Chapter" href="Int32.html">
+<link title="Int64" rel="Chapter" href="Int64.html">
+<link title="Lazy" rel="Chapter" href="Lazy.html">
+<link title="Lexing" rel="Chapter" href="Lexing.html">
+<link title="Marshal" rel="Chapter" href="Marshal.html">
+<link title="Mutex" rel="Chapter" href="Mutex.html">
+<link title="Nativeint" rel="Chapter" href="Nativeint.html">
+<link title="Obj" rel="Chapter" href="Obj.html">
+<link title="Oo" rel="Chapter" href="Oo.html">
+<link title="Option" rel="Chapter" href="Option.html">
+<link title="Out_channel" rel="Chapter" href="Out_channel.html">
+<link title="Parsing" rel="Chapter" href="Parsing.html">
+<link title="Printexc" rel="Chapter" href="Printexc.html">
+<link title="Printf" rel="Chapter" href="Printf.html">
+<link title="Random" rel="Chapter" href="Random.html">
+<link title="Result" rel="Chapter" href="Result.html">
+<link title="Scanf" rel="Chapter" href="Scanf.html">
+<link title="Semaphore" rel="Chapter" href="Semaphore.html">
+<link title="Set" rel="Chapter" href="Set.html">
+<link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Std_exit" rel="Chapter" href="Std_exit.html">
+<link title="Str" rel="Chapter" href="Str.html">
+<link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Uchar" rel="Chapter" href="Uchar.html">
+<link title="Unit" rel="Chapter" href="Unit.html">
+<link title="Unix" rel="Chapter" href="Unix.html"><title>Index of types</title>
+</head>
+<body>
+<div class="navbar">&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;</div>
+<h1>Index of types</h1>
+<table>
+<tr><td align="left"><div>A</div></td></tr>
+<tr><td><a href="Unix.html#TYPEaccess_permission">access_permission</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>Flags for the <a href="Unix.html#VALaccess"><code class="code">Unix.access</code></a> call.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPEaddr_info">addr_info</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>Address information returned by <a href="Unix.html#VALgetaddrinfo"><code class="code">Unix.getaddrinfo</code></a>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Gc.html#TYPEalarm">alarm</a> [<a href="Gc.html">Gc</a>]</td>
+<td><div class="info">
+<p>An alarm is a piece of data that calls a user function at the end of
+   major GC cycle.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Gc.Memprof.html#TYPEallocation">allocation</a> [<a href="Gc.Memprof.html">Gc.Memprof</a>]</td>
+<td><div class="info">
+<p>The type of metadata associated with allocations.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Gc.Memprof.html#TYPEallocation_source">allocation_source</a> [<a href="Gc.Memprof.html">Gc.Memprof</a>]</td>
+<td></td></tr>
+<tr><td><a href="Arg.html#TYPEanon_fun">anon_fun</a> [<a href="Arg.html">Arg</a>]</td>
+<td></td></tr>
+<tr><td align="left"><div>B</div></td></tr>
+<tr><td><a href="Sys.html#TYPEbackend_type">backend_type</a> [<a href="Sys.html">Sys</a>]</td>
+<td><div class="info">
+<p>Currently, the official distribution only supports <code class="code">Native</code> and
+    <code class="code">Bytecode</code>, but it can be other backends with alternative
+    compilers, for example, javascript.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Printexc.html#TYPEbacktrace_slot">backtrace_slot</a> [<a href="Printexc.html">Printexc</a>]</td>
+<td><div class="info">
+<p>The abstract type <code class="code">backtrace_slot</code> represents a single slot of
+    a backtrace.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>C</div></td></tr>
+<tr><td><a href="Event.html#TYPEchannel">channel</a> [<a href="Event.html">Event</a>]</td>
+<td><div class="info">
+<p>The type of communication channels carrying values of type <code class="code">'a</code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Effect.Shallow.html#TYPEcontinuation">continuation</a> [<a href="Effect.Shallow.html">Effect.Shallow</a>]</td>
+<td><div class="info">
+<p><code class="code">('a,'b) continuation</code> is a delimited continuation that expects a <code class="code">'a</code>
+      value and returns a <code class="code">'b</code> value.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Effect.Deep.html#TYPEcontinuation">continuation</a> [<a href="Effect.Deep.html">Effect.Deep</a>]</td>
+<td><div class="info">
+<p><code class="code">('a,'b) continuation</code> is a delimited continuation that expects a <code class="code">'a</code>
+      value and returns a <code class="code">'b</code> value.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Gc.html#TYPEcontrol">control</a> [<a href="Gc.html">Gc</a>]</td>
+<td><div class="info">
+<p>The GC parameters are given as a <code class="code">control</code> record.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>D</div></td></tr>
+<tr><td><a href="Unix.html#TYPEdir_handle">dir_handle</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>The type of descriptors over opened directories.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Arg.html#TYPEdoc">doc</a> [<a href="Arg.html">Arg</a>]</td>
+<td></td></tr>
+<tr><td align="left"><div>E</div></td></tr>
+<tr><td><a href="Effect.Deep.html#TYPEeffect_handler">effect_handler</a> [<a href="Effect.Deep.html">Effect.Deep</a>]</td>
+<td><div class="info">
+<p><code class="code">'a effect_handler</code> is a deep handler with an identity value handler
+      <code class="code">fun x -&gt; x</code> and an exception handler that raises any exception
+      <code class="code">fun e -&gt; raise e</code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Set.S.html#TYPEelt">elt</a> [<a href="Set.S.html">Set.S</a>]</td>
+<td><div class="info">
+<p>The type of the set elements.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPEerror">error</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>The type of error codes.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Dynlink_types.html#TYPEerror">error</a> [<a href="Dynlink_types.html">Dynlink_types</a>]</td>
+<td></td></tr>
+<tr><td><a href="Dynlink.html#TYPEerror">error</a> [<a href="Dynlink.html">Dynlink</a>]</td>
+<td></td></tr>
+<tr><td><a href="Event.html#TYPEevent">event</a> [<a href="Event.html">Event</a>]</td>
+<td><div class="info">
+<p>The type of communication events returning a result of type <code class="code">'a</code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Marshal.html#TYPEextern_flags">extern_flags</a> [<a href="Marshal.html">Marshal</a>]</td>
+<td></td></tr>
+<tr><td><a href="Sys.html#TYPEextra_info">extra_info</a> [<a href="Sys.html">Sys</a>]</td>
+<td><div class="info">
+</div>
+</td></tr>
+<tr><td><a href="Sys.html#TYPEextra_prefix">extra_prefix</a> [<a href="Sys.html">Sys</a>]</td>
+<td></td></tr>
+<tr><td align="left"><div>F</div></td></tr>
+<tr><td><a href="Unix.html#TYPEfile_descr">file_descr</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>The abstract type of file descriptors.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPEfile_kind">file_kind</a> [<a href="Unix.html">Unix</a>]</td>
+<td></td></tr>
+<tr><td><a href="Scanf.Scanning.html#TYPEfile_name">file_name</a> [<a href="Scanf.Scanning.html">Scanf.Scanning</a>]</td>
+<td><div class="info">
+<p>A convenient alias to designate a file name.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPEfile_perm">file_perm</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>The type of file access rights, e.g.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Dynlink_types.html#TYPEfilename">filename</a> [<a href="Dynlink_types.html">Dynlink_types</a>]</td>
+<td></td></tr>
+<tr><td><a href="Unix.html#TYPEflow_action">flow_action</a> [<a href="Unix.html">Unix</a>]</td>
+<td></td></tr>
+<tr><td><a href="Unix.html#TYPEflush_queue">flush_queue</a> [<a href="Unix.html">Unix</a>]</td>
+<td></td></tr>
+<tr><td><a href="Float.html#TYPEfpclass">fpclass</a> [<a href="Float.html">Float</a>]</td>
+<td><div class="info">
+<p>The five classes of floating-point numbers, as determined by
+    the <a href="Float.html#VALclassify_float"><code class="code">Float.classify_float</code></a> function.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>G</div></td></tr>
+<tr><td><a href="Unix.html#TYPEgetaddrinfo_option">getaddrinfo_option</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>Options to <a href="Unix.html#VALgetaddrinfo"><code class="code">Unix.getaddrinfo</code></a>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPEgetnameinfo_option">getnameinfo_option</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>Options to <a href="Unix.html#VALgetnameinfo"><code class="code">Unix.getnameinfo</code></a>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPEgroup_entry">group_entry</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>Structure of entries in the <code class="code">groups</code> database.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>H</div></td></tr>
+<tr><td><a href="Effect.Shallow.html#TYPEhandler">handler</a> [<a href="Effect.Shallow.html">Effect.Shallow</a>]</td>
+<td><div class="info">
+<p><code class="code">('a,'b) handler</code> is a handler record with three fields -- <code class="code">retc</code>
+      is the value handler, <code class="code">exnc</code> handles exceptions, and <code class="code">effc</code> handles the
+      effects performed by the computation enclosed by the handler.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Effect.Deep.html#TYPEhandler">handler</a> [<a href="Effect.Deep.html">Effect.Deep</a>]</td>
+<td><div class="info">
+<p><code class="code">('a,'b) handler</code> is a handler record with three fields -- <code class="code">retc</code>
+      is the value handler, <code class="code">exnc</code> handles exceptions, and <code class="code">effc</code> handles the
+      effects performed by the computation enclosed by the handler.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPEhost_entry">host_entry</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>Structure of entries in the <code class="code">hosts</code> database.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>I</div></td></tr>
+<tr><td><a href="Dynlink_types.html#TYPEimplem_state">implem_state</a> [<a href="Dynlink_types.html">Dynlink_types</a>]</td>
+<td></td></tr>
+<tr><td><a href="Scanf.Scanning.html#TYPEin_channel">in_channel</a> [<a href="Scanf.Scanning.html">Scanf.Scanning</a>]</td>
+<td><div class="info">
+<p>The notion of input channel for the <a href="Scanf.html"><code class="code">Scanf</code></a> module:
+   those channels provide all the machinery necessary to read from any source
+   of characters, including a <code class="code">Stdlib.in_channel</code> value.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPEinet_addr">inet_addr</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>The abstract type of Internet addresses.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPEinterval_timer">interval_timer</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>The three kinds of interval timers.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPEinterval_timer_status">interval_timer_status</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>The type describing the status of an interval timer</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>K</div></td></tr>
+<tr><td><a href="Arg.html#TYPEkey">key</a> [<a href="Arg.html">Arg</a>]</td>
+<td></td></tr>
+<tr><td align="left"><div>L</div></td></tr>
+<tr><td><a href="Lexing.html#TYPElexbuf">lexbuf</a> [<a href="Lexing.html">Lexing</a>]</td>
+<td><div class="info">
+<p>The type of lexer buffers.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Dynlink_types.html#TYPElinking_error">linking_error</a> [<a href="Dynlink_types.html">Dynlink_types</a>]</td>
+<td></td></tr>
+<tr><td><a href="Dynlink.html#TYPElinking_error">linking_error</a> [<a href="Dynlink.html">Dynlink</a>]</td>
+<td></td></tr>
+<tr><td><a href="Printexc.html#TYPElocation">location</a> [<a href="Printexc.html">Printexc</a>]</td>
+<td><div class="info">
+<p>The type of location information found in backtraces.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPElock_command">lock_command</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>Commands for <a href="Unix.html#VALlockf"><code class="code">Unix.lockf</code></a>.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>M</div></td></tr>
+<tr><td><a href="Unix.html#TYPEmsg_flag">msg_flag</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>The flags for <a href="Unix.html#VALrecv"><code class="code">Unix.recv</code></a>, <a href="Unix.html#VALrecvfrom"><code class="code">Unix.recvfrom</code></a>, <a href="Unix.html#VALsend"><code class="code">Unix.send</code></a> and <a href="Unix.html#VALsendto"><code class="code">Unix.sendto</code></a>.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>N</div></td></tr>
+<tr><td><a href="Unix.html#TYPEname_info">name_info</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>Host and service information returned by <a href="Unix.html#VALgetnameinfo"><code class="code">Unix.getnameinfo</code></a>.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>O</div></td></tr>
+<tr><td><a href="Obj.Ephemeron.html#TYPEobj_t">obj_t</a> [<a href="Obj.Ephemeron.html">Obj.Ephemeron</a>]</td>
+<td><div class="info">
+<p>alias for <a href="Obj.html#TYPEt"><code class="code">Obj.t</code></a></p>
+
+</div>
+</td></tr>
+<tr><td><a href="Sys.html#TYPEocaml_release_info">ocaml_release_info</a> [<a href="Sys.html">Sys</a>]</td>
+<td><div class="info">
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPEopen_flag">open_flag</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>The flags to <a href="Unix.html#VALopenfile"><code class="code">Unix.openfile</code></a>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Out_channel.html#TYPEopen_flag">open_flag</a> [<a href="Out_channel.html">Out_channel</a>]</td>
+<td><div class="info">
+<p>Opening modes for <a href="Out_channel.html#VALopen_gen"><code class="code">Out_channel.open_gen</code></a>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="In_channel.html#TYPEopen_flag">open_flag</a> [<a href="In_channel.html">In_channel</a>]</td>
+<td><div class="info">
+<p>Opening modes for <a href="In_channel.html#VALopen_gen"><code class="code">In_channel.open_gen</code></a>.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>P</div></td></tr>
+<tr><td><a href="Unix.html#TYPEpasswd_entry">passwd_entry</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>Structure of entries in the <code class="code">passwd</code> database.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Lexing.html#TYPEposition">position</a> [<a href="Lexing.html">Lexing</a>]</td>
+<td><div class="info">
+<p>A value of type <code class="code">position</code> describes a point in a source file.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPEprocess_status">process_status</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>The termination status of a process.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPEprocess_times">process_times</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>The execution times (CPU times) of a process.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPEprotocol_entry">protocol_entry</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>Structure of entries in the <code class="code">protocols</code> database.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>R</div></td></tr>
+<tr><td><a href="Printexc.html#TYPEraw_backtrace">raw_backtrace</a> [<a href="Printexc.html">Printexc</a>]</td>
+<td><div class="info">
+<p>The type <code class="code">raw_backtrace</code> stores a backtrace in a low-level format,
+    which can be converted to usable form using <code class="code">raw_backtrace_entries</code>
+    and <code class="code">backtrace_slots_of_raw_entry</code> below.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Printexc.html#TYPEraw_backtrace_entry">raw_backtrace_entry</a> [<a href="Printexc.html">Printexc</a>]</td>
+<td><div class="info">
+<p>A <code class="code">raw_backtrace_entry</code> is an element of a <code class="code">raw_backtrace</code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Printexc.html#TYPEraw_backtrace_slot">raw_backtrace_slot</a> [<a href="Printexc.html">Printexc</a>]</td>
+<td><div class="info">
+<p>This type is used to iterate over the slots of a <code class="code">raw_backtrace</code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Obj.html#TYPEraw_data">raw_data</a> [<a href="Obj.html">Obj</a>]</td>
+<td></td></tr>
+<tr><td><a href="Str.html#TYPEregexp">regexp</a> [<a href="Str.html">Str</a>]</td>
+<td><div class="info">
+<p>The type of compiled regular expressions.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Sys.Immediate64.Make.html#TYPErepr">repr</a> [<a href="Sys.Immediate64.Make.html">Sys.Immediate64.Make</a>]</td>
+<td></td></tr>
+<tr><td align="left"><div>S</div></td></tr>
+<tr><td><a href="Scanf.Scanning.html#TYPEscanbuf">scanbuf</a> [<a href="Scanf.Scanning.html">Scanf.Scanning</a>]</td>
+<td><div class="info">
+<p>The type of scanning buffers.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Scanf.html#TYPEscanner">scanner</a> [<a href="Scanf.html">Scanf</a>]</td>
+<td><div class="info">
+<p>The type of formatted input scanners: <code class="code">('a, 'b, 'c, 'd) scanner</code>
+    is the type of a formatted input function that reads from some
+    formatted input channel according to some format string; more
+    precisely, if <code class="code">scan</code> is some formatted input function, then <code class="code">scan
+    ic fmt f</code> applies <code class="code">f</code> to all the arguments specified by format
+    string <code class="code">fmt</code>, when <code class="code">scan</code> has read those arguments from the
+    <a href="Scanf.Scanning.html#TYPEin_channel"><code class="code">Scanf.Scanning.in_channel</code></a> formatted input channel <code class="code">ic</code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Scanf.html#TYPEscanner_opt">scanner_opt</a> [<a href="Scanf.html">Scanf</a>]</td>
+<td></td></tr>
+<tr><td><a href="Unix.html#TYPEseek_command">seek_command</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>Positioning modes for <a href="Unix.html#VALlseek"><code class="code">Unix.lseek</code></a>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPEservice_entry">service_entry</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>Structure of entries in the <code class="code">services</code> database.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPEsetattr_when">setattr_when</a> [<a href="Unix.html">Unix</a>]</td>
+<td></td></tr>
+<tr><td><a href="Unix.html#TYPEshutdown_command">shutdown_command</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>The type of commands for <code class="code">shutdown</code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Sys.html#TYPEsignal_behavior">signal_behavior</a> [<a href="Sys.html">Sys</a>]</td>
+<td><div class="info">
+<p>What to do when receiving a signal: <code class="code">Signal_default</code>: take the default behavior
+     (usually: abort the program), <code class="code">Signal_ignore</code>: ignore the signal, <code class="code">Signal_handle f</code>: call function <code class="code">f</code>, giving it the signal
+   number as argument.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPEsigprocmask_command">sigprocmask_command</a> [<a href="Unix.html">Unix</a>]</td>
+<td></td></tr>
+<tr><td><a href="Unix.html#TYPEsockaddr">sockaddr</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>The type of socket addresses.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPEsocket_bool_option">socket_bool_option</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>The socket options that can be consulted with <a href="Unix.html#VALgetsockopt"><code class="code">Unix.getsockopt</code></a>
+   and modified with <a href="Unix.html#VALsetsockopt"><code class="code">Unix.setsockopt</code></a>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPEsocket_domain">socket_domain</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>The type of socket domains.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPEsocket_float_option">socket_float_option</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>The socket options that can be consulted with <a href="Unix.html#VALgetsockopt_float"><code class="code">Unix.getsockopt_float</code></a>
+   and modified with <a href="Unix.html#VALsetsockopt_float"><code class="code">Unix.setsockopt_float</code></a>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPEsocket_int_option">socket_int_option</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>The socket options that can be consulted with <a href="Unix.html#VALgetsockopt_int"><code class="code">Unix.getsockopt_int</code></a>
+   and modified with <a href="Unix.html#VALsetsockopt_int"><code class="code">Unix.setsockopt_int</code></a>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPEsocket_optint_option">socket_optint_option</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>The socket options that can be consulted with <a href="Unix.html#VALgetsockopt_optint"><code class="code">Unix.getsockopt_optint</code></a>
+   and modified with <a href="Unix.html#VALsetsockopt_optint"><code class="code">Unix.setsockopt_optint</code></a>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPEsocket_type">socket_type</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>The type of socket kinds, specifying the semantics of
+   communications.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Arg.html#TYPEspec">spec</a> [<a href="Arg.html">Arg</a>]</td>
+<td><div class="info">
+<p>The concrete type describing the behavior associated
+   with a keyword.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Str.html#TYPEsplit_result">split_result</a> [<a href="Str.html">Str</a>]</td>
+<td></td></tr>
+<tr><td><a href="Gc.html#TYPEstat">stat</a> [<a href="Gc.html">Gc</a>]</td>
+<td><div class="info">
+<p>The memory management counters are returned in a <code class="code">stat</code> record.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.LargeFile.html#TYPEstats">stats</a> [<a href="Unix.LargeFile.html">Unix.LargeFile</a>]</td>
+<td></td></tr>
+<tr><td><a href="Unix.html#TYPEstats">stats</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>The information returned by the <a href="Unix.html#VALstat"><code class="code">Unix.stat</code></a> calls.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>T</div></td></tr>
+<tr><td><a href="Unit.html#TYPEt">t</a> [<a href="Unit.html">Unit</a>]</td>
+<td><div class="info">
+<p>The unit type.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Uchar.html#TYPEt">t</a> [<a href="Uchar.html">Uchar</a>]</td>
+<td><div class="info">
+<p>The type for Unicode characters.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Sys.Immediate64.Immediate.html#TYPEt">t</a> [<a href="Sys.Immediate64.Immediate.html">Sys.Immediate64.Immediate</a>]</td>
+<td></td></tr>
+<tr><td><a href="Sys.Immediate64.Non_immediate.html#TYPEt">t</a> [<a href="Sys.Immediate64.Non_immediate.html">Sys.Immediate64.Non_immediate</a>]</td>
+<td></td></tr>
+<tr><td><a href="Sys.Immediate64.Make.html#TYPEt">t</a> [<a href="Sys.Immediate64.Make.html">Sys.Immediate64.Make</a>]</td>
+<td></td></tr>
+<tr><td><a href="Set.OrderedType.html#TYPEt">t</a> [<a href="Set.OrderedType.html">Set.OrderedType</a>]</td>
+<td><div class="info">
+<p>The type of the set elements.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Set.S.html#TYPEt">t</a> [<a href="Set.S.html">Set.S</a>]</td>
+<td><div class="info">
+<p>The type of sets.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Semaphore.Binary.html#TYPEt">t</a> [<a href="Semaphore.Binary.html">Semaphore.Binary</a>]</td>
+<td><div class="info">
+<p>The type of binary semaphores.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Semaphore.Counting.html#TYPEt">t</a> [<a href="Semaphore.Counting.html">Semaphore.Counting</a>]</td>
+<td><div class="info">
+<p>The type of counting semaphores.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Result.html#TYPEt">t</a> [<a href="Result.html">Result</a>]</td>
+<td><div class="info">
+<p>The type for result values.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Random.State.html#TYPEt">t</a> [<a href="Random.State.html">Random.State</a>]</td>
+<td><div class="info">
+<p>The type of PRNG states.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Printexc.Slot.html#TYPEt">t</a> [<a href="Printexc.Slot.html">Printexc.Slot</a>]</td>
+<td></td></tr>
+<tr><td><a href="Printexc.html#TYPEt">t</a> [<a href="Printexc.html">Printexc</a>]</td>
+<td><div class="info">
+<p>The type of exception values.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Out_channel.html#TYPEt">t</a> [<a href="Out_channel.html">Out_channel</a>]</td>
+<td><div class="info">
+<p>The type of output channel.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Option.html#TYPEt">t</a> [<a href="Option.html">Option</a>]</td>
+<td><div class="info">
+<p>The type for option values.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Obj.Ephemeron.html#TYPEt">t</a> [<a href="Obj.Ephemeron.html">Obj.Ephemeron</a>]</td>
+<td><div class="info">
+<p>an ephemeron cf <a href="Obj.Ephemeron.html"><code class="code">Obj.Ephemeron</code></a></p>
+
+</div>
+</td></tr>
+<tr><td><a href="Obj.Extension_constructor.html#TYPEt">t</a> [<a href="Obj.Extension_constructor.html">Obj.Extension_constructor</a>]</td>
+<td></td></tr>
+<tr><td><a href="Obj.html#TYPEt">t</a> [<a href="Obj.html">Obj</a>]</td>
+<td></td></tr>
+<tr><td><a href="Nativeint.html#TYPEt">t</a> [<a href="Nativeint.html">Nativeint</a>]</td>
+<td><div class="info">
+<p>An alias for the type of native integers.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Mutex.html#TYPEt">t</a> [<a href="Mutex.html">Mutex</a>]</td>
+<td><div class="info">
+<p>The type of mutexes.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Lazy.html#TYPEt">t</a> [<a href="Lazy.html">Lazy</a>]</td>
+<td><div class="info">
+<p>A value of type <code class="code">'a Lazy.t</code> is a deferred computation, called a suspension,
+    that has a result of type <code class="code">'a</code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Int64.html#TYPEt">t</a> [<a href="Int64.html">Int64</a>]</td>
+<td><div class="info">
+<p>An alias for the type of 64-bit integers.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Int32.html#TYPEt">t</a> [<a href="Int32.html">Int32</a>]</td>
+<td><div class="info">
+<p>An alias for the type of 32-bit integers.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Int.html#TYPEt">t</a> [<a href="Int.html">Int</a>]</td>
+<td><div class="info">
+<p>The type for integer values.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="In_channel.html#TYPEt">t</a> [<a href="In_channel.html">In_channel</a>]</td>
+<td><div class="info">
+<p>The type of input channel.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Gc.Memprof.html#TYPEt">t</a> [<a href="Gc.Memprof.html">Gc.Memprof</a>]</td>
+<td><div class="info">
+<p>the type of a profile</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Float.ArrayLabels.html#TYPEt">t</a> [<a href="Float.ArrayLabels.html">Float.ArrayLabels</a>]</td>
+<td><div class="info">
+<p>The type of float arrays with packed representation.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Float.Array.html#TYPEt">t</a> [<a href="Float.Array.html">Float.Array</a>]</td>
+<td><div class="info">
+<p>The type of float arrays with packed representation.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Float.html#TYPEt">t</a> [<a href="Float.html">Float</a>]</td>
+<td><div class="info">
+<p>An alias for the type of floating-point numbers.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Either.html#TYPEt">t</a> [<a href="Either.html">Either</a>]</td>
+<td><div class="info">
+<p>A value of <code class="code">('a, 'b) Either.t</code> contains
+    either a value of <code class="code">'a</code>  or a value of <code class="code">'b</code></p>
+
+</div>
+</td></tr>
+<tr><td><a href="Effect.html#TYPEt">t</a> [<a href="Effect.html">Effect</a>]</td>
+<td><div class="info">
+<p>The type of effects.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Digest.S.html#TYPEt">t</a> [<a href="Digest.S.html">Digest.S</a>]</td>
+<td><div class="info">
+<p>The type of digests.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Digest.html#TYPEt">t</a> [<a href="Digest.html">Digest</a>]</td>
+<td><div class="info">
+<p>The type of digests: 16-byte strings.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Complex.html#TYPEt">t</a> [<a href="Complex.html">Complex</a>]</td>
+<td><div class="info">
+<p>The type of complex numbers.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Char.html#TYPEt">t</a> [<a href="Char.html">Char</a>]</td>
+<td><div class="info">
+<p>An alias for the type of characters.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Buffer.html#TYPEt">t</a> [<a href="Buffer.html">Buffer</a>]</td>
+<td><div class="info">
+<p>The abstract type of buffers.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bool.html#TYPEt">t</a> [<a href="Bool.html">Bool</a>]</td>
+<td><div class="info">
+<p>The type of booleans (truth values).</p>
+
+</div>
+</td></tr>
+<tr><td><a href="ArrayLabels.html#TYPEt">t</a> [<a href="ArrayLabels.html">ArrayLabels</a>]</td>
+<td><div class="info">
+<p>An alias for the type of arrays.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Array.html#TYPEt">t</a> [<a href="Array.html">Array</a>]</td>
+<td><div class="info">
+<p>An alias for the type of arrays.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Unix.html#TYPEterminal_io">terminal_io</a> [<a href="Unix.html">Unix</a>]</td>
+<td></td></tr>
+<tr><td><a href="Unix.html#TYPEtm">tm</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>The type representing wallclock time and calendar date.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Gc.Memprof.html#TYPEtracker">tracker</a> [<a href="Gc.Memprof.html">Gc.Memprof</a>]</td>
+<td><div class="info">
+<p>A <code class="code">('minor, 'major) tracker</code> describes how memprof should track
+       sampled blocks over their lifetime, keeping a user-defined piece
+       of metadata for each of them: <code class="code">'minor</code> is the type of metadata
+       to keep for minor blocks, and <code class="code">'major</code> the type of metadata
+       for major blocks.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>U</div></td></tr>
+<tr><td><a href="Arg.html#TYPEusage_msg">usage_msg</a> [<a href="Arg.html">Arg</a>]</td>
+<td></td></tr>
+<tr><td><a href="Uchar.html#TYPEutf_decode">utf_decode</a> [<a href="Uchar.html">Uchar</a>]</td>
+<td><div class="info">
+<p>The type for UTF decode results.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>W</div></td></tr>
+<tr><td><a href="Unix.html#TYPEwait_flag">wait_flag</a> [<a href="Unix.html">Unix</a>]</td>
+<td><div class="info">
+<p>Flags for <a href="Unix.html#VALwaitpid"><code class="code">Unix.waitpid</code></a>.</p>
+
+</div>
+</td></tr>
+</table>
+</body>
+</html>
