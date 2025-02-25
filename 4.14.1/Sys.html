@@ -9,15 +9,20 @@
 <link rel="next" href="Uchar.html">
 <link rel="Up" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="Arg" rel="Chapter" href="Arg.html">
-<link title="Array" rel="Chapter" href="Array.html">
 <link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
+<link title="Array" rel="Chapter" href="Array.html">
+<link title="Atomic" rel="Chapter" href="Atomic.html">
+<link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
+<link title="Bytes" rel="Chapter" href="Bytes.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
@@ -25,19 +30,26 @@
 <link title="Dynlink" rel="Chapter" href="Dynlink.html">
 <link title="Dynlink_types" rel="Chapter" href="Dynlink_types.html">
 <link title="Either" rel="Chapter" href="Either.html">
+<link title="Ephemeron" rel="Chapter" href="Ephemeron.html">
 <link title="Event" rel="Chapter" href="Event.html">
 <link title="Filename" rel="Chapter" href="Filename.html">
 <link title="Float" rel="Chapter" href="Float.html">
+<link title="Format" rel="Chapter" href="Format.html">
 <link title="Fun" rel="Chapter" href="Fun.html">
 <link title="Gc" rel="Chapter" href="Gc.html">
 <link title="Genlex" rel="Chapter" href="Genlex.html">
+<link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
-<link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
+<link title="Int" rel="Chapter" href="Int.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
+<link title="List" rel="Chapter" href="List.html">
+<link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
+<link title="MoreLabels" rel="Chapter" href="MoreLabels.html">
 <link title="Mutex" rel="Chapter" href="Mutex.html">
 <link title="Nativeint" rel="Chapter" href="Nativeint.html">
 <link title="Obj" rel="Chapter" href="Obj.html">
@@ -47,17 +59,24 @@
 <link title="Parsing" rel="Chapter" href="Parsing.html">
 <link title="Printexc" rel="Chapter" href="Printexc.html">
 <link title="Printf" rel="Chapter" href="Printf.html">
+<link title="Queue" rel="Chapter" href="Queue.html">
 <link title="Random" rel="Chapter" href="Random.html">
 <link title="Result" rel="Chapter" href="Result.html">
 <link title="Scanf" rel="Chapter" href="Scanf.html">
 <link title="Semaphore" rel="Chapter" href="Semaphore.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
 <link title="Set" rel="Chapter" href="Set.html">
+<link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stream" rel="Chapter" href="Stream.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
+<link title="String" rel="Chapter" href="String.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
-<link title="Unix" rel="Chapter" href="Unix.html"><link title="Signal handling" rel="Section" href="#1_Signalhandling">
+<link title="Unix" rel="Chapter" href="Unix.html">
+<link title="Weak" rel="Chapter" href="Weak.html"><link title="Signal handling" rel="Section" href="#1_Signalhandling">
 <link title="Optimization" rel="Section" href="#1_Optimization">
 <link title="Signal numbers for the standard POSIX signals." rel="Subsection" href="#2_SignalnumbersforthestandardPOSIXsignals">
 <title>Sys</title>
@@ -98,13 +117,13 @@
 </div>
 </div>
 
-<pre><span id="VALfile_exists"><span class="keyword">val</span> file_exists</span> : <code class="type">string -> bool</code></pre><div class="info ">
+<pre><span id="VALfile_exists"><span class="keyword">val</span> file_exists</span> : <code class="type">string -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Test if a file with the given name exists.</p>
 </div>
 </div>
 
-<pre><span id="VALis_directory"><span class="keyword">val</span> is_directory</span> : <code class="type">string -> bool</code></pre><div class="info ">
+<pre><span id="VALis_directory"><span class="keyword">val</span> is_directory</span> : <code class="type">string -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Returns <code class="code">true</code> if the given name refers to a directory,
     <code class="code">false</code> if it refers to another kind of file.</p>
@@ -115,13 +134,13 @@
 </ul>
 </div>
 
-<pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type">string -> unit</code></pre><div class="info ">
+<pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type">string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Remove the given file name from the file system.</p>
 </div>
 </div>
 
-<pre><span id="VALrename"><span class="keyword">val</span> rename</span> : <code class="type">string -> string -> unit</code></pre><div class="info ">
+<pre><span id="VALrename"><span class="keyword">val</span> rename</span> : <code class="type">string -&gt; string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Rename a file.  <code class="code">rename oldpath newpath</code> renames the file
     called <code class="code">oldpath</code>, giving it <code class="code">newpath</code> as its new name,
@@ -136,7 +155,7 @@
 </ul>
 </div>
 
-<pre><span id="VALgetenv"><span class="keyword">val</span> getenv</span> : <code class="type">string -> string</code></pre><div class="info ">
+<pre><span id="VALgetenv"><span class="keyword">val</span> getenv</span> : <code class="type">string -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the value associated to a variable in the process
    environment.</p>
@@ -146,7 +165,7 @@
 </ul>
 </div>
 
-<pre><span id="VALgetenv_opt"><span class="keyword">val</span> getenv_opt</span> : <code class="type">string -> string option</code></pre><div class="info ">
+<pre><span id="VALgetenv_opt"><span class="keyword">val</span> getenv_opt</span> : <code class="type">string -&gt; string option</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the value associated to a variable in the process
     environment or <code class="code">None</code> if the variable is unbound.</p>
@@ -156,7 +175,7 @@
 </ul>
 </div>
 
-<pre><span id="VALcommand"><span class="keyword">val</span> command</span> : <code class="type">string -> int</code></pre><div class="info ">
+<pre><span id="VALcommand"><span class="keyword">val</span> command</span> : <code class="type">string -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Execute the given shell command and return its exit code.</p>
 
@@ -178,20 +197,20 @@
 </div>
 </div>
 
-<pre><span id="VALtime"><span class="keyword">val</span> time</span> : <code class="type">unit -> float</code></pre><div class="info ">
+<pre><span id="VALtime"><span class="keyword">val</span> time</span> : <code class="type">unit -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the processor time, in seconds, used by the program
    since the beginning of execution.</p>
 </div>
 </div>
 
-<pre><span id="VALchdir"><span class="keyword">val</span> chdir</span> : <code class="type">string -> unit</code></pre><div class="info ">
+<pre><span id="VALchdir"><span class="keyword">val</span> chdir</span> : <code class="type">string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Change the current working directory of the process.</p>
 </div>
 </div>
 
-<pre><span id="VALmkdir"><span class="keyword">val</span> mkdir</span> : <code class="type">string -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALmkdir"><span class="keyword">val</span> mkdir</span> : <code class="type">string -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Create a directory with the given permissions.</p>
 </div>
@@ -200,7 +219,7 @@
 </ul>
 </div>
 
-<pre><span id="VALrmdir"><span class="keyword">val</span> rmdir</span> : <code class="type">string -> unit</code></pre><div class="info ">
+<pre><span id="VALrmdir"><span class="keyword">val</span> rmdir</span> : <code class="type">string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Remove an empty directory.</p>
 </div>
@@ -209,13 +228,13 @@
 </ul>
 </div>
 
-<pre><span id="VALgetcwd"><span class="keyword">val</span> getcwd</span> : <code class="type">unit -> string</code></pre><div class="info ">
+<pre><span id="VALgetcwd"><span class="keyword">val</span> getcwd</span> : <code class="type">unit -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the current working directory of the process.</p>
 </div>
 </div>
 
-<pre><span id="VALreaddir"><span class="keyword">val</span> readdir</span> : <code class="type">string -> string array</code></pre><div class="info ">
+<pre><span id="VALreaddir"><span class="keyword">val</span> readdir</span> : <code class="type">string -&gt; string array</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the names of all files present in the given directory.
    Names denoting the current directory and the parent directory
@@ -368,7 +387,7 @@
 </div>
 </div>
 
-<pre><span id="VALruntime_variant"><span class="keyword">val</span> runtime_variant</span> : <code class="type">unit -> string</code></pre><div class="info ">
+<pre><span id="VALruntime_variant"><span class="keyword">val</span> runtime_variant</span> : <code class="type">unit -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the name of the runtime variant the program is running on.
     This is normally the argument given to <code class="code">-runtime-variant</code> at compile
@@ -379,7 +398,7 @@
 </ul>
 </div>
 
-<pre><span id="VALruntime_parameters"><span class="keyword">val</span> runtime_parameters</span> : <code class="type">unit -> string</code></pre><div class="info ">
+<pre><span id="VALruntime_parameters"><span class="keyword">val</span> runtime_parameters</span> : <code class="type">unit -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the value of the runtime parameters, in the same format
     as the contents of the <code class="code">OCAMLRUNPARAM</code> environment variable.</p>
@@ -408,7 +427,7 @@
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTsignal_behavior.Signal_handle"><span class="constructor">Signal_handle</span></span> <span class="keyword">of</span> <code class="type">(int -> unit)</code></code></td>
+<code><span id="TYPEELTsignal_behavior.Signal_handle"><span class="constructor">Signal_handle</span></span> <span class="keyword">of</span> <code class="type">(int -&gt; unit)</code></code></td>
 
 </tr></table>
 
@@ -426,7 +445,7 @@
 </div>
 
 
-<pre><span id="VALsignal"><span class="keyword">val</span> signal</span> : <code class="type">int -> <a href="Sys.html#TYPEsignal_behavior">signal_behavior</a> -> <a href="Sys.html#TYPEsignal_behavior">signal_behavior</a></code></pre><div class="info ">
+<pre><span id="VALsignal"><span class="keyword">val</span> signal</span> : <code class="type">int -&gt; <a href="Sys.html#TYPEsignal_behavior">signal_behavior</a> -&gt; <a href="Sys.html#TYPEsignal_behavior">signal_behavior</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Set the behavior of the system on receipt of a given signal.  The
    first argument is the signal number.  Return the behavior
@@ -436,7 +455,7 @@
 </div>
 </div>
 
-<pre><span id="VALset_signal"><span class="keyword">val</span> set_signal</span> : <code class="type">int -> <a href="Sys.html#TYPEsignal_behavior">signal_behavior</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALset_signal"><span class="keyword">val</span> set_signal</span> : <code class="type">int -&gt; <a href="Sys.html#TYPEsignal_behavior">signal_behavior</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Sys.html#VALsignal"><code class="code">Sys.signal</code></a> but return value is ignored.</p>
 </div>
@@ -639,7 +658,7 @@
 </div>
 </div>
 
-<pre><span id="VALcatch_break"><span class="keyword">val</span> catch_break</span> : <code class="type">bool -> unit</code></pre><div class="info ">
+<pre><span id="VALcatch_break"><span class="keyword">val</span> catch_break</span> : <code class="type">bool -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">catch_break</code> governs whether interactive interrupt (ctrl-C)
    terminates the program or raises the <code class="code">Break</code> exception.
@@ -726,7 +745,7 @@
 
 
 <pre><span id="VALocaml_release"><span class="keyword">val</span> ocaml_release</span> : <code class="type"><a href="Sys.html#TYPEocaml_release_info">ocaml_release_info</a></code></pre>
-<pre><span id="VALenable_runtime_warnings"><span class="keyword">val</span> enable_runtime_warnings</span> : <code class="type">bool -> unit</code></pre><div class="info ">
+<pre><span id="VALenable_runtime_warnings"><span class="keyword">val</span> enable_runtime_warnings</span> : <code class="type">bool -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Control whether the OCaml runtime system can emit warnings
     on stderr.  Currently, the only supported warning is triggered
@@ -738,7 +757,7 @@
 </ul>
 </div>
 
-<pre><span id="VALruntime_warnings_enabled"><span class="keyword">val</span> runtime_warnings_enabled</span> : <code class="type">unit -> bool</code></pre><div class="info ">
+<pre><span id="VALruntime_warnings_enabled"><span class="keyword">val</span> runtime_warnings_enabled</span> : <code class="type">unit -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return whether runtime warnings are currently enabled.</p>
 </div>
@@ -747,7 +766,7 @@
 </ul>
 </div>
 <h2 id="1_Optimization">Optimization</h2>
-<pre><span id="VALopaque_identity"><span class="keyword">val</span> opaque_identity</span> : <code class="type">'a -> 'a</code></pre><div class="info ">
+<pre><span id="VALopaque_identity"><span class="keyword">val</span> opaque_identity</span> : <code class="type">'a -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>For the purposes of optimization, <code class="code">opaque_identity</code> behaves like an
     unknown (and thus possibly side-effecting) function.</p>

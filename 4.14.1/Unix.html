@@ -6,17 +6,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Unit.html">
+<link rel="next" href="Weak.html">
 <link rel="Up" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="Arg" rel="Chapter" href="Arg.html">
-<link title="Array" rel="Chapter" href="Array.html">
 <link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
+<link title="Array" rel="Chapter" href="Array.html">
+<link title="Atomic" rel="Chapter" href="Atomic.html">
+<link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
+<link title="Bytes" rel="Chapter" href="Bytes.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
@@ -24,19 +30,26 @@
 <link title="Dynlink" rel="Chapter" href="Dynlink.html">
 <link title="Dynlink_types" rel="Chapter" href="Dynlink_types.html">
 <link title="Either" rel="Chapter" href="Either.html">
+<link title="Ephemeron" rel="Chapter" href="Ephemeron.html">
 <link title="Event" rel="Chapter" href="Event.html">
 <link title="Filename" rel="Chapter" href="Filename.html">
 <link title="Float" rel="Chapter" href="Float.html">
+<link title="Format" rel="Chapter" href="Format.html">
 <link title="Fun" rel="Chapter" href="Fun.html">
 <link title="Gc" rel="Chapter" href="Gc.html">
 <link title="Genlex" rel="Chapter" href="Genlex.html">
+<link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
-<link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
+<link title="Int" rel="Chapter" href="Int.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
+<link title="List" rel="Chapter" href="List.html">
+<link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
+<link title="MoreLabels" rel="Chapter" href="MoreLabels.html">
 <link title="Mutex" rel="Chapter" href="Mutex.html">
 <link title="Nativeint" rel="Chapter" href="Nativeint.html">
 <link title="Obj" rel="Chapter" href="Obj.html">
@@ -46,17 +59,24 @@
 <link title="Parsing" rel="Chapter" href="Parsing.html">
 <link title="Printexc" rel="Chapter" href="Printexc.html">
 <link title="Printf" rel="Chapter" href="Printf.html">
+<link title="Queue" rel="Chapter" href="Queue.html">
 <link title="Random" rel="Chapter" href="Random.html">
 <link title="Result" rel="Chapter" href="Result.html">
 <link title="Scanf" rel="Chapter" href="Scanf.html">
 <link title="Semaphore" rel="Chapter" href="Semaphore.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
 <link title="Set" rel="Chapter" href="Set.html">
+<link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stream" rel="Chapter" href="Stream.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
+<link title="String" rel="Chapter" href="String.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
-<link title="Unix" rel="Chapter" href="Unix.html"><link title="Error report" rel="Section" href="#1_Errorreport">
+<link title="Unix" rel="Chapter" href="Unix.html">
+<link title="Weak" rel="Chapter" href="Weak.html"><link title="Error report" rel="Section" href="#1_Errorreport">
 <link title="Access to the process environment" rel="Section" href="#1_Accesstotheprocessenvironment">
 <link title="Process handling" rel="Section" href="#1_Processhandling">
 <link title="Basic file input/output" rel="Section" href="#1_Basicfileinputoutput">
@@ -88,7 +108,8 @@
 <body>
 <div class="navbar"><a class="pre" href="Unit.html" title="Unit">Previous</a>
 &nbsp;<a class="up" href="index.html" title="Index">Up</a>
-&nbsp;</div>
+&nbsp;<a class="post" href="Weak.html" title="Weak">Next</a>
+</div>
 <h1>Module <a href="type_Unix.html">Unix</a></h1>
 
 <pre><span id="MODULEUnix"><span class="keyword">module</span> Unix</span>: <code class="code">sig</code> <a href="Unix.html">..</a> <code class="code">end</code></pre><div class="info module top">
@@ -958,13 +979,13 @@
 </div>
 </div>
 
-<pre><span id="VALerror_message"><span class="keyword">val</span> error_message</span> : <code class="type"><a href="Unix.html#TYPEerror">error</a> -> string</code></pre><div class="info ">
+<pre><span id="VALerror_message"><span class="keyword">val</span> error_message</span> : <code class="type"><a href="Unix.html#TYPEerror">error</a> -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return a string describing the given error code.</p>
 </div>
 </div>
 
-<pre><span id="VALhandle_unix_error"><span class="keyword">val</span> handle_unix_error</span> : <code class="type">('a -> 'b) -> 'a -> 'b</code></pre><div class="info ">
+<pre><span id="VALhandle_unix_error"><span class="keyword">val</span> handle_unix_error</span> : <code class="type">('a -&gt; 'b) -&gt; 'a -&gt; 'b</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">handle_unix_error f x</code> applies <code class="code">f</code> to <code class="code">x</code> and returns the result.
    If the exception <a href="Unix.html#EXCEPTIONUnix_error"><code class="code">Unix.Unix_error</code></a> is raised, it prints a message
@@ -972,7 +993,7 @@
 </div>
 </div>
 <h2 id="1_Accesstotheprocessenvironment">Access to the process environment</h2>
-<pre><span id="VALenvironment"><span class="keyword">val</span> environment</span> : <code class="type">unit -> string array</code></pre><div class="info ">
+<pre><span id="VALenvironment"><span class="keyword">val</span> environment</span> : <code class="type">unit -&gt; string array</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the process environment, as an array of strings
     with the format ``variable=value''.  The returned array
@@ -980,7 +1001,7 @@
 </div>
 </div>
 
-<pre><span id="VALunsafe_environment"><span class="keyword">val</span> unsafe_environment</span> : <code class="type">unit -> string array</code></pre><div class="info ">
+<pre><span id="VALunsafe_environment"><span class="keyword">val</span> unsafe_environment</span> : <code class="type">unit -&gt; string array</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the process environment, as an array of strings with the
     format ``variable=value''.  Unlike <a href="Unix.html#VALenvironment"><code class="code">Unix.environment</code></a>, this function
@@ -993,7 +1014,7 @@
 </ul>
 </div>
 
-<pre><span id="VALgetenv"><span class="keyword">val</span> getenv</span> : <code class="type">string -> string</code></pre><div class="info ">
+<pre><span id="VALgetenv"><span class="keyword">val</span> getenv</span> : <code class="type">string -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the value associated to a variable in the process
    environment, unless the process has special privileges.</p>
@@ -1006,7 +1027,7 @@
 </ul>
 </div>
 
-<pre><span id="VALunsafe_getenv"><span class="keyword">val</span> unsafe_getenv</span> : <code class="type">string -> string</code></pre><div class="info ">
+<pre><span id="VALunsafe_getenv"><span class="keyword">val</span> unsafe_getenv</span> : <code class="type">string -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the value associated to a variable in the process
    environment.</p>
@@ -1024,7 +1045,7 @@
 </ul>
 </div>
 
-<pre><span id="VALputenv"><span class="keyword">val</span> putenv</span> : <code class="type">string -> string -> unit</code></pre><div class="info ">
+<pre><span id="VALputenv"><span class="keyword">val</span> putenv</span> : <code class="type">string -&gt; string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">putenv name value</code> sets the value associated to a
    variable in the process environment.
@@ -1117,7 +1138,7 @@
 </div>
 
 
-<pre><span id="VALexecv"><span class="keyword">val</span> execv</span> : <code class="type">string -> string array -> 'a</code></pre><div class="info ">
+<pre><span id="VALexecv"><span class="keyword">val</span> execv</span> : <code class="type">string -&gt; string array -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">execv prog args</code> execute the program in file <code class="code">prog</code>, with
    the arguments <code class="code">args</code>, and the current process environment.
@@ -1129,28 +1150,28 @@
 </ul>
 </div>
 
-<pre><span id="VALexecve"><span class="keyword">val</span> execve</span> : <code class="type">string -> string array -> string array -> 'a</code></pre><div class="info ">
+<pre><span id="VALexecve"><span class="keyword">val</span> execve</span> : <code class="type">string -&gt; string array -&gt; string array -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Unix.html#VALexecv"><code class="code">Unix.execv</code></a>, except that the third argument provides the
    environment to the program executed.</p>
 </div>
 </div>
 
-<pre><span id="VALexecvp"><span class="keyword">val</span> execvp</span> : <code class="type">string -> string array -> 'a</code></pre><div class="info ">
+<pre><span id="VALexecvp"><span class="keyword">val</span> execvp</span> : <code class="type">string -&gt; string array -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Unix.html#VALexecv"><code class="code">Unix.execv</code></a>, except that
    the program is searched in the path.</p>
 </div>
 </div>
 
-<pre><span id="VALexecvpe"><span class="keyword">val</span> execvpe</span> : <code class="type">string -> string array -> string array -> 'a</code></pre><div class="info ">
+<pre><span id="VALexecvpe"><span class="keyword">val</span> execvpe</span> : <code class="type">string -&gt; string array -&gt; string array -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Unix.html#VALexecve"><code class="code">Unix.execve</code></a>, except that
    the program is searched in the path.</p>
 </div>
 </div>
 
-<pre><span id="VALfork"><span class="keyword">val</span> fork</span> : <code class="type">unit -> int</code></pre><div class="info ">
+<pre><span id="VALfork"><span class="keyword">val</span> fork</span> : <code class="type">unit -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Fork a new process. The returned integer is 0 for the child
    process, the pid of the child process for the parent process.</p>
@@ -1161,7 +1182,7 @@
 </ul>
 </div>
 
-<pre><span id="VALwait"><span class="keyword">val</span> wait</span> : <code class="type">unit -> int * <a href="Unix.html#TYPEprocess_status">process_status</a></code></pre><div class="info ">
+<pre><span id="VALwait"><span class="keyword">val</span> wait</span> : <code class="type">unit -&gt; int * <a href="Unix.html#TYPEprocess_status">process_status</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Wait until one of the children processes die, and return its pid
    and termination status.</p>
@@ -1171,7 +1192,7 @@
 </ul>
 </div>
 
-<pre><span id="VALwaitpid"><span class="keyword">val</span> waitpid</span> : <code class="type"><a href="Unix.html#TYPEwait_flag">wait_flag</a> list -> int -> int * <a href="Unix.html#TYPEprocess_status">process_status</a></code></pre><div class="info ">
+<pre><span id="VALwaitpid"><span class="keyword">val</span> waitpid</span> : <code class="type"><a href="Unix.html#TYPEwait_flag">wait_flag</a> list -&gt; int -&gt; int * <a href="Unix.html#TYPEprocess_status">process_status</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Unix.html#VALwait"><code class="code">Unix.wait</code></a>, but waits for the child process whose pid is given.
    A pid of <code class="code">-1</code> means wait for any child.
@@ -1186,7 +1207,7 @@
 </div>
 </div>
 
-<pre><span id="VALsystem"><span class="keyword">val</span> system</span> : <code class="type">string -> <a href="Unix.html#TYPEprocess_status">process_status</a></code></pre><div class="info ">
+<pre><span id="VALsystem"><span class="keyword">val</span> system</span> : <code class="type">string -&gt; <a href="Unix.html#TYPEprocess_status">process_status</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Execute the given command, wait until it terminates, and return
    its termination status. The string is interpreted by the shell
@@ -1200,7 +1221,7 @@
 </div>
 </div>
 
-<pre><span id="VAL_exit"><span class="keyword">val</span> _exit</span> : <code class="type">int -> 'a</code></pre><div class="info ">
+<pre><span id="VAL_exit"><span class="keyword">val</span> _exit</span> : <code class="type">int -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Terminate the calling process immediately, returning the given
    status code to the operating system: usually 0 to indicate no
@@ -1224,13 +1245,13 @@
 </ul>
 </div>
 
-<pre><span id="VALgetpid"><span class="keyword">val</span> getpid</span> : <code class="type">unit -> int</code></pre><div class="info ">
+<pre><span id="VALgetpid"><span class="keyword">val</span> getpid</span> : <code class="type">unit -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the pid of the process.</p>
 </div>
 </div>
 
-<pre><span id="VALgetppid"><span class="keyword">val</span> getppid</span> : <code class="type">unit -> int</code></pre><div class="info ">
+<pre><span id="VALgetppid"><span class="keyword">val</span> getppid</span> : <code class="type">unit -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the pid of the parent process.</p>
 </div>
@@ -1240,7 +1261,7 @@
 </ul>
 </div>
 
-<pre><span id="VALnice"><span class="keyword">val</span> nice</span> : <code class="type">int -> int</code></pre><div class="info ">
+<pre><span id="VALnice"><span class="keyword">val</span> nice</span> : <code class="type">int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Change the process priority. The integer argument is added to the
    ``nice'' value. (Higher values of the ``nice'' value mean
@@ -1483,7 +1504,7 @@
 </div>
 
 
-<pre><span id="VALopenfile"><span class="keyword">val</span> openfile</span> : <code class="type">string -> <a href="Unix.html#TYPEopen_flag">open_flag</a> list -> <a href="Unix.html#TYPEfile_perm">file_perm</a> -> <a href="Unix.html#TYPEfile_descr">file_descr</a></code></pre><div class="info ">
+<pre><span id="VALopenfile"><span class="keyword">val</span> openfile</span> : <code class="type">string -&gt; <a href="Unix.html#TYPEopen_flag">open_flag</a> list -&gt; <a href="Unix.html#TYPEfile_perm">file_perm</a> -&gt; <a href="Unix.html#TYPEfile_descr">file_descr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Open the named file with the given flags. Third argument is the
    permissions to give to the file if it is created (see
@@ -1491,13 +1512,13 @@
 </div>
 </div>
 
-<pre><span id="VALclose"><span class="keyword">val</span> close</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALclose"><span class="keyword">val</span> close</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Close a file descriptor.</p>
 </div>
 </div>
 
-<pre><span id="VALfsync"><span class="keyword">val</span> fsync</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALfsync"><span class="keyword">val</span> fsync</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Flush file buffers to disk.</p>
 </div>
@@ -1506,7 +1527,7 @@
 </ul>
 </div>
 
-<pre><span id="VALread"><span class="keyword">val</span> read</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> bytes -> int -> int -> int</code></pre><div class="info ">
+<pre><span id="VALread"><span class="keyword">val</span> read</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; bytes -&gt; int -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">read fd buf pos len</code> reads <code class="code">len</code> bytes from descriptor <code class="code">fd</code>,
     storing them in byte sequence <code class="code">buf</code>, starting at position <code class="code">pos</code> in
@@ -1514,7 +1535,7 @@
 </div>
 </div>
 
-<pre><span id="VALwrite"><span class="keyword">val</span> write</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> bytes -> int -> int -> int</code></pre><div class="info ">
+<pre><span id="VALwrite"><span class="keyword">val</span> write</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; bytes -&gt; int -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">write fd buf pos len</code> writes <code class="code">len</code> bytes to descriptor <code class="code">fd</code>,
     taking them from byte sequence <code class="code">buf</code>, starting at position <code class="code">pos</code>
@@ -1524,7 +1545,7 @@
 </div>
 </div>
 
-<pre><span id="VALsingle_write"><span class="keyword">val</span> single_write</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> bytes -> int -> int -> int</code></pre><div class="info ">
+<pre><span id="VALsingle_write"><span class="keyword">val</span> single_write</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; bytes -&gt; int -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Unix.html#VALwrite"><code class="code">Unix.write</code></a>, but attempts to write only once.
    Thus, if an error occurs, <code class="code">single_write</code> guarantees that no data
@@ -1532,7 +1553,7 @@
 </div>
 </div>
 
-<pre><span id="VALwrite_substring"><span class="keyword">val</span> write_substring</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> string -> int -> int -> int</code></pre><div class="info ">
+<pre><span id="VALwrite_substring"><span class="keyword">val</span> write_substring</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; string -&gt; int -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Unix.html#VALwrite"><code class="code">Unix.write</code></a>, but take the data from a string instead of a byte
     sequence.</p>
@@ -1542,7 +1563,7 @@
 </ul>
 </div>
 
-<pre><span id="VALsingle_write_substring"><span class="keyword">val</span> single_write_substring</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> string -> int -> int -> int</code></pre><div class="info ">
+<pre><span id="VALsingle_write_substring"><span class="keyword">val</span> single_write_substring</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; string -&gt; int -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Unix.html#VALsingle_write"><code class="code">Unix.single_write</code></a>, but take the data from a string instead of
     a byte sequence.</p>
@@ -1552,7 +1573,7 @@
 </ul>
 </div>
 <h2 id="1_Interfacingwiththestandardinputoutputlibrary">Interfacing with the standard input/output library</h2>
-<pre><span id="VALin_channel_of_descr"><span class="keyword">val</span> in_channel_of_descr</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> Stdlib.in_channel</code></pre><div class="info ">
+<pre><span id="VALin_channel_of_descr"><span class="keyword">val</span> in_channel_of_descr</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; Stdlib.in_channel</code></pre><div class="info ">
 <div class="info-desc">
 <p>Create an input channel reading from the given descriptor.
    The channel is initially in binary mode; use
@@ -1583,7 +1604,7 @@
 </div>
 </div>
 
-<pre><span id="VALout_channel_of_descr"><span class="keyword">val</span> out_channel_of_descr</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> Stdlib.out_channel</code></pre><div class="info ">
+<pre><span id="VALout_channel_of_descr"><span class="keyword">val</span> out_channel_of_descr</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; Stdlib.out_channel</code></pre><div class="info ">
 <div class="info-desc">
 <p>Create an output channel writing on the given descriptor.
    The channel is initially in binary mode; use
@@ -1608,13 +1629,13 @@
 </div>
 </div>
 
-<pre><span id="VALdescr_of_in_channel"><span class="keyword">val</span> descr_of_in_channel</span> : <code class="type">Stdlib.in_channel -> <a href="Unix.html#TYPEfile_descr">file_descr</a></code></pre><div class="info ">
+<pre><span id="VALdescr_of_in_channel"><span class="keyword">val</span> descr_of_in_channel</span> : <code class="type">Stdlib.in_channel -&gt; <a href="Unix.html#TYPEfile_descr">file_descr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the descriptor corresponding to an input channel.</p>
 </div>
 </div>
 
-<pre><span id="VALdescr_of_out_channel"><span class="keyword">val</span> descr_of_out_channel</span> : <code class="type">Stdlib.out_channel -> <a href="Unix.html#TYPEfile_descr">file_descr</a></code></pre><div class="info ">
+<pre><span id="VALdescr_of_out_channel"><span class="keyword">val</span> descr_of_out_channel</span> : <code class="type">Stdlib.out_channel -&gt; <a href="Unix.html#TYPEfile_descr">file_descr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the descriptor corresponding to an output channel.</p>
 </div>
@@ -1665,20 +1686,20 @@
 </div>
 
 
-<pre><span id="VALlseek"><span class="keyword">val</span> lseek</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> int -> <a href="Unix.html#TYPEseek_command">seek_command</a> -> int</code></pre><div class="info ">
+<pre><span id="VALlseek"><span class="keyword">val</span> lseek</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; int -&gt; <a href="Unix.html#TYPEseek_command">seek_command</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Set the current position for a file descriptor, and return the resulting
     offset (from the beginning of the file).</p>
 </div>
 </div>
 
-<pre><span id="VALtruncate"><span class="keyword">val</span> truncate</span> : <code class="type">string -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALtruncate"><span class="keyword">val</span> truncate</span> : <code class="type">string -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Truncates the named file to the given size.</p>
 </div>
 </div>
 
-<pre><span id="VALftruncate"><span class="keyword">val</span> ftruncate</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALftruncate"><span class="keyword">val</span> ftruncate</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Truncates the file corresponding to the given descriptor
    to the given size.</p>
@@ -1927,27 +1948,27 @@
 </div>
 
 
-<pre><span id="VALstat"><span class="keyword">val</span> stat</span> : <code class="type">string -> <a href="Unix.html#TYPEstats">stats</a></code></pre><div class="info ">
+<pre><span id="VALstat"><span class="keyword">val</span> stat</span> : <code class="type">string -&gt; <a href="Unix.html#TYPEstats">stats</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the information for the named file.</p>
 </div>
 </div>
 
-<pre><span id="VALlstat"><span class="keyword">val</span> lstat</span> : <code class="type">string -> <a href="Unix.html#TYPEstats">stats</a></code></pre><div class="info ">
+<pre><span id="VALlstat"><span class="keyword">val</span> lstat</span> : <code class="type">string -&gt; <a href="Unix.html#TYPEstats">stats</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Unix.html#VALstat"><code class="code">Unix.stat</code></a>, but in case the file is a symbolic link,
    return the information for the link itself.</p>
 </div>
 </div>
 
-<pre><span id="VALfstat"><span class="keyword">val</span> fstat</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEstats">stats</a></code></pre><div class="info ">
+<pre><span id="VALfstat"><span class="keyword">val</span> fstat</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEstats">stats</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the information for the file associated with the given
    descriptor.</p>
 </div>
 </div>
 
-<pre><span id="VALisatty"><span class="keyword">val</span> isatty</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALisatty"><span class="keyword">val</span> isatty</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return <code class="code">true</code> if the given file descriptor refers to a terminal or
    console window, <code class="code">false</code> otherwise.</p>
@@ -1959,7 +1980,7 @@
 
 </div>
 <h2 id="1_Mappingfilesintomemory">Mapping files into memory</h2>
-<pre><span id="VALmap_file"><span class="keyword">val</span> map_file</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -><br>       ?pos:int64 -><br>       ('a, 'b) Stdlib.Bigarray.kind -><br>       'c Stdlib.Bigarray.layout -><br>       bool -> int array -> ('a, 'b, 'c) Stdlib.Bigarray.Genarray.t</code></pre><div class="info ">
+<pre><span id="VALmap_file"><span class="keyword">val</span> map_file</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt;<br>       ?pos:int64 -&gt;<br>       ('a, 'b) Stdlib.Bigarray.kind -&gt;<br>       'c Stdlib.Bigarray.layout -&gt;<br>       bool -&gt; int array -&gt; ('a, 'b, 'c) Stdlib.Bigarray.Genarray.t</code></pre><div class="info ">
 <div class="info-desc">
 <p>Memory mapping of a file as a Bigarray.
   <code class="code">map_file fd kind layout shared dims</code>
@@ -2012,7 +2033,7 @@
 </ul>
 </div>
 <h2 id="1_Operationsonfilenames">Operations on file names</h2>
-<pre><span id="VALunlink"><span class="keyword">val</span> unlink</span> : <code class="type">string -> unit</code></pre><div class="info ">
+<pre><span id="VALunlink"><span class="keyword">val</span> unlink</span> : <code class="type">string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Removes the named file.</p>
 
@@ -2025,7 +2046,7 @@
 </div>
 </div>
 
-<pre><span id="VALrename"><span class="keyword">val</span> rename</span> : <code class="type">string -> string -> unit</code></pre><div class="info ">
+<pre><span id="VALrename"><span class="keyword">val</span> rename</span> : <code class="type">string -&gt; string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">rename src dst</code> changes the name of a file from <code class="code">src</code> to <code class="code">dst</code>,
     moving it between directories if needed.  If <code class="code">dst</code> already
@@ -2036,7 +2057,7 @@
 </div>
 </div>
 
-<pre><span id="VALlink"><span class="keyword">val</span> link</span> : <code class="type">?follow:bool -> string -> string -> unit</code></pre><div class="info ">
+<pre><span id="VALlink"><span class="keyword">val</span> link</span> : <code class="type">?follow:bool -&gt; string -&gt; string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">link ?follow src dst</code> creates a hard link named <code class="code">dst</code> to the file
    named <code class="code">src</code>.</p>
@@ -2054,7 +2075,7 @@
    <code class="code">link(2)</code> function is used whose behaviour is OS-dependent, but more widely
    available.</div>
 
-<pre><span id="VALrealpath"><span class="keyword">val</span> realpath</span> : <code class="type">string -> string</code></pre><div class="info ">
+<pre><span id="VALrealpath"><span class="keyword">val</span> realpath</span> : <code class="type">string -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">realpath p</code> is an absolute pathname for <code class="code">p</code> obtained by resolving
     all extra <code class="code">/</code> characters, relative path segments and symbolic links.</p>
@@ -2121,13 +2142,13 @@
 </div>
 
 
-<pre><span id="VALchmod"><span class="keyword">val</span> chmod</span> : <code class="type">string -> <a href="Unix.html#TYPEfile_perm">file_perm</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALchmod"><span class="keyword">val</span> chmod</span> : <code class="type">string -&gt; <a href="Unix.html#TYPEfile_perm">file_perm</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Change the permissions of the named file.</p>
 </div>
 </div>
 
-<pre><span id="VALfchmod"><span class="keyword">val</span> fchmod</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEfile_perm">file_perm</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALfchmod"><span class="keyword">val</span> fchmod</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEfile_perm">file_perm</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Change the permissions of an opened file.</p>
 </div>
@@ -2136,7 +2157,7 @@
 </ul>
 </div>
 
-<pre><span id="VALchown"><span class="keyword">val</span> chown</span> : <code class="type">string -> int -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALchown"><span class="keyword">val</span> chown</span> : <code class="type">string -&gt; int -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Change the owner uid and owner gid of the named file.</p>
 </div>
@@ -2145,7 +2166,7 @@
 </ul>
 </div>
 
-<pre><span id="VALfchown"><span class="keyword">val</span> fchown</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> int -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALfchown"><span class="keyword">val</span> fchown</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; int -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Change the owner uid and owner gid of an opened file.</p>
 </div>
@@ -2154,7 +2175,7 @@
 </ul>
 </div>
 
-<pre><span id="VALumask"><span class="keyword">val</span> umask</span> : <code class="type">int -> int</code></pre><div class="info ">
+<pre><span id="VALumask"><span class="keyword">val</span> umask</span> : <code class="type">int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Set the process's file mode creation mask, and return the previous
     mask.</p>
@@ -2164,7 +2185,7 @@
 </ul>
 </div>
 
-<pre><span id="VALaccess"><span class="keyword">val</span> access</span> : <code class="type">string -> <a href="Unix.html#TYPEaccess_permission">access_permission</a> list -> unit</code></pre><div class="info ">
+<pre><span id="VALaccess"><span class="keyword">val</span> access</span> : <code class="type">string -&gt; <a href="Unix.html#TYPEaccess_permission">access_permission</a> list -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Check that the process has the given permissions over the named file.</p>
 
@@ -2176,7 +2197,7 @@
 </ul>
 </div>
 <h2 id="1_Operationsonfiledescriptors">Operations on file descriptors</h2>
-<pre><span id="VALdup"><span class="keyword">val</span> dup</span> : <code class="type">?cloexec:bool -> <a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEfile_descr">file_descr</a></code></pre><div class="info ">
+<pre><span id="VALdup"><span class="keyword">val</span> dup</span> : <code class="type">?cloexec:bool -&gt; <a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEfile_descr">file_descr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return a new file descriptor referencing the same file as
    the given descriptor.
@@ -2185,7 +2206,7 @@
 </div>
 </div>
 
-<pre><span id="VALdup2"><span class="keyword">val</span> dup2</span> : <code class="type">?cloexec:bool -> <a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEfile_descr">file_descr</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALdup2"><span class="keyword">val</span> dup2</span> : <code class="type">?cloexec:bool -&gt; <a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">dup2 src dst</code> duplicates <code class="code">src</code> to <code class="code">dst</code>, closing <code class="code">dst</code> if already
    opened.
@@ -2194,7 +2215,7 @@
 </div>
 </div>
 
-<pre><span id="VALset_nonblock"><span class="keyword">val</span> set_nonblock</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALset_nonblock"><span class="keyword">val</span> set_nonblock</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Set the ``non-blocking'' flag on the given descriptor.
    When the non-blocking flag is set, reading on a descriptor
@@ -2205,14 +2226,14 @@
 </div>
 </div>
 
-<pre><span id="VALclear_nonblock"><span class="keyword">val</span> clear_nonblock</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALclear_nonblock"><span class="keyword">val</span> clear_nonblock</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Clear the ``non-blocking'' flag on the given descriptor.
    See <a href="Unix.html#VALset_nonblock"><code class="code">Unix.set_nonblock</code></a>.</p>
 </div>
 </div>
 
-<pre><span id="VALset_close_on_exec"><span class="keyword">val</span> set_close_on_exec</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALset_close_on_exec"><span class="keyword">val</span> set_close_on_exec</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Set the ``close-on-exec'' flag on the given descriptor.
    A descriptor with the close-on-exec flag is automatically
@@ -2261,38 +2282,38 @@
 </div>
 </div>
 
-<pre><span id="VALclear_close_on_exec"><span class="keyword">val</span> clear_close_on_exec</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALclear_close_on_exec"><span class="keyword">val</span> clear_close_on_exec</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Clear the ``close-on-exec'' flag on the given descriptor.
    See <a href="Unix.html#VALset_close_on_exec"><code class="code">Unix.set_close_on_exec</code></a>.</p>
 </div>
 </div>
 <h2 id="1_Directories">Directories</h2>
-<pre><span id="VALmkdir"><span class="keyword">val</span> mkdir</span> : <code class="type">string -> <a href="Unix.html#TYPEfile_perm">file_perm</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALmkdir"><span class="keyword">val</span> mkdir</span> : <code class="type">string -&gt; <a href="Unix.html#TYPEfile_perm">file_perm</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Create a directory with the given permissions (see <a href="Unix.html#VALumask"><code class="code">Unix.umask</code></a>).</p>
 </div>
 </div>
 
-<pre><span id="VALrmdir"><span class="keyword">val</span> rmdir</span> : <code class="type">string -> unit</code></pre><div class="info ">
+<pre><span id="VALrmdir"><span class="keyword">val</span> rmdir</span> : <code class="type">string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Remove an empty directory.</p>
 </div>
 </div>
 
-<pre><span id="VALchdir"><span class="keyword">val</span> chdir</span> : <code class="type">string -> unit</code></pre><div class="info ">
+<pre><span id="VALchdir"><span class="keyword">val</span> chdir</span> : <code class="type">string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Change the process working directory.</p>
 </div>
 </div>
 
-<pre><span id="VALgetcwd"><span class="keyword">val</span> getcwd</span> : <code class="type">unit -> string</code></pre><div class="info ">
+<pre><span id="VALgetcwd"><span class="keyword">val</span> getcwd</span> : <code class="type">unit -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the name of the current working directory.</p>
 </div>
 </div>
 
-<pre><span id="VALchroot"><span class="keyword">val</span> chroot</span> : <code class="type">string -> unit</code></pre><div class="info ">
+<pre><span id="VALchroot"><span class="keyword">val</span> chroot</span> : <code class="type">string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Change the process root directory.</p>
 </div>
@@ -2309,13 +2330,13 @@
 </div>
 
 
-<pre><span id="VALopendir"><span class="keyword">val</span> opendir</span> : <code class="type">string -> <a href="Unix.html#TYPEdir_handle">dir_handle</a></code></pre><div class="info ">
+<pre><span id="VALopendir"><span class="keyword">val</span> opendir</span> : <code class="type">string -&gt; <a href="Unix.html#TYPEdir_handle">dir_handle</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Open a descriptor on a directory</p>
 </div>
 </div>
 
-<pre><span id="VALreaddir"><span class="keyword">val</span> readdir</span> : <code class="type"><a href="Unix.html#TYPEdir_handle">dir_handle</a> -> string</code></pre><div class="info ">
+<pre><span id="VALreaddir"><span class="keyword">val</span> readdir</span> : <code class="type"><a href="Unix.html#TYPEdir_handle">dir_handle</a> -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the next entry in a directory.</p>
 </div>
@@ -2324,19 +2345,19 @@
 </ul>
 </div>
 
-<pre><span id="VALrewinddir"><span class="keyword">val</span> rewinddir</span> : <code class="type"><a href="Unix.html#TYPEdir_handle">dir_handle</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALrewinddir"><span class="keyword">val</span> rewinddir</span> : <code class="type"><a href="Unix.html#TYPEdir_handle">dir_handle</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Reposition the descriptor to the beginning of the directory</p>
 </div>
 </div>
 
-<pre><span id="VALclosedir"><span class="keyword">val</span> closedir</span> : <code class="type"><a href="Unix.html#TYPEdir_handle">dir_handle</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALclosedir"><span class="keyword">val</span> closedir</span> : <code class="type"><a href="Unix.html#TYPEdir_handle">dir_handle</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Close a directory descriptor.</p>
 </div>
 </div>
 <h2 id="1_Pipesandredirections">Pipes and redirections</h2>
-<pre><span id="VALpipe"><span class="keyword">val</span> pipe</span> : <code class="type">?cloexec:bool -> unit -> <a href="Unix.html#TYPEfile_descr">file_descr</a> * <a href="Unix.html#TYPEfile_descr">file_descr</a></code></pre><div class="info ">
+<pre><span id="VALpipe"><span class="keyword">val</span> pipe</span> : <code class="type">?cloexec:bool -&gt; unit -&gt; <a href="Unix.html#TYPEfile_descr">file_descr</a> * <a href="Unix.html#TYPEfile_descr">file_descr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Create a pipe. The first component of the result is opened
    for reading, that's the exit to the pipe. The second component is
@@ -2346,7 +2367,7 @@
 </div>
 </div>
 
-<pre><span id="VALmkfifo"><span class="keyword">val</span> mkfifo</span> : <code class="type">string -> <a href="Unix.html#TYPEfile_perm">file_perm</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALmkfifo"><span class="keyword">val</span> mkfifo</span> : <code class="type">string -&gt; <a href="Unix.html#TYPEfile_perm">file_perm</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Create a named pipe with the given permissions (see <a href="Unix.html#VALumask"><code class="code">Unix.umask</code></a>).</p>
 </div>
@@ -2355,7 +2376,7 @@
 </ul>
 </div>
 <h2 id="1_Highlevelprocessandredirectionmanagement">High-level process and redirection management</h2>
-<pre><span id="VALcreate_process"><span class="keyword">val</span> create_process</span> : <code class="type">string -><br>       string array -> <a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEfile_descr">file_descr</a> -> int</code></pre><div class="info ">
+<pre><span id="VALcreate_process"><span class="keyword">val</span> create_process</span> : <code class="type">string -&gt;<br>       string array -&gt; <a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">create_process prog args stdin stdout stderr</code>
    forks a new process that executes the program
@@ -2372,7 +2393,7 @@
 </div>
 </div>
 
-<pre><span id="VALcreate_process_env"><span class="keyword">val</span> create_process_env</span> : <code class="type">string -><br>       string array -><br>       string array -> <a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEfile_descr">file_descr</a> -> int</code></pre><div class="info ">
+<pre><span id="VALcreate_process_env"><span class="keyword">val</span> create_process_env</span> : <code class="type">string -&gt;<br>       string array -&gt;<br>       string array -&gt; <a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">create_process_env prog args env stdin stdout stderr</code>
    works as <a href="Unix.html#VALcreate_process"><code class="code">Unix.create_process</code></a>, except that the extra argument
@@ -2380,7 +2401,7 @@
 </div>
 </div>
 
-<pre><span id="VALopen_process_in"><span class="keyword">val</span> open_process_in</span> : <code class="type">string -> Stdlib.in_channel</code></pre><div class="info ">
+<pre><span id="VALopen_process_in"><span class="keyword">val</span> open_process_in</span> : <code class="type">string -&gt; Stdlib.in_channel</code></pre><div class="info ">
 <div class="info-desc">
 <p>High-level pipe and process management. This function
    runs the given command in parallel with the program.
@@ -2396,7 +2417,7 @@
 </div>
 </div>
 
-<pre><span id="VALopen_process_out"><span class="keyword">val</span> open_process_out</span> : <code class="type">string -> Stdlib.out_channel</code></pre><div class="info ">
+<pre><span id="VALopen_process_out"><span class="keyword">val</span> open_process_out</span> : <code class="type">string -&gt; Stdlib.out_channel</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Unix.html#VALopen_process_in"><code class="code">Unix.open_process_in</code></a>, but redirect the standard input of
    the command to a pipe.  Data written to the returned output channel
@@ -2410,7 +2431,7 @@
 </div>
 </div>
 
-<pre><span id="VALopen_process"><span class="keyword">val</span> open_process</span> : <code class="type">string -> Stdlib.in_channel * Stdlib.out_channel</code></pre><div class="info ">
+<pre><span id="VALopen_process"><span class="keyword">val</span> open_process</span> : <code class="type">string -&gt; Stdlib.in_channel * Stdlib.out_channel</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Unix.html#VALopen_process_out"><code class="code">Unix.open_process_out</code></a>, but redirects both the standard input
    and standard output of the command to pipes connected to the two
@@ -2422,7 +2443,7 @@
 </div>
 </div>
 
-<pre><span id="VALopen_process_full"><span class="keyword">val</span> open_process_full</span> : <code class="type">string -><br>       string array -> Stdlib.in_channel * Stdlib.out_channel * Stdlib.in_channel</code></pre><div class="info ">
+<pre><span id="VALopen_process_full"><span class="keyword">val</span> open_process_full</span> : <code class="type">string -&gt;<br>       string array -&gt; Stdlib.in_channel * Stdlib.out_channel * Stdlib.in_channel</code></pre><div class="info ">
 <div class="info-desc">
 <p>Similar to <a href="Unix.html#VALopen_process"><code class="code">Unix.open_process</code></a>, but the second argument specifies
    the environment passed to the command.  The result is a triple
@@ -2434,7 +2455,7 @@
 </div>
 </div>
 
-<pre><span id="VALopen_process_args_in"><span class="keyword">val</span> open_process_args_in</span> : <code class="type">string -> string array -> Stdlib.in_channel</code></pre><div class="info ">
+<pre><span id="VALopen_process_args_in"><span class="keyword">val</span> open_process_args_in</span> : <code class="type">string -&gt; string array -&gt; Stdlib.in_channel</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">open_process_args_in prog args</code> runs the program <code class="code">prog</code> with arguments
     <code class="code">args</code>.  The new process executes concurrently with the current process.
@@ -2451,7 +2472,7 @@
 </ul>
 </div>
 
-<pre><span id="VALopen_process_args_out"><span class="keyword">val</span> open_process_args_out</span> : <code class="type">string -> string array -> Stdlib.out_channel</code></pre><div class="info ">
+<pre><span id="VALopen_process_args_out"><span class="keyword">val</span> open_process_args_out</span> : <code class="type">string -&gt; string array -&gt; Stdlib.out_channel</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Unix.html#VALopen_process_args_in"><code class="code">Unix.open_process_args_in</code></a>, but redirect the standard input of the new
     process to a pipe.  Data written to the returned output channel is sent to
@@ -2464,7 +2485,7 @@
 </ul>
 </div>
 
-<pre><span id="VALopen_process_args"><span class="keyword">val</span> open_process_args</span> : <code class="type">string -> string array -> Stdlib.in_channel * Stdlib.out_channel</code></pre><div class="info ">
+<pre><span id="VALopen_process_args"><span class="keyword">val</span> open_process_args</span> : <code class="type">string -&gt; string array -&gt; Stdlib.in_channel * Stdlib.out_channel</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Unix.html#VALopen_process_args_out"><code class="code">Unix.open_process_args_out</code></a>, but redirects both the standard input and
     standard output of the new process to pipes connected to the two returned
@@ -2476,7 +2497,7 @@
 </ul>
 </div>
 
-<pre><span id="VALopen_process_args_full"><span class="keyword">val</span> open_process_args_full</span> : <code class="type">string -><br>       string array -><br>       string array -> Stdlib.in_channel * Stdlib.out_channel * Stdlib.in_channel</code></pre><div class="info ">
+<pre><span id="VALopen_process_args_full"><span class="keyword">val</span> open_process_args_full</span> : <code class="type">string -&gt;<br>       string array -&gt;<br>       string array -&gt; Stdlib.in_channel * Stdlib.out_channel * Stdlib.in_channel</code></pre><div class="info ">
 <div class="info-desc">
 <p>Similar to <a href="Unix.html#VALopen_process_args"><code class="code">Unix.open_process_args</code></a>, but the third argument specifies the
     environment passed to the new process.  The result is a triple of channels
@@ -2488,7 +2509,7 @@
 </ul>
 </div>
 
-<pre><span id="VALprocess_in_pid"><span class="keyword">val</span> process_in_pid</span> : <code class="type">Stdlib.in_channel -> int</code></pre><div class="info ">
+<pre><span id="VALprocess_in_pid"><span class="keyword">val</span> process_in_pid</span> : <code class="type">Stdlib.in_channel -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the pid of a process opened via <a href="Unix.html#VALopen_process_in"><code class="code">Unix.open_process_in</code></a> or
    <a href="Unix.html#VALopen_process_args_in"><code class="code">Unix.open_process_args_in</code></a>.</p>
@@ -2498,7 +2519,7 @@
 </ul>
 </div>
 
-<pre><span id="VALprocess_out_pid"><span class="keyword">val</span> process_out_pid</span> : <code class="type">Stdlib.out_channel -> int</code></pre><div class="info ">
+<pre><span id="VALprocess_out_pid"><span class="keyword">val</span> process_out_pid</span> : <code class="type">Stdlib.out_channel -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the pid of a process opened via <a href="Unix.html#VALopen_process_out"><code class="code">Unix.open_process_out</code></a> or
    <a href="Unix.html#VALopen_process_args_out"><code class="code">Unix.open_process_args_out</code></a>.</p>
@@ -2508,7 +2529,7 @@
 </ul>
 </div>
 
-<pre><span id="VALprocess_pid"><span class="keyword">val</span> process_pid</span> : <code class="type">Stdlib.in_channel * Stdlib.out_channel -> int</code></pre><div class="info ">
+<pre><span id="VALprocess_pid"><span class="keyword">val</span> process_pid</span> : <code class="type">Stdlib.in_channel * Stdlib.out_channel -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the pid of a process opened via <a href="Unix.html#VALopen_process"><code class="code">Unix.open_process</code></a> or
    <a href="Unix.html#VALopen_process_args"><code class="code">Unix.open_process_args</code></a>.</p>
@@ -2518,7 +2539,7 @@
 </ul>
 </div>
 
-<pre><span id="VALprocess_full_pid"><span class="keyword">val</span> process_full_pid</span> : <code class="type">Stdlib.in_channel * Stdlib.out_channel * Stdlib.in_channel -> int</code></pre><div class="info ">
+<pre><span id="VALprocess_full_pid"><span class="keyword">val</span> process_full_pid</span> : <code class="type">Stdlib.in_channel * Stdlib.out_channel * Stdlib.in_channel -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the pid of a process opened via <a href="Unix.html#VALopen_process_full"><code class="code">Unix.open_process_full</code></a> or
    <a href="Unix.html#VALopen_process_args_full"><code class="code">Unix.open_process_args_full</code></a>.</p>
@@ -2528,7 +2549,7 @@
 </ul>
 </div>
 
-<pre><span id="VALclose_process_in"><span class="keyword">val</span> close_process_in</span> : <code class="type">Stdlib.in_channel -> <a href="Unix.html#TYPEprocess_status">process_status</a></code></pre><div class="info ">
+<pre><span id="VALclose_process_in"><span class="keyword">val</span> close_process_in</span> : <code class="type">Stdlib.in_channel -&gt; <a href="Unix.html#TYPEprocess_status">process_status</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Close channels opened by <a href="Unix.html#VALopen_process_in"><code class="code">Unix.open_process_in</code></a>,
    wait for the associated command to terminate,
@@ -2536,7 +2557,7 @@
 </div>
 </div>
 
-<pre><span id="VALclose_process_out"><span class="keyword">val</span> close_process_out</span> : <code class="type">Stdlib.out_channel -> <a href="Unix.html#TYPEprocess_status">process_status</a></code></pre><div class="info ">
+<pre><span id="VALclose_process_out"><span class="keyword">val</span> close_process_out</span> : <code class="type">Stdlib.out_channel -&gt; <a href="Unix.html#TYPEprocess_status">process_status</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Close channels opened by <a href="Unix.html#VALopen_process_out"><code class="code">Unix.open_process_out</code></a>,
    wait for the associated command to terminate,
@@ -2544,7 +2565,7 @@
 </div>
 </div>
 
-<pre><span id="VALclose_process"><span class="keyword">val</span> close_process</span> : <code class="type">Stdlib.in_channel * Stdlib.out_channel -> <a href="Unix.html#TYPEprocess_status">process_status</a></code></pre><div class="info ">
+<pre><span id="VALclose_process"><span class="keyword">val</span> close_process</span> : <code class="type">Stdlib.in_channel * Stdlib.out_channel -&gt; <a href="Unix.html#TYPEprocess_status">process_status</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Close channels opened by <a href="Unix.html#VALopen_process"><code class="code">Unix.open_process</code></a>,
    wait for the associated command to terminate,
@@ -2552,7 +2573,7 @@
 </div>
 </div>
 
-<pre><span id="VALclose_process_full"><span class="keyword">val</span> close_process_full</span> : <code class="type">Stdlib.in_channel * Stdlib.out_channel * Stdlib.in_channel -><br>       <a href="Unix.html#TYPEprocess_status">process_status</a></code></pre><div class="info ">
+<pre><span id="VALclose_process_full"><span class="keyword">val</span> close_process_full</span> : <code class="type">Stdlib.in_channel * Stdlib.out_channel * Stdlib.in_channel -&gt;<br>       <a href="Unix.html#TYPEprocess_status">process_status</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Close channels opened by <a href="Unix.html#VALopen_process_full"><code class="code">Unix.open_process_full</code></a>,
    wait for the associated command to terminate,
@@ -2560,7 +2581,7 @@
 </div>
 </div>
 <h2 id="1_Symboliclinks">Symbolic links</h2>
-<pre><span id="VALsymlink"><span class="keyword">val</span> symlink</span> : <code class="type">?to_dir:bool -> string -> string -> unit</code></pre><div class="info ">
+<pre><span id="VALsymlink"><span class="keyword">val</span> symlink</span> : <code class="type">?to_dir:bool -&gt; string -&gt; string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">symlink ?to_dir src dst</code> creates the file <code class="code">dst</code> as a symbolic link
    to the file <code class="code">src</code>. On Windows, <code class="code">~to_dir</code> indicates if the symbolic link
@@ -2595,7 +2616,7 @@
 </div>
 </div>
 
-<pre><span id="VALhas_symlink"><span class="keyword">val</span> has_symlink</span> : <code class="type">unit -> bool</code></pre><div class="info ">
+<pre><span id="VALhas_symlink"><span class="keyword">val</span> has_symlink</span> : <code class="type">unit -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Returns <code class="code">true</code> if the user is able to create symbolic links. On Windows,
    this indicates that the user not only has the SeCreateSymbolicLinkPrivilege
@@ -2607,13 +2628,13 @@
 </ul>
 </div>
 
-<pre><span id="VALreadlink"><span class="keyword">val</span> readlink</span> : <code class="type">string -> string</code></pre><div class="info ">
+<pre><span id="VALreadlink"><span class="keyword">val</span> readlink</span> : <code class="type">string -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Read the contents of a symbolic link.</p>
 </div>
 </div>
 <h2 id="1_Polling">Polling</h2>
-<pre><span id="VALselect"><span class="keyword">val</span> select</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> list -><br>       <a href="Unix.html#TYPEfile_descr">file_descr</a> list -><br>       <a href="Unix.html#TYPEfile_descr">file_descr</a> list -><br>       float -> <a href="Unix.html#TYPEfile_descr">file_descr</a> list * <a href="Unix.html#TYPEfile_descr">file_descr</a> list * <a href="Unix.html#TYPEfile_descr">file_descr</a> list</code></pre><div class="info ">
+<pre><span id="VALselect"><span class="keyword">val</span> select</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> list -&gt;<br>       <a href="Unix.html#TYPEfile_descr">file_descr</a> list -&gt;<br>       <a href="Unix.html#TYPEfile_descr">file_descr</a> list -&gt;<br>       float -&gt; <a href="Unix.html#TYPEfile_descr">file_descr</a> list * <a href="Unix.html#TYPEfile_descr">file_descr</a> list * <a href="Unix.html#TYPEfile_descr">file_descr</a> list</code></pre><div class="info ">
 <div class="info-desc">
 <p>Wait until some input/output operations become possible on
    some channels. The three list arguments are, respectively, a set
@@ -2709,7 +2730,7 @@
 </div>
 
 
-<pre><span id="VALlockf"><span class="keyword">val</span> lockf</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPElock_command">lock_command</a> -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALlockf"><span class="keyword">val</span> lockf</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPElock_command">lock_command</a> -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">lockf fd mode len</code> puts a lock on a region of the file opened
    as <code class="code">fd</code>. The region starts at the current read/write position for
@@ -2746,7 +2767,7 @@
 <h2 id="1_Signals">Signals</h2><p>Note: installation of signal handlers is performed via
    the functions <a href="Sys.html#VALsignal"><code class="code">Sys.signal</code></a> and <a href="Sys.html#VALset_signal"><code class="code">Sys.set_signal</code></a>.</p>
 
-<pre><span id="VALkill"><span class="keyword">val</span> kill</span> : <code class="type">int -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALkill"><span class="keyword">val</span> kill</span> : <code class="type">int -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">kill pid signal</code> sends signal number <code class="code">signal</code> to the process
    with id <code class="code">pid</code>.</p>
@@ -2780,7 +2801,7 @@
 
 
 
-<pre><span id="VALsigprocmask"><span class="keyword">val</span> sigprocmask</span> : <code class="type"><a href="Unix.html#TYPEsigprocmask_command">sigprocmask_command</a> -> int list -> int list</code></pre><div class="info ">
+<pre><span id="VALsigprocmask"><span class="keyword">val</span> sigprocmask</span> : <code class="type"><a href="Unix.html#TYPEsigprocmask_command">sigprocmask_command</a> -&gt; int list -&gt; int list</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">sigprocmask mode sigs</code> changes the set of blocked signals.
    If <code class="code">mode</code> is <code class="code">SIG_SETMASK</code>, blocked signals are set to those in
@@ -2801,7 +2822,7 @@
 </ul>
 </div>
 
-<pre><span id="VALsigpending"><span class="keyword">val</span> sigpending</span> : <code class="type">unit -> int list</code></pre><div class="info ">
+<pre><span id="VALsigpending"><span class="keyword">val</span> sigpending</span> : <code class="type">unit -&gt; int list</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the set of blocked signals that are currently pending.</p>
 </div>
@@ -2811,7 +2832,7 @@
 </ul>
 </div>
 
-<pre><span id="VALsigsuspend"><span class="keyword">val</span> sigsuspend</span> : <code class="type">int list -> unit</code></pre><div class="info ">
+<pre><span id="VALsigsuspend"><span class="keyword">val</span> sigsuspend</span> : <code class="type">int list -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">sigsuspend sigs</code> atomically sets the blocked signals to <code class="code">sigs</code>
    and waits for a non-ignored, non-blocked signal to be delivered.
@@ -2823,7 +2844,7 @@
 </ul>
 </div>
 
-<pre><span id="VALpause"><span class="keyword">val</span> pause</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALpause"><span class="keyword">val</span> pause</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Wait until a non-ignored, non-blocked signal is delivered.</p>
 </div>
@@ -3009,20 +3030,20 @@
 </div>
 
 
-<pre><span id="VALtime"><span class="keyword">val</span> time</span> : <code class="type">unit -> float</code></pre><div class="info ">
+<pre><span id="VALtime"><span class="keyword">val</span> time</span> : <code class="type">unit -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the current time since 00:00:00 GMT, Jan. 1, 1970,
    in seconds.</p>
 </div>
 </div>
 
-<pre><span id="VALgettimeofday"><span class="keyword">val</span> gettimeofday</span> : <code class="type">unit -> float</code></pre><div class="info ">
+<pre><span id="VALgettimeofday"><span class="keyword">val</span> gettimeofday</span> : <code class="type">unit -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Unix.html#VALtime"><code class="code">Unix.time</code></a>, but with resolution better than 1 second.</p>
 </div>
 </div>
 
-<pre><span id="VALgmtime"><span class="keyword">val</span> gmtime</span> : <code class="type">float -> <a href="Unix.html#TYPEtm">tm</a></code></pre><div class="info ">
+<pre><span id="VALgmtime"><span class="keyword">val</span> gmtime</span> : <code class="type">float -&gt; <a href="Unix.html#TYPEtm">tm</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Convert a time in seconds, as returned by <a href="Unix.html#VALtime"><code class="code">Unix.time</code></a>, into a date and
    a time. Assumes UTC (Coordinated Universal Time), also known as GMT.
@@ -3031,7 +3052,7 @@
 </div>
 </div>
 
-<pre><span id="VALlocaltime"><span class="keyword">val</span> localtime</span> : <code class="type">float -> <a href="Unix.html#TYPEtm">tm</a></code></pre><div class="info ">
+<pre><span id="VALlocaltime"><span class="keyword">val</span> localtime</span> : <code class="type">float -&gt; <a href="Unix.html#TYPEtm">tm</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Convert a time in seconds, as returned by <a href="Unix.html#VALtime"><code class="code">Unix.time</code></a>, into a date and
    a time. Assumes the local time zone.
@@ -3039,7 +3060,7 @@
 </div>
 </div>
 
-<pre><span id="VALmktime"><span class="keyword">val</span> mktime</span> : <code class="type"><a href="Unix.html#TYPEtm">tm</a> -> float * <a href="Unix.html#TYPEtm">tm</a></code></pre><div class="info ">
+<pre><span id="VALmktime"><span class="keyword">val</span> mktime</span> : <code class="type"><a href="Unix.html#TYPEtm">tm</a> -&gt; float * <a href="Unix.html#TYPEtm">tm</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Convert a date and time, specified by the <code class="code">tm</code> argument, into
    a time in seconds, as returned by <a href="Unix.html#VALtime"><code class="code">Unix.time</code></a>.  The <code class="code">tm_isdst</code>,
@@ -3052,7 +3073,7 @@
 </div>
 </div>
 
-<pre><span id="VALalarm"><span class="keyword">val</span> alarm</span> : <code class="type">int -> int</code></pre><div class="info ">
+<pre><span id="VALalarm"><span class="keyword">val</span> alarm</span> : <code class="type">int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Schedule a <code class="code">SIGALRM</code> signal after the given number of seconds.</p>
 </div>
@@ -3061,13 +3082,13 @@
 </ul>
 </div>
 
-<pre><span id="VALsleep"><span class="keyword">val</span> sleep</span> : <code class="type">int -> unit</code></pre><div class="info ">
+<pre><span id="VALsleep"><span class="keyword">val</span> sleep</span> : <code class="type">int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Stop execution for the given number of seconds.</p>
 </div>
 </div>
 
-<pre><span id="VALsleepf"><span class="keyword">val</span> sleepf</span> : <code class="type">float -> unit</code></pre><div class="info ">
+<pre><span id="VALsleepf"><span class="keyword">val</span> sleepf</span> : <code class="type">float -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Stop execution for the given number of seconds.  Like <code class="code">sleep</code>,
     but fractions of seconds are supported.</p>
@@ -3077,7 +3098,7 @@
 </ul>
 </div>
 
-<pre><span id="VALtimes"><span class="keyword">val</span> times</span> : <code class="type">unit -> <a href="Unix.html#TYPEprocess_times">process_times</a></code></pre><div class="info ">
+<pre><span id="VALtimes"><span class="keyword">val</span> times</span> : <code class="type">unit -&gt; <a href="Unix.html#TYPEprocess_times">process_times</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the execution times of the process.</p>
 
@@ -3086,7 +3107,7 @@
 </div>
 </div>
 
-<pre><span id="VALutimes"><span class="keyword">val</span> utimes</span> : <code class="type">string -> float -> float -> unit</code></pre><div class="info ">
+<pre><span id="VALutimes"><span class="keyword">val</span> utimes</span> : <code class="type">string -&gt; float -&gt; float -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Set the last access time (second arg) and last modification time
    (third arg) for a file. Times are expressed in seconds from
@@ -3178,7 +3199,7 @@
 </div>
 
 
-<pre><span id="VALgetitimer"><span class="keyword">val</span> getitimer</span> : <code class="type"><a href="Unix.html#TYPEinterval_timer">interval_timer</a> -> <a href="Unix.html#TYPEinterval_timer_status">interval_timer_status</a></code></pre><div class="info ">
+<pre><span id="VALgetitimer"><span class="keyword">val</span> getitimer</span> : <code class="type"><a href="Unix.html#TYPEinterval_timer">interval_timer</a> -&gt; <a href="Unix.html#TYPEinterval_timer_status">interval_timer_status</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the current status of the given interval timer.</p>
 </div>
@@ -3187,7 +3208,7 @@
 </ul>
 </div>
 
-<pre><span id="VALsetitimer"><span class="keyword">val</span> setitimer</span> : <code class="type"><a href="Unix.html#TYPEinterval_timer">interval_timer</a> -><br>       <a href="Unix.html#TYPEinterval_timer_status">interval_timer_status</a> -> <a href="Unix.html#TYPEinterval_timer_status">interval_timer_status</a></code></pre><div class="info ">
+<pre><span id="VALsetitimer"><span class="keyword">val</span> setitimer</span> : <code class="type"><a href="Unix.html#TYPEinterval_timer">interval_timer</a> -&gt;<br>       <a href="Unix.html#TYPEinterval_timer_status">interval_timer_status</a> -&gt; <a href="Unix.html#TYPEinterval_timer_status">interval_timer_status</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">setitimer t s</code> sets the interval timer <code class="code">t</code> and returns
    its previous status. The <code class="code">s</code> argument is interpreted as follows:
@@ -3203,7 +3224,7 @@
 </ul>
 </div>
 <h2 id="1_Useridgroupid">User id, group id</h2>
-<pre><span id="VALgetuid"><span class="keyword">val</span> getuid</span> : <code class="type">unit -> int</code></pre><div class="info ">
+<pre><span id="VALgetuid"><span class="keyword">val</span> getuid</span> : <code class="type">unit -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the user id of the user executing the process.</p>
 
@@ -3211,7 +3232,7 @@
 </div>
 </div>
 
-<pre><span id="VALgeteuid"><span class="keyword">val</span> geteuid</span> : <code class="type">unit -> int</code></pre><div class="info ">
+<pre><span id="VALgeteuid"><span class="keyword">val</span> geteuid</span> : <code class="type">unit -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the effective user id under which the process runs.</p>
 
@@ -3219,7 +3240,7 @@
 </div>
 </div>
 
-<pre><span id="VALsetuid"><span class="keyword">val</span> setuid</span> : <code class="type">int -> unit</code></pre><div class="info ">
+<pre><span id="VALsetuid"><span class="keyword">val</span> setuid</span> : <code class="type">int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Set the real user id and effective user id for the process.</p>
 </div>
@@ -3228,7 +3249,7 @@
 </ul>
 </div>
 
-<pre><span id="VALgetgid"><span class="keyword">val</span> getgid</span> : <code class="type">unit -> int</code></pre><div class="info ">
+<pre><span id="VALgetgid"><span class="keyword">val</span> getgid</span> : <code class="type">unit -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the group id of the user executing the process.</p>
 
@@ -3236,7 +3257,7 @@
 </div>
 </div>
 
-<pre><span id="VALgetegid"><span class="keyword">val</span> getegid</span> : <code class="type">unit -> int</code></pre><div class="info ">
+<pre><span id="VALgetegid"><span class="keyword">val</span> getegid</span> : <code class="type">unit -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the effective group id under which the process runs.</p>
 
@@ -3244,7 +3265,7 @@
 </div>
 </div>
 
-<pre><span id="VALsetgid"><span class="keyword">val</span> setgid</span> : <code class="type">int -> unit</code></pre><div class="info ">
+<pre><span id="VALsetgid"><span class="keyword">val</span> setgid</span> : <code class="type">int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Set the real group id and effective group id for the process.</p>
 </div>
@@ -3253,7 +3274,7 @@
 </ul>
 </div>
 
-<pre><span id="VALgetgroups"><span class="keyword">val</span> getgroups</span> : <code class="type">unit -> int array</code></pre><div class="info ">
+<pre><span id="VALgetgroups"><span class="keyword">val</span> getgroups</span> : <code class="type">unit -&gt; int array</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the list of groups to which the user executing the process
    belongs.</p>
@@ -3262,7 +3283,7 @@
 </div>
 </div>
 
-<pre><span id="VALsetgroups"><span class="keyword">val</span> setgroups</span> : <code class="type">int array -> unit</code></pre><div class="info ">
+<pre><span id="VALsetgroups"><span class="keyword">val</span> setgroups</span> : <code class="type">int array -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">setgroups groups</code> sets the supplementary group IDs for the
     calling process. Appropriate privileges are required.</p>
@@ -3272,7 +3293,7 @@
 </ul>
 </div>
 
-<pre><span id="VALinitgroups"><span class="keyword">val</span> initgroups</span> : <code class="type">string -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALinitgroups"><span class="keyword">val</span> initgroups</span> : <code class="type">string -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">initgroups user group</code> initializes the group access list by
     reading the group database /etc/group and using all groups of
@@ -3381,13 +3402,13 @@
 </div>
 
 
-<pre><span id="VALgetlogin"><span class="keyword">val</span> getlogin</span> : <code class="type">unit -> string</code></pre><div class="info ">
+<pre><span id="VALgetlogin"><span class="keyword">val</span> getlogin</span> : <code class="type">unit -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the login name of the user executing the process.</p>
 </div>
 </div>
 
-<pre><span id="VALgetpwnam"><span class="keyword">val</span> getpwnam</span> : <code class="type">string -> <a href="Unix.html#TYPEpasswd_entry">passwd_entry</a></code></pre><div class="info ">
+<pre><span id="VALgetpwnam"><span class="keyword">val</span> getpwnam</span> : <code class="type">string -&gt; <a href="Unix.html#TYPEpasswd_entry">passwd_entry</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Find an entry in <code class="code">passwd</code> with the given name.</p>
 </div>
@@ -3396,7 +3417,7 @@
 </ul>
 </div>
 
-<pre><span id="VALgetgrnam"><span class="keyword">val</span> getgrnam</span> : <code class="type">string -> <a href="Unix.html#TYPEgroup_entry">group_entry</a></code></pre><div class="info ">
+<pre><span id="VALgetgrnam"><span class="keyword">val</span> getgrnam</span> : <code class="type">string -&gt; <a href="Unix.html#TYPEgroup_entry">group_entry</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Find an entry in <code class="code">group</code> with the given name.</p>
 </div>
@@ -3405,7 +3426,7 @@
 </ul>
 </div>
 
-<pre><span id="VALgetpwuid"><span class="keyword">val</span> getpwuid</span> : <code class="type">int -> <a href="Unix.html#TYPEpasswd_entry">passwd_entry</a></code></pre><div class="info ">
+<pre><span id="VALgetpwuid"><span class="keyword">val</span> getpwuid</span> : <code class="type">int -&gt; <a href="Unix.html#TYPEpasswd_entry">passwd_entry</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Find an entry in <code class="code">passwd</code> with the given user id.</p>
 </div>
@@ -3414,7 +3435,7 @@
 </ul>
 </div>
 
-<pre><span id="VALgetgrgid"><span class="keyword">val</span> getgrgid</span> : <code class="type">int -> <a href="Unix.html#TYPEgroup_entry">group_entry</a></code></pre><div class="info ">
+<pre><span id="VALgetgrgid"><span class="keyword">val</span> getgrgid</span> : <code class="type">int -&gt; <a href="Unix.html#TYPEgroup_entry">group_entry</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Find an entry in <code class="code">group</code> with the given group id.</p>
 </div>
@@ -3431,7 +3452,7 @@
 </div>
 
 
-<pre><span id="VALinet_addr_of_string"><span class="keyword">val</span> inet_addr_of_string</span> : <code class="type">string -> <a href="Unix.html#TYPEinet_addr">inet_addr</a></code></pre><div class="info ">
+<pre><span id="VALinet_addr_of_string"><span class="keyword">val</span> inet_addr_of_string</span> : <code class="type">string -&gt; <a href="Unix.html#TYPEinet_addr">inet_addr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Conversion from the printable representation of an Internet
     address to its internal representation.  The argument string
@@ -3444,7 +3465,7 @@
 </ul>
 </div>
 
-<pre><span id="VALstring_of_inet_addr"><span class="keyword">val</span> string_of_inet_addr</span> : <code class="type"><a href="Unix.html#TYPEinet_addr">inet_addr</a> -> string</code></pre><div class="info ">
+<pre><span id="VALstring_of_inet_addr"><span class="keyword">val</span> string_of_inet_addr</span> : <code class="type"><a href="Unix.html#TYPEinet_addr">inet_addr</a> -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the printable representation of the given Internet address.
     See <a href="Unix.html#VALinet_addr_of_string"><code class="code">Unix.inet_addr_of_string</code></a> for a description of the
@@ -3478,7 +3499,7 @@
 </div>
 </div>
 
-<pre><span id="VALis_inet6_addr"><span class="keyword">val</span> is_inet6_addr</span> : <code class="type"><a href="Unix.html#TYPEinet_addr">inet_addr</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALis_inet6_addr"><span class="keyword">val</span> is_inet6_addr</span> : <code class="type"><a href="Unix.html#TYPEinet_addr">inet_addr</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Whether the given <code class="code">inet_addr</code> is an IPv6 address.</p>
 </div>
@@ -3623,7 +3644,7 @@
 </div>
 
 
-<pre><span id="VALsocket"><span class="keyword">val</span> socket</span> : <code class="type">?cloexec:bool -><br>       <a href="Unix.html#TYPEsocket_domain">socket_domain</a> -> <a href="Unix.html#TYPEsocket_type">socket_type</a> -> int -> <a href="Unix.html#TYPEfile_descr">file_descr</a></code></pre><div class="info ">
+<pre><span id="VALsocket"><span class="keyword">val</span> socket</span> : <code class="type">?cloexec:bool -&gt;<br>       <a href="Unix.html#TYPEsocket_domain">socket_domain</a> -&gt; <a href="Unix.html#TYPEsocket_type">socket_type</a> -&gt; int -&gt; <a href="Unix.html#TYPEfile_descr">file_descr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Create a new socket in the given domain, and with the
    given kind. The third argument is the protocol type; 0 selects
@@ -3633,13 +3654,13 @@
 </div>
 </div>
 
-<pre><span id="VALdomain_of_sockaddr"><span class="keyword">val</span> domain_of_sockaddr</span> : <code class="type"><a href="Unix.html#TYPEsockaddr">sockaddr</a> -> <a href="Unix.html#TYPEsocket_domain">socket_domain</a></code></pre><div class="info ">
+<pre><span id="VALdomain_of_sockaddr"><span class="keyword">val</span> domain_of_sockaddr</span> : <code class="type"><a href="Unix.html#TYPEsockaddr">sockaddr</a> -&gt; <a href="Unix.html#TYPEsocket_domain">socket_domain</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the socket domain adequate for the given socket address.</p>
 </div>
 </div>
 
-<pre><span id="VALsocketpair"><span class="keyword">val</span> socketpair</span> : <code class="type">?cloexec:bool -><br>       <a href="Unix.html#TYPEsocket_domain">socket_domain</a> -><br>       <a href="Unix.html#TYPEsocket_type">socket_type</a> -> int -> <a href="Unix.html#TYPEfile_descr">file_descr</a> * <a href="Unix.html#TYPEfile_descr">file_descr</a></code></pre><div class="info ">
+<pre><span id="VALsocketpair"><span class="keyword">val</span> socketpair</span> : <code class="type">?cloexec:bool -&gt;<br>       <a href="Unix.html#TYPEsocket_domain">socket_domain</a> -&gt;<br>       <a href="Unix.html#TYPEsocket_type">socket_type</a> -&gt; int -&gt; <a href="Unix.html#TYPEfile_descr">file_descr</a> * <a href="Unix.html#TYPEfile_descr">file_descr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Create a pair of unnamed sockets, connected together.
    See <a href="Unix.html#VALset_close_on_exec"><code class="code">Unix.set_close_on_exec</code></a> for documentation on the <code class="code">cloexec</code>
@@ -3650,7 +3671,7 @@
 </ul>
 </div>
 
-<pre><span id="VALaccept"><span class="keyword">val</span> accept</span> : <code class="type">?cloexec:bool -> <a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEfile_descr">file_descr</a> * <a href="Unix.html#TYPEsockaddr">sockaddr</a></code></pre><div class="info ">
+<pre><span id="VALaccept"><span class="keyword">val</span> accept</span> : <code class="type">?cloexec:bool -&gt; <a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEfile_descr">file_descr</a> * <a href="Unix.html#TYPEsockaddr">sockaddr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Accept connections on the given socket. The returned descriptor
    is a socket connected to the client; the returned address is
@@ -3660,19 +3681,19 @@
 </div>
 </div>
 
-<pre><span id="VALbind"><span class="keyword">val</span> bind</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEsockaddr">sockaddr</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALbind"><span class="keyword">val</span> bind</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEsockaddr">sockaddr</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Bind a socket to an address.</p>
 </div>
 </div>
 
-<pre><span id="VALconnect"><span class="keyword">val</span> connect</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEsockaddr">sockaddr</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALconnect"><span class="keyword">val</span> connect</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEsockaddr">sockaddr</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Connect a socket to an address.</p>
 </div>
 </div>
 
-<pre><span id="VALlisten"><span class="keyword">val</span> listen</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALlisten"><span class="keyword">val</span> listen</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Set up a socket for receiving connection requests. The integer
    argument is the maximal number of pending requests.</p>
@@ -3724,7 +3745,7 @@
 </div>
 
 
-<pre><span id="VALshutdown"><span class="keyword">val</span> shutdown</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEshutdown_command">shutdown_command</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALshutdown"><span class="keyword">val</span> shutdown</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEshutdown_command">shutdown_command</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Shutdown a socket connection. <code class="code">SHUTDOWN_SEND</code> as second argument
    causes reads on the other end of the connection to return
@@ -3734,13 +3755,13 @@
 </div>
 </div>
 
-<pre><span id="VALgetsockname"><span class="keyword">val</span> getsockname</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEsockaddr">sockaddr</a></code></pre><div class="info ">
+<pre><span id="VALgetsockname"><span class="keyword">val</span> getsockname</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEsockaddr">sockaddr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the address of the given socket.</p>
 </div>
 </div>
 
-<pre><span id="VALgetpeername"><span class="keyword">val</span> getpeername</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEsockaddr">sockaddr</a></code></pre><div class="info ">
+<pre><span id="VALgetpeername"><span class="keyword">val</span> getpeername</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEsockaddr">sockaddr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the address of the host connected to the given socket.</p>
 </div>
@@ -3776,25 +3797,25 @@
 </div>
 
 
-<pre><span id="VALrecv"><span class="keyword">val</span> recv</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> bytes -> int -> int -> <a href="Unix.html#TYPEmsg_flag">msg_flag</a> list -> int</code></pre><div class="info ">
+<pre><span id="VALrecv"><span class="keyword">val</span> recv</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; bytes -&gt; int -&gt; int -&gt; <a href="Unix.html#TYPEmsg_flag">msg_flag</a> list -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Receive data from a connected socket.</p>
 </div>
 </div>
 
-<pre><span id="VALrecvfrom"><span class="keyword">val</span> recvfrom</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -><br>       bytes -> int -> int -> <a href="Unix.html#TYPEmsg_flag">msg_flag</a> list -> int * <a href="Unix.html#TYPEsockaddr">sockaddr</a></code></pre><div class="info ">
+<pre><span id="VALrecvfrom"><span class="keyword">val</span> recvfrom</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt;<br>       bytes -&gt; int -&gt; int -&gt; <a href="Unix.html#TYPEmsg_flag">msg_flag</a> list -&gt; int * <a href="Unix.html#TYPEsockaddr">sockaddr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Receive data from an unconnected socket.</p>
 </div>
 </div>
 
-<pre><span id="VALsend"><span class="keyword">val</span> send</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> bytes -> int -> int -> <a href="Unix.html#TYPEmsg_flag">msg_flag</a> list -> int</code></pre><div class="info ">
+<pre><span id="VALsend"><span class="keyword">val</span> send</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; bytes -&gt; int -&gt; int -&gt; <a href="Unix.html#TYPEmsg_flag">msg_flag</a> list -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Send data over a connected socket.</p>
 </div>
 </div>
 
-<pre><span id="VALsend_substring"><span class="keyword">val</span> send_substring</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> string -> int -> int -> <a href="Unix.html#TYPEmsg_flag">msg_flag</a> list -> int</code></pre><div class="info ">
+<pre><span id="VALsend_substring"><span class="keyword">val</span> send_substring</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; string -&gt; int -&gt; int -&gt; <a href="Unix.html#TYPEmsg_flag">msg_flag</a> list -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">send</code>, but take the data from a string instead of a byte
     sequence.</p>
@@ -3804,13 +3825,13 @@
 </ul>
 </div>
 
-<pre><span id="VALsendto"><span class="keyword">val</span> sendto</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -><br>       bytes -> int -> int -> <a href="Unix.html#TYPEmsg_flag">msg_flag</a> list -> <a href="Unix.html#TYPEsockaddr">sockaddr</a> -> int</code></pre><div class="info ">
+<pre><span id="VALsendto"><span class="keyword">val</span> sendto</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt;<br>       bytes -&gt; int -&gt; int -&gt; <a href="Unix.html#TYPEmsg_flag">msg_flag</a> list -&gt; <a href="Unix.html#TYPEsockaddr">sockaddr</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Send data over an unconnected socket.</p>
 </div>
 </div>
 
-<pre><span id="VALsendto_substring"><span class="keyword">val</span> sendto_substring</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -><br>       string -> int -> int -> <a href="Unix.html#TYPEmsg_flag">msg_flag</a> list -> <a href="Unix.html#TYPEsockaddr">sockaddr</a> -> int</code></pre><div class="info ">
+<pre><span id="VALsendto_substring"><span class="keyword">val</span> sendto_substring</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt;<br>       string -&gt; int -&gt; int -&gt; <a href="Unix.html#TYPEmsg_flag">msg_flag</a> list -&gt; <a href="Unix.html#TYPEsockaddr">sockaddr</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">sendto</code>, but take the data from a string instead of a
     byte sequence.</p>
@@ -4095,67 +4116,67 @@
 </div>
 
 
-<pre><span id="VALgetsockopt"><span class="keyword">val</span> getsockopt</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEsocket_bool_option">socket_bool_option</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALgetsockopt"><span class="keyword">val</span> getsockopt</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEsocket_bool_option">socket_bool_option</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the current status of a boolean-valued option
    in the given socket.</p>
 </div>
 </div>
 
-<pre><span id="VALsetsockopt"><span class="keyword">val</span> setsockopt</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEsocket_bool_option">socket_bool_option</a> -> bool -> unit</code></pre><div class="info ">
+<pre><span id="VALsetsockopt"><span class="keyword">val</span> setsockopt</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEsocket_bool_option">socket_bool_option</a> -&gt; bool -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Set or clear a boolean-valued option in the given socket.</p>
 </div>
 </div>
 
-<pre><span id="VALgetsockopt_int"><span class="keyword">val</span> getsockopt_int</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEsocket_int_option">socket_int_option</a> -> int</code></pre><div class="info ">
+<pre><span id="VALgetsockopt_int"><span class="keyword">val</span> getsockopt_int</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEsocket_int_option">socket_int_option</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Unix.html#VALgetsockopt"><code class="code">Unix.getsockopt</code></a> for an integer-valued socket option.</p>
 </div>
 </div>
 
-<pre><span id="VALsetsockopt_int"><span class="keyword">val</span> setsockopt_int</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEsocket_int_option">socket_int_option</a> -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALsetsockopt_int"><span class="keyword">val</span> setsockopt_int</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEsocket_int_option">socket_int_option</a> -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Unix.html#VALsetsockopt"><code class="code">Unix.setsockopt</code></a> for an integer-valued socket option.</p>
 </div>
 </div>
 
-<pre><span id="VALgetsockopt_optint"><span class="keyword">val</span> getsockopt_optint</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEsocket_optint_option">socket_optint_option</a> -> int option</code></pre><div class="info ">
+<pre><span id="VALgetsockopt_optint"><span class="keyword">val</span> getsockopt_optint</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEsocket_optint_option">socket_optint_option</a> -&gt; int option</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Unix.html#VALgetsockopt"><code class="code">Unix.getsockopt</code></a> for a socket option whose value is
     an <code class="code">int option</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALsetsockopt_optint"><span class="keyword">val</span> setsockopt_optint</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEsocket_optint_option">socket_optint_option</a> -> int option -> unit</code></pre><div class="info ">
+<pre><span id="VALsetsockopt_optint"><span class="keyword">val</span> setsockopt_optint</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEsocket_optint_option">socket_optint_option</a> -&gt; int option -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Unix.html#VALsetsockopt"><code class="code">Unix.setsockopt</code></a> for a socket option whose value is
     an <code class="code">int option</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALgetsockopt_float"><span class="keyword">val</span> getsockopt_float</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEsocket_float_option">socket_float_option</a> -> float</code></pre><div class="info ">
+<pre><span id="VALgetsockopt_float"><span class="keyword">val</span> getsockopt_float</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEsocket_float_option">socket_float_option</a> -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Unix.html#VALgetsockopt"><code class="code">Unix.getsockopt</code></a> for a socket option whose value is a
     floating-point number.</p>
 </div>
 </div>
 
-<pre><span id="VALsetsockopt_float"><span class="keyword">val</span> setsockopt_float</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEsocket_float_option">socket_float_option</a> -> float -> unit</code></pre><div class="info ">
+<pre><span id="VALsetsockopt_float"><span class="keyword">val</span> setsockopt_float</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEsocket_float_option">socket_float_option</a> -&gt; float -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Unix.html#VALsetsockopt"><code class="code">Unix.setsockopt</code></a> for a socket option whose value is a
     floating-point number.</p>
 </div>
 </div>
 
-<pre><span id="VALgetsockopt_error"><span class="keyword">val</span> getsockopt_error</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEerror">error</a> option</code></pre><div class="info ">
+<pre><span id="VALgetsockopt_error"><span class="keyword">val</span> getsockopt_error</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEerror">error</a> option</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the error condition associated with the given socket,
     and clear it.</p>
 </div>
 </div>
 <h2 id="1_Highlevelnetworkconnectionfunctions">High-level network connection functions</h2>
-<pre><span id="VALopen_connection"><span class="keyword">val</span> open_connection</span> : <code class="type"><a href="Unix.html#TYPEsockaddr">sockaddr</a> -> Stdlib.in_channel * Stdlib.out_channel</code></pre><div class="info ">
+<pre><span id="VALopen_connection"><span class="keyword">val</span> open_connection</span> : <code class="type"><a href="Unix.html#TYPEsockaddr">sockaddr</a> -&gt; Stdlib.in_channel * Stdlib.out_channel</code></pre><div class="info ">
 <div class="info-desc">
 <p>Connect to a server at the given address.
    Return a pair of buffered channels connected to the server.
@@ -4170,7 +4191,7 @@
 </div>
 </div>
 
-<pre><span id="VALshutdown_connection"><span class="keyword">val</span> shutdown_connection</span> : <code class="type">Stdlib.in_channel -> unit</code></pre><div class="info ">
+<pre><span id="VALshutdown_connection"><span class="keyword">val</span> shutdown_connection</span> : <code class="type">Stdlib.in_channel -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>``Shut down'' a connection established with <a href="Unix.html#VALopen_connection"><code class="code">Unix.open_connection</code></a>;
    that is, transmit an end-of-file condition to the server reading
@@ -4181,7 +4202,7 @@
 </div>
 </div>
 
-<pre><span id="VALestablish_server"><span class="keyword">val</span> establish_server</span> : <code class="type">(Stdlib.in_channel -> Stdlib.out_channel -> unit) -> <a href="Unix.html#TYPEsockaddr">sockaddr</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALestablish_server"><span class="keyword">val</span> establish_server</span> : <code class="type">(Stdlib.in_channel -&gt; Stdlib.out_channel -&gt; unit) -&gt; <a href="Unix.html#TYPEsockaddr">sockaddr</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Establish a server on the given address.
    The function given as first argument is called for each connection
@@ -4308,13 +4329,13 @@
 </div>
 
 
-<pre><span id="VALgethostname"><span class="keyword">val</span> gethostname</span> : <code class="type">unit -> string</code></pre><div class="info ">
+<pre><span id="VALgethostname"><span class="keyword">val</span> gethostname</span> : <code class="type">unit -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the name of the local host.</p>
 </div>
 </div>
 
-<pre><span id="VALgethostbyname"><span class="keyword">val</span> gethostbyname</span> : <code class="type">string -> <a href="Unix.html#TYPEhost_entry">host_entry</a></code></pre><div class="info ">
+<pre><span id="VALgethostbyname"><span class="keyword">val</span> gethostbyname</span> : <code class="type">string -&gt; <a href="Unix.html#TYPEhost_entry">host_entry</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Find an entry in <code class="code">hosts</code> with the given name.</p>
 </div>
@@ -4323,7 +4344,7 @@
 </ul>
 </div>
 
-<pre><span id="VALgethostbyaddr"><span class="keyword">val</span> gethostbyaddr</span> : <code class="type"><a href="Unix.html#TYPEinet_addr">inet_addr</a> -> <a href="Unix.html#TYPEhost_entry">host_entry</a></code></pre><div class="info ">
+<pre><span id="VALgethostbyaddr"><span class="keyword">val</span> gethostbyaddr</span> : <code class="type"><a href="Unix.html#TYPEinet_addr">inet_addr</a> -&gt; <a href="Unix.html#TYPEhost_entry">host_entry</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Find an entry in <code class="code">hosts</code> with the given address.</p>
 </div>
@@ -4332,7 +4353,7 @@
 </ul>
 </div>
 
-<pre><span id="VALgetprotobyname"><span class="keyword">val</span> getprotobyname</span> : <code class="type">string -> <a href="Unix.html#TYPEprotocol_entry">protocol_entry</a></code></pre><div class="info ">
+<pre><span id="VALgetprotobyname"><span class="keyword">val</span> getprotobyname</span> : <code class="type">string -&gt; <a href="Unix.html#TYPEprotocol_entry">protocol_entry</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Find an entry in <code class="code">protocols</code> with the given name.</p>
 </div>
@@ -4341,7 +4362,7 @@
 </ul>
 </div>
 
-<pre><span id="VALgetprotobynumber"><span class="keyword">val</span> getprotobynumber</span> : <code class="type">int -> <a href="Unix.html#TYPEprotocol_entry">protocol_entry</a></code></pre><div class="info ">
+<pre><span id="VALgetprotobynumber"><span class="keyword">val</span> getprotobynumber</span> : <code class="type">int -&gt; <a href="Unix.html#TYPEprotocol_entry">protocol_entry</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Find an entry in <code class="code">protocols</code> with the given protocol number.</p>
 </div>
@@ -4350,7 +4371,7 @@
 </ul>
 </div>
 
-<pre><span id="VALgetservbyname"><span class="keyword">val</span> getservbyname</span> : <code class="type">string -> string -> <a href="Unix.html#TYPEservice_entry">service_entry</a></code></pre><div class="info ">
+<pre><span id="VALgetservbyname"><span class="keyword">val</span> getservbyname</span> : <code class="type">string -&gt; string -&gt; <a href="Unix.html#TYPEservice_entry">service_entry</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Find an entry in <code class="code">services</code> with the given name.</p>
 </div>
@@ -4359,7 +4380,7 @@
 </ul>
 </div>
 
-<pre><span id="VALgetservbyport"><span class="keyword">val</span> getservbyport</span> : <code class="type">int -> string -> <a href="Unix.html#TYPEservice_entry">service_entry</a></code></pre><div class="info ">
+<pre><span id="VALgetservbyport"><span class="keyword">val</span> getservbyport</span> : <code class="type">int -&gt; string -&gt; <a href="Unix.html#TYPEservice_entry">service_entry</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Find an entry in <code class="code">services</code> with the given service number.</p>
 </div>
@@ -4522,7 +4543,7 @@
 </div>
 
 
-<pre><span id="VALgetaddrinfo"><span class="keyword">val</span> getaddrinfo</span> : <code class="type">string -> string -> <a href="Unix.html#TYPEgetaddrinfo_option">getaddrinfo_option</a> list -> <a href="Unix.html#TYPEaddr_info">addr_info</a> list</code></pre><div class="info ">
+<pre><span id="VALgetaddrinfo"><span class="keyword">val</span> getaddrinfo</span> : <code class="type">string -&gt; string -&gt; <a href="Unix.html#TYPEgetaddrinfo_option">getaddrinfo_option</a> list -&gt; <a href="Unix.html#TYPEaddr_info">addr_info</a> list</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">getaddrinfo host service opts</code> returns a list of <a href="Unix.html#TYPEaddr_info"><code class="code">Unix.addr_info</code></a>
     records describing socket parameters and addresses suitable for
@@ -4647,7 +4668,7 @@
 </div>
 
 
-<pre><span id="VALgetnameinfo"><span class="keyword">val</span> getnameinfo</span> : <code class="type"><a href="Unix.html#TYPEsockaddr">sockaddr</a> -> <a href="Unix.html#TYPEgetnameinfo_option">getnameinfo_option</a> list -> <a href="Unix.html#TYPEname_info">name_info</a></code></pre><div class="info ">
+<pre><span id="VALgetnameinfo"><span class="keyword">val</span> getnameinfo</span> : <code class="type"><a href="Unix.html#TYPEsockaddr">sockaddr</a> -&gt; <a href="Unix.html#TYPEgetnameinfo_option">getnameinfo_option</a> list -&gt; <a href="Unix.html#TYPEname_info">name_info</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">getnameinfo addr opts</code> returns the host name and service name
     corresponding to the socket address <code class="code">addr</code>.  <code class="code">opts</code> is a possibly
@@ -5125,7 +5146,7 @@
 
 
 
-<pre><span id="VALtcgetattr"><span class="keyword">val</span> tcgetattr</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEterminal_io">terminal_io</a></code></pre><div class="info ">
+<pre><span id="VALtcgetattr"><span class="keyword">val</span> tcgetattr</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEterminal_io">terminal_io</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the status of the terminal referred to by the given
    file descriptor.</p>
@@ -5160,7 +5181,7 @@
 
 
 
-<pre><span id="VALtcsetattr"><span class="keyword">val</span> tcsetattr</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEsetattr_when">setattr_when</a> -> <a href="Unix.html#TYPEterminal_io">terminal_io</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALtcsetattr"><span class="keyword">val</span> tcsetattr</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEsetattr_when">setattr_when</a> -&gt; <a href="Unix.html#TYPEterminal_io">terminal_io</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Set the status of the terminal referred to by the given
    file descriptor. The second argument indicates when the
@@ -5176,7 +5197,7 @@
 </ul>
 </div>
 
-<pre><span id="VALtcsendbreak"><span class="keyword">val</span> tcsendbreak</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALtcsendbreak"><span class="keyword">val</span> tcsendbreak</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Send a break condition on the given file descriptor.
    The second argument is the duration of the break, in 0.1s units;
@@ -5187,7 +5208,7 @@
 </ul>
 </div>
 
-<pre><span id="VALtcdrain"><span class="keyword">val</span> tcdrain</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALtcdrain"><span class="keyword">val</span> tcdrain</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Waits until all output written on the given file descriptor
    has been transmitted.</p>
@@ -5222,7 +5243,7 @@
 
 
 
-<pre><span id="VALtcflush"><span class="keyword">val</span> tcflush</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEflush_queue">flush_queue</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALtcflush"><span class="keyword">val</span> tcflush</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEflush_queue">flush_queue</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Discard data written on the given file descriptor but not yet
    transmitted, or data received but not yet read, depending on the
@@ -5267,7 +5288,7 @@
 
 
 
-<pre><span id="VALtcflow"><span class="keyword">val</span> tcflow</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -> <a href="Unix.html#TYPEflow_action">flow_action</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALtcflow"><span class="keyword">val</span> tcflow</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Unix.html#TYPEflow_action">flow_action</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Suspend or restart reception or transmission of data on
    the given file descriptor, depending on the second argument:
@@ -5280,7 +5301,7 @@
 </ul>
 </div>
 
-<pre><span id="VALsetsid"><span class="keyword">val</span> setsid</span> : <code class="type">unit -> int</code></pre><div class="info ">
+<pre><span id="VALsetsid"><span class="keyword">val</span> setsid</span> : <code class="type">unit -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Put the calling process in a new session and detach it from
    its controlling terminal.</p>

@@ -5,19 +5,24 @@
 <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="Start" href="index.html">
-<link rel="previous" href="In_channel.html">
-<link rel="next" href="Int32.html">
+<link rel="previous" href="Int64.html">
+<link rel="next" href="Lazy.html">
 <link rel="Up" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="Arg" rel="Chapter" href="Arg.html">
-<link title="Array" rel="Chapter" href="Array.html">
 <link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
+<link title="Array" rel="Chapter" href="Array.html">
+<link title="Atomic" rel="Chapter" href="Atomic.html">
+<link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
+<link title="Bytes" rel="Chapter" href="Bytes.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
@@ -25,19 +30,26 @@
 <link title="Dynlink" rel="Chapter" href="Dynlink.html">
 <link title="Dynlink_types" rel="Chapter" href="Dynlink_types.html">
 <link title="Either" rel="Chapter" href="Either.html">
+<link title="Ephemeron" rel="Chapter" href="Ephemeron.html">
 <link title="Event" rel="Chapter" href="Event.html">
 <link title="Filename" rel="Chapter" href="Filename.html">
 <link title="Float" rel="Chapter" href="Float.html">
+<link title="Format" rel="Chapter" href="Format.html">
 <link title="Fun" rel="Chapter" href="Fun.html">
 <link title="Gc" rel="Chapter" href="Gc.html">
 <link title="Genlex" rel="Chapter" href="Genlex.html">
+<link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
-<link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
+<link title="Int" rel="Chapter" href="Int.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
+<link title="List" rel="Chapter" href="List.html">
+<link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
+<link title="MoreLabels" rel="Chapter" href="MoreLabels.html">
 <link title="Mutex" rel="Chapter" href="Mutex.html">
 <link title="Nativeint" rel="Chapter" href="Nativeint.html">
 <link title="Obj" rel="Chapter" href="Obj.html">
@@ -47,25 +59,32 @@
 <link title="Parsing" rel="Chapter" href="Parsing.html">
 <link title="Printexc" rel="Chapter" href="Printexc.html">
 <link title="Printf" rel="Chapter" href="Printf.html">
+<link title="Queue" rel="Chapter" href="Queue.html">
 <link title="Random" rel="Chapter" href="Random.html">
 <link title="Result" rel="Chapter" href="Result.html">
 <link title="Scanf" rel="Chapter" href="Scanf.html">
 <link title="Semaphore" rel="Chapter" href="Semaphore.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
 <link title="Set" rel="Chapter" href="Set.html">
+<link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stream" rel="Chapter" href="Stream.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
+<link title="String" rel="Chapter" href="String.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
-<link title="Unix" rel="Chapter" href="Unix.html"><link title="Integers" rel="Section" href="#ints">
+<link title="Unix" rel="Chapter" href="Unix.html">
+<link title="Weak" rel="Chapter" href="Weak.html"><link title="Integers" rel="Section" href="#ints">
 <link title="Predicates and comparisons" rel="Section" href="#preds">
 <link title="Converting" rel="Section" href="#convert">
 <title>Int</title>
 </head>
 <body>
-<div class="navbar"><a class="pre" href="In_channel.html" title="In_channel">Previous</a>
+<div class="navbar"><a class="pre" href="Int64.html" title="Int64">Previous</a>
 &nbsp;<a class="up" href="index.html" title="Index">Up</a>
-&nbsp;<a class="post" href="Int32.html" title="Int32">Next</a>
+&nbsp;<a class="post" href="Lazy.html" title="Lazy">Next</a>
 </div>
 <h1>Module <a href="type_Int.html">Int</a></h1>
 
@@ -109,55 +128,55 @@
 </div>
 </div>
 
-<pre><span id="VALneg"><span class="keyword">val</span> neg</span> : <code class="type">int -> int</code></pre><div class="info ">
+<pre><span id="VALneg"><span class="keyword">val</span> neg</span> : <code class="type">int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">neg x</code> is <code class="code">~-x</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type">int -> int -> int</code></pre><div class="info ">
+<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type">int -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add x y</code> is the addition <code class="code">x + y</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALsub"><span class="keyword">val</span> sub</span> : <code class="type">int -> int -> int</code></pre><div class="info ">
+<pre><span id="VALsub"><span class="keyword">val</span> sub</span> : <code class="type">int -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">sub x y</code> is the subtraction <code class="code">x - y</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALmul"><span class="keyword">val</span> mul</span> : <code class="type">int -> int -> int</code></pre><div class="info ">
+<pre><span id="VALmul"><span class="keyword">val</span> mul</span> : <code class="type">int -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">mul x y</code> is the multiplication <code class="code">x * y</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALdiv"><span class="keyword">val</span> div</span> : <code class="type">int -> int -> int</code></pre><div class="info ">
+<pre><span id="VALdiv"><span class="keyword">val</span> div</span> : <code class="type">int -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">div x y</code> is the division <code class="code">x / y</code>. See <code class="code">Stdlib.( / )</code> for details.</p>
 </div>
 </div>
 
-<pre><span id="VALrem"><span class="keyword">val</span> rem</span> : <code class="type">int -> int -> int</code></pre><div class="info ">
+<pre><span id="VALrem"><span class="keyword">val</span> rem</span> : <code class="type">int -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">rem x y</code> is the remainder <code class="code">x mod y</code>. See <code class="code">Stdlib.( mod )</code> for details.</p>
 </div>
 </div>
 
-<pre><span id="VALsucc"><span class="keyword">val</span> succ</span> : <code class="type">int -> int</code></pre><div class="info ">
+<pre><span id="VALsucc"><span class="keyword">val</span> succ</span> : <code class="type">int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">succ x</code> is <code class="code">add x 1</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALpred"><span class="keyword">val</span> pred</span> : <code class="type">int -> int</code></pre><div class="info ">
+<pre><span id="VALpred"><span class="keyword">val</span> pred</span> : <code class="type">int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pred x</code> is <code class="code">sub x 1</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALabs"><span class="keyword">val</span> abs</span> : <code class="type">int -> int</code></pre><div class="info ">
+<pre><span id="VALabs"><span class="keyword">val</span> abs</span> : <code class="type">int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">abs x</code> is the absolute value of <code class="code">x</code>. That is <code class="code">x</code> if <code class="code">x</code> is positive
     and <code class="code">neg x</code> if <code class="code">x</code> is negative. <b>Warning.</b> This may be negative if
@@ -179,38 +198,38 @@
 </div>
 </div>
 
-<pre><span id="VALlogand"><span class="keyword">val</span> logand</span> : <code class="type">int -> int -> int</code></pre><div class="info ">
+<pre><span id="VALlogand"><span class="keyword">val</span> logand</span> : <code class="type">int -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">logand x y</code> is the bitwise logical and of <code class="code">x</code> and <code class="code">y</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALlogor"><span class="keyword">val</span> logor</span> : <code class="type">int -> int -> int</code></pre><div class="info ">
+<pre><span id="VALlogor"><span class="keyword">val</span> logor</span> : <code class="type">int -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">logor x y</code> is the bitwise logical or of <code class="code">x</code> and <code class="code">y</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALlogxor"><span class="keyword">val</span> logxor</span> : <code class="type">int -> int -> int</code></pre><div class="info ">
+<pre><span id="VALlogxor"><span class="keyword">val</span> logxor</span> : <code class="type">int -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">logxor x y</code> is the bitwise logical exclusive or of <code class="code">x</code> and <code class="code">y</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALlognot"><span class="keyword">val</span> lognot</span> : <code class="type">int -> int</code></pre><div class="info ">
+<pre><span id="VALlognot"><span class="keyword">val</span> lognot</span> : <code class="type">int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">lognot x</code> is the bitwise logical negation of <code class="code">x</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALshift_left"><span class="keyword">val</span> shift_left</span> : <code class="type">int -> int -> int</code></pre><div class="info ">
+<pre><span id="VALshift_left"><span class="keyword">val</span> shift_left</span> : <code class="type">int -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">shift_left x n</code> shifts <code class="code">x</code> to the left by <code class="code">n</code> bits. The result
     is unspecified if <code class="code">n &lt; 0</code> or <code class="code">n &gt; </code><a href="Sys.html#VALint_size"><code class="code">Sys.int_size</code></a>.</p>
 </div>
 </div>
 
-<pre><span id="VALshift_right"><span class="keyword">val</span> shift_right</span> : <code class="type">int -> int -> int</code></pre><div class="info ">
+<pre><span id="VALshift_right"><span class="keyword">val</span> shift_right</span> : <code class="type">int -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">shift_right x n</code> shifts <code class="code">x</code> to the right by <code class="code">n</code> bits. This is an
     arithmetic shift: the sign bit of <code class="code">x</code> is replicated and inserted
@@ -219,7 +238,7 @@
 </div>
 </div>
 
-<pre><span id="VALshift_right_logical"><span class="keyword">val</span> shift_right_logical</span> : <code class="type">int -> int -> int</code></pre><div class="info ">
+<pre><span id="VALshift_right_logical"><span class="keyword">val</span> shift_right_logical</span> : <code class="type">int -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">shift_right x n</code> shifts <code class="code">x</code> to the right by <code class="code">n</code> bits. This is a
     logical shift: zeroes are inserted in the vacated bits regardless
@@ -228,19 +247,19 @@
 </div>
 </div>
 <h2 id="preds">Predicates and comparisons</h2>
-<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type">int -> int -> bool</code></pre><div class="info ">
+<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type">int -&gt; int -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">equal x y</code> is <code class="code">true</code> if and only if <code class="code">x = y</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">int -> int -> int</code></pre><div class="info ">
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">int -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">compare x y</code> is <code class="code">Stdlib.compare</code><code class="code"> x y</code> but more efficient.</p>
 </div>
 </div>
 
-<pre><span id="VALmin"><span class="keyword">val</span> min</span> : <code class="type">int -> int -> int</code></pre><div class="info ">
+<pre><span id="VALmin"><span class="keyword">val</span> min</span> : <code class="type">int -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the smaller of the two arguments.</p>
 </div>
@@ -249,7 +268,7 @@
 </ul>
 </div>
 
-<pre><span id="VALmax"><span class="keyword">val</span> max</span> : <code class="type">int -> int -> int</code></pre><div class="info ">
+<pre><span id="VALmax"><span class="keyword">val</span> max</span> : <code class="type">int -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the greater of the two arguments.</p>
 </div>
@@ -258,13 +277,13 @@
 </ul>
 </div>
 <h2 id="convert">Converting</h2>
-<pre><span id="VALto_float"><span class="keyword">val</span> to_float</span> : <code class="type">int -> float</code></pre><div class="info ">
+<pre><span id="VALto_float"><span class="keyword">val</span> to_float</span> : <code class="type">int -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">to_float x</code> is <code class="code">x</code> as a floating point number.</p>
 </div>
 </div>
 
-<pre><span id="VALof_float"><span class="keyword">val</span> of_float</span> : <code class="type">float -> int</code></pre><div class="info ">
+<pre><span id="VALof_float"><span class="keyword">val</span> of_float</span> : <code class="type">float -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">of_float x</code> truncates <code class="code">x</code> to an integer. The result is
     unspecified if the argument is <code class="code">nan</code> or falls outside the range of
@@ -272,7 +291,7 @@
 </div>
 </div>
 
-<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type">int -> string</code></pre><div class="info ">
+<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type">int -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">to_string x</code> is the written representation of <code class="code">x</code> in decimal.</p>
 </div>

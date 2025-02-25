@@ -5,19 +5,24 @@
 <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="Start" href="index.html">
-<link rel="previous" href="Genlex.html">
-<link rel="next" href="Int.html">
+<link rel="previous" href="Hashtbl.html">
+<link rel="next" href="Int32.html">
 <link rel="Up" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="Arg" rel="Chapter" href="Arg.html">
-<link title="Array" rel="Chapter" href="Array.html">
 <link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
+<link title="Array" rel="Chapter" href="Array.html">
+<link title="Atomic" rel="Chapter" href="Atomic.html">
+<link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
+<link title="Bytes" rel="Chapter" href="Bytes.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
@@ -25,19 +30,26 @@
 <link title="Dynlink" rel="Chapter" href="Dynlink.html">
 <link title="Dynlink_types" rel="Chapter" href="Dynlink_types.html">
 <link title="Either" rel="Chapter" href="Either.html">
+<link title="Ephemeron" rel="Chapter" href="Ephemeron.html">
 <link title="Event" rel="Chapter" href="Event.html">
 <link title="Filename" rel="Chapter" href="Filename.html">
 <link title="Float" rel="Chapter" href="Float.html">
+<link title="Format" rel="Chapter" href="Format.html">
 <link title="Fun" rel="Chapter" href="Fun.html">
 <link title="Gc" rel="Chapter" href="Gc.html">
 <link title="Genlex" rel="Chapter" href="Genlex.html">
+<link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
-<link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
+<link title="Int" rel="Chapter" href="Int.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
+<link title="List" rel="Chapter" href="List.html">
+<link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
+<link title="MoreLabels" rel="Chapter" href="MoreLabels.html">
 <link title="Mutex" rel="Chapter" href="Mutex.html">
 <link title="Nativeint" rel="Chapter" href="Nativeint.html">
 <link title="Obj" rel="Chapter" href="Obj.html">
@@ -47,22 +59,29 @@
 <link title="Parsing" rel="Chapter" href="Parsing.html">
 <link title="Printexc" rel="Chapter" href="Printexc.html">
 <link title="Printf" rel="Chapter" href="Printf.html">
+<link title="Queue" rel="Chapter" href="Queue.html">
 <link title="Random" rel="Chapter" href="Random.html">
 <link title="Result" rel="Chapter" href="Result.html">
 <link title="Scanf" rel="Chapter" href="Scanf.html">
 <link title="Semaphore" rel="Chapter" href="Semaphore.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
 <link title="Set" rel="Chapter" href="Set.html">
+<link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stream" rel="Chapter" href="Stream.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
+<link title="String" rel="Chapter" href="String.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
-<link title="Unix" rel="Chapter" href="Unix.html"><title>In_channel</title>
+<link title="Unix" rel="Chapter" href="Unix.html">
+<link title="Weak" rel="Chapter" href="Weak.html"><title>In_channel</title>
 </head>
 <body>
-<div class="navbar"><a class="pre" href="Genlex.html" title="Genlex">Previous</a>
+<div class="navbar"><a class="pre" href="Hashtbl.html" title="Hashtbl">Previous</a>
 &nbsp;<a class="up" href="index.html" title="Index">Up</a>
-&nbsp;<a class="post" href="Int.html" title="Int">Next</a>
+&nbsp;<a class="post" href="Int32.html" title="Int32">Next</a>
 </div>
 <h1>Module <a href="type_In_channel.html">In_channel</a></h1>
 
@@ -207,14 +226,14 @@
 </div>
 </div>
 
-<pre><span id="VALopen_bin"><span class="keyword">val</span> open_bin</span> : <code class="type">string -> <a href="In_channel.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALopen_bin"><span class="keyword">val</span> open_bin</span> : <code class="type">string -&gt; <a href="In_channel.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Open the named file for reading, and return a new input channel on that
     file, positioned at the beginning of the file.</p>
 </div>
 </div>
 
-<pre><span id="VALopen_text"><span class="keyword">val</span> open_text</span> : <code class="type">string -> <a href="In_channel.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALopen_text"><span class="keyword">val</span> open_text</span> : <code class="type">string -&gt; <a href="In_channel.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="In_channel.html#VALopen_bin"><code class="code">In_channel.open_bin</code></a>, but the file is opened in text mode, so that newline
     translation takes place during reads. On operating systems that do not
@@ -223,7 +242,7 @@
 </div>
 </div>
 
-<pre><span id="VALopen_gen"><span class="keyword">val</span> open_gen</span> : <code class="type"><a href="In_channel.html#TYPEopen_flag">open_flag</a> list -> int -> string -> <a href="In_channel.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALopen_gen"><span class="keyword">val</span> open_gen</span> : <code class="type"><a href="In_channel.html#TYPEopen_flag">open_flag</a> list -&gt; int -&gt; string -&gt; <a href="In_channel.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">open_gen mode perm filename</code> opens the named file for reading, as described
     above. The extra arguments <code class="code">mode</code> and <code class="code">perm</code> specify the opening mode and
@@ -232,7 +251,7 @@
 </div>
 </div>
 
-<pre><span id="VALwith_open_bin"><span class="keyword">val</span> with_open_bin</span> : <code class="type">string -> (<a href="In_channel.html#TYPEt">t</a> -> 'a) -> 'a</code></pre><div class="info ">
+<pre><span id="VALwith_open_bin"><span class="keyword">val</span> with_open_bin</span> : <code class="type">string -&gt; (<a href="In_channel.html#TYPEt">t</a> -&gt; 'a) -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">with_open_bin fn f</code> opens a channel <code class="code">ic</code> on file <code class="code">fn</code> and returns <code class="code">f
     ic</code>. After <code class="code">f</code> returns, either with a value or by raising an exception, <code class="code">ic</code>
@@ -240,21 +259,21 @@
 </div>
 </div>
 
-<pre><span id="VALwith_open_text"><span class="keyword">val</span> with_open_text</span> : <code class="type">string -> (<a href="In_channel.html#TYPEt">t</a> -> 'a) -> 'a</code></pre><div class="info ">
+<pre><span id="VALwith_open_text"><span class="keyword">val</span> with_open_text</span> : <code class="type">string -&gt; (<a href="In_channel.html#TYPEt">t</a> -&gt; 'a) -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Like <a href="In_channel.html#VALwith_open_bin"><code class="code">In_channel.with_open_bin</code></a>, but the channel is opened in text mode (see
     <a href="In_channel.html#VALopen_text"><code class="code">In_channel.open_text</code></a>).</p>
 </div>
 </div>
 
-<pre><span id="VALwith_open_gen"><span class="keyword">val</span> with_open_gen</span> : <code class="type"><a href="In_channel.html#TYPEopen_flag">open_flag</a> list -> int -> string -> (<a href="In_channel.html#TYPEt">t</a> -> 'a) -> 'a</code></pre><div class="info ">
+<pre><span id="VALwith_open_gen"><span class="keyword">val</span> with_open_gen</span> : <code class="type"><a href="In_channel.html#TYPEopen_flag">open_flag</a> list -&gt; int -&gt; string -&gt; (<a href="In_channel.html#TYPEt">t</a> -&gt; 'a) -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Like <a href="In_channel.html#VALwith_open_bin"><code class="code">In_channel.with_open_bin</code></a>, but can specify the opening mode and file permission,
     in case the file must be created (see <a href="In_channel.html#VALopen_gen"><code class="code">In_channel.open_gen</code></a>).</p>
 </div>
 </div>
 
-<pre><span id="VALseek"><span class="keyword">val</span> seek</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -> int64 -> unit</code></pre><div class="info ">
+<pre><span id="VALseek"><span class="keyword">val</span> seek</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; int64 -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">seek chan pos</code> sets the current reading position to <code class="code">pos</code> for channel
     <code class="code">chan</code>. This works only for regular files. On files of other kinds, the
@@ -262,7 +281,7 @@
 </div>
 </div>
 
-<pre><span id="VALpos"><span class="keyword">val</span> pos</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -> int64</code></pre><div class="info ">
+<pre><span id="VALpos"><span class="keyword">val</span> pos</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; int64</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the current reading position for the given channel.  For files opened
     in text mode under Windows, the returned position is approximate (owing to
@@ -273,7 +292,7 @@
 </div>
 </div>
 
-<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -> int64</code></pre><div class="info ">
+<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; int64</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the size (number of characters) of the regular file on which the
     given channel is opened.  If the channel is opened on a file that is not a
@@ -283,7 +302,7 @@
 </div>
 </div>
 
-<pre><span id="VALclose"><span class="keyword">val</span> close</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALclose"><span class="keyword">val</span> close</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Close the given channel.  Input functions raise a <code class="code">Sys_error</code> exception when
     they are applied to a closed input channel, except <a href="In_channel.html#VALclose"><code class="code">In_channel.close</code></a>, which does
@@ -291,27 +310,27 @@
 </div>
 </div>
 
-<pre><span id="VALclose_noerr"><span class="keyword">val</span> close_noerr</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALclose_noerr"><span class="keyword">val</span> close_noerr</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="In_channel.html#VALclose"><code class="code">In_channel.close</code></a>, but ignore all errors.</p>
 </div>
 </div>
 
-<pre><span id="VALinput_char"><span class="keyword">val</span> input_char</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -> char option</code></pre><div class="info ">
+<pre><span id="VALinput_char"><span class="keyword">val</span> input_char</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; char option</code></pre><div class="info ">
 <div class="info-desc">
 <p>Read one character from the given input channel.  Returns <code class="code">None</code> if there
     are no more characters to read.</p>
 </div>
 </div>
 
-<pre><span id="VALinput_byte"><span class="keyword">val</span> input_byte</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -> int option</code></pre><div class="info ">
+<pre><span id="VALinput_byte"><span class="keyword">val</span> input_byte</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; int option</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="In_channel.html#VALinput_char"><code class="code">In_channel.input_char</code></a>, but return the 8-bit integer representing the
     character. Returns <code class="code">None</code> if the end of file was reached.</p>
 </div>
 </div>
 
-<pre><span id="VALinput_line"><span class="keyword">val</span> input_line</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -> string option</code></pre><div class="info ">
+<pre><span id="VALinput_line"><span class="keyword">val</span> input_line</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; string option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">input_line ic</code> reads characters from <code class="code">ic</code> until a newline or the end of
     file is reached.  Returns the string of all characters read, without the
@@ -324,7 +343,7 @@
 </div>
 </div>
 
-<pre><span id="VALinput"><span class="keyword">val</span> input</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -> bytes -> int -> int -> int</code></pre><div class="info ">
+<pre><span id="VALinput"><span class="keyword">val</span> input</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; bytes -&gt; int -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">input ic buf pos len</code> reads up to <code class="code">len</code> characters from the given channel
     <code class="code">ic</code>, storing them in byte sequence <code class="code">buf</code>, starting at character number
@@ -339,7 +358,7 @@
 </ul>
 </div>
 
-<pre><span id="VALreally_input"><span class="keyword">val</span> really_input</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -> bytes -> int -> int -> unit option</code></pre><div class="info ">
+<pre><span id="VALreally_input"><span class="keyword">val</span> really_input</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; bytes -&gt; int -&gt; int -&gt; unit option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">really_input ic buf pos len</code> reads <code class="code">len</code> characters from channel <code class="code">ic</code>,
     storing them in byte sequence <code class="code">buf</code>, starting at character number <code class="code">pos</code>.</p>
@@ -353,7 +372,7 @@
 </ul>
 </div>
 
-<pre><span id="VALreally_input_string"><span class="keyword">val</span> really_input_string</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -> int -> string option</code></pre><div class="info ">
+<pre><span id="VALreally_input_string"><span class="keyword">val</span> really_input_string</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; int -&gt; string option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">really_input_string ic len</code> reads <code class="code">len</code> characters from channel <code class="code">ic</code> and
     returns them in a new string.  Returns <code class="code">None</code> if the end of file is reached
@@ -361,13 +380,13 @@
 </div>
 </div>
 
-<pre><span id="VALinput_all"><span class="keyword">val</span> input_all</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -> string</code></pre><div class="info ">
+<pre><span id="VALinput_all"><span class="keyword">val</span> input_all</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">input_all ic</code> reads all remaining data from <code class="code">ic</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALset_binary_mode"><span class="keyword">val</span> set_binary_mode</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -> bool -> unit</code></pre><div class="info ">
+<pre><span id="VALset_binary_mode"><span class="keyword">val</span> set_binary_mode</span> : <code class="type"><a href="In_channel.html#TYPEt">t</a> -&gt; bool -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">set_binary_mode ic true</code> sets the channel <code class="code">ic</code> to binary mode: no
     translations take place during input.</p>

@@ -5,15 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="Start" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="Arg" rel="Chapter" href="Arg.html">
-<link title="Array" rel="Chapter" href="Array.html">
 <link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
+<link title="Array" rel="Chapter" href="Array.html">
+<link title="Atomic" rel="Chapter" href="Atomic.html">
+<link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
+<link title="Bytes" rel="Chapter" href="Bytes.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
@@ -21,19 +26,26 @@
 <link title="Dynlink" rel="Chapter" href="Dynlink.html">
 <link title="Dynlink_types" rel="Chapter" href="Dynlink_types.html">
 <link title="Either" rel="Chapter" href="Either.html">
+<link title="Ephemeron" rel="Chapter" href="Ephemeron.html">
 <link title="Event" rel="Chapter" href="Event.html">
 <link title="Filename" rel="Chapter" href="Filename.html">
 <link title="Float" rel="Chapter" href="Float.html">
+<link title="Format" rel="Chapter" href="Format.html">
 <link title="Fun" rel="Chapter" href="Fun.html">
 <link title="Gc" rel="Chapter" href="Gc.html">
 <link title="Genlex" rel="Chapter" href="Genlex.html">
+<link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
-<link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
+<link title="Int" rel="Chapter" href="Int.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
+<link title="List" rel="Chapter" href="List.html">
+<link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
+<link title="MoreLabels" rel="Chapter" href="MoreLabels.html">
 <link title="Mutex" rel="Chapter" href="Mutex.html">
 <link title="Nativeint" rel="Chapter" href="Nativeint.html">
 <link title="Obj" rel="Chapter" href="Obj.html">
@@ -43,17 +55,24 @@
 <link title="Parsing" rel="Chapter" href="Parsing.html">
 <link title="Printexc" rel="Chapter" href="Printexc.html">
 <link title="Printf" rel="Chapter" href="Printf.html">
+<link title="Queue" rel="Chapter" href="Queue.html">
 <link title="Random" rel="Chapter" href="Random.html">
 <link title="Result" rel="Chapter" href="Result.html">
 <link title="Scanf" rel="Chapter" href="Scanf.html">
 <link title="Semaphore" rel="Chapter" href="Semaphore.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
 <link title="Set" rel="Chapter" href="Set.html">
+<link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stream" rel="Chapter" href="Stream.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
+<link title="String" rel="Chapter" href="String.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
-<link title="Unix" rel="Chapter" href="Unix.html"><title>Index of modules</title>
+<link title="Unix" rel="Chapter" href="Unix.html">
+<link title="Weak" rel="Chapter" href="Weak.html"><title>Index of modules</title>
 </head>
 <body>
 <div class="navbar">&nbsp;<a class="up" href="index.html" title="Index">Up</a>
@@ -81,6 +100,30 @@
 
 </div>
 </td></tr>
+<tr><td><a href="Bigarray.Array0.html">Array0</a> [<a href="Bigarray.html">Bigarray</a>]</td>
+<td><div class="info">
+<p>Zero-dimensional arrays.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bigarray.Array1.html">Array1</a> [<a href="Bigarray.html">Bigarray</a>]</td>
+<td><div class="info">
+<p>One-dimensional arrays.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bigarray.Array2.html">Array2</a> [<a href="Bigarray.html">Bigarray</a>]</td>
+<td><div class="info">
+<p>Two-dimensional arrays.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bigarray.Array3.html">Array3</a> [<a href="Bigarray.html">Bigarray</a>]</td>
+<td><div class="info">
+<p>Three-dimensional arrays.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Float.ArrayLabels.html">ArrayLabels</a> [<a href="Float.html">Float</a>]</td>
 <td><div class="info">
 <p>Float arrays with packed representation (labeled functions).</p>
@@ -93,7 +136,21 @@
 
 </div>
 </td></tr>
+<tr><td><a href="Atomic.html">Atomic</a> </td>
+<td><div class="info">
+<p>This module provides a purely sequential implementation of the
+    concurrent atomic references provided by the Multicore OCaml
+    standard library:</p>
+
+</div>
+</td></tr>
 <tr><td align="left"><div>B</div></td></tr>
+<tr><td><a href="Bigarray.html">Bigarray</a> </td>
+<td><div class="info">
+<p>Large, multi-dimensional, numerical arrays.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Semaphore.Binary.html">Binary</a> [<a href="Semaphore.html">Semaphore</a>]</td>
 <td></td></tr>
 <tr><td><a href="Bool.html">Bool</a> </td>
@@ -102,6 +159,12 @@
 
 </div>
 </td></tr>
+<tr><td><a href="Ephemeron.Kn.Bucket.html">Bucket</a> [<a href="Ephemeron.Kn.html">Ephemeron.Kn</a>]</td>
+<td></td></tr>
+<tr><td><a href="Ephemeron.K2.Bucket.html">Bucket</a> [<a href="Ephemeron.K2.html">Ephemeron.K2</a>]</td>
+<td></td></tr>
+<tr><td><a href="Ephemeron.K1.Bucket.html">Bucket</a> [<a href="Ephemeron.K1.html">Ephemeron.K1</a>]</td>
+<td></td></tr>
 <tr><td><a href="Buffer.html">Buffer</a> </td>
 <td><div class="info">
 <p>Extensible buffers.</p>
@@ -110,6 +173,18 @@
 </td></tr>
 <tr><td><a href="StdLabels.Bytes.html">Bytes</a> [<a href="StdLabels.html">StdLabels</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bytes.html">Bytes</a> </td>
+<td><div class="info">
+<p>Byte sequence operations.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="BytesLabels.html">BytesLabels</a> </td>
+<td><div class="info">
+<p>Byte sequence operations.</p>
+
+</div>
+</td></tr>
 <tr><td align="left"><div>C</div></td></tr>
 <tr><td><a href="Callback.html">Callback</a> </td>
 <td><div class="info">
@@ -161,6 +236,12 @@
 </td></tr>
 <tr><td><a href="Obj.Ephemeron.html">Ephemeron</a> [<a href="Obj.html">Obj</a>]</td>
 <td></td></tr>
+<tr><td><a href="Ephemeron.html">Ephemeron</a> </td>
+<td><div class="info">
+<p>Ephemerons and weak hash tables.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Event.html">Event</a> </td>
 <td><div class="info">
 <p>First-class synchronous communication.</p>
@@ -182,6 +263,12 @@
 
 </div>
 </td></tr>
+<tr><td><a href="Format.html">Format</a> </td>
+<td><div class="info">
+<p>Pretty-printing.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Fun.html">Fun</a> </td>
 <td><div class="info">
 <p>Function manipulation.</p>
@@ -195,9 +282,26 @@
 
 </div>
 </td></tr>
+<tr><td><a href="Ephemeron.GenHashTable.html">GenHashTable</a> [<a href="Ephemeron.html">Ephemeron</a>]</td>
+<td><div class="info">
+<p>Hash tables on generic containers with notion of death and aliveness.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bigarray.Genarray.html">Genarray</a> [<a href="Bigarray.html">Bigarray</a>]</td>
+<td></td></tr>
 <tr><td><a href="Genlex.html">Genlex</a> </td>
 <td><div class="info">
 <p>A generic lexical analyzer.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>H</div></td></tr>
+<tr><td><a href="MoreLabels.Hashtbl.html">Hashtbl</a> [<a href="MoreLabels.html">MoreLabels</a>]</td>
+<td></td></tr>
+<tr><td><a href="Hashtbl.html">Hashtbl</a> </td>
+<td><div class="info">
+<p>Hash tables and hash functions.</p>
 
 </div>
 </td></tr>
@@ -228,6 +332,25 @@
 
 </div>
 </td></tr>
+<tr><td align="left"><div>K</div></td></tr>
+<tr><td><a href="Ephemeron.K1.html">K1</a> [<a href="Ephemeron.html">Ephemeron</a>]</td>
+<td><div class="info">
+<p>Ephemerons with one key.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Ephemeron.K2.html">K2</a> [<a href="Ephemeron.html">Ephemeron</a>]</td>
+<td><div class="info">
+<p>Ephemerons with two keys.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Ephemeron.Kn.html">Kn</a> [<a href="Ephemeron.html">Ephemeron</a>]</td>
+<td><div class="info">
+<p>Ephemerons with arbitrary number of keys of the same type.</p>
+
+</div>
+</td></tr>
 <tr><td align="left"><div>L</div></td></tr>
 <tr><td><a href="Unix.LargeFile.html">LargeFile</a> [<a href="Unix.html">Unix</a>]</td>
 <td><div class="info">
@@ -249,13 +372,127 @@
 </td></tr>
 <tr><td><a href="StdLabels.List.html">List</a> [<a href="StdLabels.html">StdLabels</a>]</td>
 <td></td></tr>
+<tr><td><a href="List.html">List</a> </td>
+<td><div class="info">
+<p>List operations.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="ListLabels.html">ListLabels</a> </td>
+<td><div class="info">
+<p>List operations.</p>
+
+</div>
+</td></tr>
 <tr><td align="left"><div>M</div></td></tr>
+<tr><td><a href="Weak.Make.html">Make</a> [<a href="Weak.html">Weak</a>]</td>
+<td><div class="info">
+<p>Functor building an implementation of the weak hash set structure.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Sys.Immediate64.Make.html">Make</a> [<a href="Sys.Immediate64.html">Sys.Immediate64</a>]</td>
 <td></td></tr>
 <tr><td><a href="Set.Make.html">Make</a> [<a href="Set.html">Set</a>]</td>
 <td><div class="info">
 <p>Functor building an implementation of the set structure
    given a totally ordered type.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="MoreLabels.Set.Make.html">Make</a> [<a href="MoreLabels.Set.html">MoreLabels.Set</a>]</td>
+<td><div class="info">
+<p>Functor building an implementation of the set structure
+     given a totally ordered type.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="MoreLabels.Map.Make.html">Make</a> [<a href="MoreLabels.Map.html">MoreLabels.Map</a>]</td>
+<td><div class="info">
+<p>Functor building an implementation of the map structure
+     given a totally ordered type.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="MoreLabels.Hashtbl.Make.html">Make</a> [<a href="MoreLabels.Hashtbl.html">MoreLabels.Hashtbl</a>]</td>
+<td><div class="info">
+<p>Functor building an implementation of the hashtable structure.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Map.Make.html">Make</a> [<a href="Map.html">Map</a>]</td>
+<td><div class="info">
+<p>Functor building an implementation of the map structure
+   given a totally ordered type.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Hashtbl.Make.html">Make</a> [<a href="Hashtbl.html">Hashtbl</a>]</td>
+<td><div class="info">
+<p>Functor building an implementation of the hashtable structure.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Ephemeron.Kn.Make.html">Make</a> [<a href="Ephemeron.Kn.html">Ephemeron.Kn</a>]</td>
+<td><div class="info">
+<p>Functor building an implementation of a weak hash table</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Ephemeron.K2.Make.html">Make</a> [<a href="Ephemeron.K2.html">Ephemeron.K2</a>]</td>
+<td><div class="info">
+<p>Functor building an implementation of a weak hash table</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Ephemeron.K1.Make.html">Make</a> [<a href="Ephemeron.K1.html">Ephemeron.K1</a>]</td>
+<td><div class="info">
+<p>Functor building an implementation of a weak hash table</p>
+
+</div>
+</td></tr>
+<tr><td><a href="MoreLabels.Hashtbl.MakeSeeded.html">MakeSeeded</a> [<a href="MoreLabels.Hashtbl.html">MoreLabels.Hashtbl</a>]</td>
+<td><div class="info">
+<p>Functor building an implementation of the hashtable structure.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Hashtbl.MakeSeeded.html">MakeSeeded</a> [<a href="Hashtbl.html">Hashtbl</a>]</td>
+<td><div class="info">
+<p>Functor building an implementation of the hashtable structure.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Ephemeron.GenHashTable.MakeSeeded.html">MakeSeeded</a> [<a href="Ephemeron.GenHashTable.html">Ephemeron.GenHashTable</a>]</td>
+<td><div class="info">
+<p>Functor building an implementation of an hash table that use the container
+      for keeping the information given</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Ephemeron.Kn.MakeSeeded.html">MakeSeeded</a> [<a href="Ephemeron.Kn.html">Ephemeron.Kn</a>]</td>
+<td><div class="info">
+<p>Functor building an implementation of a weak hash table.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Ephemeron.K2.MakeSeeded.html">MakeSeeded</a> [<a href="Ephemeron.K2.html">Ephemeron.K2</a>]</td>
+<td><div class="info">
+<p>Functor building an implementation of a weak hash table.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Ephemeron.K1.MakeSeeded.html">MakeSeeded</a> [<a href="Ephemeron.K1.html">Ephemeron.K1</a>]</td>
+<td><div class="info">
+<p>Functor building an implementation of a weak hash table.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="MoreLabels.Map.html">Map</a> [<a href="MoreLabels.html">MoreLabels</a>]</td>
+<td></td></tr>
+<tr><td><a href="Map.html">Map</a> </td>
+<td><div class="info">
+<p>Association tables over ordered types.</p>
 
 </div>
 </td></tr>
@@ -268,6 +505,12 @@
 <tr><td><a href="Gc.Memprof.html">Memprof</a> [<a href="Gc.html">Gc</a>]</td>
 <td><div class="info">
 <p><code class="code">Memprof</code> is a sampling engine for allocated memory words.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="MoreLabels.html">MoreLabels</a> </td>
+<td><div class="info">
+<p>Extra labeled libraries.</p>
 
 </div>
 </td></tr>
@@ -328,6 +571,13 @@
 
 </div>
 </td></tr>
+<tr><td align="left"><div>Q</div></td></tr>
+<tr><td><a href="Queue.html">Queue</a> </td>
+<td><div class="info">
+<p>First-in first-out queues.</p>
+
+</div>
+</td></tr>
 <tr><td align="left"><div>R</div></td></tr>
 <tr><td><a href="Random.html">Random</a> </td>
 <td><div class="info">
@@ -356,14 +606,28 @@
 
 </div>
 </td></tr>
+<tr><td><a href="Seq.html">Seq</a> </td>
+<td><div class="info">
+<p>Sequences.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Set.html">Set</a> </td>
 <td><div class="info">
 <p>Sets over ordered types.</p>
 
 </div>
 </td></tr>
+<tr><td><a href="MoreLabels.Set.html">Set</a> [<a href="MoreLabels.html">MoreLabels</a>]</td>
+<td></td></tr>
 <tr><td><a href="Printexc.Slot.html">Slot</a> [<a href="Printexc.html">Printexc</a>]</td>
 <td><div class="info">
+</div>
+</td></tr>
+<tr><td><a href="Stack.html">Stack</a> </td>
+<td><div class="info">
+<p>Last-in first-out stacks.</p>
+
 </div>
 </td></tr>
 <tr><td><a href="Random.State.html">State</a> [<a href="Random.html">Random</a>]</td>
@@ -380,8 +644,26 @@
 
 </div>
 </td></tr>
+<tr><td><a href="Stream.html">Stream</a> </td>
+<td><div class="info">
+<p>Streams and parsers.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="String.html">String</a> </td>
+<td><div class="info">
+<p>Strings.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="StdLabels.String.html">String</a> [<a href="StdLabels.html">StdLabels</a>]</td>
 <td></td></tr>
+<tr><td><a href="StringLabels.html">StringLabels</a> </td>
+<td><div class="info">
+<p>Strings.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Sys.html">Sys</a> </td>
 <td><div class="info">
 <p>System interface.</p>
@@ -404,6 +686,13 @@
 <tr><td><a href="Unix.html">Unix</a> </td>
 <td><div class="info">
 <p>Interface to the Unix system.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>W</div></td></tr>
+<tr><td><a href="Weak.html">Weak</a> </td>
+<td><div class="info">
+<p>Arrays of weak pointers and hash sets of weak pointers.</p>
 
 </div>
 </td></tr>

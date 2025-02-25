@@ -5,15 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="Start" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
+<link title="Index of extensions" rel=Appendix href="index_extensions.html">
 <link title="Index of exceptions" rel=Appendix href="index_exceptions.html">
 <link title="Index of values" rel=Appendix href="index_values.html">
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="Arg" rel="Chapter" href="Arg.html">
-<link title="Array" rel="Chapter" href="Array.html">
 <link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
+<link title="Array" rel="Chapter" href="Array.html">
+<link title="Atomic" rel="Chapter" href="Atomic.html">
+<link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
+<link title="Bytes" rel="Chapter" href="Bytes.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
@@ -21,19 +26,26 @@
 <link title="Dynlink" rel="Chapter" href="Dynlink.html">
 <link title="Dynlink_types" rel="Chapter" href="Dynlink_types.html">
 <link title="Either" rel="Chapter" href="Either.html">
+<link title="Ephemeron" rel="Chapter" href="Ephemeron.html">
 <link title="Event" rel="Chapter" href="Event.html">
 <link title="Filename" rel="Chapter" href="Filename.html">
 <link title="Float" rel="Chapter" href="Float.html">
+<link title="Format" rel="Chapter" href="Format.html">
 <link title="Fun" rel="Chapter" href="Fun.html">
 <link title="Gc" rel="Chapter" href="Gc.html">
 <link title="Genlex" rel="Chapter" href="Genlex.html">
+<link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
-<link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
+<link title="Int" rel="Chapter" href="Int.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
+<link title="List" rel="Chapter" href="List.html">
+<link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
+<link title="MoreLabels" rel="Chapter" href="MoreLabels.html">
 <link title="Mutex" rel="Chapter" href="Mutex.html">
 <link title="Nativeint" rel="Chapter" href="Nativeint.html">
 <link title="Obj" rel="Chapter" href="Obj.html">
@@ -43,17 +55,24 @@
 <link title="Parsing" rel="Chapter" href="Parsing.html">
 <link title="Printexc" rel="Chapter" href="Printexc.html">
 <link title="Printf" rel="Chapter" href="Printf.html">
+<link title="Queue" rel="Chapter" href="Queue.html">
 <link title="Random" rel="Chapter" href="Random.html">
 <link title="Result" rel="Chapter" href="Result.html">
 <link title="Scanf" rel="Chapter" href="Scanf.html">
 <link title="Semaphore" rel="Chapter" href="Semaphore.html">
+<link title="Seq" rel="Chapter" href="Seq.html">
 <link title="Set" rel="Chapter" href="Set.html">
+<link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stream" rel="Chapter" href="Stream.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
+<link title="String" rel="Chapter" href="String.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
-<link title="Unix" rel="Chapter" href="Unix.html"><title>Index of types</title>
+<link title="Unix" rel="Chapter" href="Unix.html">
+<link title="Weak" rel="Chapter" href="Weak.html"><title>Index of types</title>
 </head>
 <body>
 <div class="navbar">&nbsp;<a class="up" href="index.html" title="Index">Up</a>
@@ -107,12 +126,22 @@
 </div>
 </td></tr>
 <tr><td align="left"><div>C</div></td></tr>
+<tr><td><a href="Bigarray.html#TYPEc_layout">c_layout</a> [<a href="Bigarray.html">Bigarray</a>]</td>
+<td><div class="info">
+<p>See <a href="Bigarray.html#TYPEfortran_layout"><code class="code">Bigarray.fortran_layout</code></a>.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Event.html#TYPEchannel">channel</a> [<a href="Event.html">Event</a>]</td>
 <td><div class="info">
 <p>The type of communication channels carrying values of type <code class="code">'a</code>.</p>
 
 </div>
 </td></tr>
+<tr><td><a href="Bigarray.html#TYPEcomplex32_elt">complex32_elt</a> [<a href="Bigarray.html">Bigarray</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bigarray.html#TYPEcomplex64_elt">complex64_elt</a> [<a href="Bigarray.html">Bigarray</a>]</td>
+<td></td></tr>
 <tr><td><a href="Gc.html#TYPEcontrol">control</a> [<a href="Gc.html">Gc</a>]</td>
 <td><div class="info">
 <p>The GC parameters are given as a <code class="code">control</code> record.</p>
@@ -120,6 +149,12 @@
 </div>
 </td></tr>
 <tr><td align="left"><div>D</div></td></tr>
+<tr><td><a href="Weak.S.html#TYPEdata">data</a> [<a href="Weak.S.html">Weak.S</a>]</td>
+<td><div class="info">
+<p>The type of the elements stored in the table.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Unix.html#TYPEdir_handle">dir_handle</a> [<a href="Unix.html">Unix</a>]</td>
 <td><div class="info">
 <p>The type of descriptors over opened directories.</p>
@@ -135,6 +170,14 @@
 
 </div>
 </td></tr>
+<tr><td><a href="MoreLabels.Set.S.html#TYPEelt">elt</a> [<a href="MoreLabels.Set.S.html">MoreLabels.Set.S</a>]</td>
+<td><div class="info">
+<p>The type of the set elements.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Ephemeron.GenHashTable.html#TYPEequal">equal</a> [<a href="Ephemeron.GenHashTable.html">Ephemeron.GenHashTable</a>]</td>
+<td></td></tr>
 <tr><td><a href="Unix.html#TYPEerror">error</a> [<a href="Unix.html">Unix</a>]</td>
 <td><div class="info">
 <p>The type of error codes.</p>
@@ -184,10 +227,61 @@
 </td></tr>
 <tr><td><a href="Dynlink_types.html#TYPEfilename">filename</a> [<a href="Dynlink_types.html">Dynlink_types</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bigarray.html#TYPEfloat32_elt">float32_elt</a> [<a href="Bigarray.html">Bigarray</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bigarray.html#TYPEfloat64_elt">float64_elt</a> [<a href="Bigarray.html">Bigarray</a>]</td>
+<td></td></tr>
 <tr><td><a href="Unix.html#TYPEflow_action">flow_action</a> [<a href="Unix.html">Unix</a>]</td>
 <td></td></tr>
 <tr><td><a href="Unix.html#TYPEflush_queue">flush_queue</a> [<a href="Unix.html">Unix</a>]</td>
 <td></td></tr>
+<tr><td><a href="Format.html#TYPEformatter">formatter</a> [<a href="Format.html">Format</a>]</td>
+<td><div class="info">
+<p>Abstract data corresponding to a pretty-printer (also called a
+    formatter) and all its machinery.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Format.html#TYPEformatter_out_functions">formatter_out_functions</a> [<a href="Format.html">Format</a>]</td>
+<td><div class="info">
+<p>The set of output functions specific to a formatter: the <code class="code">out_string</code> function performs all the pretty-printer string output.
+  It is called with a string <code class="code">s</code>, a start position <code class="code">p</code>, and a number of
+  characters <code class="code">n</code>; it is supposed to output characters <code class="code">p</code> to <code class="code">p + n - 1</code> of
+  <code class="code">s</code>., the <code class="code">out_flush</code> function flushes the pretty-printer output device., <code class="code">out_newline</code> is called to open a new line when the pretty-printer splits
+  the line., the <code class="code">out_spaces</code> function outputs spaces when a break hint leads to spaces
+  instead of a line split. It is called with the number of spaces to output., the <code class="code">out_indent</code> function performs new line indentation when the
+  pretty-printer splits the line. It is called with the indentation value of
+  the new line.
+  By default: fields <code class="code">out_string</code> and <code class="code">out_flush</code> are output device specific;
+  (e.g. <code class="code">Stdlib.output_string</code> and <code class="code">Stdlib.flush</code> for a
+   <code class="code">Stdlib.out_channel</code> device, or <code class="code">Buffer.add_substring</code> and
+   <code class="code">Stdlib.ignore</code> for a <code class="code">Buffer.t</code> output device),, field <code class="code">out_newline</code> is equivalent to <code class="code">out_string "\n" 0 1</code>;, fields <code class="code">out_spaces</code> and <code class="code">out_indent</code> are equivalent to
+  <code class="code">out_string (String.make n ' ') 0 n</code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Format.html#TYPEformatter_stag_functions">formatter_stag_functions</a> [<a href="Format.html">Format</a>]</td>
+<td><div class="info">
+<p>The semantic tag handling functions specific to a formatter:
+  <code class="code">mark</code> versions are the 'tag-marking' functions that associate a string
+  marker to a tag in order for the pretty-printing engine to write
+  those markers as 0 length tokens in the output device of the formatter.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Format.html#TYPEformatter_tag_functions">formatter_tag_functions</a> [<a href="Format.html">Format</a>]</td>
+<td><div class="info">
+<span class="deprecated"></span></div>
+</td></tr>
+<tr><td><a href="Bigarray.html#TYPEfortran_layout">fortran_layout</a> [<a href="Bigarray.html">Bigarray</a>]</td>
+<td><div class="info">
+<p>To facilitate interoperability with existing C and Fortran code,
+   this library supports two different memory layouts for Bigarrays,
+   one compatible with the C conventions,
+   the other compatible with the Fortran conventions.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Float.html#TYPEfpclass">fpclass</a> [<a href="Float.html">Float</a>]</td>
 <td><div class="info">
 <p>The five classes of floating-point numbers, as determined by
@@ -196,6 +290,8 @@
 </div>
 </td></tr>
 <tr><td align="left"><div>G</div></td></tr>
+<tr><td><a href="Format.html#TYPEgeometry">geometry</a> [<a href="Format.html">Format</a>]</td>
+<td></td></tr>
 <tr><td><a href="Unix.html#TYPEgetaddrinfo_option">getaddrinfo_option</a> [<a href="Unix.html">Unix</a>]</td>
 <td><div class="info">
 <p>Options to <a href="Unix.html#VALgetaddrinfo"><code class="code">Unix.getaddrinfo</code></a>.</p>
@@ -240,6 +336,20 @@
 </td></tr>
 <tr><td><a href="Obj.Closure.html#TYPEinfo">info</a> [<a href="Obj.Closure.html">Obj.Closure</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bigarray.html#TYPEint16_signed_elt">int16_signed_elt</a> [<a href="Bigarray.html">Bigarray</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bigarray.html#TYPEint16_unsigned_elt">int16_unsigned_elt</a> [<a href="Bigarray.html">Bigarray</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bigarray.html#TYPEint32_elt">int32_elt</a> [<a href="Bigarray.html">Bigarray</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bigarray.html#TYPEint64_elt">int64_elt</a> [<a href="Bigarray.html">Bigarray</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bigarray.html#TYPEint8_signed_elt">int8_signed_elt</a> [<a href="Bigarray.html">Bigarray</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bigarray.html#TYPEint8_unsigned_elt">int8_unsigned_elt</a> [<a href="Bigarray.html">Bigarray</a>]</td>
+<td></td></tr>
+<tr><td><a href="Bigarray.html#TYPEint_elt">int_elt</a> [<a href="Bigarray.html">Bigarray</a>]</td>
+<td></td></tr>
 <tr><td><a href="Unix.html#TYPEinterval_timer">interval_timer</a> [<a href="Unix.html">Unix</a>]</td>
 <td><div class="info">
 <p>The three kinds of interval timers.</p>
@@ -253,9 +363,43 @@
 </div>
 </td></tr>
 <tr><td align="left"><div>K</div></td></tr>
+<tr><td><a href="MoreLabels.Map.S.html#TYPEkey">key</a> [<a href="MoreLabels.Map.S.html">MoreLabels.Map.S</a>]</td>
+<td><div class="info">
+<p>The type of the map keys.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="MoreLabels.Hashtbl.SeededS.html#TYPEkey">key</a> [<a href="MoreLabels.Hashtbl.SeededS.html">MoreLabels.Hashtbl.SeededS</a>]</td>
+<td></td></tr>
+<tr><td><a href="MoreLabels.Hashtbl.S.html#TYPEkey">key</a> [<a href="MoreLabels.Hashtbl.S.html">MoreLabels.Hashtbl.S</a>]</td>
+<td></td></tr>
+<tr><td><a href="Map.S.html#TYPEkey">key</a> [<a href="Map.S.html">Map.S</a>]</td>
+<td><div class="info">
+<p>The type of the map keys.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Hashtbl.SeededS.html#TYPEkey">key</a> [<a href="Hashtbl.SeededS.html">Hashtbl.SeededS</a>]</td>
+<td></td></tr>
+<tr><td><a href="Hashtbl.S.html#TYPEkey">key</a> [<a href="Hashtbl.S.html">Hashtbl.S</a>]</td>
+<td></td></tr>
+<tr><td><a href="Ephemeron.SeededS.html#TYPEkey">key</a> [<a href="Ephemeron.SeededS.html">Ephemeron.SeededS</a>]</td>
+<td></td></tr>
+<tr><td><a href="Ephemeron.S.html#TYPEkey">key</a> [<a href="Ephemeron.S.html">Ephemeron.S</a>]</td>
+<td></td></tr>
 <tr><td><a href="Arg.html#TYPEkey">key</a> [<a href="Arg.html">Arg</a>]</td>
 <td></td></tr>
+<tr><td><a href="Bigarray.html#TYPEkind">kind</a> [<a href="Bigarray.html">Bigarray</a>]</td>
+<td><div class="info">
+<p>To each element kind is associated an OCaml type, which is
+   the type of OCaml values that can be stored in the Bigarray
+   or read back from it.</p>
+
+</div>
+</td></tr>
 <tr><td align="left"><div>L</div></td></tr>
+<tr><td><a href="Bigarray.html#TYPElayout">layout</a> [<a href="Bigarray.html">Bigarray</a>]</td>
+<td></td></tr>
 <tr><td><a href="Lexing.html#TYPElexbuf">lexbuf</a> [<a href="Lexing.html">Lexing</a>]</td>
 <td><div class="info">
 <p>The type of lexer buffers.</p>
@@ -289,6 +433,16 @@
 <tr><td><a href="Unix.html#TYPEname_info">name_info</a> [<a href="Unix.html">Unix</a>]</td>
 <td><div class="info">
 <p>Host and service information returned by <a href="Unix.html#VALgetnameinfo"><code class="code">Unix.getnameinfo</code></a>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bigarray.html#TYPEnativeint_elt">nativeint_elt</a> [<a href="Bigarray.html">Bigarray</a>]</td>
+<td></td></tr>
+<tr><td><a href="Seq.html#TYPEnode">node</a> [<a href="Seq.html">Seq</a>]</td>
+<td><div class="info">
+<p>A node is either <code class="code">Nil</code>, which means that the sequence is empty,
+    or <code class="code">Cons (x, xs)</code>, which means that <code class="code">x</code> is the first element
+    of the sequence and that <code class="code">xs</code> is the remainder of the sequence.</p>
 
 </div>
 </td></tr>
@@ -486,10 +640,25 @@
 </td></tr>
 <tr><td><a href="Str.html#TYPEsplit_result">split_result</a> [<a href="Str.html">Str</a>]</td>
 <td></td></tr>
+<tr><td><a href="Format.html#TYPEstag">stag</a> [<a href="Format.html">Format</a>]</td>
+<td><div class="info">
+<p><i>Semantic tags</i> (or simply <em>tags</em>) are user's defined annotations
+  to associate user's specific operations to printed entities.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Gc.html#TYPEstat">stat</a> [<a href="Gc.html">Gc</a>]</td>
 <td><div class="info">
 <p>The memory management counters are returned in a <code class="code">stat</code> record.</p>
 
+</div>
+</td></tr>
+<tr><td><a href="MoreLabels.Hashtbl.html#TYPEstatistics">statistics</a> [<a href="MoreLabels.Hashtbl.html">MoreLabels.Hashtbl</a>]</td>
+<td><div class="info">
+</div>
+</td></tr>
+<tr><td><a href="Hashtbl.html#TYPEstatistics">statistics</a> [<a href="Hashtbl.html">Hashtbl</a>]</td>
+<td><div class="info">
 </div>
 </td></tr>
 <tr><td><a href="Unix.LargeFile.html#TYPEstats">stats</a> [<a href="Unix.LargeFile.html">Unix.LargeFile</a>]</td>
@@ -500,7 +669,31 @@
 
 </div>
 </td></tr>
+<tr><td><a href="Format.html#TYPEsymbolic_output_buffer">symbolic_output_buffer</a> [<a href="Format.html">Format</a>]</td>
+<td><div class="info">
+<p>The output buffer of a symbolic pretty-printer.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Format.html#TYPEsymbolic_output_item">symbolic_output_item</a> [<a href="Format.html">Format</a>]</td>
+<td><div class="info">
+<p>Items produced by symbolic pretty-printers</p>
+
+</div>
+</td></tr>
 <tr><td align="left"><div>T</div></td></tr>
+<tr><td><a href="Weak.S.html#TYPEt">t</a> [<a href="Weak.S.html">Weak.S</a>]</td>
+<td><div class="info">
+<p>The type of tables that contain elements of type <code class="code">data</code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Weak.html#TYPEt">t</a> [<a href="Weak.html">Weak</a>]</td>
+<td><div class="info">
+<p>The type of arrays of weak pointers (weak arrays).</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Unit.html#TYPEt">t</a> [<a href="Unit.html">Unit</a>]</td>
 <td><div class="info">
 <p>The unit type.</p>
@@ -519,6 +712,30 @@
 <td></td></tr>
 <tr><td><a href="Sys.Immediate64.Make.html#TYPEt">t</a> [<a href="Sys.Immediate64.Make.html">Sys.Immediate64.Make</a>]</td>
 <td></td></tr>
+<tr><td><a href="String.html#TYPEt">t</a> [<a href="String.html">String</a>]</td>
+<td><div class="info">
+<p>The type for strings.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="StringLabels.html#TYPEt">t</a> [<a href="StringLabels.html">StringLabels</a>]</td>
+<td><div class="info">
+<p>The type for strings.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Stream.html#TYPEt">t</a> [<a href="Stream.html">Stream</a>]</td>
+<td><div class="info">
+<p>The type of streams holding values of type <code class="code">'a</code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Stack.html#TYPEt">t</a> [<a href="Stack.html">Stack</a>]</td>
+<td><div class="info">
+<p>The type of stacks containing elements of type <code class="code">'a</code>.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Set.OrderedType.html#TYPEt">t</a> [<a href="Set.OrderedType.html">Set.OrderedType</a>]</td>
 <td><div class="info">
 <p>The type of the set elements.</p>
@@ -528,6 +745,13 @@
 <tr><td><a href="Set.S.html#TYPEt">t</a> [<a href="Set.S.html">Set.S</a>]</td>
 <td><div class="info">
 <p>The type of sets.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Seq.html#TYPEt">t</a> [<a href="Seq.html">Seq</a>]</td>
+<td><div class="info">
+<p>A sequence <code class="code">xs</code> of type <code class="code">'a t</code> is a delayed list of elements of
+    type <code class="code">'a</code>.</p>
 
 </div>
 </td></tr>
@@ -555,6 +779,12 @@
 
 </div>
 </td></tr>
+<tr><td><a href="Queue.html#TYPEt">t</a> [<a href="Queue.html">Queue</a>]</td>
+<td><div class="info">
+<p>The type of queues containing elements of type <code class="code">'a</code>.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Printexc.Slot.html#TYPEt">t</a> [<a href="Printexc.Slot.html">Printexc.Slot</a>]</td>
 <td></td></tr>
 <tr><td><a href="Printexc.html#TYPEt">t</a> [<a href="Printexc.html">Printexc</a>]</td>
@@ -577,7 +807,7 @@
 </td></tr>
 <tr><td><a href="Obj.Ephemeron.html#TYPEt">t</a> [<a href="Obj.Ephemeron.html">Obj.Ephemeron</a>]</td>
 <td><div class="info">
-<p>an ephemeron cf <a href="Obj.Ephemeron.html"><code class="code">Obj.Ephemeron</code></a></p>
+<p>an ephemeron cf <a href="Ephemeron.html"><code class="code">Ephemeron</code></a></p>
 
 </div>
 </td></tr>
@@ -597,10 +827,86 @@
 
 </div>
 </td></tr>
+<tr><td><a href="MoreLabels.Set.OrderedType.html#TYPEt">t</a> [<a href="MoreLabels.Set.OrderedType.html">MoreLabels.Set.OrderedType</a>]</td>
+<td><div class="info">
+<p>The type of the set elements.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="MoreLabels.Set.S.html#TYPEt">t</a> [<a href="MoreLabels.Set.S.html">MoreLabels.Set.S</a>]</td>
+<td><div class="info">
+<p>The type of sets.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="MoreLabels.Map.OrderedType.html#TYPEt">t</a> [<a href="MoreLabels.Map.OrderedType.html">MoreLabels.Map.OrderedType</a>]</td>
+<td><div class="info">
+<p>The type of the map keys.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="MoreLabels.Map.S.html#TYPEt">t</a> [<a href="MoreLabels.Map.S.html">MoreLabels.Map.S</a>]</td>
+<td><div class="info">
+<p>The type of maps from type <code class="code">key</code> to type <code class="code">'a</code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="MoreLabels.Hashtbl.SeededHashedType.html#TYPEt">t</a> [<a href="MoreLabels.Hashtbl.SeededHashedType.html">MoreLabels.Hashtbl.SeededHashedType</a>]</td>
+<td><div class="info">
+<p>The type of the hashtable keys.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="MoreLabels.Hashtbl.HashedType.html#TYPEt">t</a> [<a href="MoreLabels.Hashtbl.HashedType.html">MoreLabels.Hashtbl.HashedType</a>]</td>
+<td><div class="info">
+<p>The type of the hashtable keys.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="MoreLabels.Hashtbl.SeededS.html#TYPEt">t</a> [<a href="MoreLabels.Hashtbl.SeededS.html">MoreLabels.Hashtbl.SeededS</a>]</td>
+<td></td></tr>
+<tr><td><a href="MoreLabels.Hashtbl.S.html#TYPEt">t</a> [<a href="MoreLabels.Hashtbl.S.html">MoreLabels.Hashtbl.S</a>]</td>
+<td></td></tr>
+<tr><td><a href="MoreLabels.Hashtbl.html#TYPEt">t</a> [<a href="MoreLabels.Hashtbl.html">MoreLabels.Hashtbl</a>]</td>
+<td><div class="info">
+<p>The type of hash tables from type <code class="code">'a</code> to type <code class="code">'b</code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Map.OrderedType.html#TYPEt">t</a> [<a href="Map.OrderedType.html">Map.OrderedType</a>]</td>
+<td><div class="info">
+<p>The type of the map keys.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Map.S.html#TYPEt">t</a> [<a href="Map.S.html">Map.S</a>]</td>
+<td><div class="info">
+<p>The type of maps from type <code class="code">key</code> to type <code class="code">'a</code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="List.html#TYPEt">t</a> [<a href="List.html">List</a>]</td>
+<td><div class="info">
+<p>An alias for the type of lists.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="ListLabels.html#TYPEt">t</a> [<a href="ListLabels.html">ListLabels</a>]</td>
+<td><div class="info">
+<p>An alias for the type of lists.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Lazy.html#TYPEt">t</a> [<a href="Lazy.html">Lazy</a>]</td>
 <td><div class="info">
 <p>A value of type <code class="code">'a Lazy.t</code> is a deferred computation, called
    a suspension, that has a result of type <code class="code">'a</code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Int.html#TYPEt">t</a> [<a href="Int.html">Int</a>]</td>
+<td><div class="info">
+<p>The type for integer values.</p>
 
 </div>
 </td></tr>
@@ -616,15 +922,31 @@
 
 </div>
 </td></tr>
-<tr><td><a href="Int.html#TYPEt">t</a> [<a href="Int.html">Int</a>]</td>
-<td><div class="info">
-<p>The type for integer values.</p>
-
-</div>
-</td></tr>
 <tr><td><a href="In_channel.html#TYPEt">t</a> [<a href="In_channel.html">In_channel</a>]</td>
 <td><div class="info">
 <p>The type of input channel.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Hashtbl.SeededHashedType.html#TYPEt">t</a> [<a href="Hashtbl.SeededHashedType.html">Hashtbl.SeededHashedType</a>]</td>
+<td><div class="info">
+<p>The type of the hashtable keys.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Hashtbl.HashedType.html#TYPEt">t</a> [<a href="Hashtbl.HashedType.html">Hashtbl.HashedType</a>]</td>
+<td><div class="info">
+<p>The type of the hashtable keys.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Hashtbl.SeededS.html#TYPEt">t</a> [<a href="Hashtbl.SeededS.html">Hashtbl.SeededS</a>]</td>
+<td></td></tr>
+<tr><td><a href="Hashtbl.S.html#TYPEt">t</a> [<a href="Hashtbl.S.html">Hashtbl.S</a>]</td>
+<td></td></tr>
+<tr><td><a href="Hashtbl.html#TYPEt">t</a> [<a href="Hashtbl.html">Hashtbl</a>]</td>
+<td><div class="info">
+<p>The type of hash tables from type <code class="code">'a</code> to type <code class="code">'b</code>.</p>
 
 </div>
 </td></tr>
@@ -643,6 +965,47 @@
 <tr><td><a href="Float.html#TYPEt">t</a> [<a href="Float.html">Float</a>]</td>
 <td><div class="info">
 <p>An alias for the type of floating-point numbers.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Ephemeron.Kn.Bucket.html#TYPEt">t</a> [<a href="Ephemeron.Kn.Bucket.html">Ephemeron.Kn.Bucket</a>]</td>
+<td><div class="info">
+<p>A bucket is a mutable "list" of ephemerons.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Ephemeron.Kn.html#TYPEt">t</a> [<a href="Ephemeron.Kn.html">Ephemeron.Kn</a>]</td>
+<td><div class="info">
+<p>an ephemeron with an arbitrary number of keys
+                      of the same type</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Ephemeron.K2.Bucket.html#TYPEt">t</a> [<a href="Ephemeron.K2.Bucket.html">Ephemeron.K2.Bucket</a>]</td>
+<td><div class="info">
+<p>A bucket is a mutable "list" of ephemerons.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Ephemeron.K2.html#TYPEt">t</a> [<a href="Ephemeron.K2.html">Ephemeron.K2</a>]</td>
+<td><div class="info">
+<p>an ephemeron with two keys</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Ephemeron.K1.Bucket.html#TYPEt">t</a> [<a href="Ephemeron.K1.Bucket.html">Ephemeron.K1.Bucket</a>]</td>
+<td><div class="info">
+<p>A bucket is a mutable "list" of ephemerons.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Ephemeron.SeededS.html#TYPEt">t</a> [<a href="Ephemeron.SeededS.html">Ephemeron.SeededS</a>]</td>
+<td></td></tr>
+<tr><td><a href="Ephemeron.S.html#TYPEt">t</a> [<a href="Ephemeron.S.html">Ephemeron.S</a>]</td>
+<td></td></tr>
+<tr><td><a href="Ephemeron.K1.html#TYPEt">t</a> [<a href="Ephemeron.K1.html">Ephemeron.K1</a>]</td>
+<td><div class="info">
+<p>an ephemeron with one key</p>
 
 </div>
 </td></tr>
@@ -671,6 +1034,18 @@
 
 </div>
 </td></tr>
+<tr><td><a href="Bytes.html#TYPEt">t</a> [<a href="Bytes.html">Bytes</a>]</td>
+<td><div class="info">
+<p>An alias for the type of byte sequences.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="BytesLabels.html#TYPEt">t</a> [<a href="BytesLabels.html">BytesLabels</a>]</td>
+<td><div class="info">
+<p>An alias for the type of byte sequences.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Buffer.html#TYPEt">t</a> [<a href="Buffer.html">Buffer</a>]</td>
 <td><div class="info">
 <p>The abstract type of buffers.</p>
@@ -683,9 +1058,44 @@
 
 </div>
 </td></tr>
-<tr><td><a href="ArrayLabels.html#TYPEt">t</a> [<a href="ArrayLabels.html">ArrayLabels</a>]</td>
+<tr><td><a href="Bigarray.Array3.html#TYPEt">t</a> [<a href="Bigarray.Array3.html">Bigarray.Array3</a>]</td>
 <td><div class="info">
-<p>An alias for the type of arrays.</p>
+<p>The type of three-dimensional Bigarrays whose elements have
+     OCaml type <code class="code">'a</code>, representation kind <code class="code">'b</code>, and memory layout <code class="code">'c</code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bigarray.Array2.html#TYPEt">t</a> [<a href="Bigarray.Array2.html">Bigarray.Array2</a>]</td>
+<td><div class="info">
+<p>The type of two-dimensional Bigarrays whose elements have
+     OCaml type <code class="code">'a</code>, representation kind <code class="code">'b</code>, and memory layout <code class="code">'c</code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bigarray.Array1.html#TYPEt">t</a> [<a href="Bigarray.Array1.html">Bigarray.Array1</a>]</td>
+<td><div class="info">
+<p>The type of one-dimensional Bigarrays whose elements have
+     OCaml type <code class="code">'a</code>, representation kind <code class="code">'b</code>, and memory layout <code class="code">'c</code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bigarray.Array0.html#TYPEt">t</a> [<a href="Bigarray.Array0.html">Bigarray.Array0</a>]</td>
+<td><div class="info">
+<p>The type of zero-dimensional Bigarrays whose elements have
+     OCaml type <code class="code">'a</code>, representation kind <code class="code">'b</code>, and memory layout <code class="code">'c</code>.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Bigarray.Genarray.html#TYPEt">t</a> [<a href="Bigarray.Genarray.html">Bigarray.Genarray</a>]</td>
+<td><div class="info">
+<p>The type <code class="code">Genarray.t</code> is the type of Bigarrays with variable
+     numbers of dimensions.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Atomic.html#TYPEt">t</a> [<a href="Atomic.html">Atomic</a>]</td>
+<td><div class="info">
+<p>An atomic (mutable) reference to a value of type <code class="code">'a</code>.</p>
 
 </div>
 </td></tr>
@@ -695,6 +1105,14 @@
 
 </div>
 </td></tr>
+<tr><td><a href="ArrayLabels.html#TYPEt">t</a> [<a href="ArrayLabels.html">ArrayLabels</a>]</td>
+<td><div class="info">
+<p>An alias for the type of arrays.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Format.html#TYPEtag">tag</a> [<a href="Format.html">Format</a>]</td>
+<td></td></tr>
 <tr><td><a href="Unix.html#TYPEterminal_io">terminal_io</a> [<a href="Unix.html">Unix</a>]</td>
 <td></td></tr>
 <tr><td><a href="Unix.html#TYPEtm">tm</a> [<a href="Unix.html">Unix</a>]</td>
