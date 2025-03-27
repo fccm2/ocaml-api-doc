@@ -1391,6 +1391,7 @@ val do_at_exit : unit -> unit
 (** {1:modules Standard library modules } *)
 
 (*MODULE_ALIASES*)
+(*
 module Arg          = Arg
 module Array        = Array
 module ArrayLabels  = ArrayLabels
@@ -1454,3 +1455,4 @@ module Sys          = Sys
 module Uchar        = Uchar
 module Unit         = Unit
 module Weak         = Weak
+*)
