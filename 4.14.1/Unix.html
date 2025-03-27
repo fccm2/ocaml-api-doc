@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="Start" href="index.html">
 <link rel="previous" href="Unit.html">
-<link rel="next" href="Weak.html">
+<link rel="next" href="UnixLabels.html">
 <link rel="Up" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
@@ -15,14 +15,14 @@
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="Arg" rel="Chapter" href="Arg.html">
-<link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
 <link title="Array" rel="Chapter" href="Array.html">
+<link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
 <link title="Atomic" rel="Chapter" href="Atomic.html">
 <link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
-<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
 <link title="Bytes" rel="Chapter" href="Bytes.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
@@ -40,13 +40,13 @@
 <link title="Genlex" rel="Chapter" href="Genlex.html">
 <link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
+<link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
-<link title="Int" rel="Chapter" href="Int.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
-<link title="ListLabels" rel="Chapter" href="ListLabels.html">
 <link title="List" rel="Chapter" href="List.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
 <link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
 <link title="MoreLabels" rel="Chapter" href="MoreLabels.html">
@@ -68,14 +68,18 @@
 <link title="Set" rel="Chapter" href="Set.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
-<link title="Stream" rel="Chapter" href="Stream.html">
-<link title="StringLabels" rel="Chapter" href="StringLabels.html">
-<link title="String" rel="Chapter" href="String.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
+<link title="Stream" rel="Chapter" href="Stream.html">
+<link title="String" rel="Chapter" href="String.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><link title="Error report" rel="Section" href="#1_Errorreport">
 <link title="Access to the process environment" rel="Section" href="#1_Accesstotheprocessenvironment">
 <link title="Process handling" rel="Section" href="#1_Processhandling">
@@ -108,7 +112,7 @@
 <body>
 <div class="navbar"><a class="pre" href="Unit.html" title="Unit">Previous</a>
 &nbsp;<a class="up" href="index.html" title="Index">Up</a>
-&nbsp;<a class="post" href="Weak.html" title="Weak">Next</a>
+&nbsp;<a class="post" href="UnixLabels.html" title="UnixLabels">Next</a>
 </div>
 <h1>Module <a href="type_Unix.html">Unix</a></h1>
 
@@ -974,7 +978,7 @@
    is the function name; the third component is the string parameter
    to the function, if it has one, or the empty string otherwise.</p>
 
-<p><code class="code">UnixLabels.Unix_error</code> and <a href="Unix.html#EXCEPTIONUnix_error"><code class="code">Unix.Unix_error</code></a> are the same, and
+<p><a href="UnixLabels.html#EXCEPTIONUnix_error"><code class="code">UnixLabels.Unix_error</code></a> and <a href="Unix.html#EXCEPTIONUnix_error"><code class="code">Unix.Unix_error</code></a> are the same, and
    catching one will catch the other.</p>
 </div>
 </div>
@@ -1226,8 +1230,8 @@
 <p>Terminate the calling process immediately, returning the given
    status code to the operating system: usually 0 to indicate no
    errors, and a small positive integer to indicate failure.
-   Unlike <code class="code">Stdlib.exit</code>, <a href="Unix.html#VAL_exit"><code class="code">Unix._exit</code></a> performs no finalization
-   whatsoever: functions registered with <code class="code">Stdlib.at_exit</code> are not called,
+   Unlike <a href="Stdlib.html#VALexit"><code class="code">Stdlib.exit</code></a>, <a href="Unix.html#VAL_exit"><code class="code">Unix._exit</code></a> performs no finalization
+   whatsoever: functions registered with <a href="Stdlib.html#VALat_exit"><code class="code">Stdlib.at_exit</code></a> are not called,
    input/output channels are not flushed, and the C run-time system
    is not finalized either.</p>
 
@@ -1573,7 +1577,7 @@
 </ul>
 </div>
 <h2 id="1_Interfacingwiththestandardinputoutputlibrary">Interfacing with the standard input/output library</h2>
-<pre><span id="VALin_channel_of_descr"><span class="keyword">val</span> in_channel_of_descr</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; Stdlib.in_channel</code></pre><div class="info ">
+<pre><span id="VALin_channel_of_descr"><span class="keyword">val</span> in_channel_of_descr</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Stdlib.html#TYPEin_channel">Stdlib.in_channel</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Create an input channel reading from the given descriptor.
    The channel is initially in binary mode; use
@@ -1581,7 +1585,7 @@
    Text mode is supported only if the descriptor refers to a file
    or pipe, but is not supported if it refers to a socket.</p>
 
-<p>On Windows: <code class="code">Stdlib.set_binary_mode_in</code> always fails on channels
+<p>On Windows: <a href="Stdlib.html#VALset_binary_mode_in"><code class="code">Stdlib.set_binary_mode_in</code></a> always fails on channels
    created with this function.</p>
 
 <p>Beware that input channels are buffered, so more characters may
@@ -1604,7 +1608,7 @@
 </div>
 </div>
 
-<pre><span id="VALout_channel_of_descr"><span class="keyword">val</span> out_channel_of_descr</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; Stdlib.out_channel</code></pre><div class="info ">
+<pre><span id="VALout_channel_of_descr"><span class="keyword">val</span> out_channel_of_descr</span> : <code class="type"><a href="Unix.html#TYPEfile_descr">file_descr</a> -&gt; <a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Create an output channel writing on the given descriptor.
    The channel is initially in binary mode; use
@@ -1612,11 +1616,11 @@
    Text mode is supported only if the descriptor refers to a file
    or pipe, but is not supported if it refers to a socket.</p>
 
-<p>On Windows: <code class="code">Stdlib.set_binary_mode_out</code> always fails on channels created
+<p>On Windows: <a href="Stdlib.html#VALset_binary_mode_out"><code class="code">Stdlib.set_binary_mode_out</code></a> always fails on channels created
    with this function.</p>
 
 <p>Beware that output channels are buffered, so you may have to call
-   <code class="code">Stdlib.flush</code> to ensure that all data has been sent to the
+   <a href="Stdlib.html#VALflush"><code class="code">Stdlib.flush</code></a> to ensure that all data has been sent to the
    descriptor.  Channels also keep a copy of the current position in
    the file.</p>
 
@@ -1629,13 +1633,13 @@
 </div>
 </div>
 
-<pre><span id="VALdescr_of_in_channel"><span class="keyword">val</span> descr_of_in_channel</span> : <code class="type">Stdlib.in_channel -&gt; <a href="Unix.html#TYPEfile_descr">file_descr</a></code></pre><div class="info ">
+<pre><span id="VALdescr_of_in_channel"><span class="keyword">val</span> descr_of_in_channel</span> : <code class="type"><a href="Stdlib.html#TYPEin_channel">Stdlib.in_channel</a> -&gt; <a href="Unix.html#TYPEfile_descr">file_descr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the descriptor corresponding to an input channel.</p>
 </div>
 </div>
 
-<pre><span id="VALdescr_of_out_channel"><span class="keyword">val</span> descr_of_out_channel</span> : <code class="type">Stdlib.out_channel -&gt; <a href="Unix.html#TYPEfile_descr">file_descr</a></code></pre><div class="info ">
+<pre><span id="VALdescr_of_out_channel"><span class="keyword">val</span> descr_of_out_channel</span> : <code class="type"><a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a> -&gt; <a href="Unix.html#TYPEfile_descr">file_descr</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the descriptor corresponding to an output channel.</p>
 </div>
@@ -2401,7 +2405,7 @@
 </div>
 </div>
 
-<pre><span id="VALopen_process_in"><span class="keyword">val</span> open_process_in</span> : <code class="type">string -&gt; Stdlib.in_channel</code></pre><div class="info ">
+<pre><span id="VALopen_process_in"><span class="keyword">val</span> open_process_in</span> : <code class="type">string -&gt; <a href="Stdlib.html#TYPEin_channel">Stdlib.in_channel</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>High-level pipe and process management. This function
    runs the given command in parallel with the program.
@@ -2417,13 +2421,13 @@
 </div>
 </div>
 
-<pre><span id="VALopen_process_out"><span class="keyword">val</span> open_process_out</span> : <code class="type">string -&gt; Stdlib.out_channel</code></pre><div class="info ">
+<pre><span id="VALopen_process_out"><span class="keyword">val</span> open_process_out</span> : <code class="type">string -&gt; <a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Unix.html#VALopen_process_in"><code class="code">Unix.open_process_in</code></a>, but redirect the standard input of
    the command to a pipe.  Data written to the returned output channel
    is sent to the standard input of the command.
    Warning: writes on output channels are buffered, hence be careful
-   to call <code class="code">Stdlib.flush</code> at the right times to ensure
+   to call <a href="Stdlib.html#VALflush"><code class="code">Stdlib.flush</code></a> at the right times to ensure
    correct synchronization.
    If the command does not need to be run through the shell,
    <a href="Unix.html#VALopen_process_args_out"><code class="code">Unix.open_process_args_out</code></a> can be used instead of
@@ -2431,7 +2435,7 @@
 </div>
 </div>
 
-<pre><span id="VALopen_process"><span class="keyword">val</span> open_process</span> : <code class="type">string -&gt; Stdlib.in_channel * Stdlib.out_channel</code></pre><div class="info ">
+<pre><span id="VALopen_process"><span class="keyword">val</span> open_process</span> : <code class="type">string -&gt; <a href="Stdlib.html#TYPEin_channel">Stdlib.in_channel</a> * <a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Unix.html#VALopen_process_out"><code class="code">Unix.open_process_out</code></a>, but redirects both the standard input
    and standard output of the command to pipes connected to the two
@@ -2443,7 +2447,7 @@
 </div>
 </div>
 
-<pre><span id="VALopen_process_full"><span class="keyword">val</span> open_process_full</span> : <code class="type">string -&gt;<br>       string array -&gt; Stdlib.in_channel * Stdlib.out_channel * Stdlib.in_channel</code></pre><div class="info ">
+<pre><span id="VALopen_process_full"><span class="keyword">val</span> open_process_full</span> : <code class="type">string -&gt;<br>       string array -&gt; <a href="Stdlib.html#TYPEin_channel">Stdlib.in_channel</a> * <a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a> * <a href="Stdlib.html#TYPEin_channel">Stdlib.in_channel</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Similar to <a href="Unix.html#VALopen_process"><code class="code">Unix.open_process</code></a>, but the second argument specifies
    the environment passed to the command.  The result is a triple
@@ -2455,7 +2459,7 @@
 </div>
 </div>
 
-<pre><span id="VALopen_process_args_in"><span class="keyword">val</span> open_process_args_in</span> : <code class="type">string -&gt; string array -&gt; Stdlib.in_channel</code></pre><div class="info ">
+<pre><span id="VALopen_process_args_in"><span class="keyword">val</span> open_process_args_in</span> : <code class="type">string -&gt; string array -&gt; <a href="Stdlib.html#TYPEin_channel">Stdlib.in_channel</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">open_process_args_in prog args</code> runs the program <code class="code">prog</code> with arguments
     <code class="code">args</code>.  The new process executes concurrently with the current process.
@@ -2472,12 +2476,12 @@
 </ul>
 </div>
 
-<pre><span id="VALopen_process_args_out"><span class="keyword">val</span> open_process_args_out</span> : <code class="type">string -&gt; string array -&gt; Stdlib.out_channel</code></pre><div class="info ">
+<pre><span id="VALopen_process_args_out"><span class="keyword">val</span> open_process_args_out</span> : <code class="type">string -&gt; string array -&gt; <a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Unix.html#VALopen_process_args_in"><code class="code">Unix.open_process_args_in</code></a>, but redirect the standard input of the new
     process to a pipe.  Data written to the returned output channel is sent to
     the standard input of the program.  Warning: writes on output channels are
-    buffered, hence be careful to call <code class="code">Stdlib.flush</code> at the right times to
+    buffered, hence be careful to call <a href="Stdlib.html#VALflush"><code class="code">Stdlib.flush</code></a> at the right times to
     ensure correct synchronization.</p>
 </div>
 <ul class="info-attributes">
@@ -2485,7 +2489,7 @@
 </ul>
 </div>
 
-<pre><span id="VALopen_process_args"><span class="keyword">val</span> open_process_args</span> : <code class="type">string -&gt; string array -&gt; Stdlib.in_channel * Stdlib.out_channel</code></pre><div class="info ">
+<pre><span id="VALopen_process_args"><span class="keyword">val</span> open_process_args</span> : <code class="type">string -&gt; string array -&gt; <a href="Stdlib.html#TYPEin_channel">Stdlib.in_channel</a> * <a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Unix.html#VALopen_process_args_out"><code class="code">Unix.open_process_args_out</code></a>, but redirects both the standard input and
     standard output of the new process to pipes connected to the two returned
@@ -2497,7 +2501,7 @@
 </ul>
 </div>
 
-<pre><span id="VALopen_process_args_full"><span class="keyword">val</span> open_process_args_full</span> : <code class="type">string -&gt;<br>       string array -&gt;<br>       string array -&gt; Stdlib.in_channel * Stdlib.out_channel * Stdlib.in_channel</code></pre><div class="info ">
+<pre><span id="VALopen_process_args_full"><span class="keyword">val</span> open_process_args_full</span> : <code class="type">string -&gt;<br>       string array -&gt;<br>       string array -&gt; <a href="Stdlib.html#TYPEin_channel">Stdlib.in_channel</a> * <a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a> * <a href="Stdlib.html#TYPEin_channel">Stdlib.in_channel</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Similar to <a href="Unix.html#VALopen_process_args"><code class="code">Unix.open_process_args</code></a>, but the third argument specifies the
     environment passed to the new process.  The result is a triple of channels
@@ -2509,7 +2513,7 @@
 </ul>
 </div>
 
-<pre><span id="VALprocess_in_pid"><span class="keyword">val</span> process_in_pid</span> : <code class="type">Stdlib.in_channel -&gt; int</code></pre><div class="info ">
+<pre><span id="VALprocess_in_pid"><span class="keyword">val</span> process_in_pid</span> : <code class="type"><a href="Stdlib.html#TYPEin_channel">Stdlib.in_channel</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the pid of a process opened via <a href="Unix.html#VALopen_process_in"><code class="code">Unix.open_process_in</code></a> or
    <a href="Unix.html#VALopen_process_args_in"><code class="code">Unix.open_process_args_in</code></a>.</p>
@@ -2519,7 +2523,7 @@
 </ul>
 </div>
 
-<pre><span id="VALprocess_out_pid"><span class="keyword">val</span> process_out_pid</span> : <code class="type">Stdlib.out_channel -&gt; int</code></pre><div class="info ">
+<pre><span id="VALprocess_out_pid"><span class="keyword">val</span> process_out_pid</span> : <code class="type"><a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the pid of a process opened via <a href="Unix.html#VALopen_process_out"><code class="code">Unix.open_process_out</code></a> or
    <a href="Unix.html#VALopen_process_args_out"><code class="code">Unix.open_process_args_out</code></a>.</p>
@@ -2529,7 +2533,7 @@
 </ul>
 </div>
 
-<pre><span id="VALprocess_pid"><span class="keyword">val</span> process_pid</span> : <code class="type">Stdlib.in_channel * Stdlib.out_channel -&gt; int</code></pre><div class="info ">
+<pre><span id="VALprocess_pid"><span class="keyword">val</span> process_pid</span> : <code class="type"><a href="Stdlib.html#TYPEin_channel">Stdlib.in_channel</a> * <a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the pid of a process opened via <a href="Unix.html#VALopen_process"><code class="code">Unix.open_process</code></a> or
    <a href="Unix.html#VALopen_process_args"><code class="code">Unix.open_process_args</code></a>.</p>
@@ -2539,7 +2543,7 @@
 </ul>
 </div>
 
-<pre><span id="VALprocess_full_pid"><span class="keyword">val</span> process_full_pid</span> : <code class="type">Stdlib.in_channel * Stdlib.out_channel * Stdlib.in_channel -&gt; int</code></pre><div class="info ">
+<pre><span id="VALprocess_full_pid"><span class="keyword">val</span> process_full_pid</span> : <code class="type"><a href="Stdlib.html#TYPEin_channel">Stdlib.in_channel</a> * <a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a> * <a href="Stdlib.html#TYPEin_channel">Stdlib.in_channel</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the pid of a process opened via <a href="Unix.html#VALopen_process_full"><code class="code">Unix.open_process_full</code></a> or
    <a href="Unix.html#VALopen_process_args_full"><code class="code">Unix.open_process_args_full</code></a>.</p>
@@ -2549,7 +2553,7 @@
 </ul>
 </div>
 
-<pre><span id="VALclose_process_in"><span class="keyword">val</span> close_process_in</span> : <code class="type">Stdlib.in_channel -&gt; <a href="Unix.html#TYPEprocess_status">process_status</a></code></pre><div class="info ">
+<pre><span id="VALclose_process_in"><span class="keyword">val</span> close_process_in</span> : <code class="type"><a href="Stdlib.html#TYPEin_channel">Stdlib.in_channel</a> -&gt; <a href="Unix.html#TYPEprocess_status">process_status</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Close channels opened by <a href="Unix.html#VALopen_process_in"><code class="code">Unix.open_process_in</code></a>,
    wait for the associated command to terminate,
@@ -2557,7 +2561,7 @@
 </div>
 </div>
 
-<pre><span id="VALclose_process_out"><span class="keyword">val</span> close_process_out</span> : <code class="type">Stdlib.out_channel -&gt; <a href="Unix.html#TYPEprocess_status">process_status</a></code></pre><div class="info ">
+<pre><span id="VALclose_process_out"><span class="keyword">val</span> close_process_out</span> : <code class="type"><a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a> -&gt; <a href="Unix.html#TYPEprocess_status">process_status</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Close channels opened by <a href="Unix.html#VALopen_process_out"><code class="code">Unix.open_process_out</code></a>,
    wait for the associated command to terminate,
@@ -2565,7 +2569,7 @@
 </div>
 </div>
 
-<pre><span id="VALclose_process"><span class="keyword">val</span> close_process</span> : <code class="type">Stdlib.in_channel * Stdlib.out_channel -&gt; <a href="Unix.html#TYPEprocess_status">process_status</a></code></pre><div class="info ">
+<pre><span id="VALclose_process"><span class="keyword">val</span> close_process</span> : <code class="type"><a href="Stdlib.html#TYPEin_channel">Stdlib.in_channel</a> * <a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a> -&gt; <a href="Unix.html#TYPEprocess_status">process_status</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Close channels opened by <a href="Unix.html#VALopen_process"><code class="code">Unix.open_process</code></a>,
    wait for the associated command to terminate,
@@ -2573,7 +2577,7 @@
 </div>
 </div>
 
-<pre><span id="VALclose_process_full"><span class="keyword">val</span> close_process_full</span> : <code class="type">Stdlib.in_channel * Stdlib.out_channel * Stdlib.in_channel -&gt;<br>       <a href="Unix.html#TYPEprocess_status">process_status</a></code></pre><div class="info ">
+<pre><span id="VALclose_process_full"><span class="keyword">val</span> close_process_full</span> : <code class="type"><a href="Stdlib.html#TYPEin_channel">Stdlib.in_channel</a> * <a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a> * <a href="Stdlib.html#TYPEin_channel">Stdlib.in_channel</a> -&gt;<br>       <a href="Unix.html#TYPEprocess_status">process_status</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Close channels opened by <a href="Unix.html#VALopen_process_full"><code class="code">Unix.open_process_full</code></a>,
    wait for the associated command to terminate,
@@ -4176,22 +4180,22 @@
 </div>
 </div>
 <h2 id="1_Highlevelnetworkconnectionfunctions">High-level network connection functions</h2>
-<pre><span id="VALopen_connection"><span class="keyword">val</span> open_connection</span> : <code class="type"><a href="Unix.html#TYPEsockaddr">sockaddr</a> -&gt; Stdlib.in_channel * Stdlib.out_channel</code></pre><div class="info ">
+<pre><span id="VALopen_connection"><span class="keyword">val</span> open_connection</span> : <code class="type"><a href="Unix.html#TYPEsockaddr">sockaddr</a> -&gt; <a href="Stdlib.html#TYPEin_channel">Stdlib.in_channel</a> * <a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Connect to a server at the given address.
    Return a pair of buffered channels connected to the server.
-   Remember to call <code class="code">Stdlib.flush</code> on the output channel at the right
+   Remember to call <a href="Stdlib.html#VALflush"><code class="code">Stdlib.flush</code></a> on the output channel at the right
    times to ensure correct synchronization.</p>
 
 <p>The two channels returned by <code class="code">open_connection</code> share a descriptor
    to a socket.  Therefore, when the connection is over, you should
-   call <code class="code">Stdlib.close_out</code> on the output channel, which will also close
-   the underlying socket.  Do not call <code class="code">Stdlib.close_in</code> on the input
+   call <a href="Stdlib.html#VALclose_out"><code class="code">Stdlib.close_out</code></a> on the output channel, which will also close
+   the underlying socket.  Do not call <a href="Stdlib.html#VALclose_in"><code class="code">Stdlib.close_in</code></a> on the input
    channel; it will be collected by the GC eventually.</p>
 </div>
 </div>
 
-<pre><span id="VALshutdown_connection"><span class="keyword">val</span> shutdown_connection</span> : <code class="type">Stdlib.in_channel -&gt; unit</code></pre><div class="info ">
+<pre><span id="VALshutdown_connection"><span class="keyword">val</span> shutdown_connection</span> : <code class="type"><a href="Stdlib.html#TYPEin_channel">Stdlib.in_channel</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>``Shut down'' a connection established with <a href="Unix.html#VALopen_connection"><code class="code">Unix.open_connection</code></a>;
    that is, transmit an end-of-file condition to the server reading
@@ -4202,7 +4206,7 @@
 </div>
 </div>
 
-<pre><span id="VALestablish_server"><span class="keyword">val</span> establish_server</span> : <code class="type">(Stdlib.in_channel -&gt; Stdlib.out_channel -&gt; unit) -&gt; <a href="Unix.html#TYPEsockaddr">sockaddr</a> -&gt; unit</code></pre><div class="info ">
+<pre><span id="VALestablish_server"><span class="keyword">val</span> establish_server</span> : <code class="type">(<a href="Stdlib.html#TYPEin_channel">Stdlib.in_channel</a> -&gt; <a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a> -&gt; unit) -&gt; <a href="Unix.html#TYPEsockaddr">sockaddr</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Establish a server on the given address.
    The function given as first argument is called for each connection
@@ -4214,7 +4218,7 @@
    socket.  The function does not need to close the channels, since this
    occurs automatically when the function returns.  If the function
    prefers explicit closing, it should close the output channel using
-   <code class="code">Stdlib.close_out</code> and leave the input channel unclosed,
+   <a href="Stdlib.html#VALclose_out"><code class="code">Stdlib.close_out</code></a> and leave the input channel unclosed,
    for reasons explained in <a href="Unix.html#VALin_channel_of_descr"><code class="code">Unix.in_channel_of_descr</code></a>.</p>
 </div>
 <ul class="info-attributes">

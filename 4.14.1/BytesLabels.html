@@ -5,8 +5,8 @@
 <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="Start" href="index.html">
-<link rel="previous" href="Buffer.html">
-<link rel="next" href="Bytes.html">
+<link rel="previous" href="Bytes.html">
+<link rel="next" href="Callback.html">
 <link rel="Up" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
@@ -15,14 +15,14 @@
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="Arg" rel="Chapter" href="Arg.html">
-<link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
 <link title="Array" rel="Chapter" href="Array.html">
+<link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
 <link title="Atomic" rel="Chapter" href="Atomic.html">
 <link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
-<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
 <link title="Bytes" rel="Chapter" href="Bytes.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
@@ -40,13 +40,13 @@
 <link title="Genlex" rel="Chapter" href="Genlex.html">
 <link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
+<link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
-<link title="Int" rel="Chapter" href="Int.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
-<link title="ListLabels" rel="Chapter" href="ListLabels.html">
 <link title="List" rel="Chapter" href="List.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
 <link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
 <link title="MoreLabels" rel="Chapter" href="MoreLabels.html">
@@ -68,14 +68,18 @@
 <link title="Set" rel="Chapter" href="Set.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
-<link title="Stream" rel="Chapter" href="Stream.html">
-<link title="StringLabels" rel="Chapter" href="StringLabels.html">
-<link title="String" rel="Chapter" href="String.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
+<link title="Stream" rel="Chapter" href="Stream.html">
+<link title="String" rel="Chapter" href="String.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><link title="Unsafe conversions (for advanced users)" rel="Section" href="#unsafe">
 <link title="Iterators" rel="Section" href="#1_Iterators">
 <link title="UTF codecs and validations" rel="Section" href="#utf">
@@ -86,9 +90,9 @@
 <title>BytesLabels</title>
 </head>
 <body>
-<div class="navbar"><a class="pre" href="Buffer.html" title="Buffer">Previous</a>
+<div class="navbar"><a class="pre" href="Bytes.html" title="Bytes">Previous</a>
 &nbsp;<a class="up" href="index.html" title="Index">Up</a>
-&nbsp;<a class="post" href="Bytes.html" title="Bytes">Next</a>
+&nbsp;<a class="post" href="Callback.html" title="Callback">Next</a>
 </div>
 <h1>Module <a href="type_BytesLabels.html">BytesLabels</a></h1>
 
@@ -612,7 +616,7 @@
 <pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="BytesLabels.html#TYPEt">t</a> -&gt; <a href="BytesLabels.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>The comparison function for byte sequences, with the same
-    specification as <code class="code">Stdlib.compare</code>.  Along with the type <code class="code">t</code>,
+    specification as <a href="Stdlib.html#VALcompare"><code class="code">Stdlib.compare</code></a>.  Along with the type <code class="code">t</code>,
     this function <code class="code">compare</code> allows the module <code class="code">Bytes</code> to be passed as
     argument to the functors <a href="Set.Make.html"><code class="code">Set.Make</code></a> and <a href="Map.Make.html"><code class="code">Map.Make</code></a>.</p>
 </div>

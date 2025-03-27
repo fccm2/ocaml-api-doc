@@ -5,7 +5,7 @@
 <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="Start" href="index.html">
-<link rel="next" href="ArrayLabels.html">
+<link rel="next" href="Array.html">
 <link rel="Up" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
@@ -14,14 +14,14 @@
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="Arg" rel="Chapter" href="Arg.html">
-<link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
 <link title="Array" rel="Chapter" href="Array.html">
+<link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
 <link title="Atomic" rel="Chapter" href="Atomic.html">
 <link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
-<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
 <link title="Bytes" rel="Chapter" href="Bytes.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
@@ -39,13 +39,13 @@
 <link title="Genlex" rel="Chapter" href="Genlex.html">
 <link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
+<link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
-<link title="Int" rel="Chapter" href="Int.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
-<link title="ListLabels" rel="Chapter" href="ListLabels.html">
 <link title="List" rel="Chapter" href="List.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
 <link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
 <link title="MoreLabels" rel="Chapter" href="MoreLabels.html">
@@ -67,19 +67,23 @@
 <link title="Set" rel="Chapter" href="Set.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
-<link title="Stream" rel="Chapter" href="Stream.html">
-<link title="StringLabels" rel="Chapter" href="StringLabels.html">
-<link title="String" rel="Chapter" href="String.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
+<link title="Stream" rel="Chapter" href="Stream.html">
+<link title="String" rel="Chapter" href="String.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><title>Arg</title>
 </head>
 <body>
 <div class="navbar">&nbsp;<a class="up" href="index.html" title="Index">Up</a>
-&nbsp;<a class="post" href="ArrayLabels.html" title="ArrayLabels">Next</a>
+&nbsp;<a class="post" href="Array.html" title="Array">Next</a>
 </div>
 <h1>Module <a href="type_Arg.html">Arg</a></h1>
 
@@ -173,7 +177,7 @@
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTspec.Set"><span class="constructor">Set</span></span> <span class="keyword">of</span> <code class="type">bool Stdlib.ref</code></code></td>
+<code><span id="TYPEELTspec.Set"><span class="constructor">Set</span></span> <span class="keyword">of</span> <code class="type">bool <a href="Stdlib.html#TYPEref">Stdlib.ref</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 <div class="info-desc">
 <p>Set the reference to true</p>
@@ -185,7 +189,7 @@
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTspec.Clear"><span class="constructor">Clear</span></span> <span class="keyword">of</span> <code class="type">bool Stdlib.ref</code></code></td>
+<code><span id="TYPEELTspec.Clear"><span class="constructor">Clear</span></span> <span class="keyword">of</span> <code class="type">bool <a href="Stdlib.html#TYPEref">Stdlib.ref</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 <div class="info-desc">
 <p>Set the reference to false</p>
@@ -209,7 +213,7 @@
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTspec.Set_string"><span class="constructor">Set_string</span></span> <span class="keyword">of</span> <code class="type">string Stdlib.ref</code></code></td>
+<code><span id="TYPEELTspec.Set_string"><span class="constructor">Set_string</span></span> <span class="keyword">of</span> <code class="type">string <a href="Stdlib.html#TYPEref">Stdlib.ref</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 <div class="info-desc">
 <p>Set the reference to the string argument</p>
@@ -233,7 +237,7 @@
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTspec.Set_int"><span class="constructor">Set_int</span></span> <span class="keyword">of</span> <code class="type">int Stdlib.ref</code></code></td>
+<code><span id="TYPEELTspec.Set_int"><span class="constructor">Set_int</span></span> <span class="keyword">of</span> <code class="type">int <a href="Stdlib.html#TYPEref">Stdlib.ref</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 <div class="info-desc">
 <p>Set the reference to the int argument</p>
@@ -257,7 +261,7 @@
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTspec.Set_float"><span class="constructor">Set_float</span></span> <span class="keyword">of</span> <code class="type">float Stdlib.ref</code></code></td>
+<code><span id="TYPEELTspec.Set_float"><span class="constructor">Set_float</span></span> <span class="keyword">of</span> <code class="type">float <a href="Stdlib.html#TYPEref">Stdlib.ref</a></code></code></td>
 <td class="typefieldcomment" align="left" valign="top" ><code>(*</code></td><td class="typefieldcomment" align="left" valign="top" ><div class="info ">
 <div class="info-desc">
 <p>Set the reference to the float argument</p>
@@ -387,7 +391,7 @@
 </div>
 </div>
 
-<pre><span id="VALparse_dynamic"><span class="keyword">val</span> parse_dynamic</span> : <code class="type">(<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list Stdlib.ref -&gt;<br>       <a href="Arg.html#TYPEanon_fun">anon_fun</a> -&gt; <a href="Arg.html#TYPEusage_msg">usage_msg</a> -&gt; unit</code></pre><div class="info ">
+<pre><span id="VALparse_dynamic"><span class="keyword">val</span> parse_dynamic</span> : <code class="type">(<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list <a href="Stdlib.html#TYPEref">Stdlib.ref</a> -&gt;<br>       <a href="Arg.html#TYPEanon_fun">anon_fun</a> -&gt; <a href="Arg.html#TYPEusage_msg">usage_msg</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Arg.html#VALparse"><code class="code">Arg.parse</code></a>, except that the <code class="code">speclist</code> argument is a reference
     and may be updated during the parsing. A typical use for this feature
@@ -402,7 +406,7 @@
 </ul>
 </div>
 
-<pre><span id="VALparse_argv"><span class="keyword">val</span> parse_argv</span> : <code class="type">?current:int Stdlib.ref -&gt;<br>       string array -&gt;<br>       (<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list -&gt; <a href="Arg.html#TYPEanon_fun">anon_fun</a> -&gt; <a href="Arg.html#TYPEusage_msg">usage_msg</a> -&gt; unit</code></pre><div class="info ">
+<pre><span id="VALparse_argv"><span class="keyword">val</span> parse_argv</span> : <code class="type">?current:int <a href="Stdlib.html#TYPEref">Stdlib.ref</a> -&gt;<br>       string array -&gt;<br>       (<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list -&gt; <a href="Arg.html#TYPEanon_fun">anon_fun</a> -&gt; <a href="Arg.html#TYPEusage_msg">usage_msg</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Arg.parse_argv ~current args speclist anon_fun usage_msg</code> parses
   the array <code class="code">args</code> as if it were the command line.  It uses and updates
@@ -416,7 +420,7 @@
 </div>
 </div>
 
-<pre><span id="VALparse_argv_dynamic"><span class="keyword">val</span> parse_argv_dynamic</span> : <code class="type">?current:int Stdlib.ref -&gt;<br>       string array -&gt;<br>       (<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list Stdlib.ref -&gt;<br>       <a href="Arg.html#TYPEanon_fun">anon_fun</a> -&gt; string -&gt; unit</code></pre><div class="info ">
+<pre><span id="VALparse_argv_dynamic"><span class="keyword">val</span> parse_argv_dynamic</span> : <code class="type">?current:int <a href="Stdlib.html#TYPEref">Stdlib.ref</a> -&gt;<br>       string array -&gt;<br>       (<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list <a href="Stdlib.html#TYPEref">Stdlib.ref</a> -&gt;<br>       <a href="Arg.html#TYPEanon_fun">anon_fun</a> -&gt; string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Arg.html#VALparse_argv"><code class="code">Arg.parse_argv</code></a>, except that the <code class="code">speclist</code> argument is a
     reference and may be updated during the parsing.
@@ -427,7 +431,7 @@
 </ul>
 </div>
 
-<pre><span id="VALparse_and_expand_argv_dynamic"><span class="keyword">val</span> parse_and_expand_argv_dynamic</span> : <code class="type">int Stdlib.ref -&gt;<br>       string array Stdlib.ref -&gt;<br>       (<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list Stdlib.ref -&gt;<br>       <a href="Arg.html#TYPEanon_fun">anon_fun</a> -&gt; string -&gt; unit</code></pre><div class="info ">
+<pre><span id="VALparse_and_expand_argv_dynamic"><span class="keyword">val</span> parse_and_expand_argv_dynamic</span> : <code class="type">int <a href="Stdlib.html#TYPEref">Stdlib.ref</a> -&gt;<br>       string array <a href="Stdlib.html#TYPEref">Stdlib.ref</a> -&gt;<br>       (<a href="Arg.html#TYPEkey">key</a> * <a href="Arg.html#TYPEspec">spec</a> * <a href="Arg.html#TYPEdoc">doc</a>) list <a href="Stdlib.html#TYPEref">Stdlib.ref</a> -&gt;<br>       <a href="Arg.html#TYPEanon_fun">anon_fun</a> -&gt; string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Arg.html#VALparse_argv_dynamic"><code class="code">Arg.parse_argv_dynamic</code></a>, except that the <code class="code">argv</code> argument is a
     reference and may be updated during the parsing of <code class="code">Expand</code> arguments.
@@ -492,7 +496,7 @@
 <div class="param_info"><code class="code">limit</code> : options with keyword and message longer than <code class="code">limit</code> will not
     be used to compute the alignment.</div>
 
-<pre><span id="VALcurrent"><span class="keyword">val</span> current</span> : <code class="type">int Stdlib.ref</code></pre><div class="info ">
+<pre><span id="VALcurrent"><span class="keyword">val</span> current</span> : <code class="type">int <a href="Stdlib.html#TYPEref">Stdlib.ref</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Position (in <a href="Sys.html#VALargv"><code class="code">Sys.argv</code></a>) of the argument being processed.  You can
     change this value, e.g. to force <a href="Arg.html#VALparse"><code class="code">Arg.parse</code></a> to skip some arguments.

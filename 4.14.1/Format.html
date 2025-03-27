@@ -15,14 +15,14 @@
 <link title="Index of modules" rel=Appendix href="index_modules.html">
 <link title="Index of module types" rel=Appendix href="index_module_types.html">
 <link title="Arg" rel="Chapter" href="Arg.html">
-<link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
 <link title="Array" rel="Chapter" href="Array.html">
+<link title="ArrayLabels" rel="Chapter" href="ArrayLabels.html">
 <link title="Atomic" rel="Chapter" href="Atomic.html">
 <link title="Bigarray" rel="Chapter" href="Bigarray.html">
 <link title="Bool" rel="Chapter" href="Bool.html">
 <link title="Buffer" rel="Chapter" href="Buffer.html">
-<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
 <link title="Bytes" rel="Chapter" href="Bytes.html">
+<link title="BytesLabels" rel="Chapter" href="BytesLabels.html">
 <link title="Callback" rel="Chapter" href="Callback.html">
 <link title="Char" rel="Chapter" href="Char.html">
 <link title="Complex" rel="Chapter" href="Complex.html">
@@ -40,13 +40,13 @@
 <link title="Genlex" rel="Chapter" href="Genlex.html">
 <link title="Hashtbl" rel="Chapter" href="Hashtbl.html">
 <link title="In_channel" rel="Chapter" href="In_channel.html">
+<link title="Int" rel="Chapter" href="Int.html">
 <link title="Int32" rel="Chapter" href="Int32.html">
 <link title="Int64" rel="Chapter" href="Int64.html">
-<link title="Int" rel="Chapter" href="Int.html">
 <link title="Lazy" rel="Chapter" href="Lazy.html">
 <link title="Lexing" rel="Chapter" href="Lexing.html">
-<link title="ListLabels" rel="Chapter" href="ListLabels.html">
 <link title="List" rel="Chapter" href="List.html">
+<link title="ListLabels" rel="Chapter" href="ListLabels.html">
 <link title="Map" rel="Chapter" href="Map.html">
 <link title="Marshal" rel="Chapter" href="Marshal.html">
 <link title="MoreLabels" rel="Chapter" href="MoreLabels.html">
@@ -68,14 +68,18 @@
 <link title="Set" rel="Chapter" href="Set.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
-<link title="Stream" rel="Chapter" href="Stream.html">
-<link title="StringLabels" rel="Chapter" href="StringLabels.html">
-<link title="String" rel="Chapter" href="String.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
+<link title="Stream" rel="Chapter" href="Stream.html">
+<link title="String" rel="Chapter" href="String.html">
+<link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><link title="Introduction" rel="Section" href="#1_Introduction">
 <link title="Formatters" rel="Section" href="#1_Formatters">
 <link title="Pretty-printing boxes" rel="Section" href="#boxes">
@@ -124,8 +128,8 @@
    functions.
    Some formatters are predefined, notably:</p>
 <ul>
-<li><a href="Format.html#VALstd_formatter"><code class="code">Format.std_formatter</code></a> outputs to stdout</li>
-<li><a href="Format.html#VALerr_formatter"><code class="code">Format.err_formatter</code></a> outputs to stderr</li>
+<li><a href="Format.html#VALstd_formatter"><code class="code">Format.std_formatter</code></a> outputs to <a href="Stdlib.html#VALstdout">stdout</a></li>
+<li><a href="Format.html#VALerr_formatter"><code class="code">Format.err_formatter</code></a> outputs to <a href="Stdlib.html#VALstderr">stderr</a></li>
 </ul>
 <p>Most functions in the <a href="Format.html"><code class="code">Format</code></a> module come in two variants:
    a short version that operates on <a href="Format.html#VALstd_formatter"><code class="code">Format.std_formatter</code></a> and the
@@ -182,7 +186,7 @@
    pending text, and resets the standard pretty-printer.</p>
 
 <p>Warning: mixing calls to pretty-printing functions of this module with
-   calls to <code class="code">Stdlib</code> low level output functions is error prone.</p>
+   calls to <a href="Stdlib.html"><code class="code">Stdlib</code></a> low level output functions is error prone.</p>
 
 <p>The pretty-printing functions output material that is delayed in the
    pretty-printer queue and stacks in order to compute proper line
@@ -506,7 +510,7 @@
   disturb further pretty-printing.</p>
 
 <p>Warning: If the output device of the pretty-printer is an output channel,
-  repeated calls to <code class="code">print_flush</code> means repeated calls to <code class="code">Stdlib.flush</code>
+  repeated calls to <code class="code">print_flush</code> means repeated calls to <a href="Stdlib.html#VALflush"><code class="code">Stdlib.flush</code></a>
   to flush the out channel; these explicit flush calls could foil the
   buffering strategy of output channels and could dramatically impact
   efficiency.</p>
@@ -968,12 +972,12 @@ coupled variables, margin and maxixum indentation limit.</p>
 </div>
 </div>
 
-<pre><span id="VALpp_set_formatter_out_channel"><span class="keyword">val</span> pp_set_formatter_out_channel</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; Stdlib.out_channel -&gt; unit</code></pre><div class="info ">
+<pre><span id="VALpp_set_formatter_out_channel"><span class="keyword">val</span> pp_set_formatter_out_channel</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; <a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <h2 id="1_Redirectingthestandardformatteroutput">Redirecting the standard formatter output</h2></div>
 </div>
 
-<pre><span id="VALset_formatter_out_channel"><span class="keyword">val</span> set_formatter_out_channel</span> : <code class="type">Stdlib.out_channel -&gt; unit</code></pre><div class="info ">
+<pre><span id="VALset_formatter_out_channel"><span class="keyword">val</span> set_formatter_out_channel</span> : <code class="type"><a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Redirect the standard pretty-printer output to the given channel.
   (All the output functions of the standard formatter are set to the
@@ -1076,9 +1080,9 @@ coupled variables, margin and maxixum indentation limit.</p>
 <p>By default:</p>
 <ul>
 <li>fields <code class="code">out_string</code> and <code class="code">out_flush</code> are output device specific;
-  (e.g. <code class="code">Stdlib.output_string</code> and <code class="code">Stdlib.flush</code> for a
-   <code class="code">Stdlib.out_channel</code> device, or <code class="code">Buffer.add_substring</code> and
-   <code class="code">Stdlib.ignore</code> for a <code class="code">Buffer.t</code> output device),</li>
+  (e.g. <a href="Stdlib.html#VALoutput_string"><code class="code">Stdlib.output_string</code></a> and <a href="Stdlib.html#VALflush"><code class="code">Stdlib.flush</code></a> for a
+   <a href="Stdlib.html#TYPEout_channel"><code class="code">Stdlib.out_channel</code></a> device, or <code class="code">Buffer.add_substring</code> and
+   <a href="Stdlib.html#VALignore"><code class="code">Stdlib.ignore</code></a> for a <code class="code">Buffer.t</code> output device),</li>
 <li>field <code class="code">out_newline</code> is equivalent to <code class="code">out_string "\n" 0 1</code>;</li>
 <li>fields <code class="code">out_spaces</code> and <code class="code">out_indent</code> are equivalent to
   <code class="code">out_string (String.make n ' ') 0 n</code>.</li>
@@ -1213,7 +1217,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 
 <p>For instance, given a <a href="Buffer.html#TYPEt"><code class="code">Buffer.t</code></a> buffer <code class="code">b</code>, <a href="Format.html#VALformatter_of_buffer"><code class="code">Format.formatter_of_buffer</code></a> <code class="code">b</code>
   returns a new formatter using buffer <code class="code">b</code> as its output device.
-  Similarly, given a <code class="code">Stdlib.out_channel</code> output channel <code class="code">oc</code>,
+  Similarly, given a <a href="Stdlib.html#TYPEout_channel"><code class="code">Stdlib.out_channel</code></a> output channel <code class="code">oc</code>,
   <a href="Format.html#VALformatter_of_out_channel"><code class="code">Format.formatter_of_out_channel</code></a> <code class="code">oc</code> returns a new formatter using
   channel <code class="code">oc</code> as its output device.</p>
 
@@ -1221,7 +1225,7 @@ coupled variables, margin and maxixum indentation limit.</p>
   formatter, then <a href="Format.html#VALformatter_of_out_functions"><code class="code">Format.formatter_of_out_functions</code></a> <code class="code">out_funs</code> computes a new
   formatter using those functions for output.</p>
 
-<pre><span id="VALformatter_of_out_channel"><span class="keyword">val</span> formatter_of_out_channel</span> : <code class="type">Stdlib.out_channel -&gt; <a href="Format.html#TYPEformatter">formatter</a></code></pre><div class="info ">
+<pre><span id="VALformatter_of_out_channel"><span class="keyword">val</span> formatter_of_out_channel</span> : <code class="type"><a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a> -&gt; <a href="Format.html#TYPEformatter">formatter</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">formatter_of_out_channel oc</code> returns a new formatter writing
   to the corresponding output channel <code class="code">oc</code>.</p>
@@ -1232,7 +1236,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 <div class="info-desc">
 <p>The standard formatter to write to standard output.</p>
 
-<p>It is defined as <a href="Format.html#VALformatter_of_out_channel"><code class="code">Format.formatter_of_out_channel</code></a> <code class="code">Stdlib.stdout</code>.</p>
+<p>It is defined as <a href="Format.html#VALformatter_of_out_channel"><code class="code">Format.formatter_of_out_channel</code></a> <a href="Stdlib.html#VALstdout"><code class="code">Stdlib.stdout</code></a>.</p>
 </div>
 </div>
 
@@ -1240,7 +1244,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 <div class="info-desc">
 <p>A formatter to write to standard error.</p>
 
-<p>It is defined as <a href="Format.html#VALformatter_of_out_channel"><code class="code">Format.formatter_of_out_channel</code></a> <code class="code">Stdlib.stderr</code>.</p>
+<p>It is defined as <a href="Format.html#VALformatter_of_out_channel"><code class="code">Format.formatter_of_out_channel</code></a> <a href="Stdlib.html#VALstderr"><code class="code">Stdlib.stderr</code></a>.</p>
 </div>
 </div>
 
@@ -1283,7 +1287,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 <pre class="codepre"><code class="code">    make_formatter
       (Stdlib.output oc)
       (fun () -&gt; Stdlib.flush oc)
-  </code></pre><p>returns a formatter to the <code class="code">Stdlib.out_channel</code> <code class="code">oc</code>.</p>
+  </code></pre><p>returns a formatter to the <a href="Stdlib.html#TYPEout_channel"><code class="code">Stdlib.out_channel</code></a> <code class="code">oc</code>.</p>
 </div>
 </div>
 
@@ -1510,7 +1514,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 </ul>
 </div>
 
-<pre><span id="VALpp_print_result"><span class="keyword">val</span> pp_print_result</span> : <code class="type">ok:(<a href="Format.html#TYPEformatter">formatter</a> -&gt; 'a -&gt; unit) -&gt;<br>       error:(<a href="Format.html#TYPEformatter">formatter</a> -&gt; 'e -&gt; unit) -&gt;<br>       <a href="Format.html#TYPEformatter">formatter</a> -&gt; ('a, 'e) Stdlib.result -&gt; unit</code></pre><div class="info ">
+<pre><span id="VALpp_print_result"><span class="keyword">val</span> pp_print_result</span> : <code class="type">ok:(<a href="Format.html#TYPEformatter">formatter</a> -&gt; 'a -&gt; unit) -&gt;<br>       error:(<a href="Format.html#TYPEformatter">formatter</a> -&gt; 'e -&gt; unit) -&gt;<br>       <a href="Format.html#TYPEformatter">formatter</a> -&gt; ('a, 'e) <a href="Stdlib.html#TYPEresult">Stdlib.result</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_print_result ~ok ~error ppf r</code> prints <code class="code">r</code> on <code class="code">ppf</code> using
     <code class="code">ok</code> if <code class="code">r</code> is <code class="code">Ok _</code> and <code class="code">error</code> if <code class="code">r</code> is <code class="code">Error _</code>.</p>
@@ -1539,7 +1543,7 @@ coupled variables, margin and maxixum indentation limit.</p>
   character. For instance, <code class="code">@ </code> means a space break, <code class="code">@,</code> means a cut,
   <code class="code">@[</code> opens a new box, and <code class="code">@]</code> closes the last open box.</p>
 
-<pre><span id="VALfprintf"><span class="keyword">val</span> fprintf</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; ('a, <a href="Format.html#TYPEformatter">formatter</a>, unit) Stdlib.format -&gt; 'a</code></pre><p><code class="code">fprintf ff fmt arg1 ... argN</code> formats the arguments <code class="code">arg1</code> to <code class="code">argN</code>
+<pre><span id="VALfprintf"><span class="keyword">val</span> fprintf</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; ('a, <a href="Format.html#TYPEformatter">formatter</a>, unit) <a href="Stdlib.html#TYPEformat">Stdlib.format</a> -&gt; 'a</code></pre><p><code class="code">fprintf ff fmt arg1 ... argN</code> formats the arguments <code class="code">arg1</code> to <code class="code">argN</code>
   according to the format string <code class="code">fmt</code>, and outputs the resulting string on
   the formatter <code class="code">ff</code>.</p>
 
@@ -1609,19 +1613,19 @@ coupled variables, margin and maxixum indentation limit.</p>
    print_int 1; close_box (); print_newline ()</code>.
   It prints <code class="code">x = 1</code> within a pretty-printing 'horizontal-or-vertical' box.</p>
 
-<pre><span id="VALprintf"><span class="keyword">val</span> printf</span> : <code class="type">('a, <a href="Format.html#TYPEformatter">formatter</a>, unit) Stdlib.format -&gt; 'a</code></pre><div class="info ">
+<pre><span id="VALprintf"><span class="keyword">val</span> printf</span> : <code class="type">('a, <a href="Format.html#TYPEformatter">formatter</a>, unit) <a href="Stdlib.html#TYPEformat">Stdlib.format</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">fprintf</code> above, but output on <code class="code">std_formatter</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALeprintf"><span class="keyword">val</span> eprintf</span> : <code class="type">('a, <a href="Format.html#TYPEformatter">formatter</a>, unit) Stdlib.format -&gt; 'a</code></pre><div class="info ">
+<pre><span id="VALeprintf"><span class="keyword">val</span> eprintf</span> : <code class="type">('a, <a href="Format.html#TYPEformatter">formatter</a>, unit) <a href="Stdlib.html#TYPEformat">Stdlib.format</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">fprintf</code> above, but output on <code class="code">err_formatter</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALsprintf"><span class="keyword">val</span> sprintf</span> : <code class="type">('a, unit, string) Stdlib.format -&gt; 'a</code></pre><div class="info ">
+<pre><span id="VALsprintf"><span class="keyword">val</span> sprintf</span> : <code class="type">('a, unit, string) <a href="Stdlib.html#TYPEformat">Stdlib.format</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">printf</code> above, but instead of printing on a formatter,
   returns a string containing the result of formatting the arguments.
@@ -1639,7 +1643,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 </div>
 </div>
 
-<pre><span id="VALasprintf"><span class="keyword">val</span> asprintf</span> : <code class="type">('a, <a href="Format.html#TYPEformatter">formatter</a>, unit, string) Stdlib.format4 -&gt; 'a</code></pre><div class="info ">
+<pre><span id="VALasprintf"><span class="keyword">val</span> asprintf</span> : <code class="type">('a, <a href="Format.html#TYPEformatter">formatter</a>, unit, string) <a href="Stdlib.html#TYPEformat4">Stdlib.format4</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">printf</code> above, but instead of printing on a formatter,
   returns a string containing the result of formatting the arguments.
@@ -1651,7 +1655,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 </ul>
 </div>
 
-<pre><span id="VALdprintf"><span class="keyword">val</span> dprintf</span> : <code class="type">('a, <a href="Format.html#TYPEformatter">formatter</a>, unit, <a href="Format.html#TYPEformatter">formatter</a> -&gt; unit) Stdlib.format4 -&gt; 'a</code></pre><div class="info ">
+<pre><span id="VALdprintf"><span class="keyword">val</span> dprintf</span> : <code class="type">('a, <a href="Format.html#TYPEformatter">formatter</a>, unit, <a href="Format.html#TYPEformatter">formatter</a> -&gt; unit) <a href="Stdlib.html#TYPEformat4">Stdlib.format4</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Format.html#VALfprintf"><code class="code">Format.fprintf</code></a>, except the formatter is the last argument.
   <code class="code">dprintf "..." a b c</code> is a function of type
@@ -1673,7 +1677,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 </ul>
 </div>
 
-<pre><span id="VALifprintf"><span class="keyword">val</span> ifprintf</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; ('a, <a href="Format.html#TYPEformatter">formatter</a>, unit) Stdlib.format -&gt; 'a</code></pre><div class="info ">
+<pre><span id="VALifprintf"><span class="keyword">val</span> ifprintf</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; ('a, <a href="Format.html#TYPEformatter">formatter</a>, unit) <a href="Stdlib.html#TYPEformat">Stdlib.format</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">fprintf</code> above, but does not print anything.
   Useful to ignore some material when conditionally printing.</p>
@@ -1684,14 +1688,14 @@ coupled variables, margin and maxixum indentation limit.</p>
 </div>
 <p>Formatted Pretty-Printing with continuations.</p>
 
-<pre><span id="VALkfprintf"><span class="keyword">val</span> kfprintf</span> : <code class="type">(<a href="Format.html#TYPEformatter">formatter</a> -&gt; 'a) -&gt;<br>       <a href="Format.html#TYPEformatter">formatter</a> -&gt; ('b, <a href="Format.html#TYPEformatter">formatter</a>, unit, 'a) Stdlib.format4 -&gt; 'b</code></pre><div class="info ">
+<pre><span id="VALkfprintf"><span class="keyword">val</span> kfprintf</span> : <code class="type">(<a href="Format.html#TYPEformatter">formatter</a> -&gt; 'a) -&gt;<br>       <a href="Format.html#TYPEformatter">formatter</a> -&gt; ('b, <a href="Format.html#TYPEformatter">formatter</a>, unit, 'a) <a href="Stdlib.html#TYPEformat4">Stdlib.format4</a> -&gt; 'b</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">fprintf</code> above, but instead of returning immediately,
   passes the formatter to its first argument at the end of printing.</p>
 </div>
 </div>
 
-<pre><span id="VALkdprintf"><span class="keyword">val</span> kdprintf</span> : <code class="type">((<a href="Format.html#TYPEformatter">formatter</a> -&gt; unit) -&gt; 'a) -&gt;<br>       ('b, <a href="Format.html#TYPEformatter">formatter</a>, unit, 'a) Stdlib.format4 -&gt; 'b</code></pre><div class="info ">
+<pre><span id="VALkdprintf"><span class="keyword">val</span> kdprintf</span> : <code class="type">((<a href="Format.html#TYPEformatter">formatter</a> -&gt; unit) -&gt; 'a) -&gt;<br>       ('b, <a href="Format.html#TYPEformatter">formatter</a>, unit, 'a) <a href="Stdlib.html#TYPEformat4">Stdlib.format4</a> -&gt; 'b</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Format.html#VALdprintf"><code class="code">Format.dprintf</code></a> above, but instead of returning immediately,
   passes the suspended printer to its first argument at the end of printing.</p>
@@ -1701,7 +1705,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 </ul>
 </div>
 
-<pre><span id="VALikfprintf"><span class="keyword">val</span> ikfprintf</span> : <code class="type">(<a href="Format.html#TYPEformatter">formatter</a> -&gt; 'a) -&gt;<br>       <a href="Format.html#TYPEformatter">formatter</a> -&gt; ('b, <a href="Format.html#TYPEformatter">formatter</a>, unit, 'a) Stdlib.format4 -&gt; 'b</code></pre><div class="info ">
+<pre><span id="VALikfprintf"><span class="keyword">val</span> ikfprintf</span> : <code class="type">(<a href="Format.html#TYPEformatter">formatter</a> -&gt; 'a) -&gt;<br>       <a href="Format.html#TYPEformatter">formatter</a> -&gt; ('b, <a href="Format.html#TYPEformatter">formatter</a>, unit, 'a) <a href="Stdlib.html#TYPEformat4">Stdlib.format4</a> -&gt; 'b</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">kfprintf</code> above, but does not print anything.
   Useful to ignore some material when conditionally printing.</p>
@@ -1711,14 +1715,14 @@ coupled variables, margin and maxixum indentation limit.</p>
 </ul>
 </div>
 
-<pre><span id="VALksprintf"><span class="keyword">val</span> ksprintf</span> : <code class="type">(string -&gt; 'a) -&gt; ('b, unit, string, 'a) Stdlib.format4 -&gt; 'b</code></pre><div class="info ">
+<pre><span id="VALksprintf"><span class="keyword">val</span> ksprintf</span> : <code class="type">(string -&gt; 'a) -&gt; ('b, unit, string, 'a) <a href="Stdlib.html#TYPEformat4">Stdlib.format4</a> -&gt; 'b</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">sprintf</code> above, but instead of returning the string,
   passes it to the first argument.</p>
 </div>
 </div>
 
-<pre><span id="VALkasprintf"><span class="keyword">val</span> kasprintf</span> : <code class="type">(string -&gt; 'a) -&gt; ('b, <a href="Format.html#TYPEformatter">formatter</a>, unit, 'a) Stdlib.format4 -&gt; 'b</code></pre><div class="info ">
+<pre><span id="VALkasprintf"><span class="keyword">val</span> kasprintf</span> : <code class="type">(string -&gt; 'a) -&gt; ('b, <a href="Format.html#TYPEformatter">formatter</a>, unit, 'a) <a href="Stdlib.html#TYPEformat4">Stdlib.format4</a> -&gt; 'b</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">asprintf</code> above, but instead of returning the string,
   passes it to the first argument.</p>
@@ -1728,7 +1732,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 </ul>
 </div>
 <h2 id="1_Deprecated">Deprecated</h2>
-<pre><span id="VALbprintf"><span class="keyword">val</span> bprintf</span> : <code class="type">Stdlib.Buffer.t -&gt; ('a, <a href="Format.html#TYPEformatter">formatter</a>, unit) Stdlib.format -&gt; 'a</code></pre><div class="info ">
+<pre><span id="VALbprintf"><span class="keyword">val</span> bprintf</span> : <code class="type">Stdlib.Buffer.t -&gt; ('a, <a href="Format.html#TYPEformatter">formatter</a>, unit) <a href="Stdlib.html#TYPEformat">Stdlib.format</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-deprecated">
 <span class="warning">Deprecated. </span>This function is error prone. Do not use it.
   This function is neither compositional nor incremental, since it flushes
@@ -1739,7 +1743,7 @@ coupled variables, margin and maxixum indentation limit.</p>
   use regular calls to <code class="code">Format.fprintf</code> with formatter <code class="code">to_b</code>.</div>
 </div>
 
-<pre><span id="VALkprintf"><span class="keyword">val</span> kprintf</span> : <code class="type">(string -&gt; 'a) -&gt; ('b, unit, string, 'a) Stdlib.format4 -&gt; 'b</code></pre><div class="info ">
+<pre><span id="VALkprintf"><span class="keyword">val</span> kprintf</span> : <code class="type">(string -&gt; 'a) -&gt; ('b, unit, string, 'a) <a href="Stdlib.html#TYPEformat4">Stdlib.format4</a> -&gt; 'b</code></pre><div class="info ">
 <div class="info-deprecated">
 <span class="warning">Deprecated. </span>An alias for <code class="code">ksprintf</code>.</div>
 </div>
