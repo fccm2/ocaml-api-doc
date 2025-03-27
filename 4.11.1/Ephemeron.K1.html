@@ -63,14 +63,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><title>Ephemeron.K1</title>
 </head>
 <body>
@@ -89,21 +93,21 @@
 </div>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -> ('k, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -&gt; ('k, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Ephemeron.K1.create ()</code> creates an ephemeron with one key. The
       data and the key are empty</p>
 </div>
 </div>
 
-<pre><span id="VALget_key"><span class="keyword">val</span> get_key</span> : <code class="type">('k, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a> -> 'k option</code></pre><div class="info ">
+<pre><span id="VALget_key"><span class="keyword">val</span> get_key</span> : <code class="type">('k, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a> -&gt; 'k option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Ephemeron.K1.get_key eph</code> returns <code class="code">None</code> if the key of <code class="code">eph</code> is
       empty, <code class="code">Some x</code> (where <code class="code">x</code> is the key) if it is full.</p>
 </div>
 </div>
 
-<pre><span id="VALget_key_copy"><span class="keyword">val</span> get_key_copy</span> : <code class="type">('k, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a> -> 'k option</code></pre><div class="info ">
+<pre><span id="VALget_key_copy"><span class="keyword">val</span> get_key_copy</span> : <code class="type">('k, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a> -&gt; 'k option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Ephemeron.K1.get_key_copy eph</code> returns <code class="code">None</code> if the key of <code class="code">eph</code> is
       empty, <code class="code">Some x</code> (where <code class="code">x</code> is a (shallow) copy of the key) if
@@ -113,14 +117,14 @@
 </div>
 </div>
 
-<pre><span id="VALset_key"><span class="keyword">val</span> set_key</span> : <code class="type">('k, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a> -> 'k -> unit</code></pre><div class="info ">
+<pre><span id="VALset_key"><span class="keyword">val</span> set_key</span> : <code class="type">('k, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a> -&gt; 'k -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Ephemeron.K1.set_key eph el</code> sets the key of <code class="code">eph</code> to be a
       (full) key to <code class="code">el</code></p>
 </div>
 </div>
 
-<pre><span id="VALunset_key"><span class="keyword">val</span> unset_key</span> : <code class="type">('k, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALunset_key"><span class="keyword">val</span> unset_key</span> : <code class="type">('k, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Ephemeron.K1.unset_key eph el</code> sets the key of <code class="code">eph</code> to be an
       empty key. Since there is only one key, the ephemeron starts
@@ -128,7 +132,7 @@
 </div>
 </div>
 
-<pre><span id="VALcheck_key"><span class="keyword">val</span> check_key</span> : <code class="type">('k, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALcheck_key"><span class="keyword">val</span> check_key</span> : <code class="type">('k, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Ephemeron.K1.check_key eph</code> returns <code class="code">true</code> if the key of the <code class="code">eph</code>
       is full, <code class="code">false</code> if it is empty. Note that even if
@@ -137,7 +141,7 @@
 </div>
 </div>
 
-<pre><span id="VALblit_key"><span class="keyword">val</span> blit_key</span> : <code class="type">('k, 'a) <a href="Ephemeron.K1.html#TYPEt">t</a> -> ('k, 'b) <a href="Ephemeron.K1.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALblit_key"><span class="keyword">val</span> blit_key</span> : <code class="type">('k, 'a) <a href="Ephemeron.K1.html#TYPEt">t</a> -&gt; ('k, 'b) <a href="Ephemeron.K1.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Ephemeron.K1.blit_key eph1 eph2</code> sets the key of <code class="code">eph2</code> with
       the key of <code class="code">eph1</code>. Contrary to using <a href="Ephemeron.K1.html#VALget_key"><code class="code">Ephemeron.K1.get_key</code></a>
@@ -147,14 +151,14 @@
 </div>
 </div>
 
-<pre><span id="VALget_data"><span class="keyword">val</span> get_data</span> : <code class="type">('k, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a> -> 'd option</code></pre><div class="info ">
+<pre><span id="VALget_data"><span class="keyword">val</span> get_data</span> : <code class="type">('k, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a> -&gt; 'd option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Ephemeron.K1.get_data eph</code> returns <code class="code">None</code> if the data of <code class="code">eph</code> is
       empty, <code class="code">Some x</code> (where <code class="code">x</code> is the data) if it is full.</p>
 </div>
 </div>
 
-<pre><span id="VALget_data_copy"><span class="keyword">val</span> get_data_copy</span> : <code class="type">('k, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a> -> 'd option</code></pre><div class="info ">
+<pre><span id="VALget_data_copy"><span class="keyword">val</span> get_data_copy</span> : <code class="type">('k, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a> -&gt; 'd option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Ephemeron.K1.get_data_copy eph</code> returns <code class="code">None</code> if the data of <code class="code">eph</code> is
       empty, <code class="code">Some x</code> (where <code class="code">x</code> is a (shallow) copy of the data) if
@@ -164,21 +168,21 @@
 </div>
 </div>
 
-<pre><span id="VALset_data"><span class="keyword">val</span> set_data</span> : <code class="type">('k, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a> -> 'd -> unit</code></pre><div class="info ">
+<pre><span id="VALset_data"><span class="keyword">val</span> set_data</span> : <code class="type">('k, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a> -&gt; 'd -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Ephemeron.K1.set_data eph el</code> sets the data of <code class="code">eph</code> to be a
       (full) data to <code class="code">el</code></p>
 </div>
 </div>
 
-<pre><span id="VALunset_data"><span class="keyword">val</span> unset_data</span> : <code class="type">('k, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALunset_data"><span class="keyword">val</span> unset_data</span> : <code class="type">('k, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Ephemeron.K1.unset_data eph el</code> sets the key of <code class="code">eph</code> to be an
       empty key. The ephemeron starts behaving like a weak pointer.</p>
 </div>
 </div>
 
-<pre><span id="VALcheck_data"><span class="keyword">val</span> check_data</span> : <code class="type">('k, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALcheck_data"><span class="keyword">val</span> check_data</span> : <code class="type">('k, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Ephemeron.K1.check_data eph</code> returns <code class="code">true</code> if the data of the <code class="code">eph</code>
       is full, <code class="code">false</code> if it is empty. Note that even if
@@ -187,7 +191,7 @@
 </div>
 </div>
 
-<pre><span id="VALblit_data"><span class="keyword">val</span> blit_data</span> : <code class="type">('a, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a> -> ('b, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALblit_data"><span class="keyword">val</span> blit_data</span> : <code class="type">('a, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a> -&gt; ('b, 'd) <a href="Ephemeron.K1.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Ephemeron.K1.blit_data eph1 eph2</code> sets the data of <code class="code">eph2</code> with
       the data of <code class="code">eph1</code>. Contrary to using <a href="Ephemeron.K1.html#VALget_data"><code class="code">Ephemeron.K1.get_data</code></a>

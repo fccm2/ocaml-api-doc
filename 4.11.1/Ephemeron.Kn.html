@@ -64,14 +64,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><title>Ephemeron.Kn</title>
 </head>
 <body>
@@ -92,79 +96,79 @@
 </div>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">int -> ('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">int -&gt; ('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Ephemeron.K1.html#VALcreate"><code class="code">Ephemeron.K1.create</code></a></p>
 </div>
 </div>
 
-<pre><span id="VALget_key"><span class="keyword">val</span> get_key</span> : <code class="type">('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a> -> int -> 'k option</code></pre><div class="info ">
+<pre><span id="VALget_key"><span class="keyword">val</span> get_key</span> : <code class="type">('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a> -&gt; int -&gt; 'k option</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Ephemeron.K1.html#VALget_key"><code class="code">Ephemeron.K1.get_key</code></a></p>
 </div>
 </div>
 
-<pre><span id="VALget_key_copy"><span class="keyword">val</span> get_key_copy</span> : <code class="type">('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a> -> int -> 'k option</code></pre><div class="info ">
+<pre><span id="VALget_key_copy"><span class="keyword">val</span> get_key_copy</span> : <code class="type">('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a> -&gt; int -&gt; 'k option</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Ephemeron.K1.html#VALget_key_copy"><code class="code">Ephemeron.K1.get_key_copy</code></a></p>
 </div>
 </div>
 
-<pre><span id="VALset_key"><span class="keyword">val</span> set_key</span> : <code class="type">('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a> -> int -> 'k -> unit</code></pre><div class="info ">
+<pre><span id="VALset_key"><span class="keyword">val</span> set_key</span> : <code class="type">('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a> -&gt; int -&gt; 'k -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Ephemeron.K1.html#VALset_key"><code class="code">Ephemeron.K1.set_key</code></a></p>
 </div>
 </div>
 
-<pre><span id="VALunset_key"><span class="keyword">val</span> unset_key</span> : <code class="type">('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a> -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALunset_key"><span class="keyword">val</span> unset_key</span> : <code class="type">('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a> -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Ephemeron.K1.html#VALunset_key"><code class="code">Ephemeron.K1.unset_key</code></a></p>
 </div>
 </div>
 
-<pre><span id="VALcheck_key"><span class="keyword">val</span> check_key</span> : <code class="type">('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a> -> int -> bool</code></pre><div class="info ">
+<pre><span id="VALcheck_key"><span class="keyword">val</span> check_key</span> : <code class="type">('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a> -&gt; int -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Ephemeron.K1.html#VALcheck_key"><code class="code">Ephemeron.K1.check_key</code></a></p>
 </div>
 </div>
 
-<pre><span id="VALblit_key"><span class="keyword">val</span> blit_key</span> : <code class="type">('k, 'a) <a href="Ephemeron.Kn.html#TYPEt">t</a> -><br>       int -> ('k, 'b) <a href="Ephemeron.Kn.html#TYPEt">t</a> -> int -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALblit_key"><span class="keyword">val</span> blit_key</span> : <code class="type">('k, 'a) <a href="Ephemeron.Kn.html#TYPEt">t</a> -&gt;<br>       int -&gt; ('k, 'b) <a href="Ephemeron.Kn.html#TYPEt">t</a> -&gt; int -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Ephemeron.K1.html#VALblit_key"><code class="code">Ephemeron.K1.blit_key</code></a></p>
 </div>
 </div>
 
-<pre><span id="VALget_data"><span class="keyword">val</span> get_data</span> : <code class="type">('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a> -> 'd option</code></pre><div class="info ">
+<pre><span id="VALget_data"><span class="keyword">val</span> get_data</span> : <code class="type">('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a> -&gt; 'd option</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Ephemeron.K1.html#VALget_data"><code class="code">Ephemeron.K1.get_data</code></a></p>
 </div>
 </div>
 
-<pre><span id="VALget_data_copy"><span class="keyword">val</span> get_data_copy</span> : <code class="type">('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a> -> 'd option</code></pre><div class="info ">
+<pre><span id="VALget_data_copy"><span class="keyword">val</span> get_data_copy</span> : <code class="type">('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a> -&gt; 'd option</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Ephemeron.K1.html#VALget_data_copy"><code class="code">Ephemeron.K1.get_data_copy</code></a></p>
 </div>
 </div>
 
-<pre><span id="VALset_data"><span class="keyword">val</span> set_data</span> : <code class="type">('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a> -> 'd -> unit</code></pre><div class="info ">
+<pre><span id="VALset_data"><span class="keyword">val</span> set_data</span> : <code class="type">('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a> -&gt; 'd -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Ephemeron.K1.html#VALset_data"><code class="code">Ephemeron.K1.set_data</code></a></p>
 </div>
 </div>
 
-<pre><span id="VALunset_data"><span class="keyword">val</span> unset_data</span> : <code class="type">('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALunset_data"><span class="keyword">val</span> unset_data</span> : <code class="type">('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Ephemeron.K1.html#VALunset_data"><code class="code">Ephemeron.K1.unset_data</code></a></p>
 </div>
 </div>
 
-<pre><span id="VALcheck_data"><span class="keyword">val</span> check_data</span> : <code class="type">('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALcheck_data"><span class="keyword">val</span> check_data</span> : <code class="type">('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Ephemeron.K1.html#VALcheck_data"><code class="code">Ephemeron.K1.check_data</code></a></p>
 </div>
 </div>
 
-<pre><span id="VALblit_data"><span class="keyword">val</span> blit_data</span> : <code class="type">('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a> -> ('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALblit_data"><span class="keyword">val</span> blit_data</span> : <code class="type">('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a> -&gt; ('k, 'd) <a href="Ephemeron.Kn.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Ephemeron.K1.html#VALblit_data"><code class="code">Ephemeron.K1.blit_data</code></a></p>
 </div>

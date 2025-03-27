@@ -64,14 +64,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><link title="Booleans" rel="Section" href="#bools">
 <link title="Predicates and comparisons" rel="Section" href="#preds">
 <link title="Converting" rel="Section" href="#convert">
@@ -120,13 +124,13 @@
 </div>
 
 
-<pre><span id="VALnot"><span class="keyword">val</span> not</span> : <code class="type">bool -> bool</code></pre><div class="info ">
+<pre><span id="VALnot"><span class="keyword">val</span> not</span> : <code class="type">bool -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">not b</code> is the boolean negation of <code class="code">b</code>.</p>
 </div>
 </div>
 
-<pre><span id="VAL(&&)"><span class="keyword">val</span> (&amp;&amp;)</span> : <code class="type">bool -> bool -> bool</code></pre><div class="info ">
+<pre><span id="VAL(&&)"><span class="keyword">val</span> (&amp;&amp;)</span> : <code class="type">bool -&gt; bool -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">e0 &amp;&amp; e1</code> is the lazy boolean conjunction of expressions <code class="code">e0</code> and <code class="code">e1</code>.
     If <code class="code">e0</code> evaluates to <code class="code">false</code>, <code class="code">e1</code> is not evaluated. Right-associative
@@ -134,7 +138,7 @@
 </div>
 </div>
 
-<pre><span id="VAL(||)"><span class="keyword">val</span> (||)</span> : <code class="type">bool -> bool -> bool</code></pre><div class="info ">
+<pre><span id="VAL(||)"><span class="keyword">val</span> (||)</span> : <code class="type">bool -&gt; bool -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">e0 || e1</code> is the lazy boolean disjunction of expressions <code class="code">e0</code> and <code class="code">e1</code>.
     If <code class="code">e0</code> evaluates to <code class="code">true</code>, <code class="code">e1</code> is not evaluated. Right-associative
@@ -142,33 +146,33 @@
 </div>
 </div>
 <h2 id="preds">Predicates and comparisons</h2>
-<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type">bool -> bool -> bool</code></pre><div class="info ">
+<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type">bool -&gt; bool -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">equal b0 b1</code> is <code class="code">true</code> iff <code class="code">b0</code> and <code class="code">b1</code> are both either <code class="code">true</code>
     or <code class="code">false</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">bool -> bool -> int</code></pre><div class="info ">
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">bool -&gt; bool -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">compare b0 b1</code> is a total order on boolean values. <code class="code">false</code> is smaller
     than <code class="code">true</code>.</p>
 </div>
 </div>
 <h2 id="convert">Converting</h2>
-<pre><span id="VALto_int"><span class="keyword">val</span> to_int</span> : <code class="type">bool -> int</code></pre><div class="info ">
+<pre><span id="VALto_int"><span class="keyword">val</span> to_int</span> : <code class="type">bool -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">to_int b</code> is <code class="code">0</code> if <code class="code">b</code> is <code class="code">false</code> and <code class="code">1</code> if <code class="code">b</code> is <code class="code">true</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALto_float"><span class="keyword">val</span> to_float</span> : <code class="type">bool -> float</code></pre><div class="info ">
+<pre><span id="VALto_float"><span class="keyword">val</span> to_float</span> : <code class="type">bool -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">to_float b</code> is <code class="code">0.</code> if <code class="code">b</code> is <code class="code">false</code> and <code class="code">1.</code> if <code class="code">b</code> is <code class="code">true</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type">bool -> string</code></pre><div class="info ">
+<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type">bool -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">to_string b</code> is <code class="code">"true"</code> if <code class="code">b</code> is <code class="code">true</code> and <code class="code">"false"</code> if <code class="code">b</code> is
     <code class="code">false</code>.</p>

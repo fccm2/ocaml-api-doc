@@ -64,14 +64,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><link title="Iterators" rel="Section" href="#1_Iterators">
 <link title="Binary encoding of integers" rel="Section" href="#1_Binaryencodingofintegers">
 <title>Buffer</title>
@@ -103,7 +107,7 @@
 </div>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">int -> <a href="Buffer.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">int -&gt; <a href="Buffer.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">create n</code> returns a fresh buffer, initially empty.
    The <code class="code">n</code> parameter is the initial size of the internal byte sequence
@@ -120,14 +124,14 @@
 </div>
 </div>
 
-<pre><span id="VALcontents"><span class="keyword">val</span> contents</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> string</code></pre><div class="info ">
+<pre><span id="VALcontents"><span class="keyword">val</span> contents</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return a copy of the current contents of the buffer.
     The buffer itself is unchanged.</p>
 </div>
 </div>
 
-<pre><span id="VALto_bytes"><span class="keyword">val</span> to_bytes</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> bytes</code></pre><div class="info ">
+<pre><span id="VALto_bytes"><span class="keyword">val</span> to_bytes</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; bytes</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return a copy of the current contents of the buffer.
     The buffer itself is unchanged.</p>
@@ -137,7 +141,7 @@
 </ul>
 </div>
 
-<pre><span id="VALsub"><span class="keyword">val</span> sub</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> int -> int -> string</code></pre><div class="info ">
+<pre><span id="VALsub"><span class="keyword">val</span> sub</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; int -&gt; int -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Buffer.sub b off len</code> returns a copy of <code class="code">len</code> bytes from the
     current contents of the buffer <code class="code">b</code>, starting at offset <code class="code">off</code>.</p>
@@ -148,7 +152,7 @@
 </ul>
 </div>
 
-<pre><span id="VALblit"><span class="keyword">val</span> blit</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> int -> bytes -> int -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALblit"><span class="keyword">val</span> blit</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; int -&gt; bytes -&gt; int -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Buffer.blit src srcoff dst dstoff len</code> copies <code class="code">len</code> characters from
    the current contents of the buffer <code class="code">src</code>, starting at offset <code class="code">srcoff</code>
@@ -162,7 +166,7 @@
 </ul>
 </div>
 
-<pre><span id="VALnth"><span class="keyword">val</span> nth</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> int -> char</code></pre><div class="info ">
+<pre><span id="VALnth"><span class="keyword">val</span> nth</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; int -&gt; char</code></pre><div class="info ">
 <div class="info-desc">
 <p>Get the n-th character of the buffer.</p>
 </div>
@@ -172,19 +176,19 @@
 </ul>
 </div>
 
-<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the number of characters currently contained in the buffer.</p>
 </div>
 </div>
 
-<pre><span id="VALclear"><span class="keyword">val</span> clear</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALclear"><span class="keyword">val</span> clear</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Empty the buffer.</p>
 </div>
 </div>
 
-<pre><span id="VALreset"><span class="keyword">val</span> reset</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALreset"><span class="keyword">val</span> reset</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Empty the buffer and deallocate the internal byte sequence holding the
    buffer contents, replacing it with the initial internal byte sequence
@@ -194,13 +198,13 @@
 </div>
 </div>
 
-<pre><span id="VALadd_char"><span class="keyword">val</span> add_char</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> char -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_char"><span class="keyword">val</span> add_char</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; char -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_char b c</code> appends the character <code class="code">c</code> at the end of buffer <code class="code">b</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALadd_utf_8_uchar"><span class="keyword">val</span> add_utf_8_uchar</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> Stdlib.Uchar.t -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_utf_8_uchar"><span class="keyword">val</span> add_utf_8_uchar</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; Stdlib.Uchar.t -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_utf_8_uchar b u</code> appends the <a href="https://tools.ietf.org/html/rfc3629">
     UTF-8</a> encoding of <code class="code">u</code> at the end of buffer <code class="code">b</code>.</p>
@@ -210,7 +214,7 @@
 </ul>
 </div>
 
-<pre><span id="VALadd_utf_16le_uchar"><span class="keyword">val</span> add_utf_16le_uchar</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> Stdlib.Uchar.t -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_utf_16le_uchar"><span class="keyword">val</span> add_utf_16le_uchar</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; Stdlib.Uchar.t -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_utf_16le_uchar b u</code> appends the
     <a href="https://tools.ietf.org/html/rfc2781">UTF-16LE</a> encoding of <code class="code">u</code>
@@ -221,7 +225,7 @@
 </ul>
 </div>
 
-<pre><span id="VALadd_utf_16be_uchar"><span class="keyword">val</span> add_utf_16be_uchar</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> Stdlib.Uchar.t -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_utf_16be_uchar"><span class="keyword">val</span> add_utf_16be_uchar</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; Stdlib.Uchar.t -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_utf_16be_uchar b u</code> appends the
     <a href="https://tools.ietf.org/html/rfc2781">UTF-16BE</a> encoding of <code class="code">u</code>
@@ -232,13 +236,13 @@
 </ul>
 </div>
 
-<pre><span id="VALadd_string"><span class="keyword">val</span> add_string</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> string -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_string"><span class="keyword">val</span> add_string</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_string b s</code> appends the string <code class="code">s</code> at the end of buffer <code class="code">b</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALadd_bytes"><span class="keyword">val</span> add_bytes</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> bytes -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_bytes"><span class="keyword">val</span> add_bytes</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; bytes -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_bytes b s</code> appends the byte sequence <code class="code">s</code> at the end of buffer <code class="code">b</code>.</p>
 </div>
@@ -247,14 +251,14 @@
 </ul>
 </div>
 
-<pre><span id="VALadd_substring"><span class="keyword">val</span> add_substring</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> string -> int -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_substring"><span class="keyword">val</span> add_substring</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; string -&gt; int -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_substring b s ofs len</code> takes <code class="code">len</code> characters from offset
    <code class="code">ofs</code> in string <code class="code">s</code> and appends them at the end of buffer <code class="code">b</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALadd_subbytes"><span class="keyword">val</span> add_subbytes</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> bytes -> int -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_subbytes"><span class="keyword">val</span> add_subbytes</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; bytes -&gt; int -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_subbytes b s ofs len</code> takes <code class="code">len</code> characters from offset
     <code class="code">ofs</code> in byte sequence <code class="code">s</code> and appends them at the end of buffer <code class="code">b</code>.</p>
@@ -264,7 +268,7 @@
 </ul>
 </div>
 
-<pre><span id="VALadd_substitute"><span class="keyword">val</span> add_substitute</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> (string -> string) -> string -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_substitute"><span class="keyword">val</span> add_substitute</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; (string -&gt; string) -&gt; string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_substitute b f s</code> appends the string pattern <code class="code">s</code> at the end
    of buffer <code class="code">b</code> with substitution.
@@ -287,14 +291,14 @@
 </ul>
 </div>
 
-<pre><span id="VALadd_buffer"><span class="keyword">val</span> add_buffer</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> <a href="Buffer.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_buffer"><span class="keyword">val</span> add_buffer</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; <a href="Buffer.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_buffer b1 b2</code> appends the current contents of buffer <code class="code">b2</code>
    at the end of buffer <code class="code">b1</code>.  <code class="code">b2</code> is not modified.</p>
 </div>
 </div>
 
-<pre><span id="VALadd_channel"><span class="keyword">val</span> add_channel</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> Stdlib.in_channel -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_channel"><span class="keyword">val</span> add_channel</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; <a href="Stdlib.html#TYPEin_channel">Stdlib.in_channel</a> -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_channel b ic n</code> reads at most <code class="code">n</code> characters from the
    input channel <code class="code">ic</code> and stores them at the end of buffer <code class="code">b</code>.</p>
@@ -306,14 +310,14 @@
 </ul>
 </div>
 
-<pre><span id="VALoutput_buffer"><span class="keyword">val</span> output_buffer</span> : <code class="type">Stdlib.out_channel -> <a href="Buffer.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALoutput_buffer"><span class="keyword">val</span> output_buffer</span> : <code class="type"><a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a> -&gt; <a href="Buffer.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">output_buffer oc b</code> writes the current contents of buffer <code class="code">b</code>
    on the output channel <code class="code">oc</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALtruncate"><span class="keyword">val</span> truncate</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALtruncate"><span class="keyword">val</span> truncate</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">truncate b len</code> truncates the length of <code class="code">b</code> to <code class="code">len</code>
   Note: the internal byte sequence is not shortened.</p>
@@ -324,7 +328,7 @@
 </ul>
 </div>
 <h2 id="1_Iterators">Iterators</h2>
-<pre><span id="VALto_seq"><span class="keyword">val</span> to_seq</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> char Stdlib.Seq.t</code></pre><div class="info ">
+<pre><span id="VALto_seq"><span class="keyword">val</span> to_seq</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; char Stdlib.Seq.t</code></pre><div class="info ">
 <div class="info-desc">
 <p>Iterate on the buffer, in increasing order.
     Modification of the buffer during iteration is undefined behavior.</p>
@@ -334,7 +338,7 @@
 </ul>
 </div>
 
-<pre><span id="VALto_seqi"><span class="keyword">val</span> to_seqi</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> (int * char) Stdlib.Seq.t</code></pre><div class="info ">
+<pre><span id="VALto_seqi"><span class="keyword">val</span> to_seqi</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; (int * char) Stdlib.Seq.t</code></pre><div class="info ">
 <div class="info-desc">
 <p>Iterate on the buffer, in increasing order, yielding indices along chars.
     Modification of the buffer during iteration is undefined behavior.</p>
@@ -344,7 +348,7 @@
 </ul>
 </div>
 
-<pre><span id="VALadd_seq"><span class="keyword">val</span> add_seq</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> char Stdlib.Seq.t -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_seq"><span class="keyword">val</span> add_seq</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; char Stdlib.Seq.t -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Add chars to the buffer</p>
 </div>
@@ -353,7 +357,7 @@
 </ul>
 </div>
 
-<pre><span id="VALof_seq"><span class="keyword">val</span> of_seq</span> : <code class="type">char Stdlib.Seq.t -> <a href="Buffer.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALof_seq"><span class="keyword">val</span> of_seq</span> : <code class="type">char Stdlib.Seq.t -&gt; <a href="Buffer.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Create a buffer from the generator</p>
 </div>
@@ -378,7 +382,7 @@
     encode these values truncate their inputs to their least
     significant bytes.</p>
 
-<pre><span id="VALadd_uint8"><span class="keyword">val</span> add_uint8</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_uint8"><span class="keyword">val</span> add_uint8</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_uint8 b i</code> appends a binary unsigned 8-bit integer <code class="code">i</code> to
     <code class="code">b</code>.</p>
@@ -388,7 +392,7 @@
 </ul>
 </div>
 
-<pre><span id="VALadd_int8"><span class="keyword">val</span> add_int8</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_int8"><span class="keyword">val</span> add_int8</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_int8 b i</code> appends a binary signed 8-bit integer <code class="code">i</code> to
     <code class="code">b</code>.</p>
@@ -398,7 +402,7 @@
 </ul>
 </div>
 
-<pre><span id="VALadd_uint16_ne"><span class="keyword">val</span> add_uint16_ne</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_uint16_ne"><span class="keyword">val</span> add_uint16_ne</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_uint16_ne b i</code> appends a binary native-endian unsigned 16-bit
     integer <code class="code">i</code> to <code class="code">b</code>.</p>
@@ -408,7 +412,7 @@
 </ul>
 </div>
 
-<pre><span id="VALadd_uint16_be"><span class="keyword">val</span> add_uint16_be</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_uint16_be"><span class="keyword">val</span> add_uint16_be</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_uint16_be b i</code> appends a binary big-endian unsigned 16-bit
     integer <code class="code">i</code> to <code class="code">b</code>.</p>
@@ -418,7 +422,7 @@
 </ul>
 </div>
 
-<pre><span id="VALadd_uint16_le"><span class="keyword">val</span> add_uint16_le</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_uint16_le"><span class="keyword">val</span> add_uint16_le</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_uint16_le b i</code> appends a binary little-endian unsigned 16-bit
     integer <code class="code">i</code> to <code class="code">b</code>.</p>
@@ -428,7 +432,7 @@
 </ul>
 </div>
 
-<pre><span id="VALadd_int16_ne"><span class="keyword">val</span> add_int16_ne</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_int16_ne"><span class="keyword">val</span> add_int16_ne</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_int16_ne b i</code> appends a binary native-endian signed 16-bit
     integer <code class="code">i</code> to <code class="code">b</code>.</p>
@@ -438,7 +442,7 @@
 </ul>
 </div>
 
-<pre><span id="VALadd_int16_be"><span class="keyword">val</span> add_int16_be</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_int16_be"><span class="keyword">val</span> add_int16_be</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_int16_be b i</code> appends a binary big-endian signed 16-bit
     integer <code class="code">i</code> to <code class="code">b</code>.</p>
@@ -448,7 +452,7 @@
 </ul>
 </div>
 
-<pre><span id="VALadd_int16_le"><span class="keyword">val</span> add_int16_le</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_int16_le"><span class="keyword">val</span> add_int16_le</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_int16_le b i</code> appends a binary little-endian signed 16-bit
     integer <code class="code">i</code> to <code class="code">b</code>.</p>
@@ -458,7 +462,7 @@
 </ul>
 </div>
 
-<pre><span id="VALadd_int32_ne"><span class="keyword">val</span> add_int32_ne</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> int32 -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_int32_ne"><span class="keyword">val</span> add_int32_ne</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; int32 -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_int32_ne b i</code> appends a binary native-endian 32-bit integer
     <code class="code">i</code> to <code class="code">b</code>.</p>
@@ -468,7 +472,7 @@
 </ul>
 </div>
 
-<pre><span id="VALadd_int32_be"><span class="keyword">val</span> add_int32_be</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> int32 -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_int32_be"><span class="keyword">val</span> add_int32_be</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; int32 -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_int32_be b i</code> appends a binary big-endian 32-bit integer
     <code class="code">i</code> to <code class="code">b</code>.</p>
@@ -478,7 +482,7 @@
 </ul>
 </div>
 
-<pre><span id="VALadd_int32_le"><span class="keyword">val</span> add_int32_le</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> int32 -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_int32_le"><span class="keyword">val</span> add_int32_le</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; int32 -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_int32_le b i</code> appends a binary little-endian 32-bit integer
     <code class="code">i</code> to <code class="code">b</code>.</p>
@@ -488,7 +492,7 @@
 </ul>
 </div>
 
-<pre><span id="VALadd_int64_ne"><span class="keyword">val</span> add_int64_ne</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> int64 -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_int64_ne"><span class="keyword">val</span> add_int64_ne</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; int64 -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_int64_ne b i</code> appends a binary native-endian 64-bit integer
     <code class="code">i</code> to <code class="code">b</code>.</p>
@@ -498,7 +502,7 @@
 </ul>
 </div>
 
-<pre><span id="VALadd_int64_be"><span class="keyword">val</span> add_int64_be</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> int64 -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_int64_be"><span class="keyword">val</span> add_int64_be</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; int64 -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_int64_be b i</code> appends a binary big-endian 64-bit integer
     <code class="code">i</code> to <code class="code">b</code>.</p>
@@ -508,7 +512,7 @@
 </ul>
 </div>
 
-<pre><span id="VALadd_int64_le"><span class="keyword">val</span> add_int64_le</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -> int64 -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_int64_le"><span class="keyword">val</span> add_int64_le</span> : <code class="type"><a href="Buffer.html#TYPEt">t</a> -&gt; int64 -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_int64_ne b i</code> appends a binary little-endian 64-bit integer
     <code class="code">i</code> to <code class="code">b</code>.</p>

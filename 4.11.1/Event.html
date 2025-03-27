@@ -64,14 +64,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><title>Event</title>
 </head>
 <body>
@@ -101,7 +105,7 @@
 </div>
 
 
-<pre><span id="VALnew_channel"><span class="keyword">val</span> new_channel</span> : <code class="type">unit -> 'a <a href="Event.html#TYPEchannel">channel</a></code></pre><div class="info ">
+<pre><span id="VALnew_channel"><span class="keyword">val</span> new_channel</span> : <code class="type">unit -&gt; 'a <a href="Event.html#TYPEchannel">channel</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return a new channel.</p>
 </div>
@@ -115,14 +119,14 @@
 </div>
 
 
-<pre><span id="VALsend"><span class="keyword">val</span> send</span> : <code class="type">'a <a href="Event.html#TYPEchannel">channel</a> -> 'a -> unit <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
+<pre><span id="VALsend"><span class="keyword">val</span> send</span> : <code class="type">'a <a href="Event.html#TYPEchannel">channel</a> -&gt; 'a -&gt; unit <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">send ch v</code> returns the event consisting in sending the value <code class="code">v</code>
    over the channel <code class="code">ch</code>. The result value of this event is <code class="code">()</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALreceive"><span class="keyword">val</span> receive</span> : <code class="type">'a <a href="Event.html#TYPEchannel">channel</a> -> 'a <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
+<pre><span id="VALreceive"><span class="keyword">val</span> receive</span> : <code class="type">'a <a href="Event.html#TYPEchannel">channel</a> -&gt; 'a <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">receive ch</code> returns the event consisting in receiving a value
    from the channel <code class="code">ch</code>. The result value of this event is the
@@ -130,21 +134,21 @@
 </div>
 </div>
 
-<pre><span id="VALalways"><span class="keyword">val</span> always</span> : <code class="type">'a -> 'a <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
+<pre><span id="VALalways"><span class="keyword">val</span> always</span> : <code class="type">'a -&gt; 'a <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">always v</code> returns an event that is always ready for
    synchronization.  The result value of this event is <code class="code">v</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALchoose"><span class="keyword">val</span> choose</span> : <code class="type">'a <a href="Event.html#TYPEevent">event</a> list -> 'a <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
+<pre><span id="VALchoose"><span class="keyword">val</span> choose</span> : <code class="type">'a <a href="Event.html#TYPEevent">event</a> list -&gt; 'a <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">choose evl</code> returns the event that is the alternative of
    all the events in the list <code class="code">evl</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALwrap"><span class="keyword">val</span> wrap</span> : <code class="type">'a <a href="Event.html#TYPEevent">event</a> -> ('a -> 'b) -> 'b <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
+<pre><span id="VALwrap"><span class="keyword">val</span> wrap</span> : <code class="type">'a <a href="Event.html#TYPEevent">event</a> -&gt; ('a -&gt; 'b) -&gt; 'b <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">wrap ev fn</code> returns the event that performs the same communications
    as <code class="code">ev</code>, then applies the post-processing function <code class="code">fn</code>
@@ -152,7 +156,7 @@
 </div>
 </div>
 
-<pre><span id="VALwrap_abort"><span class="keyword">val</span> wrap_abort</span> : <code class="type">'a <a href="Event.html#TYPEevent">event</a> -> (unit -> unit) -> 'a <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
+<pre><span id="VALwrap_abort"><span class="keyword">val</span> wrap_abort</span> : <code class="type">'a <a href="Event.html#TYPEevent">event</a> -&gt; (unit -&gt; unit) -&gt; 'a <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">wrap_abort ev fn</code> returns the event that performs
    the same communications as <code class="code">ev</code>, but if it is not selected
@@ -160,7 +164,7 @@
 </div>
 </div>
 
-<pre><span id="VALguard"><span class="keyword">val</span> guard</span> : <code class="type">(unit -> 'a <a href="Event.html#TYPEevent">event</a>) -> 'a <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
+<pre><span id="VALguard"><span class="keyword">val</span> guard</span> : <code class="type">(unit -&gt; 'a <a href="Event.html#TYPEevent">event</a>) -&gt; 'a <a href="Event.html#TYPEevent">event</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">guard fn</code> returns the event that, when synchronized, computes
    <code class="code">fn()</code> and behaves as the resulting event. This enables
@@ -169,7 +173,7 @@
 </div>
 </div>
 
-<pre><span id="VALsync"><span class="keyword">val</span> sync</span> : <code class="type">'a <a href="Event.html#TYPEevent">event</a> -> 'a</code></pre><div class="info ">
+<pre><span id="VALsync"><span class="keyword">val</span> sync</span> : <code class="type">'a <a href="Event.html#TYPEevent">event</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>'Synchronize' on an event: offer all the communication
    possibilities specified in the event to the outside world,
@@ -178,14 +182,14 @@
 </div>
 </div>
 
-<pre><span id="VALselect"><span class="keyword">val</span> select</span> : <code class="type">'a <a href="Event.html#TYPEevent">event</a> list -> 'a</code></pre><div class="info ">
+<pre><span id="VALselect"><span class="keyword">val</span> select</span> : <code class="type">'a <a href="Event.html#TYPEevent">event</a> list -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>'Synchronize' on an alternative of events.
    <code class="code">select evl</code> is shorthand for <code class="code">sync(choose evl)</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALpoll"><span class="keyword">val</span> poll</span> : <code class="type">'a <a href="Event.html#TYPEevent">event</a> -> 'a option</code></pre><div class="info ">
+<pre><span id="VALpoll"><span class="keyword">val</span> poll</span> : <code class="type">'a <a href="Event.html#TYPEevent">event</a> -&gt; 'a option</code></pre><div class="info ">
 <div class="info-desc">
 <p>Non-blocking version of <a href="Event.html#VALsync"><code class="code">Event.sync</code></a>: offer all the communication
    possibilities specified in the event to the outside world,

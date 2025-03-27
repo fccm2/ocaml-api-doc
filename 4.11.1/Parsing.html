@@ -64,14 +64,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><title>Parsing</title>
 </head>
 <body>
@@ -88,7 +92,7 @@
 </div>
 <hr width="100%">
 
-<pre><span id="VALsymbol_start"><span class="keyword">val</span> symbol_start</span> : <code class="type">unit -> int</code></pre><div class="info ">
+<pre><span id="VALsymbol_start"><span class="keyword">val</span> symbol_start</span> : <code class="type">unit -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">symbol_start</code> and <a href="Parsing.html#VALsymbol_end"><code class="code">Parsing.symbol_end</code></a> are to be called in the
    action part of a grammar rule only. They return the offset of the
@@ -99,13 +103,13 @@
 </div>
 </div>
 
-<pre><span id="VALsymbol_end"><span class="keyword">val</span> symbol_end</span> : <code class="type">unit -> int</code></pre><div class="info ">
+<pre><span id="VALsymbol_end"><span class="keyword">val</span> symbol_end</span> : <code class="type">unit -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>See <a href="Parsing.html#VALsymbol_start"><code class="code">Parsing.symbol_start</code></a>.</p>
 </div>
 </div>
 
-<pre><span id="VALrhs_start"><span class="keyword">val</span> rhs_start</span> : <code class="type">int -> int</code></pre><div class="info ">
+<pre><span id="VALrhs_start"><span class="keyword">val</span> rhs_start</span> : <code class="type">int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Parsing.html#VALsymbol_start"><code class="code">Parsing.symbol_start</code></a> and <a href="Parsing.html#VALsymbol_end"><code class="code">Parsing.symbol_end</code></a>, but
    return the offset of the string matching the <code class="code">n</code>th item on the
@@ -114,37 +118,37 @@
 </div>
 </div>
 
-<pre><span id="VALrhs_end"><span class="keyword">val</span> rhs_end</span> : <code class="type">int -> int</code></pre><div class="info ">
+<pre><span id="VALrhs_end"><span class="keyword">val</span> rhs_end</span> : <code class="type">int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>See <a href="Parsing.html#VALrhs_start"><code class="code">Parsing.rhs_start</code></a>.</p>
 </div>
 </div>
 
-<pre><span id="VALsymbol_start_pos"><span class="keyword">val</span> symbol_start_pos</span> : <code class="type">unit -> Stdlib.Lexing.position</code></pre><div class="info ">
+<pre><span id="VALsymbol_start_pos"><span class="keyword">val</span> symbol_start_pos</span> : <code class="type">unit -&gt; Stdlib.Lexing.position</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">symbol_start</code>, but return a <code class="code">position</code> instead of an offset.</p>
 </div>
 </div>
 
-<pre><span id="VALsymbol_end_pos"><span class="keyword">val</span> symbol_end_pos</span> : <code class="type">unit -> Stdlib.Lexing.position</code></pre><div class="info ">
+<pre><span id="VALsymbol_end_pos"><span class="keyword">val</span> symbol_end_pos</span> : <code class="type">unit -&gt; Stdlib.Lexing.position</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">symbol_end</code>, but return a <code class="code">position</code> instead of an offset.</p>
 </div>
 </div>
 
-<pre><span id="VALrhs_start_pos"><span class="keyword">val</span> rhs_start_pos</span> : <code class="type">int -> Stdlib.Lexing.position</code></pre><div class="info ">
+<pre><span id="VALrhs_start_pos"><span class="keyword">val</span> rhs_start_pos</span> : <code class="type">int -&gt; Stdlib.Lexing.position</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">rhs_start</code>, but return a <code class="code">position</code> instead of an offset.</p>
 </div>
 </div>
 
-<pre><span id="VALrhs_end_pos"><span class="keyword">val</span> rhs_end_pos</span> : <code class="type">int -> Stdlib.Lexing.position</code></pre><div class="info ">
+<pre><span id="VALrhs_end_pos"><span class="keyword">val</span> rhs_end_pos</span> : <code class="type">int -&gt; Stdlib.Lexing.position</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">rhs_end</code>, but return a <code class="code">position</code> instead of an offset.</p>
 </div>
 </div>
 
-<pre><span id="VALclear_parser"><span class="keyword">val</span> clear_parser</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALclear_parser"><span class="keyword">val</span> clear_parser</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Empty the parser stack. Call it just after a parsing function
    has returned, to remove all pointers from the parser stack
@@ -163,7 +167,7 @@
 </div>
 </div>
 
-<pre><span id="VALset_trace"><span class="keyword">val</span> set_trace</span> : <code class="type">bool -> bool</code></pre><div class="info ">
+<pre><span id="VALset_trace"><span class="keyword">val</span> set_trace</span> : <code class="type">bool -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Control debugging support for <code class="code">ocamlyacc</code>-generated parsers.
     After <code class="code">Parsing.set_trace true</code>, the pushdown automaton that

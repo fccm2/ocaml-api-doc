@@ -64,14 +64,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><title>Filename</title>
 </head>
 <body>
@@ -110,14 +114,14 @@
 </ul>
 </div>
 
-<pre><span id="VALconcat"><span class="keyword">val</span> concat</span> : <code class="type">string -> string -> string</code></pre><div class="info ">
+<pre><span id="VALconcat"><span class="keyword">val</span> concat</span> : <code class="type">string -&gt; string -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">concat dir file</code> returns a file name that designates file
    <code class="code">file</code> in directory <code class="code">dir</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALis_relative"><span class="keyword">val</span> is_relative</span> : <code class="type">string -> bool</code></pre><div class="info ">
+<pre><span id="VALis_relative"><span class="keyword">val</span> is_relative</span> : <code class="type">string -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return <code class="code">true</code> if the file name is relative to the current
    directory, <code class="code">false</code> if it is absolute (i.e. in Unix, starts
@@ -125,7 +129,7 @@
 </div>
 </div>
 
-<pre><span id="VALis_implicit"><span class="keyword">val</span> is_implicit</span> : <code class="type">string -> bool</code></pre><div class="info ">
+<pre><span id="VALis_implicit"><span class="keyword">val</span> is_implicit</span> : <code class="type">string -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return <code class="code">true</code> if the file name is relative and does not start
    with an explicit reference to the current directory (<code class="code">./</code> or
@@ -134,7 +138,7 @@
 </div>
 </div>
 
-<pre><span id="VALcheck_suffix"><span class="keyword">val</span> check_suffix</span> : <code class="type">string -> string -> bool</code></pre><div class="info ">
+<pre><span id="VALcheck_suffix"><span class="keyword">val</span> check_suffix</span> : <code class="type">string -&gt; string -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">check_suffix name suff</code> returns <code class="code">true</code> if the filename <code class="code">name</code>
     ends with the suffix <code class="code">suff</code>.</p>
@@ -146,7 +150,7 @@
 </div>
 </div>
 
-<pre><span id="VALchop_suffix"><span class="keyword">val</span> chop_suffix</span> : <code class="type">string -> string -> string</code></pre><div class="info ">
+<pre><span id="VALchop_suffix"><span class="keyword">val</span> chop_suffix</span> : <code class="type">string -&gt; string -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">chop_suffix name suff</code> removes the suffix <code class="code">suff</code> from
    the filename <code class="code">name</code>. The behavior is undefined if <code class="code">name</code> does not
@@ -155,7 +159,7 @@
 </div>
 </div>
 
-<pre><span id="VALchop_suffix_opt"><span class="keyword">val</span> chop_suffix_opt</span> : <code class="type">suffix:string -> string -> string option</code></pre><div class="info ">
+<pre><span id="VALchop_suffix_opt"><span class="keyword">val</span> chop_suffix_opt</span> : <code class="type">suffix:string -&gt; string -&gt; string option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">chop_suffix_opt ~suffix filename</code> removes the suffix from
     the <code class="code">filename</code> if possible, or returns <code class="code">None</code> if the
@@ -171,7 +175,7 @@
 </ul>
 </div>
 
-<pre><span id="VALextension"><span class="keyword">val</span> extension</span> : <code class="type">string -> string</code></pre><div class="info ">
+<pre><span id="VALextension"><span class="keyword">val</span> extension</span> : <code class="type">string -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">extension name</code> is the shortest suffix <code class="code">ext</code> of <code class="code">name0</code> where:</p>
 
@@ -190,7 +194,7 @@
 </ul>
 </div>
 
-<pre><span id="VALremove_extension"><span class="keyword">val</span> remove_extension</span> : <code class="type">string -> string</code></pre><div class="info ">
+<pre><span id="VALremove_extension"><span class="keyword">val</span> remove_extension</span> : <code class="type">string -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the given file name without its extension, as defined
     in <a href="Filename.html#VALextension"><code class="code">Filename.extension</code></a>. If the extension is empty, the function
@@ -205,14 +209,14 @@
 </ul>
 </div>
 
-<pre><span id="VALchop_extension"><span class="keyword">val</span> chop_extension</span> : <code class="type">string -> string</code></pre><div class="info ">
+<pre><span id="VALchop_extension"><span class="keyword">val</span> chop_extension</span> : <code class="type">string -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Filename.html#VALremove_extension"><code class="code">Filename.remove_extension</code></a>, but raise <code class="code">Invalid_argument</code>
     if the given name has an empty extension.</p>
 </div>
 </div>
 
-<pre><span id="VALbasename"><span class="keyword">val</span> basename</span> : <code class="type">string -> string</code></pre><div class="info ">
+<pre><span id="VALbasename"><span class="keyword">val</span> basename</span> : <code class="type">string -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Split a file name into directory name / base file name.
    If <code class="code">name</code> is a valid file name, then <code class="code">concat (dirname name) (basename name)</code>
@@ -226,7 +230,7 @@
 </div>
 </div>
 
-<pre><span id="VALdirname"><span class="keyword">val</span> dirname</span> : <code class="type">string -> string</code></pre><div class="info ">
+<pre><span id="VALdirname"><span class="keyword">val</span> dirname</span> : <code class="type">string -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>See <a href="Filename.html#VALbasename"><code class="code">Filename.basename</code></a>.
    This function conforms to the specification of POSIX.1-2008 for the
@@ -244,7 +248,7 @@
 </ul>
 </div>
 
-<pre><span id="VALtemp_file"><span class="keyword">val</span> temp_file</span> : <code class="type">?temp_dir:string -> string -> string -> string</code></pre><div class="info ">
+<pre><span id="VALtemp_file"><span class="keyword">val</span> temp_file</span> : <code class="type">?temp_dir:string -&gt; string -&gt; string -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">temp_file prefix suffix</code> returns the name of a
    fresh temporary file in the temporary directory.
@@ -263,7 +267,7 @@
 </ul>
 </div>
 
-<pre><span id="VALopen_temp_file"><span class="keyword">val</span> open_temp_file</span> : <code class="type">?mode:Stdlib.open_flag list -><br>       ?perms:int -><br>       ?temp_dir:string -> string -> string -> string * Stdlib.out_channel</code></pre><div class="info ">
+<pre><span id="VALopen_temp_file"><span class="keyword">val</span> open_temp_file</span> : <code class="type">?mode:<a href="Stdlib.html#TYPEopen_flag">Stdlib.open_flag</a> list -&gt;<br>       ?perms:int -&gt;<br>       ?temp_dir:string -&gt; string -&gt; string -&gt; string * <a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Filename.html#VALtemp_file"><code class="code">Filename.temp_file</code></a>, but returns both the name of a fresh
    temporary file, and an output channel opened (atomically) on
@@ -283,7 +287,7 @@
 </ul>
 </div>
 
-<pre><span id="VALget_temp_dir_name"><span class="keyword">val</span> get_temp_dir_name</span> : <code class="type">unit -> string</code></pre><div class="info ">
+<pre><span id="VALget_temp_dir_name"><span class="keyword">val</span> get_temp_dir_name</span> : <code class="type">unit -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>The name of the temporary directory:
     Under Unix, the value of the <code class="code">TMPDIR</code> environment variable, or "/tmp"
@@ -297,7 +301,7 @@
 </ul>
 </div>
 
-<pre><span id="VALset_temp_dir_name"><span class="keyword">val</span> set_temp_dir_name</span> : <code class="type">string -> unit</code></pre><div class="info ">
+<pre><span id="VALset_temp_dir_name"><span class="keyword">val</span> set_temp_dir_name</span> : <code class="type">string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Change the temporary directory returned by <a href="Filename.html#VALget_temp_dir_name"><code class="code">Filename.get_temp_dir_name</code></a>
     and used by <a href="Filename.html#VALtemp_file"><code class="code">Filename.temp_file</code></a> and <a href="Filename.html#VALopen_temp_file"><code class="code">Filename.open_temp_file</code></a>.</p>
@@ -309,7 +313,7 @@
 
 <pre><span id="VALtemp_dir_name"><span class="keyword">val</span> temp_dir_name</span> : <code class="type">string</code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span>You should use <a href="Filename.html#VALget_temp_dir_name"><code class="code">Filename.get_temp_dir_name</code></a> instead.</div>
+<span class="warning">Deprecated. </span>You should use <a href="Filename.html#VALget_temp_dir_name"><code class="code">Filename.get_temp_dir_name</code></a> instead.</div>
 <div class="info-desc">
 <p>The name of the initial temporary directory:
     Under Unix, the value of the <code class="code">TMPDIR</code> environment variable, or "/tmp"
@@ -322,7 +326,7 @@
 </ul>
 </div>
 
-<pre><span id="VALquote"><span class="keyword">val</span> quote</span> : <code class="type">string -> string</code></pre><div class="info ">
+<pre><span id="VALquote"><span class="keyword">val</span> quote</span> : <code class="type">string -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return a quoted version of a file name, suitable for use as
     one argument in a command line, escaping all meta-characters.
@@ -332,7 +336,7 @@
 </div>
 </div>
 
-<pre><span id="VALquote_command"><span class="keyword">val</span> quote_command</span> : <code class="type">string -><br>       ?stdin:string -> ?stdout:string -> ?stderr:string -> string list -> string</code></pre><div class="info ">
+<pre><span id="VALquote_command"><span class="keyword">val</span> quote_command</span> : <code class="type">string -&gt;<br>       ?stdin:string -&gt; ?stdout:string -&gt; ?stderr:string -&gt; string list -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">quote_command cmd args</code> returns a quoted command line, suitable
     for use as an argument to <a href="Sys.html#VALcommand"><code class="code">Sys.command</code></a>, <a href="Unix.html#VALsystem"><code class="code">Unix.system</code></a>, and the

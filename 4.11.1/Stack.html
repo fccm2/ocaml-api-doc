@@ -64,14 +64,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><link title="Iterators" rel="Section" href="#1_Iterators">
 <title>Stack</title>
 </head>
@@ -106,26 +110,26 @@
 </div>
 </div>
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -> 'a <a href="Stack.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -&gt; 'a <a href="Stack.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return a new stack, initially empty.</p>
 </div>
 </div>
 
-<pre><span id="VALpush"><span class="keyword">val</span> push</span> : <code class="type">'a -> 'a <a href="Stack.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALpush"><span class="keyword">val</span> push</span> : <code class="type">'a -&gt; 'a <a href="Stack.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">push x s</code> adds the element <code class="code">x</code> at the top of stack <code class="code">s</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALpop"><span class="keyword">val</span> pop</span> : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -> 'a</code></pre><div class="info ">
+<pre><span id="VALpop"><span class="keyword">val</span> pop</span> : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pop s</code> removes and returns the topmost element in stack <code class="code">s</code>,
    or raises <a href="Stack.html#EXCEPTIONEmpty"><code class="code">Stack.Empty</code></a> if the stack is empty.</p>
 </div>
 </div>
 
-<pre><span id="VALpop_opt"><span class="keyword">val</span> pop_opt</span> : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -> 'a option</code></pre><div class="info ">
+<pre><span id="VALpop_opt"><span class="keyword">val</span> pop_opt</span> : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -&gt; 'a option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pop_opt s</code> removes and returns the topmost element in stack <code class="code">s</code>,
    or returns <code class="code">None</code> if the stack is empty.</p>
@@ -135,14 +139,14 @@
 </ul>
 </div>
 
-<pre><span id="VALtop"><span class="keyword">val</span> top</span> : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -> 'a</code></pre><div class="info ">
+<pre><span id="VALtop"><span class="keyword">val</span> top</span> : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">top s</code> returns the topmost element in stack <code class="code">s</code>,
    or raises <a href="Stack.html#EXCEPTIONEmpty"><code class="code">Stack.Empty</code></a> if the stack is empty.</p>
 </div>
 </div>
 
-<pre><span id="VALtop_opt"><span class="keyword">val</span> top_opt</span> : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -> 'a option</code></pre><div class="info ">
+<pre><span id="VALtop_opt"><span class="keyword">val</span> top_opt</span> : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -&gt; 'a option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">top_opt s</code> returns the topmost element in stack <code class="code">s</code>,
    or <code class="code">None</code> if the stack is empty.</p>
@@ -152,31 +156,31 @@
 </ul>
 </div>
 
-<pre><span id="VALclear"><span class="keyword">val</span> clear</span> : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALclear"><span class="keyword">val</span> clear</span> : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Discard all elements from a stack.</p>
 </div>
 </div>
 
-<pre><span id="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -> 'a <a href="Stack.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -&gt; 'a <a href="Stack.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return a copy of the given stack.</p>
 </div>
 </div>
 
-<pre><span id="VALis_empty"><span class="keyword">val</span> is_empty</span> : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALis_empty"><span class="keyword">val</span> is_empty</span> : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return <code class="code">true</code> if the given stack is empty, <code class="code">false</code> otherwise.</p>
 </div>
 </div>
 
-<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the number of elements in a stack. Time complexity O(1)</p>
 </div>
 </div>
 
-<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">('a -> unit) -> 'a <a href="Stack.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">('a -&gt; unit) -&gt; 'a <a href="Stack.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">iter f s</code> applies <code class="code">f</code> in turn to all elements of <code class="code">s</code>,
    from the element at the top of the stack to the element at the
@@ -184,7 +188,7 @@
 </div>
 </div>
 
-<pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">('b -> 'a -> 'b) -> 'b -> 'a <a href="Stack.html#TYPEt">t</a> -> 'b</code></pre><div class="info ">
+<pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">('b -&gt; 'a -&gt; 'b) -&gt; 'b -&gt; 'a <a href="Stack.html#TYPEt">t</a> -&gt; 'b</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">fold f accu s</code> is <code class="code">(f (... (f (f accu x1) x2) ...) xn)</code>
     where <code class="code">x1</code> is the top of the stack, <code class="code">x2</code> the second element,
@@ -195,7 +199,7 @@
 </ul>
 </div>
 <h2 id="1_Iterators">Iterators</h2>
-<pre><span id="VALto_seq"><span class="keyword">val</span> to_seq</span> : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -> 'a Stdlib.Seq.t</code></pre><div class="info ">
+<pre><span id="VALto_seq"><span class="keyword">val</span> to_seq</span> : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -&gt; 'a Stdlib.Seq.t</code></pre><div class="info ">
 <div class="info-desc">
 <p>Iterate on the stack, top to bottom.
     It is safe to modify the stack during iteration.</p>
@@ -205,7 +209,7 @@
 </ul>
 </div>
 
-<pre><span id="VALadd_seq"><span class="keyword">val</span> add_seq</span> : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -> 'a Stdlib.Seq.t -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_seq"><span class="keyword">val</span> add_seq</span> : <code class="type">'a <a href="Stack.html#TYPEt">t</a> -&gt; 'a Stdlib.Seq.t -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Add the elements from the iterator on the top of the stack.</p>
 </div>
@@ -214,7 +218,7 @@
 </ul>
 </div>
 
-<pre><span id="VALof_seq"><span class="keyword">val</span> of_seq</span> : <code class="type">'a Stdlib.Seq.t -> 'a <a href="Stack.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALof_seq"><span class="keyword">val</span> of_seq</span> : <code class="type">'a Stdlib.Seq.t -&gt; 'a <a href="Stack.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Create a stack from the iterator</p>
 </div>

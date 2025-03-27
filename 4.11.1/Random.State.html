@@ -62,14 +62,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><title>Random.State</title>
 </head>
 <body>
@@ -87,32 +91,32 @@
 </div>
 
 
-<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type">int array -> <a href="Random.State.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type">int array -&gt; <a href="Random.State.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Create a new state and initialize it with the given seed.</p>
 </div>
 </div>
 
-<pre><span id="VALmake_self_init"><span class="keyword">val</span> make_self_init</span> : <code class="type">unit -> <a href="Random.State.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALmake_self_init"><span class="keyword">val</span> make_self_init</span> : <code class="type">unit -&gt; <a href="Random.State.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Create a new state and initialize it with a system-dependent
       low-entropy seed.</p>
 </div>
 </div>
 
-<pre><span id="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> <a href="Random.State.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; <a href="Random.State.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return a copy of the given state.</p>
 </div>
 </div>
 
-<pre><span id="VALbits"><span class="keyword">val</span> bits</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> int</code></pre>
-<pre><span id="VALint"><span class="keyword">val</span> int</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> int -> int</code></pre>
-<pre><span id="VALint32"><span class="keyword">val</span> int32</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> Stdlib.Int32.t -> Stdlib.Int32.t</code></pre>
-<pre><span id="VALnativeint"><span class="keyword">val</span> nativeint</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> Stdlib.Nativeint.t -> Stdlib.Nativeint.t</code></pre>
-<pre><span id="VALint64"><span class="keyword">val</span> int64</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> Stdlib.Int64.t -> Stdlib.Int64.t</code></pre>
-<pre><span id="VALfloat"><span class="keyword">val</span> float</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> float -> float</code></pre>
-<pre><span id="VALbool"><span class="keyword">val</span> bool</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALbits"><span class="keyword">val</span> bits</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; int</code></pre>
+<pre><span id="VALint"><span class="keyword">val</span> int</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; int -&gt; int</code></pre>
+<pre><span id="VALint32"><span class="keyword">val</span> int32</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; Stdlib.Int32.t -&gt; Stdlib.Int32.t</code></pre>
+<pre><span id="VALnativeint"><span class="keyword">val</span> nativeint</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; Stdlib.Nativeint.t -&gt; Stdlib.Nativeint.t</code></pre>
+<pre><span id="VALint64"><span class="keyword">val</span> int64</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; Stdlib.Int64.t -&gt; Stdlib.Int64.t</code></pre>
+<pre><span id="VALfloat"><span class="keyword">val</span> float</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; float -&gt; float</code></pre>
+<pre><span id="VALbool"><span class="keyword">val</span> bool</span> : <code class="type"><a href="Random.State.html#TYPEt">t</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>These functions are the same as the basic functions, except that they
       use (and update) the given PRNG state instead of the default one.</p>

@@ -64,14 +64,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><link title="Iterators on two arrays" rel="Section" href="#1_Iteratorsontwoarrays">
 <link title="Array scanning" rel="Section" href="#1_Arrayscanning">
 <link title="Sorting" rel="Section" href="#1_Sorting">
@@ -108,13 +112,13 @@
 </div>
 
 
-<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">'a array -> int</code></pre><div class="info ">
+<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">'a array -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the length (number of elements) of the given array.</p>
 </div>
 </div>
 
-<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">'a array -> int -> 'a</code></pre><div class="info ">
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">'a array -&gt; int -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">get a n</code> returns the element number <code class="code">n</code> of array <code class="code">a</code>.
    The first element has number 0.
@@ -126,7 +130,7 @@
 </ul>
 </div>
 
-<pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type">'a array -> int -> 'a -> unit</code></pre><div class="info ">
+<pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type">'a array -&gt; int -&gt; 'a -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">set a n x</code> modifies array <code class="code">a</code> in place, replacing
    element number <code class="code">n</code> with <code class="code">x</code>.
@@ -137,7 +141,7 @@
 </ul>
 </div>
 
-<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type">int -> 'a -> 'a array</code></pre><div class="info ">
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type">int -&gt; 'a -&gt; 'a array</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">make n x</code> returns a fresh array of length <code class="code">n</code>,
    initialized with <code class="code">x</code>.
@@ -154,12 +158,12 @@
 </ul>
 </div>
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">int -> 'a -> 'a array</code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">int -&gt; 'a -&gt; 'a array</code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span><code class="code">create</code> is an alias for <a href="ArrayLabels.html#VALmake"><code class="code">ArrayLabels.make</code></a>.</div>
+<span class="warning">Deprecated. </span><code class="code">create</code> is an alias for <a href="ArrayLabels.html#VALmake"><code class="code">ArrayLabels.make</code></a>.</div>
 </div>
 
-<pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">int -> f:(int -> 'a) -> 'a array</code></pre><div class="info ">
+<pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">int -&gt; f:(int -&gt; 'a) -&gt; 'a array</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">init n ~f</code> returns a fresh array of length <code class="code">n</code>,
    with element number <code class="code">i</code> initialized to the result of <code class="code">f i</code>.
@@ -173,7 +177,7 @@
 </ul>
 </div>
 
-<pre><span id="VALmake_matrix"><span class="keyword">val</span> make_matrix</span> : <code class="type">dimx:int -> dimy:int -> 'a -> 'a array array</code></pre><div class="info ">
+<pre><span id="VALmake_matrix"><span class="keyword">val</span> make_matrix</span> : <code class="type">dimx:int -&gt; dimy:int -&gt; 'a -&gt; 'a array array</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">make_matrix ~dimx ~dimy e</code> returns a two-dimensional array
    (an array of arrays) with first dimension <code class="code">dimx</code> and
@@ -190,25 +194,25 @@
 </ul>
 </div>
 
-<pre><span id="VALcreate_matrix"><span class="keyword">val</span> create_matrix</span> : <code class="type">dimx:int -> dimy:int -> 'a -> 'a array array</code></pre><div class="info ">
+<pre><span id="VALcreate_matrix"><span class="keyword">val</span> create_matrix</span> : <code class="type">dimx:int -&gt; dimy:int -&gt; 'a -&gt; 'a array array</code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span><code class="code">create_matrix</code> is an alias for <a href="ArrayLabels.html#VALmake_matrix"><code class="code">ArrayLabels.make_matrix</code></a>.</div>
+<span class="warning">Deprecated. </span><code class="code">create_matrix</code> is an alias for <a href="ArrayLabels.html#VALmake_matrix"><code class="code">ArrayLabels.make_matrix</code></a>.</div>
 </div>
 
-<pre><span id="VALappend"><span class="keyword">val</span> append</span> : <code class="type">'a array -> 'a array -> 'a array</code></pre><div class="info ">
+<pre><span id="VALappend"><span class="keyword">val</span> append</span> : <code class="type">'a array -&gt; 'a array -&gt; 'a array</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">append v1 v2</code> returns a fresh array containing the
    concatenation of the arrays <code class="code">v1</code> and <code class="code">v2</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALconcat"><span class="keyword">val</span> concat</span> : <code class="type">'a array list -> 'a array</code></pre><div class="info ">
+<pre><span id="VALconcat"><span class="keyword">val</span> concat</span> : <code class="type">'a array list -&gt; 'a array</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="ArrayLabels.html#VALappend"><code class="code">ArrayLabels.append</code></a>, but concatenates a list of arrays.</p>
 </div>
 </div>
 
-<pre><span id="VALsub"><span class="keyword">val</span> sub</span> : <code class="type">'a array -> pos:int -> len:int -> 'a array</code></pre><div class="info ">
+<pre><span id="VALsub"><span class="keyword">val</span> sub</span> : <code class="type">'a array -&gt; pos:int -&gt; len:int -&gt; 'a array</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">sub a ~pos ~len</code> returns a fresh array of length <code class="code">len</code>,
    containing the elements number <code class="code">pos</code> to <code class="code">pos + len - 1</code>
@@ -221,14 +225,14 @@
 </ul>
 </div>
 
-<pre><span id="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type">'a array -> 'a array</code></pre><div class="info ">
+<pre><span id="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type">'a array -&gt; 'a array</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">copy a</code> returns a copy of <code class="code">a</code>, that is, a fresh array
    containing the same elements as <code class="code">a</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALfill"><span class="keyword">val</span> fill</span> : <code class="type">'a array -> pos:int -> len:int -> 'a -> unit</code></pre><div class="info ">
+<pre><span id="VALfill"><span class="keyword">val</span> fill</span> : <code class="type">'a array -&gt; pos:int -&gt; len:int -&gt; 'a -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">fill a ~pos ~len x</code> modifies the array <code class="code">a</code> in place,
    storing <code class="code">x</code> in elements number <code class="code">pos</code> to <code class="code">pos + len - 1</code>.</p>
@@ -239,7 +243,7 @@
 </ul>
 </div>
 
-<pre><span id="VALblit"><span class="keyword">val</span> blit</span> : <code class="type">src:'a array -> src_pos:int -> dst:'a array -> dst_pos:int -> len:int -> unit</code></pre><div class="info ">
+<pre><span id="VALblit"><span class="keyword">val</span> blit</span> : <code class="type">src:'a array -&gt; src_pos:int -&gt; dst:'a array -&gt; dst_pos:int -&gt; len:int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">blit ~src ~src_pos ~dst ~dst_pos ~len</code> copies <code class="code">len</code> elements
    from array <code class="code">src</code>, starting at element number <code class="code">src_pos</code>, to array <code class="code">dst</code>,
@@ -254,20 +258,20 @@
 </ul>
 </div>
 
-<pre><span id="VALto_list"><span class="keyword">val</span> to_list</span> : <code class="type">'a array -> 'a list</code></pre><div class="info ">
+<pre><span id="VALto_list"><span class="keyword">val</span> to_list</span> : <code class="type">'a array -&gt; 'a list</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">to_list a</code> returns the list of all the elements of <code class="code">a</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALof_list"><span class="keyword">val</span> of_list</span> : <code class="type">'a list -> 'a array</code></pre><div class="info ">
+<pre><span id="VALof_list"><span class="keyword">val</span> of_list</span> : <code class="type">'a list -&gt; 'a array</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">of_list l</code> returns a fresh array containing the elements
    of <code class="code">l</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">f:('a -> unit) -> 'a array -> unit</code></pre><div class="info ">
+<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">f:('a -&gt; unit) -&gt; 'a array -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">iter ~f a</code> applies function <code class="code">f</code> in turn to all
    the elements of <code class="code">a</code>.  It is equivalent to
@@ -275,7 +279,7 @@
 </div>
 </div>
 
-<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">f:('a -> 'b) -> 'a array -> 'b array</code></pre><div class="info ">
+<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">f:('a -&gt; 'b) -&gt; 'a array -&gt; 'b array</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">map ~f a</code> applies function <code class="code">f</code> to all the elements of <code class="code">a</code>,
    and builds an array with the results returned by <code class="code">f</code>:
@@ -283,7 +287,7 @@
 </div>
 </div>
 
-<pre><span id="VALiteri"><span class="keyword">val</span> iteri</span> : <code class="type">f:(int -> 'a -> unit) -> 'a array -> unit</code></pre><div class="info ">
+<pre><span id="VALiteri"><span class="keyword">val</span> iteri</span> : <code class="type">f:(int -&gt; 'a -&gt; unit) -&gt; 'a array -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="ArrayLabels.html#VALiter"><code class="code">ArrayLabels.iter</code></a>, but the
    function is applied to the index of the element as first argument,
@@ -291,7 +295,7 @@
 </div>
 </div>
 
-<pre><span id="VALmapi"><span class="keyword">val</span> mapi</span> : <code class="type">f:(int -> 'a -> 'b) -> 'a array -> 'b array</code></pre><div class="info ">
+<pre><span id="VALmapi"><span class="keyword">val</span> mapi</span> : <code class="type">f:(int -&gt; 'a -&gt; 'b) -&gt; 'a array -&gt; 'b array</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="ArrayLabels.html#VALmap"><code class="code">ArrayLabels.map</code></a>, but the
    function is applied to the index of the element as first argument,
@@ -299,7 +303,7 @@
 </div>
 </div>
 
-<pre><span id="VALfold_left"><span class="keyword">val</span> fold_left</span> : <code class="type">f:('a -> 'b -> 'a) -> init:'a -> 'b array -> 'a</code></pre><div class="info ">
+<pre><span id="VALfold_left"><span class="keyword">val</span> fold_left</span> : <code class="type">f:('a -&gt; 'b -&gt; 'a) -&gt; init:'a -&gt; 'b array -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">fold_left ~f ~init a</code> computes
    <code class="code">f (... (f (f init a.(0)) a.(1)) ...) a.(n-1)</code>,
@@ -307,7 +311,7 @@
 </div>
 </div>
 
-<pre><span id="VALfold_right"><span class="keyword">val</span> fold_right</span> : <code class="type">f:('b -> 'a -> 'a) -> 'b array -> init:'a -> 'a</code></pre><div class="info ">
+<pre><span id="VALfold_right"><span class="keyword">val</span> fold_right</span> : <code class="type">f:('b -&gt; 'a -&gt; 'a) -&gt; 'b array -&gt; init:'a -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">fold_right ~f a ~init</code> computes
    <code class="code">f a.(0) (f a.(1) ( ... (f a.(n-1) init) ...))</code>,
@@ -315,7 +319,7 @@
 </div>
 </div>
 <h2 id="1_Iteratorsontwoarrays">Iterators on two arrays</h2>
-<pre><span id="VALiter2"><span class="keyword">val</span> iter2</span> : <code class="type">f:('a -> 'b -> unit) -> 'a array -> 'b array -> unit</code></pre><div class="info ">
+<pre><span id="VALiter2"><span class="keyword">val</span> iter2</span> : <code class="type">f:('a -&gt; 'b -&gt; unit) -&gt; 'a array -&gt; 'b array -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">iter2 ~f a b</code> applies function <code class="code">f</code> to all the elements of <code class="code">a</code>
    and <code class="code">b</code>.</p>
@@ -326,7 +330,7 @@
 </ul>
 </div>
 
-<pre><span id="VALmap2"><span class="keyword">val</span> map2</span> : <code class="type">f:('a -> 'b -> 'c) -> 'a array -> 'b array -> 'c array</code></pre><div class="info ">
+<pre><span id="VALmap2"><span class="keyword">val</span> map2</span> : <code class="type">f:('a -&gt; 'b -&gt; 'c) -&gt; 'a array -&gt; 'b array -&gt; 'c array</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">map2 ~f a b</code> applies function <code class="code">f</code> to all the elements of <code class="code">a</code>
    and <code class="code">b</code>, and builds an array with the results returned by <code class="code">f</code>:
@@ -338,7 +342,7 @@
 </ul>
 </div>
 <h2 id="1_Arrayscanning">Array scanning</h2>
-<pre><span id="VALexists"><span class="keyword">val</span> exists</span> : <code class="type">f:('a -> bool) -> 'a array -> bool</code></pre><div class="info ">
+<pre><span id="VALexists"><span class="keyword">val</span> exists</span> : <code class="type">f:('a -&gt; bool) -&gt; 'a array -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">exists ~f [|a1; ...; an|]</code> checks if at least one element of
     the array satisfies the predicate <code class="code">f</code>. That is, it returns
@@ -349,7 +353,7 @@
 </ul>
 </div>
 
-<pre><span id="VALfor_all"><span class="keyword">val</span> for_all</span> : <code class="type">f:('a -> bool) -> 'a array -> bool</code></pre><div class="info ">
+<pre><span id="VALfor_all"><span class="keyword">val</span> for_all</span> : <code class="type">f:('a -&gt; bool) -&gt; 'a array -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">for_all ~f [|a1; ...; an|]</code> checks if all elements
    of the array satisfy the predicate <code class="code">f</code>. That is, it returns
@@ -360,7 +364,7 @@
 </ul>
 </div>
 
-<pre><span id="VALfor_all2"><span class="keyword">val</span> for_all2</span> : <code class="type">f:('a -> 'b -> bool) -> 'a array -> 'b array -> bool</code></pre><div class="info ">
+<pre><span id="VALfor_all2"><span class="keyword">val</span> for_all2</span> : <code class="type">f:('a -&gt; 'b -&gt; bool) -&gt; 'a array -&gt; 'b array -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="ArrayLabels.html#VALfor_all"><code class="code">ArrayLabels.for_all</code></a>, but for a two-argument predicate.</p>
 </div>
@@ -370,7 +374,7 @@
 </ul>
 </div>
 
-<pre><span id="VALexists2"><span class="keyword">val</span> exists2</span> : <code class="type">f:('a -> 'b -> bool) -> 'a array -> 'b array -> bool</code></pre><div class="info ">
+<pre><span id="VALexists2"><span class="keyword">val</span> exists2</span> : <code class="type">f:('a -&gt; 'b -&gt; bool) -&gt; 'a array -&gt; 'b array -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="ArrayLabels.html#VALexists"><code class="code">ArrayLabels.exists</code></a>, but for a two-argument predicate.</p>
 </div>
@@ -380,7 +384,7 @@
 </ul>
 </div>
 
-<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type">'a -> set:'a array -> bool</code></pre><div class="info ">
+<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type">'a -&gt; set:'a array -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">mem x ~set</code> is true if and only if <code class="code">x</code> is equal
    to an element of <code class="code">set</code>.</p>
@@ -390,7 +394,7 @@
 </ul>
 </div>
 
-<pre><span id="VALmemq"><span class="keyword">val</span> memq</span> : <code class="type">'a -> set:'a array -> bool</code></pre><div class="info ">
+<pre><span id="VALmemq"><span class="keyword">val</span> memq</span> : <code class="type">'a -&gt; set:'a array -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="ArrayLabels.html#VALmem"><code class="code">ArrayLabels.mem</code></a>, but uses physical equality
    instead of structural equality to compare list elements.</p>
@@ -400,7 +404,7 @@
 </ul>
 </div>
 
-<pre><span id="VALcreate_float"><span class="keyword">val</span> create_float</span> : <code class="type">int -> float array</code></pre><div class="info ">
+<pre><span id="VALcreate_float"><span class="keyword">val</span> create_float</span> : <code class="type">int -&gt; float array</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">create_float n</code> returns a fresh float array of length <code class="code">n</code>,
     with uninitialized data.</p>
@@ -410,19 +414,19 @@
 </ul>
 </div>
 
-<pre><span id="VALmake_float"><span class="keyword">val</span> make_float</span> : <code class="type">int -> float array</code></pre><div class="info ">
+<pre><span id="VALmake_float"><span class="keyword">val</span> make_float</span> : <code class="type">int -&gt; float array</code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span><a href="ArrayLabels.html#VALmake_float"><code class="code">ArrayLabels.make_float</code></a> is an alias for
+<span class="warning">Deprecated. </span><a href="ArrayLabels.html#VALmake_float"><code class="code">ArrayLabels.make_float</code></a> is an alias for
     <a href="ArrayLabels.html#VALcreate_float"><code class="code">ArrayLabels.create_float</code></a>.</div>
 </div>
 <h2 id="1_Sorting">Sorting</h2>
-<pre><span id="VALsort"><span class="keyword">val</span> sort</span> : <code class="type">cmp:('a -> 'a -> int) -> 'a array -> unit</code></pre><div class="info ">
+<pre><span id="VALsort"><span class="keyword">val</span> sort</span> : <code class="type">cmp:('a -&gt; 'a -&gt; int) -&gt; 'a array -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Sort an array in increasing order according to a comparison
    function.  The comparison function must return 0 if its arguments
    compare as equal, a positive integer if the first is greater,
    and a negative integer if the first is smaller (see below for a
-   complete specification).  For example, <code class="code">Stdlib.compare</code> is
+   complete specification).  For example, <a href="Stdlib.html#VALcompare"><code class="code">Stdlib.compare</code></a> is
    a suitable comparison function, provided there are no floating-point
    NaN values in the data.  After calling <code class="code">sort</code>, the
    array is sorted in place in increasing order.
@@ -447,7 +451,7 @@
 </div>
 </div>
 
-<pre><span id="VALstable_sort"><span class="keyword">val</span> stable_sort</span> : <code class="type">cmp:('a -> 'a -> int) -> 'a array -> unit</code></pre><div class="info ">
+<pre><span id="VALstable_sort"><span class="keyword">val</span> stable_sort</span> : <code class="type">cmp:('a -&gt; 'a -&gt; int) -&gt; 'a array -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="ArrayLabels.html#VALsort"><code class="code">ArrayLabels.sort</code></a>, but the sorting algorithm is stable (i.e.
    elements that compare equal are kept in their original order) and
@@ -459,13 +463,13 @@
 </div>
 </div>
 
-<pre><span id="VALfast_sort"><span class="keyword">val</span> fast_sort</span> : <code class="type">cmp:('a -> 'a -> int) -> 'a array -> unit</code></pre><div class="info ">
+<pre><span id="VALfast_sort"><span class="keyword">val</span> fast_sort</span> : <code class="type">cmp:('a -&gt; 'a -&gt; int) -&gt; 'a array -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="ArrayLabels.html#VALsort"><code class="code">ArrayLabels.sort</code></a> or <a href="ArrayLabels.html#VALstable_sort"><code class="code">ArrayLabels.stable_sort</code></a>, whichever is faster on typical input.</p>
 </div>
 </div>
 <h2 id="1_Iterators">Iterators</h2>
-<pre><span id="VALto_seq"><span class="keyword">val</span> to_seq</span> : <code class="type">'a array -> 'a Stdlib.Seq.t</code></pre><div class="info ">
+<pre><span id="VALto_seq"><span class="keyword">val</span> to_seq</span> : <code class="type">'a array -&gt; 'a Stdlib.Seq.t</code></pre><div class="info ">
 <div class="info-desc">
 <p>Iterate on the array, in increasing order</p>
 </div>
@@ -474,7 +478,7 @@
 </ul>
 </div>
 
-<pre><span id="VALto_seqi"><span class="keyword">val</span> to_seqi</span> : <code class="type">'a array -> (int * 'a) Stdlib.Seq.t</code></pre><div class="info ">
+<pre><span id="VALto_seqi"><span class="keyword">val</span> to_seqi</span> : <code class="type">'a array -&gt; (int * 'a) Stdlib.Seq.t</code></pre><div class="info ">
 <div class="info-desc">
 <p>Iterate on the array, in increasing order, yielding indices along elements</p>
 </div>
@@ -483,7 +487,7 @@
 </ul>
 </div>
 
-<pre><span id="VALof_seq"><span class="keyword">val</span> of_seq</span> : <code class="type">'a Stdlib.Seq.t -> 'a array</code></pre><div class="info ">
+<pre><span id="VALof_seq"><span class="keyword">val</span> of_seq</span> : <code class="type">'a Stdlib.Seq.t -&gt; 'a array</code></pre><div class="info ">
 <div class="info-desc">
 <p>Create an array from the generator</p>
 </div>

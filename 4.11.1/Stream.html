@@ -64,14 +64,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><link title="Stream builders" rel="Section" href="#1_Streambuilders">
 <link title="Stream iterator" rel="Section" href="#1_Streamiterator">
 <link title="Predefined parsers" rel="Section" href="#1_Predefinedparsers">
@@ -116,7 +120,7 @@
 </div>
 </div>
 <h2 id="1_Streambuilders">Stream builders</h2>
-<pre><span id="VALfrom"><span class="keyword">val</span> from</span> : <code class="type">(int -> 'a option) -> 'a <a href="Stream.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALfrom"><span class="keyword">val</span> from</span> : <code class="type">(int -&gt; 'a option) -&gt; 'a <a href="Stream.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Stream.from f</code> returns a stream built from the function <code class="code">f</code>.
    To create a new stream element, the function <code class="code">f</code> is called with
@@ -130,20 +134,20 @@
 </div>
 </div>
 
-<pre><span id="VALof_list"><span class="keyword">val</span> of_list</span> : <code class="type">'a list -> 'a <a href="Stream.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALof_list"><span class="keyword">val</span> of_list</span> : <code class="type">'a list -&gt; 'a <a href="Stream.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the stream holding the elements of the list in the same
    order.</p>
 </div>
 </div>
 
-<pre><span id="VALof_string"><span class="keyword">val</span> of_string</span> : <code class="type">string -> char <a href="Stream.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALof_string"><span class="keyword">val</span> of_string</span> : <code class="type">string -&gt; char <a href="Stream.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the stream of the characters of the string parameter.</p>
 </div>
 </div>
 
-<pre><span id="VALof_bytes"><span class="keyword">val</span> of_bytes</span> : <code class="type">bytes -> char <a href="Stream.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALof_bytes"><span class="keyword">val</span> of_bytes</span> : <code class="type">bytes -&gt; char <a href="Stream.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the stream of the characters of the bytes parameter.</p>
 </div>
@@ -152,20 +156,20 @@
 </ul>
 </div>
 
-<pre><span id="VALof_channel"><span class="keyword">val</span> of_channel</span> : <code class="type">Stdlib.in_channel -> char <a href="Stream.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALof_channel"><span class="keyword">val</span> of_channel</span> : <code class="type"><a href="Stdlib.html#TYPEin_channel">Stdlib.in_channel</a> -&gt; char <a href="Stream.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the stream of the characters read from the input channel.</p>
 </div>
 </div>
 <h2 id="1_Streamiterator">Stream iterator</h2>
-<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">('a -> unit) -> 'a <a href="Stream.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">('a -&gt; unit) -&gt; 'a <a href="Stream.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Stream.iter f s</code> scans the whole stream s, applying function <code class="code">f</code>
    in turn to each stream element encountered.</p>
 </div>
 </div>
 <h2 id="1_Predefinedparsers">Predefined parsers</h2>
-<pre><span id="VALnext"><span class="keyword">val</span> next</span> : <code class="type">'a <a href="Stream.html#TYPEt">t</a> -> 'a</code></pre><div class="info ">
+<pre><span id="VALnext"><span class="keyword">val</span> next</span> : <code class="type">'a <a href="Stream.html#TYPEt">t</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the first element of the stream and remove it from the
    stream.</p>
@@ -175,34 +179,34 @@
 </ul>
 </div>
 
-<pre><span id="VALempty"><span class="keyword">val</span> empty</span> : <code class="type">'a <a href="Stream.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALempty"><span class="keyword">val</span> empty</span> : <code class="type">'a <a href="Stream.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return <code class="code">()</code> if the stream is empty, else raise <a href="Stream.html#EXCEPTIONFailure"><code class="code">Stream.Failure</code></a>.</p>
 </div>
 </div>
 <h2 id="1_Usefulfunctions">Useful functions</h2>
-<pre><span id="VALpeek"><span class="keyword">val</span> peek</span> : <code class="type">'a <a href="Stream.html#TYPEt">t</a> -> 'a option</code></pre><div class="info ">
+<pre><span id="VALpeek"><span class="keyword">val</span> peek</span> : <code class="type">'a <a href="Stream.html#TYPEt">t</a> -&gt; 'a option</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return <code class="code">Some</code> of "the first element" of the stream, or <code class="code">None</code> if
    the stream is empty.</p>
 </div>
 </div>
 
-<pre><span id="VALjunk"><span class="keyword">val</span> junk</span> : <code class="type">'a <a href="Stream.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALjunk"><span class="keyword">val</span> junk</span> : <code class="type">'a <a href="Stream.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Remove the first element of the stream, possibly unfreezing
    it before.</p>
 </div>
 </div>
 
-<pre><span id="VALcount"><span class="keyword">val</span> count</span> : <code class="type">'a <a href="Stream.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<pre><span id="VALcount"><span class="keyword">val</span> count</span> : <code class="type">'a <a href="Stream.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the current count of the stream elements, i.e. the number
    of the stream elements discarded.</p>
 </div>
 </div>
 
-<pre><span id="VALnpeek"><span class="keyword">val</span> npeek</span> : <code class="type">int -> 'a <a href="Stream.html#TYPEt">t</a> -> 'a list</code></pre><div class="info ">
+<pre><span id="VALnpeek"><span class="keyword">val</span> npeek</span> : <code class="type">int -&gt; 'a <a href="Stream.html#TYPEt">t</a> -&gt; 'a list</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">npeek n</code> returns the list of the <code class="code">n</code> first elements of
    the stream, or all its remaining elements if less than <code class="code">n</code>

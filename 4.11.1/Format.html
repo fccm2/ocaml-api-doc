@@ -64,14 +64,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><link title="Introduction" rel="Section" href="#1_Introduction">
 <link title="Pretty-printing boxes" rel="Section" href="#boxes">
 <link title="Formatting functions" rel="Section" href="#1_Formattingfunctions">
@@ -119,8 +123,8 @@
    functions.
    Some formatters are predefined, notably:</p>
 <ul>
-<li><a href="Format.html#VALstd_formatter"><code class="code">Format.std_formatter</code></a> outputs to stdout</li>
-<li><a href="Format.html#VALerr_formatter"><code class="code">Format.err_formatter</code></a> outputs to stderr</li>
+<li><a href="Format.html#VALstd_formatter"><code class="code">Format.std_formatter</code></a> outputs to <a href="Stdlib.html#VALstdout">stdout</a></li>
+<li><a href="Format.html#VALerr_formatter"><code class="code">Format.err_formatter</code></a> outputs to <a href="Stdlib.html#VALstderr">stderr</a></li>
 </ul>
 <p>Most functions in the <a href="Format.html"><code class="code">Format</code></a> module come in two variants:
    a short version that operates on <a href="Format.html#VALstd_formatter"><code class="code">Format.std_formatter</code></a> and the
@@ -181,7 +185,7 @@
    pending text, and resets the standard pretty-printer.</p>
 
 <p>Warning: mixing calls to pretty-printing functions of this module with
-   calls to <code class="code">Stdlib</code> low level output functions is error prone.</p>
+   calls to <a href="Stdlib.html"><code class="code">Stdlib</code></a> low level output functions is error prone.</p>
 
 <p>The pretty-printing functions output material that is delayed in the
    pretty-printer queue and stacks in order to compute proper line
@@ -230,8 +234,8 @@
 <p>Moreover, opening a box after the <a href="Format.html#maxindent">maximum indentation limit</a>
   splits the line whether or not the box would end up fitting on the line.</p>
 
-<pre><span id="VALpp_open_box"><span class="keyword">val</span> pp_open_box</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> int -> unit</code></pre>
-<pre><span id="VALopen_box"><span class="keyword">val</span> open_box</span> : <code class="type">int -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_open_box"><span class="keyword">val</span> pp_open_box</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; int -&gt; unit</code></pre>
+<pre><span id="VALopen_box"><span class="keyword">val</span> open_box</span> : <code class="type">int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_open_box ppf d</code> opens a new compacting pretty-printing box with
     offset <code class="code">d</code> in the formatter <code class="code">ppf</code>.</p>
@@ -255,15 +259,15 @@
 </div>
 </div>
 
-<pre><span id="VALpp_close_box"><span class="keyword">val</span> pp_close_box</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> unit</code></pre>
-<pre><span id="VALclose_box"><span class="keyword">val</span> close_box</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_close_box"><span class="keyword">val</span> pp_close_box</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; unit</code></pre>
+<pre><span id="VALclose_box"><span class="keyword">val</span> close_box</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Closes the most recently open pretty-printing box.</p>
 </div>
 </div>
 
-<pre><span id="VALpp_open_hbox"><span class="keyword">val</span> pp_open_hbox</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> unit</code></pre>
-<pre><span id="VALopen_hbox"><span class="keyword">val</span> open_hbox</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_open_hbox"><span class="keyword">val</span> pp_open_hbox</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; unit</code></pre>
+<pre><span id="VALopen_hbox"><span class="keyword">val</span> open_hbox</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_open_hbox ppf ()</code> opens a new 'horizontal' pretty-printing box.</p>
 
@@ -274,8 +278,8 @@
 </div>
 </div>
 
-<pre><span id="VALpp_open_vbox"><span class="keyword">val</span> pp_open_vbox</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> int -> unit</code></pre>
-<pre><span id="VALopen_vbox"><span class="keyword">val</span> open_vbox</span> : <code class="type">int -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_open_vbox"><span class="keyword">val</span> pp_open_vbox</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; int -&gt; unit</code></pre>
+<pre><span id="VALopen_vbox"><span class="keyword">val</span> open_vbox</span> : <code class="type">int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_open_vbox ppf d</code> opens a new 'vertical' pretty-printing box
   with offset <code class="code">d</code>.</p>
@@ -289,8 +293,8 @@
 </div>
 </div>
 
-<pre><span id="VALpp_open_hvbox"><span class="keyword">val</span> pp_open_hvbox</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> int -> unit</code></pre>
-<pre><span id="VALopen_hvbox"><span class="keyword">val</span> open_hvbox</span> : <code class="type">int -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_open_hvbox"><span class="keyword">val</span> pp_open_hvbox</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; int -&gt; unit</code></pre>
+<pre><span id="VALopen_hvbox"><span class="keyword">val</span> open_hvbox</span> : <code class="type">int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_open_hvbox ppf d</code> opens a new 'horizontal/vertical' pretty-printing box
   with offset <code class="code">d</code>.</p>
@@ -303,8 +307,8 @@
 </div>
 </div>
 
-<pre><span id="VALpp_open_hovbox"><span class="keyword">val</span> pp_open_hovbox</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> int -> unit</code></pre>
-<pre><span id="VALopen_hovbox"><span class="keyword">val</span> open_hovbox</span> : <code class="type">int -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_open_hovbox"><span class="keyword">val</span> pp_open_hovbox</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; int -&gt; unit</code></pre>
+<pre><span id="VALopen_hovbox"><span class="keyword">val</span> open_hovbox</span> : <code class="type">int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_open_hovbox ppf d</code> opens a new 'horizontal-or-vertical'
   pretty-printing box with offset <code class="code">d</code>.</p>
@@ -319,44 +323,44 @@
 </div>
 </div>
 <h2 id="1_Formattingfunctions">Formatting functions</h2>
-<pre><span id="VALpp_print_string"><span class="keyword">val</span> pp_print_string</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> string -> unit</code></pre>
-<pre><span id="VALprint_string"><span class="keyword">val</span> print_string</span> : <code class="type">string -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_print_string"><span class="keyword">val</span> pp_print_string</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; string -&gt; unit</code></pre>
+<pre><span id="VALprint_string"><span class="keyword">val</span> print_string</span> : <code class="type">string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_print_string ppf s</code> prints <code class="code">s</code> in the current pretty-printing box.</p>
 </div>
 </div>
 
-<pre><span id="VALpp_print_as"><span class="keyword">val</span> pp_print_as</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> int -> string -> unit</code></pre>
-<pre><span id="VALprint_as"><span class="keyword">val</span> print_as</span> : <code class="type">int -> string -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_print_as"><span class="keyword">val</span> pp_print_as</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; int -&gt; string -&gt; unit</code></pre>
+<pre><span id="VALprint_as"><span class="keyword">val</span> print_as</span> : <code class="type">int -&gt; string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_print_as ppf len s</code> prints <code class="code">s</code> in the current pretty-printing box.
   The pretty-printer formats <code class="code">s</code> as if it were of length <code class="code">len</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALpp_print_int"><span class="keyword">val</span> pp_print_int</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> int -> unit</code></pre>
-<pre><span id="VALprint_int"><span class="keyword">val</span> print_int</span> : <code class="type">int -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_print_int"><span class="keyword">val</span> pp_print_int</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; int -&gt; unit</code></pre>
+<pre><span id="VALprint_int"><span class="keyword">val</span> print_int</span> : <code class="type">int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Print an integer in the current pretty-printing box.</p>
 </div>
 </div>
 
-<pre><span id="VALpp_print_float"><span class="keyword">val</span> pp_print_float</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> float -> unit</code></pre>
-<pre><span id="VALprint_float"><span class="keyword">val</span> print_float</span> : <code class="type">float -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_print_float"><span class="keyword">val</span> pp_print_float</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; float -&gt; unit</code></pre>
+<pre><span id="VALprint_float"><span class="keyword">val</span> print_float</span> : <code class="type">float -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Print a floating point number in the current pretty-printing box.</p>
 </div>
 </div>
 
-<pre><span id="VALpp_print_char"><span class="keyword">val</span> pp_print_char</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> char -> unit</code></pre>
-<pre><span id="VALprint_char"><span class="keyword">val</span> print_char</span> : <code class="type">char -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_print_char"><span class="keyword">val</span> pp_print_char</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; char -&gt; unit</code></pre>
+<pre><span id="VALprint_char"><span class="keyword">val</span> print_char</span> : <code class="type">char -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Print a character in the current pretty-printing box.</p>
 </div>
 </div>
 
-<pre><span id="VALpp_print_bool"><span class="keyword">val</span> pp_print_bool</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> bool -> unit</code></pre>
-<pre><span id="VALprint_bool"><span class="keyword">val</span> print_bool</span> : <code class="type">bool -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_print_bool"><span class="keyword">val</span> pp_print_bool</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; bool -&gt; unit</code></pre>
+<pre><span id="VALprint_bool"><span class="keyword">val</span> print_bool</span> : <code class="type">bool -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Print a boolean in the current pretty-printing box.</p>
 </div>
@@ -380,8 +384,8 @@
   means printing a space character (ASCII code 32) and ``split the line''
   means printing a newline character (ASCII code 10).</p>
 
-<pre><span id="VALpp_print_space"><span class="keyword">val</span> pp_print_space</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> unit</code></pre>
-<pre><span id="VALprint_space"><span class="keyword">val</span> print_space</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_print_space"><span class="keyword">val</span> pp_print_space</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; unit</code></pre>
+<pre><span id="VALprint_space"><span class="keyword">val</span> print_space</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_print_space ppf ()</code> emits a 'space' break hint:
   the pretty-printer may split the line at this point,
@@ -391,8 +395,8 @@
 </div>
 </div>
 
-<pre><span id="VALpp_print_cut"><span class="keyword">val</span> pp_print_cut</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> unit</code></pre>
-<pre><span id="VALprint_cut"><span class="keyword">val</span> print_cut</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_print_cut"><span class="keyword">val</span> pp_print_cut</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; unit</code></pre>
+<pre><span id="VALprint_cut"><span class="keyword">val</span> print_cut</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_print_cut ppf ()</code> emits a 'cut' break hint:
   the pretty-printer may split the line at this point,
@@ -402,8 +406,8 @@
 </div>
 </div>
 
-<pre><span id="VALpp_print_break"><span class="keyword">val</span> pp_print_break</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> int -> int -> unit</code></pre>
-<pre><span id="VALprint_break"><span class="keyword">val</span> print_break</span> : <code class="type">int -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_print_break"><span class="keyword">val</span> pp_print_break</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; int -&gt; int -&gt; unit</code></pre>
+<pre><span id="VALprint_break"><span class="keyword">val</span> print_break</span> : <code class="type">int -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_print_break ppf nspaces offset</code> emits a 'full' break hint:
   the pretty-printer may split the line at this point,
@@ -414,7 +418,7 @@
 </div>
 </div>
 
-<pre><span id="VALpp_print_custom_break"><span class="keyword">val</span> pp_print_custom_break</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -><br>       fits:string * int * string -> breaks:string * int * string -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_print_custom_break"><span class="keyword">val</span> pp_print_custom_break</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt;<br>       fits:string * int * string -&gt; breaks:string * int * string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_print_custom_break ppf ~fits:(s1, n, s2) ~breaks:(s3, m, s4)</code> emits a
    custom break hint: the pretty-printer may split the line at this point.</p>
@@ -452,8 +456,8 @@
 </ul>
 </div>
 
-<pre><span id="VALpp_force_newline"><span class="keyword">val</span> pp_force_newline</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> unit</code></pre>
-<pre><span id="VALforce_newline"><span class="keyword">val</span> force_newline</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_force_newline"><span class="keyword">val</span> pp_force_newline</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; unit</code></pre>
+<pre><span id="VALforce_newline"><span class="keyword">val</span> force_newline</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Force a new line in the current pretty-printing box.</p>
 
@@ -466,8 +470,8 @@
 </div>
 </div>
 
-<pre><span id="VALpp_print_if_newline"><span class="keyword">val</span> pp_print_if_newline</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> unit</code></pre>
-<pre><span id="VALprint_if_newline"><span class="keyword">val</span> print_if_newline</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_print_if_newline"><span class="keyword">val</span> pp_print_if_newline</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; unit</code></pre>
+<pre><span id="VALprint_if_newline"><span class="keyword">val</span> print_if_newline</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Execute the next formatting command if the preceding line
   has just been split. Otherwise, ignore the next formatting
@@ -475,8 +479,8 @@
 </div>
 </div>
 <h2 id="1_Prettyprintingtermination">Pretty-printing termination</h2>
-<pre><span id="VALpp_print_flush"><span class="keyword">val</span> pp_print_flush</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> unit</code></pre>
-<pre><span id="VALprint_flush"><span class="keyword">val</span> print_flush</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_print_flush"><span class="keyword">val</span> pp_print_flush</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; unit</code></pre>
+<pre><span id="VALprint_flush"><span class="keyword">val</span> print_flush</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>End of pretty-printing: resets the pretty-printer to initial state.</p>
 
@@ -496,15 +500,15 @@
   disturb further pretty-printing.</p>
 
 <p>Warning: If the output device of the pretty-printer is an output channel,
-  repeated calls to <code class="code">print_flush</code> means repeated calls to <code class="code">Stdlib.flush</code>
+  repeated calls to <code class="code">print_flush</code> means repeated calls to <a href="Stdlib.html#VALflush"><code class="code">Stdlib.flush</code></a>
   to flush the out channel; these explicit flush calls could foil the
   buffering strategy of output channels and could dramatically impact
   efficiency.</p>
 </div>
 </div>
 
-<pre><span id="VALpp_print_newline"><span class="keyword">val</span> pp_print_newline</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> unit</code></pre>
-<pre><span id="VALprint_newline"><span class="keyword">val</span> print_newline</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_print_newline"><span class="keyword">val</span> pp_print_newline</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; unit</code></pre>
+<pre><span id="VALprint_newline"><span class="keyword">val</span> print_newline</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>End of pretty-printing: resets the pretty-printer to initial state.</p>
 
@@ -519,8 +523,8 @@
 </div>
 </div>
 <h2 id="1_Margin">Margin</h2>
-<pre><span id="VALpp_set_margin"><span class="keyword">val</span> pp_set_margin</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> int -> unit</code></pre>
-<pre><span id="VALset_margin"><span class="keyword">val</span> set_margin</span> : <code class="type">int -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_set_margin"><span class="keyword">val</span> pp_set_margin</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; int -&gt; unit</code></pre>
+<pre><span id="VALset_margin"><span class="keyword">val</span> set_margin</span> : <code class="type">int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_set_margin ppf d</code> sets the right margin to <code class="code">d</code> (in characters):
   the pretty-printer splits lines that overflow the right margin according to
@@ -539,15 +543,15 @@
 </div>
 </div>
 
-<pre><span id="VALpp_get_margin"><span class="keyword">val</span> pp_get_margin</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> int</code></pre>
-<pre><span id="VALget_margin"><span class="keyword">val</span> get_margin</span> : <code class="type">unit -> int</code></pre><div class="info ">
+<pre><span id="VALpp_get_margin"><span class="keyword">val</span> pp_get_margin</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; int</code></pre>
+<pre><span id="VALget_margin"><span class="keyword">val</span> get_margin</span> : <code class="type">unit -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Returns the position of the right margin.</p>
 </div>
 </div>
 <h2 id="maxindent">Maximum indentation limit</h2>
-<pre><span id="VALpp_set_max_indent"><span class="keyword">val</span> pp_set_max_indent</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> int -> unit</code></pre>
-<pre><span id="VALset_max_indent"><span class="keyword">val</span> set_max_indent</span> : <code class="type">int -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_set_max_indent"><span class="keyword">val</span> pp_set_max_indent</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; int -&gt; unit</code></pre>
+<pre><span id="VALset_max_indent"><span class="keyword">val</span> set_max_indent</span> : <code class="type">int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_set_max_indent ppf d</code> sets the maximum indentation limit of lines
   to <code class="code">d</code> (in characters):
@@ -583,8 +587,8 @@
 </div>
 </div>
 
-<pre><span id="VALpp_get_max_indent"><span class="keyword">val</span> pp_get_max_indent</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> int</code></pre>
-<pre><span id="VALget_max_indent"><span class="keyword">val</span> get_max_indent</span> : <code class="type">unit -> int</code></pre><div class="info ">
+<pre><span id="VALpp_get_max_indent"><span class="keyword">val</span> pp_get_max_indent</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; int</code></pre>
+<pre><span id="VALget_max_indent"><span class="keyword">val</span> get_max_indent</span> : <code class="type">unit -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the maximum indentation limit (in characters).</p>
 </div>
@@ -612,16 +616,16 @@ coupled variables, margin and maxixum indentation limit.</p>
 
 
 
-<pre><span id="VALcheck_geometry"><span class="keyword">val</span> check_geometry</span> : <code class="type"><a href="Format.html#TYPEgeometry">geometry</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALcheck_geometry"><span class="keyword">val</span> check_geometry</span> : <code class="type"><a href="Format.html#TYPEgeometry">geometry</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Check if the formatter geometry is valid: <code class="code">1 &lt; max_indent &lt; margin</code></p>
 </div>
 </div>
 
-<pre><span id="VALpp_set_geometry"><span class="keyword">val</span> pp_set_geometry</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> max_indent:int -> margin:int -> unit</code></pre>
-<pre><span id="VALset_geometry"><span class="keyword">val</span> set_geometry</span> : <code class="type">max_indent:int -> margin:int -> unit</code></pre>
-<pre><span id="VALpp_safe_set_geometry"><span class="keyword">val</span> pp_safe_set_geometry</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> max_indent:int -> margin:int -> unit</code></pre>
-<pre><span id="VALsafe_set_geometry"><span class="keyword">val</span> safe_set_geometry</span> : <code class="type">max_indent:int -> margin:int -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_set_geometry"><span class="keyword">val</span> pp_set_geometry</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; max_indent:int -&gt; margin:int -&gt; unit</code></pre>
+<pre><span id="VALset_geometry"><span class="keyword">val</span> set_geometry</span> : <code class="type">max_indent:int -&gt; margin:int -&gt; unit</code></pre>
+<pre><span id="VALpp_safe_set_geometry"><span class="keyword">val</span> pp_safe_set_geometry</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; max_indent:int -&gt; margin:int -&gt; unit</code></pre>
+<pre><span id="VALsafe_set_geometry"><span class="keyword">val</span> safe_set_geometry</span> : <code class="type">max_indent:int -&gt; margin:int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_set_geometry ppf ~max_indent ~margin</code> sets both the margin
    and maximum indentation limit for <code class="code">ppf</code>.</p>
@@ -641,7 +645,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 </ul>
 </div>
 
-<pre><span id="VALpp_update_geometry"><span class="keyword">val</span> pp_update_geometry</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> (<a href="Format.html#TYPEgeometry">geometry</a> -> <a href="Format.html#TYPEgeometry">geometry</a>) -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_update_geometry"><span class="keyword">val</span> pp_update_geometry</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; (<a href="Format.html#TYPEgeometry">geometry</a> -&gt; <a href="Format.html#TYPEgeometry">geometry</a>) -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_update_geometry ppf (fun geo -&gt; { geo with ... })</code> lets you
    update a formatter's geometry in a way that is robust to extension
@@ -655,9 +659,9 @@ coupled variables, margin and maxixum indentation limit.</p>
 </ul>
 </div>
 
-<pre><span id="VALupdate_geometry"><span class="keyword">val</span> update_geometry</span> : <code class="type">(<a href="Format.html#TYPEgeometry">geometry</a> -> <a href="Format.html#TYPEgeometry">geometry</a>) -> unit</code></pre>
-<pre><span id="VALpp_get_geometry"><span class="keyword">val</span> pp_get_geometry</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> <a href="Format.html#TYPEgeometry">geometry</a></code></pre>
-<pre><span id="VALget_geometry"><span class="keyword">val</span> get_geometry</span> : <code class="type">unit -> <a href="Format.html#TYPEgeometry">geometry</a></code></pre><div class="info ">
+<pre><span id="VALupdate_geometry"><span class="keyword">val</span> update_geometry</span> : <code class="type">(<a href="Format.html#TYPEgeometry">geometry</a> -&gt; <a href="Format.html#TYPEgeometry">geometry</a>) -&gt; unit</code></pre>
+<pre><span id="VALpp_get_geometry"><span class="keyword">val</span> pp_get_geometry</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; <a href="Format.html#TYPEgeometry">geometry</a></code></pre>
+<pre><span id="VALget_geometry"><span class="keyword">val</span> get_geometry</span> : <code class="type">unit -&gt; <a href="Format.html#TYPEgeometry">geometry</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the current geometry of the formatter</p>
 </div>
@@ -671,8 +675,8 @@ coupled variables, margin and maxixum indentation limit.</p>
 <p>Material inside boxes nested deeper is printed as an ellipsis (more
   precisely as the text returned by <a href="Format.html#VALget_ellipsis_text"><code class="code">Format.get_ellipsis_text</code></a> <code class="code">()</code>).</p>
 
-<pre><span id="VALpp_set_max_boxes"><span class="keyword">val</span> pp_set_max_boxes</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> int -> unit</code></pre>
-<pre><span id="VALset_max_boxes"><span class="keyword">val</span> set_max_boxes</span> : <code class="type">int -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_set_max_boxes"><span class="keyword">val</span> pp_set_max_boxes</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; int -&gt; unit</code></pre>
+<pre><span id="VALset_max_boxes"><span class="keyword">val</span> set_max_boxes</span> : <code class="type">int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_set_max_boxes ppf max</code> sets the maximum number of pretty-printing
     boxes simultaneously open.</p>
@@ -684,16 +688,16 @@ coupled variables, margin and maxixum indentation limit.</p>
 </div>
 </div>
 
-<pre><span id="VALpp_get_max_boxes"><span class="keyword">val</span> pp_get_max_boxes</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> int</code></pre>
-<pre><span id="VALget_max_boxes"><span class="keyword">val</span> get_max_boxes</span> : <code class="type">unit -> int</code></pre><div class="info ">
+<pre><span id="VALpp_get_max_boxes"><span class="keyword">val</span> pp_get_max_boxes</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; int</code></pre>
+<pre><span id="VALget_max_boxes"><span class="keyword">val</span> get_max_boxes</span> : <code class="type">unit -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Returns the maximum number of pretty-printing boxes allowed before
   ellipsis.</p>
 </div>
 </div>
 
-<pre><span id="VALpp_over_max_boxes"><span class="keyword">val</span> pp_over_max_boxes</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> bool</code></pre>
-<pre><span id="VALover_max_boxes"><span class="keyword">val</span> over_max_boxes</span> : <code class="type">unit -> bool</code></pre><div class="info ">
+<pre><span id="VALpp_over_max_boxes"><span class="keyword">val</span> pp_over_max_boxes</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; bool</code></pre>
+<pre><span id="VALover_max_boxes"><span class="keyword">val</span> over_max_boxes</span> : <code class="type">unit -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Tests if the maximum number of pretty-printing boxes allowed have already
   been opened.</p>
@@ -712,8 +716,8 @@ coupled variables, margin and maxixum indentation limit.</p>
   use of tabulation boxes allows simple printing of columns within
   module <a href="Format.html"><code class="code">Format</code></a>.</p>
 
-<pre><span id="VALpp_open_tbox"><span class="keyword">val</span> pp_open_tbox</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> unit</code></pre>
-<pre><span id="VALopen_tbox"><span class="keyword">val</span> open_tbox</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_open_tbox"><span class="keyword">val</span> pp_open_tbox</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; unit</code></pre>
+<pre><span id="VALopen_tbox"><span class="keyword">val</span> open_tbox</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">open_tbox ()</code> opens a new tabulation box.</p>
 
@@ -729,22 +733,22 @@ coupled variables, margin and maxixum indentation limit.</p>
 </div>
 </div>
 
-<pre><span id="VALpp_close_tbox"><span class="keyword">val</span> pp_close_tbox</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> unit</code></pre>
-<pre><span id="VALclose_tbox"><span class="keyword">val</span> close_tbox</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_close_tbox"><span class="keyword">val</span> pp_close_tbox</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; unit</code></pre>
+<pre><span id="VALclose_tbox"><span class="keyword">val</span> close_tbox</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Closes the most recently opened tabulation box.</p>
 </div>
 </div>
 
-<pre><span id="VALpp_set_tab"><span class="keyword">val</span> pp_set_tab</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> unit</code></pre>
-<pre><span id="VALset_tab"><span class="keyword">val</span> set_tab</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_set_tab"><span class="keyword">val</span> pp_set_tab</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; unit</code></pre>
+<pre><span id="VALset_tab"><span class="keyword">val</span> set_tab</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Sets a tabulation marker at current insertion point.</p>
 </div>
 </div>
 
-<pre><span id="VALpp_print_tab"><span class="keyword">val</span> pp_print_tab</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> unit</code></pre>
-<pre><span id="VALprint_tab"><span class="keyword">val</span> print_tab</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_print_tab"><span class="keyword">val</span> pp_print_tab</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; unit</code></pre>
+<pre><span id="VALprint_tab"><span class="keyword">val</span> print_tab</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">print_tab ()</code> emits a 'next' tabulation break hint: if not already set on
   a tabulation marker, the insertion point moves to the first tabulation
@@ -755,8 +759,8 @@ coupled variables, margin and maxixum indentation limit.</p>
 </div>
 </div>
 
-<pre><span id="VALpp_print_tbreak"><span class="keyword">val</span> pp_print_tbreak</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> int -> int -> unit</code></pre>
-<pre><span id="VALprint_tbreak"><span class="keyword">val</span> print_tbreak</span> : <code class="type">int -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_print_tbreak"><span class="keyword">val</span> pp_print_tbreak</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; int -&gt; int -&gt; unit</code></pre>
+<pre><span id="VALprint_tbreak"><span class="keyword">val</span> print_tbreak</span> : <code class="type">int -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">print_tbreak nspaces offset</code> emits a 'full' tabulation break hint.</p>
 
@@ -773,16 +777,16 @@ coupled variables, margin and maxixum indentation limit.</p>
 </div>
 </div>
 <h2 id="1_Ellipsis">Ellipsis</h2>
-<pre><span id="VALpp_set_ellipsis_text"><span class="keyword">val</span> pp_set_ellipsis_text</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> string -> unit</code></pre>
-<pre><span id="VALset_ellipsis_text"><span class="keyword">val</span> set_ellipsis_text</span> : <code class="type">string -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_set_ellipsis_text"><span class="keyword">val</span> pp_set_ellipsis_text</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; string -&gt; unit</code></pre>
+<pre><span id="VALset_ellipsis_text"><span class="keyword">val</span> set_ellipsis_text</span> : <code class="type">string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Set the text of the ellipsis printed when too many pretty-printing boxes
   are open (a single dot, <code class="code">.</code>, by default).</p>
 </div>
 </div>
 
-<pre><span id="VALpp_get_ellipsis_text"><span class="keyword">val</span> pp_get_ellipsis_text</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> string</code></pre>
-<pre><span id="VALget_ellipsis_text"><span class="keyword">val</span> get_ellipsis_text</span> : <code class="type">unit -> string</code></pre><div class="info ">
+<pre><span id="VALpp_get_ellipsis_text"><span class="keyword">val</span> pp_get_ellipsis_text</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; string</code></pre>
+<pre><span id="VALget_ellipsis_text"><span class="keyword">val</span> get_ellipsis_text</span> : <code class="type">unit -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the text of the ellipsis.</p>
 </div>
@@ -888,8 +892,8 @@ coupled variables, margin and maxixum indentation limit.</p>
 
 
 
-<pre><span id="VALpp_open_stag"><span class="keyword">val</span> pp_open_stag</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> <a href="Format.html#TYPEstag">stag</a> -> unit</code></pre>
-<pre><span id="VALopen_stag"><span class="keyword">val</span> open_stag</span> : <code class="type"><a href="Format.html#TYPEstag">stag</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_open_stag"><span class="keyword">val</span> pp_open_stag</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; <a href="Format.html#TYPEstag">stag</a> -&gt; unit</code></pre>
+<pre><span id="VALopen_stag"><span class="keyword">val</span> open_stag</span> : <code class="type"><a href="Format.html#TYPEstag">stag</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_open_stag ppf t</code> opens the semantic tag named <code class="code">t</code>.</p>
 
@@ -899,8 +903,8 @@ coupled variables, margin and maxixum indentation limit.</p>
 </div>
 </div>
 
-<pre><span id="VALpp_close_stag"><span class="keyword">val</span> pp_close_stag</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> unit</code></pre>
-<pre><span id="VALclose_stag"><span class="keyword">val</span> close_stag</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_close_stag"><span class="keyword">val</span> pp_close_stag</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; unit</code></pre>
+<pre><span id="VALclose_stag"><span class="keyword">val</span> close_stag</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_close_stag ppf ()</code> closes the most recently opened semantic tag <code class="code">t</code>.</p>
 
@@ -910,48 +914,48 @@ coupled variables, margin and maxixum indentation limit.</p>
 </div>
 </div>
 
-<pre><span id="VALpp_set_tags"><span class="keyword">val</span> pp_set_tags</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> bool -> unit</code></pre>
-<pre><span id="VALset_tags"><span class="keyword">val</span> set_tags</span> : <code class="type">bool -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_set_tags"><span class="keyword">val</span> pp_set_tags</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; bool -&gt; unit</code></pre>
+<pre><span id="VALset_tags"><span class="keyword">val</span> set_tags</span> : <code class="type">bool -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_set_tags ppf b</code> turns on or off the treatment of semantic tags
   (default is off).</p>
 </div>
 </div>
 
-<pre><span id="VALpp_set_print_tags"><span class="keyword">val</span> pp_set_print_tags</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> bool -> unit</code></pre>
-<pre><span id="VALset_print_tags"><span class="keyword">val</span> set_print_tags</span> : <code class="type">bool -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_set_print_tags"><span class="keyword">val</span> pp_set_print_tags</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; bool -&gt; unit</code></pre>
+<pre><span id="VALset_print_tags"><span class="keyword">val</span> set_print_tags</span> : <code class="type">bool -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_set_print_tags ppf b</code> turns on or off the tag-printing operations.</p>
 </div>
 </div>
 
-<pre><span id="VALpp_set_mark_tags"><span class="keyword">val</span> pp_set_mark_tags</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> bool -> unit</code></pre>
-<pre><span id="VALset_mark_tags"><span class="keyword">val</span> set_mark_tags</span> : <code class="type">bool -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_set_mark_tags"><span class="keyword">val</span> pp_set_mark_tags</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; bool -&gt; unit</code></pre>
+<pre><span id="VALset_mark_tags"><span class="keyword">val</span> set_mark_tags</span> : <code class="type">bool -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_set_mark_tags ppf b</code> turns on or off the tag-marking operations.</p>
 </div>
 </div>
 
-<pre><span id="VALpp_get_print_tags"><span class="keyword">val</span> pp_get_print_tags</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> bool</code></pre>
-<pre><span id="VALget_print_tags"><span class="keyword">val</span> get_print_tags</span> : <code class="type">unit -> bool</code></pre><div class="info ">
+<pre><span id="VALpp_get_print_tags"><span class="keyword">val</span> pp_get_print_tags</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; bool</code></pre>
+<pre><span id="VALget_print_tags"><span class="keyword">val</span> get_print_tags</span> : <code class="type">unit -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the current status of tag-printing operations.</p>
 </div>
 </div>
 
-<pre><span id="VALpp_get_mark_tags"><span class="keyword">val</span> pp_get_mark_tags</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> bool</code></pre>
-<pre><span id="VALget_mark_tags"><span class="keyword">val</span> get_mark_tags</span> : <code class="type">unit -> bool</code></pre><div class="info ">
+<pre><span id="VALpp_get_mark_tags"><span class="keyword">val</span> pp_get_mark_tags</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; bool</code></pre>
+<pre><span id="VALget_mark_tags"><span class="keyword">val</span> get_mark_tags</span> : <code class="type">unit -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the current status of tag-marking operations.</p>
 </div>
 </div>
 
-<pre><span id="VALpp_set_formatter_out_channel"><span class="keyword">val</span> pp_set_formatter_out_channel</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> Stdlib.out_channel -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_set_formatter_out_channel"><span class="keyword">val</span> pp_set_formatter_out_channel</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; <a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <h2 id="1_Redirectingthestandardformatteroutput">Redirecting the standard formatter output</h2></div>
 </div>
 
-<pre><span id="VALset_formatter_out_channel"><span class="keyword">val</span> set_formatter_out_channel</span> : <code class="type">Stdlib.out_channel -> unit</code></pre><div class="info ">
+<pre><span id="VALset_formatter_out_channel"><span class="keyword">val</span> set_formatter_out_channel</span> : <code class="type"><a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Redirect the standard pretty-printer output to the given channel.
   (All the output functions of the standard formatter are set to the
@@ -962,8 +966,8 @@ coupled variables, margin and maxixum indentation limit.</p>
 </div>
 </div>
 
-<pre><span id="VALpp_set_formatter_output_functions"><span class="keyword">val</span> pp_set_formatter_output_functions</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> (string -> int -> int -> unit) -> (unit -> unit) -> unit</code></pre>
-<pre><span id="VALset_formatter_output_functions"><span class="keyword">val</span> set_formatter_output_functions</span> : <code class="type">(string -> int -> int -> unit) -> (unit -> unit) -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_set_formatter_output_functions"><span class="keyword">val</span> pp_set_formatter_output_functions</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; (string -&gt; int -&gt; int -&gt; unit) -&gt; (unit -&gt; unit) -&gt; unit</code></pre>
+<pre><span id="VALset_formatter_output_functions"><span class="keyword">val</span> set_formatter_output_functions</span> : <code class="type">(string -&gt; int -&gt; int -&gt; unit) -&gt; (unit -&gt; unit) -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_set_formatter_output_functions ppf out flush</code> redirects the
   standard pretty-printer output functions to the functions <code class="code">out</code> and
@@ -980,8 +984,8 @@ coupled variables, margin and maxixum indentation limit.</p>
 </div>
 </div>
 
-<pre><span id="VALpp_get_formatter_output_functions"><span class="keyword">val</span> pp_get_formatter_output_functions</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> (string -> int -> int -> unit) * (unit -> unit)</code></pre>
-<pre><span id="VALget_formatter_output_functions"><span class="keyword">val</span> get_formatter_output_functions</span> : <code class="type">unit -> (string -> int -> int -> unit) * (unit -> unit)</code></pre><div class="info ">
+<pre><span id="VALpp_get_formatter_output_functions"><span class="keyword">val</span> pp_get_formatter_output_functions</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; (string -&gt; int -&gt; int -&gt; unit) * (unit -&gt; unit)</code></pre>
+<pre><span id="VALget_formatter_output_functions"><span class="keyword">val</span> get_formatter_output_functions</span> : <code class="type">unit -&gt; (string -&gt; int -&gt; int -&gt; unit) * (unit -&gt; unit)</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the current output functions of the standard pretty-printer.</p>
 </div>
@@ -996,35 +1000,35 @@ coupled variables, margin and maxixum indentation limit.</p>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTformatter_out_functions.out_string">out_string</span>&nbsp;: <code class="type">string -> int -> int -> unit</code>;</code></td>
+<code><span id="TYPEELTformatter_out_functions.out_string">out_string</span>&nbsp;: <code class="type">string -&gt; int -&gt; int -&gt; unit</code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTformatter_out_functions.out_flush">out_flush</span>&nbsp;: <code class="type">unit -> unit</code>;</code></td>
+<code><span id="TYPEELTformatter_out_functions.out_flush">out_flush</span>&nbsp;: <code class="type">unit -&gt; unit</code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTformatter_out_functions.out_newline">out_newline</span>&nbsp;: <code class="type">unit -> unit</code>;</code></td>
+<code><span id="TYPEELTformatter_out_functions.out_newline">out_newline</span>&nbsp;: <code class="type">unit -&gt; unit</code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTformatter_out_functions.out_spaces">out_spaces</span>&nbsp;: <code class="type">int -> unit</code>;</code></td>
+<code><span id="TYPEELTformatter_out_functions.out_spaces">out_spaces</span>&nbsp;: <code class="type">int -&gt; unit</code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTformatter_out_functions.out_indent">out_indent</span>&nbsp;: <code class="type">int -> unit</code>;</code></td>
+<code><span id="TYPEELTformatter_out_functions.out_indent">out_indent</span>&nbsp;: <code class="type">int -&gt; unit</code>;</code></td>
 
 </tr></table>
 <code>}</code>
@@ -1049,9 +1053,9 @@ coupled variables, margin and maxixum indentation limit.</p>
 <p>By default:</p>
 <ul>
 <li>fields <code class="code">out_string</code> and <code class="code">out_flush</code> are output device specific;
-  (e.g. <code class="code">Stdlib.output_string</code> and <code class="code">Stdlib.flush</code> for a
-   <code class="code">Stdlib.out_channel</code> device, or <code class="code">Buffer.add_substring</code> and
-   <code class="code">Stdlib.ignore</code> for a <code class="code">Buffer.t</code> output device),</li>
+  (e.g. <a href="Stdlib.html#VALoutput_string"><code class="code">Stdlib.output_string</code></a> and <a href="Stdlib.html#VALflush"><code class="code">Stdlib.flush</code></a> for a
+   <a href="Stdlib.html#TYPEout_channel"><code class="code">Stdlib.out_channel</code></a> device, or <code class="code">Buffer.add_substring</code> and
+   <a href="Stdlib.html#VALignore"><code class="code">Stdlib.ignore</code></a> for a <code class="code">Buffer.t</code> output device),</li>
 <li>field <code class="code">out_newline</code> is equivalent to <code class="code">out_string "\n" 0 1</code>;</li>
 <li>fields <code class="code">out_spaces</code> and <code class="code">out_indent</code> are equivalent to
   <code class="code">out_string (String.make n ' ') 0 n</code>.</li>
@@ -1063,8 +1067,8 @@ coupled variables, margin and maxixum indentation limit.</p>
 </div>
 
 
-<pre><span id="VALpp_set_formatter_out_functions"><span class="keyword">val</span> pp_set_formatter_out_functions</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> <a href="Format.html#TYPEformatter_out_functions">formatter_out_functions</a> -> unit</code></pre>
-<pre><span id="VALset_formatter_out_functions"><span class="keyword">val</span> set_formatter_out_functions</span> : <code class="type"><a href="Format.html#TYPEformatter_out_functions">formatter_out_functions</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_set_formatter_out_functions"><span class="keyword">val</span> pp_set_formatter_out_functions</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; <a href="Format.html#TYPEformatter_out_functions">formatter_out_functions</a> -&gt; unit</code></pre>
+<pre><span id="VALset_formatter_out_functions"><span class="keyword">val</span> set_formatter_out_functions</span> : <code class="type"><a href="Format.html#TYPEformatter_out_functions">formatter_out_functions</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_set_formatter_out_functions ppf out_funs</code>
   Set all the pretty-printer output functions of <code class="code">ppf</code> to those of
@@ -1084,8 +1088,8 @@ coupled variables, margin and maxixum indentation limit.</p>
 </ul>
 </div>
 
-<pre><span id="VALpp_get_formatter_out_functions"><span class="keyword">val</span> pp_get_formatter_out_functions</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> <a href="Format.html#TYPEformatter_out_functions">formatter_out_functions</a></code></pre>
-<pre><span id="VALget_formatter_out_functions"><span class="keyword">val</span> get_formatter_out_functions</span> : <code class="type">unit -> <a href="Format.html#TYPEformatter_out_functions">formatter_out_functions</a></code></pre><div class="info ">
+<pre><span id="VALpp_get_formatter_out_functions"><span class="keyword">val</span> pp_get_formatter_out_functions</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; <a href="Format.html#TYPEformatter_out_functions">formatter_out_functions</a></code></pre>
+<pre><span id="VALget_formatter_out_functions"><span class="keyword">val</span> get_formatter_out_functions</span> : <code class="type">unit -&gt; <a href="Format.html#TYPEformatter_out_functions">formatter_out_functions</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the current output functions of the pretty-printer,
   including line splitting and indentation functions. Useful to record the
@@ -1101,28 +1105,28 @@ coupled variables, margin and maxixum indentation limit.</p>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTformatter_stag_functions.mark_open_stag">mark_open_stag</span>&nbsp;: <code class="type"><a href="Format.html#TYPEstag">stag</a> -> string</code>;</code></td>
+<code><span id="TYPEELTformatter_stag_functions.mark_open_stag">mark_open_stag</span>&nbsp;: <code class="type"><a href="Format.html#TYPEstag">stag</a> -&gt; string</code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTformatter_stag_functions.mark_close_stag">mark_close_stag</span>&nbsp;: <code class="type"><a href="Format.html#TYPEstag">stag</a> -> string</code>;</code></td>
+<code><span id="TYPEELTformatter_stag_functions.mark_close_stag">mark_close_stag</span>&nbsp;: <code class="type"><a href="Format.html#TYPEstag">stag</a> -&gt; string</code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTformatter_stag_functions.print_open_stag">print_open_stag</span>&nbsp;: <code class="type"><a href="Format.html#TYPEstag">stag</a> -> unit</code>;</code></td>
+<code><span id="TYPEELTformatter_stag_functions.print_open_stag">print_open_stag</span>&nbsp;: <code class="type"><a href="Format.html#TYPEstag">stag</a> -&gt; unit</code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTformatter_stag_functions.print_close_stag">print_close_stag</span>&nbsp;: <code class="type"><a href="Format.html#TYPEstag">stag</a> -> unit</code>;</code></td>
+<code><span id="TYPEELTformatter_stag_functions.print_close_stag">print_close_stag</span>&nbsp;: <code class="type"><a href="Format.html#TYPEstag">stag</a> -&gt; unit</code>;</code></td>
 
 </tr></table>
 <code>}</code>
@@ -1139,8 +1143,8 @@ coupled variables, margin and maxixum indentation limit.</p>
 </div>
 
 
-<pre><span id="VALpp_set_formatter_stag_functions"><span class="keyword">val</span> pp_set_formatter_stag_functions</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> <a href="Format.html#TYPEformatter_stag_functions">formatter_stag_functions</a> -> unit</code></pre>
-<pre><span id="VALset_formatter_stag_functions"><span class="keyword">val</span> set_formatter_stag_functions</span> : <code class="type"><a href="Format.html#TYPEformatter_stag_functions">formatter_stag_functions</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_set_formatter_stag_functions"><span class="keyword">val</span> pp_set_formatter_stag_functions</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; <a href="Format.html#TYPEformatter_stag_functions">formatter_stag_functions</a> -&gt; unit</code></pre>
+<pre><span id="VALset_formatter_stag_functions"><span class="keyword">val</span> set_formatter_stag_functions</span> : <code class="type"><a href="Format.html#TYPEformatter_stag_functions">formatter_stag_functions</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_set_formatter_stag_functions ppf tag_funs</code> changes the meaning of
   opening and closing semantic tag operations to use the functions in
@@ -1160,8 +1164,8 @@ coupled variables, margin and maxixum indentation limit.</p>
 </div>
 </div>
 
-<pre><span id="VALpp_get_formatter_stag_functions"><span class="keyword">val</span> pp_get_formatter_stag_functions</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> <a href="Format.html#TYPEformatter_stag_functions">formatter_stag_functions</a></code></pre>
-<pre><span id="VALget_formatter_stag_functions"><span class="keyword">val</span> get_formatter_stag_functions</span> : <code class="type">unit -> <a href="Format.html#TYPEformatter_stag_functions">formatter_stag_functions</a></code></pre><div class="info ">
+<pre><span id="VALpp_get_formatter_stag_functions"><span class="keyword">val</span> pp_get_formatter_stag_functions</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; <a href="Format.html#TYPEformatter_stag_functions">formatter_stag_functions</a></code></pre>
+<pre><span id="VALget_formatter_stag_functions"><span class="keyword">val</span> get_formatter_stag_functions</span> : <code class="type">unit -&gt; <a href="Format.html#TYPEformatter_stag_functions">formatter_stag_functions</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the current semantic tag operation functions of the standard
   pretty-printer.</p>
@@ -1177,7 +1181,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 
 <p>For instance, given a <a href="Buffer.html#TYPEt"><code class="code">Buffer.t</code></a> buffer <code class="code">b</code>, <a href="Format.html#VALformatter_of_buffer"><code class="code">Format.formatter_of_buffer</code></a> <code class="code">b</code>
   returns a new formatter using buffer <code class="code">b</code> as its output device.
-  Similarly, given a <code class="code">Stdlib.out_channel</code> output channel <code class="code">oc</code>,
+  Similarly, given a <a href="Stdlib.html#TYPEout_channel"><code class="code">Stdlib.out_channel</code></a> output channel <code class="code">oc</code>,
   <a href="Format.html#VALformatter_of_out_channel"><code class="code">Format.formatter_of_out_channel</code></a> <code class="code">oc</code> returns a new formatter using
   channel <code class="code">oc</code> as its output device.</p>
 
@@ -1185,7 +1189,7 @@ coupled variables, margin and maxixum indentation limit.</p>
   formatter, then <a href="Format.html#VALformatter_of_out_functions"><code class="code">Format.formatter_of_out_functions</code></a> <code class="code">out_funs</code> computes a new
   formatter using those functions for output.</p>
 
-<pre><span id="VALformatter_of_out_channel"><span class="keyword">val</span> formatter_of_out_channel</span> : <code class="type">Stdlib.out_channel -> <a href="Format.html#TYPEformatter">formatter</a></code></pre><div class="info ">
+<pre><span id="VALformatter_of_out_channel"><span class="keyword">val</span> formatter_of_out_channel</span> : <code class="type"><a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a> -&gt; <a href="Format.html#TYPEformatter">formatter</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">formatter_of_out_channel oc</code> returns a new formatter writing
   to the corresponding output channel <code class="code">oc</code>.</p>
@@ -1196,7 +1200,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 <div class="info-desc">
 <p>The standard formatter to write to standard output.</p>
 
-<p>It is defined as <a href="Format.html#VALformatter_of_out_channel"><code class="code">Format.formatter_of_out_channel</code></a> <code class="code">Stdlib.stdout</code>.</p>
+<p>It is defined as <a href="Format.html#VALformatter_of_out_channel"><code class="code">Format.formatter_of_out_channel</code></a> <a href="Stdlib.html#VALstdout"><code class="code">Stdlib.stdout</code></a>.</p>
 </div>
 </div>
 
@@ -1204,11 +1208,11 @@ coupled variables, margin and maxixum indentation limit.</p>
 <div class="info-desc">
 <p>A formatter to write to standard error.</p>
 
-<p>It is defined as <a href="Format.html#VALformatter_of_out_channel"><code class="code">Format.formatter_of_out_channel</code></a> <code class="code">Stdlib.stderr</code>.</p>
+<p>It is defined as <a href="Format.html#VALformatter_of_out_channel"><code class="code">Format.formatter_of_out_channel</code></a> <a href="Stdlib.html#VALstderr"><code class="code">Stdlib.stderr</code></a>.</p>
 </div>
 </div>
 
-<pre><span id="VALformatter_of_buffer"><span class="keyword">val</span> formatter_of_buffer</span> : <code class="type">Stdlib.Buffer.t -> <a href="Format.html#TYPEformatter">formatter</a></code></pre><div class="info ">
+<pre><span id="VALformatter_of_buffer"><span class="keyword">val</span> formatter_of_buffer</span> : <code class="type">Stdlib.Buffer.t -&gt; <a href="Format.html#TYPEformatter">formatter</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">formatter_of_buffer b</code> returns a new formatter writing to
   buffer <code class="code">b</code>. At the end of pretty-printing, the formatter must be flushed
@@ -1231,14 +1235,14 @@ coupled variables, margin and maxixum indentation limit.</p>
 </div>
 </div>
 
-<pre><span id="VALflush_str_formatter"><span class="keyword">val</span> flush_str_formatter</span> : <code class="type">unit -> string</code></pre><div class="info ">
+<pre><span id="VALflush_str_formatter"><span class="keyword">val</span> flush_str_formatter</span> : <code class="type">unit -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Returns the material printed with <code class="code">str_formatter</code>, flushes
   the formatter and resets the corresponding buffer.</p>
 </div>
 </div>
 
-<pre><span id="VALmake_formatter"><span class="keyword">val</span> make_formatter</span> : <code class="type">(string -> int -> int -> unit) -> (unit -> unit) -> <a href="Format.html#TYPEformatter">formatter</a></code></pre><div class="info ">
+<pre><span id="VALmake_formatter"><span class="keyword">val</span> make_formatter</span> : <code class="type">(string -&gt; int -&gt; int -&gt; unit) -&gt; (unit -&gt; unit) -&gt; <a href="Format.html#TYPEformatter">formatter</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">make_formatter out flush</code> returns a new formatter that outputs with
   function <code class="code">out</code>, and flushes with function <code class="code">flush</code>.</p>
@@ -1246,11 +1250,11 @@ coupled variables, margin and maxixum indentation limit.</p>
 <p>For instance,</p>
 <pre class="codepre"><code class="code">    make_formatter
       (Stdlib.output oc)
-      (fun () -&gt; Stdlib.flush oc) </code></pre><p>returns a formatter to the <code class="code">Stdlib.out_channel</code> <code class="code">oc</code>.</p>
+      (fun () -&gt; Stdlib.flush oc) </code></pre><p>returns a formatter to the <a href="Stdlib.html#TYPEout_channel"><code class="code">Stdlib.out_channel</code></a> <code class="code">oc</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALformatter_of_out_functions"><span class="keyword">val</span> formatter_of_out_functions</span> : <code class="type"><a href="Format.html#TYPEformatter_out_functions">formatter_out_functions</a> -> <a href="Format.html#TYPEformatter">formatter</a></code></pre><div class="info ">
+<pre><span id="VALformatter_of_out_functions"><span class="keyword">val</span> formatter_of_out_functions</span> : <code class="type"><a href="Format.html#TYPEformatter_out_functions">formatter_out_functions</a> -&gt; <a href="Format.html#TYPEformatter">formatter</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">formatter_of_out_functions out_funs</code> returns a new formatter that writes
   with the set of output functions <code class="code">out_funs</code>.</p>
@@ -1366,7 +1370,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 </div>
 
 
-<pre><span id="VALmake_symbolic_output_buffer"><span class="keyword">val</span> make_symbolic_output_buffer</span> : <code class="type">unit -> <a href="Format.html#TYPEsymbolic_output_buffer">symbolic_output_buffer</a></code></pre><div class="info ">
+<pre><span id="VALmake_symbolic_output_buffer"><span class="keyword">val</span> make_symbolic_output_buffer</span> : <code class="type">unit -&gt; <a href="Format.html#TYPEsymbolic_output_buffer">symbolic_output_buffer</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">make_symbolic_output_buffer ()</code> returns a fresh buffer for
   symbolic output.</p>
@@ -1376,7 +1380,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 </ul>
 </div>
 
-<pre><span id="VALclear_symbolic_output_buffer"><span class="keyword">val</span> clear_symbolic_output_buffer</span> : <code class="type"><a href="Format.html#TYPEsymbolic_output_buffer">symbolic_output_buffer</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALclear_symbolic_output_buffer"><span class="keyword">val</span> clear_symbolic_output_buffer</span> : <code class="type"><a href="Format.html#TYPEsymbolic_output_buffer">symbolic_output_buffer</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">clear_symbolic_output_buffer sob</code> resets buffer <code class="code">sob</code>.</p>
 </div>
@@ -1385,7 +1389,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 </ul>
 </div>
 
-<pre><span id="VALget_symbolic_output_buffer"><span class="keyword">val</span> get_symbolic_output_buffer</span> : <code class="type"><a href="Format.html#TYPEsymbolic_output_buffer">symbolic_output_buffer</a> -> <a href="Format.html#TYPEsymbolic_output_item">symbolic_output_item</a> list</code></pre><div class="info ">
+<pre><span id="VALget_symbolic_output_buffer"><span class="keyword">val</span> get_symbolic_output_buffer</span> : <code class="type"><a href="Format.html#TYPEsymbolic_output_buffer">symbolic_output_buffer</a> -&gt; <a href="Format.html#TYPEsymbolic_output_item">symbolic_output_item</a> list</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">get_symbolic_output_buffer sob</code> returns the contents of buffer <code class="code">sob</code>.</p>
 </div>
@@ -1394,7 +1398,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 </ul>
 </div>
 
-<pre><span id="VALflush_symbolic_output_buffer"><span class="keyword">val</span> flush_symbolic_output_buffer</span> : <code class="type"><a href="Format.html#TYPEsymbolic_output_buffer">symbolic_output_buffer</a> -> <a href="Format.html#TYPEsymbolic_output_item">symbolic_output_item</a> list</code></pre><div class="info ">
+<pre><span id="VALflush_symbolic_output_buffer"><span class="keyword">val</span> flush_symbolic_output_buffer</span> : <code class="type"><a href="Format.html#TYPEsymbolic_output_buffer">symbolic_output_buffer</a> -&gt; <a href="Format.html#TYPEsymbolic_output_item">symbolic_output_item</a> list</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">flush_symbolic_output_buffer sob</code> returns the contents of buffer
   <code class="code">sob</code> and resets buffer <code class="code">sob</code>.
@@ -1407,7 +1411,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 </ul>
 </div>
 
-<pre><span id="VALadd_symbolic_output_item"><span class="keyword">val</span> add_symbolic_output_item</span> : <code class="type"><a href="Format.html#TYPEsymbolic_output_buffer">symbolic_output_buffer</a> -> <a href="Format.html#TYPEsymbolic_output_item">symbolic_output_item</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_symbolic_output_item"><span class="keyword">val</span> add_symbolic_output_item</span> : <code class="type"><a href="Format.html#TYPEsymbolic_output_buffer">symbolic_output_buffer</a> -&gt; <a href="Format.html#TYPEsymbolic_output_item">symbolic_output_item</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">add_symbolic_output_item sob itm</code> adds item <code class="code">itm</code> to buffer <code class="code">sob</code>.</p>
 </div>
@@ -1416,7 +1420,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 </ul>
 </div>
 
-<pre><span id="VALformatter_of_symbolic_output_buffer"><span class="keyword">val</span> formatter_of_symbolic_output_buffer</span> : <code class="type"><a href="Format.html#TYPEsymbolic_output_buffer">symbolic_output_buffer</a> -> <a href="Format.html#TYPEformatter">formatter</a></code></pre><div class="info ">
+<pre><span id="VALformatter_of_symbolic_output_buffer"><span class="keyword">val</span> formatter_of_symbolic_output_buffer</span> : <code class="type"><a href="Format.html#TYPEsymbolic_output_buffer">symbolic_output_buffer</a> -&gt; <a href="Format.html#TYPEformatter">formatter</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">formatter_of_symbolic_output_buffer sob</code> returns a symbolic formatter
   that outputs to <code class="code">symbolic_output_buffer</code> <code class="code">sob</code>.</p>
@@ -1426,7 +1430,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 </ul>
 </div>
 <h2 id="1_Convenienceformattingfunctions">Convenience formatting functions.</h2>
-<pre><span id="VALpp_print_list"><span class="keyword">val</span> pp_print_list</span> : <code class="type">?pp_sep:(<a href="Format.html#TYPEformatter">formatter</a> -> unit -> unit) -><br>       (<a href="Format.html#TYPEformatter">formatter</a> -> 'a -> unit) -> <a href="Format.html#TYPEformatter">formatter</a> -> 'a list -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_print_list"><span class="keyword">val</span> pp_print_list</span> : <code class="type">?pp_sep:(<a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; unit) -&gt;<br>       (<a href="Format.html#TYPEformatter">formatter</a> -&gt; 'a -&gt; unit) -&gt; <a href="Format.html#TYPEformatter">formatter</a> -&gt; 'a list -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_print_list ?pp_sep pp_v ppf l</code> prints items of list <code class="code">l</code>,
   using <code class="code">pp_v</code> to print each item, and calling <code class="code">pp_sep</code>
@@ -1438,7 +1442,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 </ul>
 </div>
 
-<pre><span id="VALpp_print_text"><span class="keyword">val</span> pp_print_text</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> string -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_print_text"><span class="keyword">val</span> pp_print_text</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_print_text ppf s</code> prints <code class="code">s</code> with spaces and newlines respectively
   printed using <a href="Format.html#VALpp_print_space"><code class="code">Format.pp_print_space</code></a> and <a href="Format.html#VALpp_force_newline"><code class="code">Format.pp_force_newline</code></a>.</p>
@@ -1448,7 +1452,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 </ul>
 </div>
 
-<pre><span id="VALpp_print_option"><span class="keyword">val</span> pp_print_option</span> : <code class="type">?none:(<a href="Format.html#TYPEformatter">formatter</a> -> unit -> unit) -><br>       (<a href="Format.html#TYPEformatter">formatter</a> -> 'a -> unit) -> <a href="Format.html#TYPEformatter">formatter</a> -> 'a option -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_print_option"><span class="keyword">val</span> pp_print_option</span> : <code class="type">?none:(<a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; unit) -&gt;<br>       (<a href="Format.html#TYPEformatter">formatter</a> -&gt; 'a -&gt; unit) -&gt; <a href="Format.html#TYPEformatter">formatter</a> -&gt; 'a option -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_print_option ?none pp_v ppf o</code> prints <code class="code">o</code> on <code class="code">ppf</code>
     using <code class="code">pp_v</code> if <code class="code">o</code> is <code class="code">Some v</code> and <code class="code">none</code> if it is <code class="code">None</code>. <code class="code">none</code>
@@ -1459,7 +1463,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 </ul>
 </div>
 
-<pre><span id="VALpp_print_result"><span class="keyword">val</span> pp_print_result</span> : <code class="type">ok:(<a href="Format.html#TYPEformatter">formatter</a> -> 'a -> unit) -><br>       error:(<a href="Format.html#TYPEformatter">formatter</a> -> 'e -> unit) -><br>       <a href="Format.html#TYPEformatter">formatter</a> -> ('a, 'e) Stdlib.result -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_print_result"><span class="keyword">val</span> pp_print_result</span> : <code class="type">ok:(<a href="Format.html#TYPEformatter">formatter</a> -&gt; 'a -&gt; unit) -&gt;<br>       error:(<a href="Format.html#TYPEformatter">formatter</a> -&gt; 'e -&gt; unit) -&gt;<br>       <a href="Format.html#TYPEformatter">formatter</a> -&gt; ('a, 'e) <a href="Stdlib.html#TYPEresult">Stdlib.result</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pp_print_result ~ok ~error ppf r</code> prints <code class="code">r</code> on <code class="code">ppf</code> using
     <code class="code">ok</code> if <code class="code">r</code> is <code class="code">Ok _</code> and <code class="code">error</code> if <code class="code">r</code> is <code class="code">Error _</code>.</p>
@@ -1478,7 +1482,7 @@ coupled variables, margin and maxixum indentation limit.</p>
   character. For instance, <code class="code">@ </code> means a space break, <code class="code">@,</code> means a cut,
   <code class="code">@[</code> opens a new box, and <code class="code">@]</code> closes the last open box.</p>
 
-<pre><span id="VALfprintf"><span class="keyword">val</span> fprintf</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> ('a, <a href="Format.html#TYPEformatter">formatter</a>, unit) Stdlib.format -> 'a</code></pre><p><code class="code">fprintf ff fmt arg1 ... argN</code> formats the arguments <code class="code">arg1</code> to <code class="code">argN</code>
+<pre><span id="VALfprintf"><span class="keyword">val</span> fprintf</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; ('a, <a href="Format.html#TYPEformatter">formatter</a>, unit) <a href="Stdlib.html#TYPEformat">Stdlib.format</a> -&gt; 'a</code></pre><p><code class="code">fprintf ff fmt arg1 ... argN</code> formats the arguments <code class="code">arg1</code> to <code class="code">argN</code>
   according to the format string <code class="code">fmt</code>, and outputs the resulting string on
   the formatter <code class="code">ff</code>.</p>
 
@@ -1548,19 +1552,19 @@ coupled variables, margin and maxixum indentation limit.</p>
    print_int 1; close_box (); print_newline ()</code>.
   It prints <code class="code">x = 1</code> within a pretty-printing 'horizontal-or-vertical' box.</p>
 
-<pre><span id="VALprintf"><span class="keyword">val</span> printf</span> : <code class="type">('a, <a href="Format.html#TYPEformatter">formatter</a>, unit) Stdlib.format -> 'a</code></pre><div class="info ">
+<pre><span id="VALprintf"><span class="keyword">val</span> printf</span> : <code class="type">('a, <a href="Format.html#TYPEformatter">formatter</a>, unit) <a href="Stdlib.html#TYPEformat">Stdlib.format</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">fprintf</code> above, but output on <code class="code">std_formatter</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALeprintf"><span class="keyword">val</span> eprintf</span> : <code class="type">('a, <a href="Format.html#TYPEformatter">formatter</a>, unit) Stdlib.format -> 'a</code></pre><div class="info ">
+<pre><span id="VALeprintf"><span class="keyword">val</span> eprintf</span> : <code class="type">('a, <a href="Format.html#TYPEformatter">formatter</a>, unit) <a href="Stdlib.html#TYPEformat">Stdlib.format</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">fprintf</code> above, but output on <code class="code">err_formatter</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALsprintf"><span class="keyword">val</span> sprintf</span> : <code class="type">('a, unit, string) Stdlib.format -> 'a</code></pre><div class="info ">
+<pre><span id="VALsprintf"><span class="keyword">val</span> sprintf</span> : <code class="type">('a, unit, string) <a href="Stdlib.html#TYPEformat">Stdlib.format</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">printf</code> above, but instead of printing on a formatter,
   returns a string containing the result of formatting the arguments.
@@ -1578,7 +1582,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 </div>
 </div>
 
-<pre><span id="VALasprintf"><span class="keyword">val</span> asprintf</span> : <code class="type">('a, <a href="Format.html#TYPEformatter">formatter</a>, unit, string) Stdlib.format4 -> 'a</code></pre><div class="info ">
+<pre><span id="VALasprintf"><span class="keyword">val</span> asprintf</span> : <code class="type">('a, <a href="Format.html#TYPEformatter">formatter</a>, unit, string) <a href="Stdlib.html#TYPEformat4">Stdlib.format4</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">printf</code> above, but instead of printing on a formatter,
   returns a string containing the result of formatting the arguments.
@@ -1590,7 +1594,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 </ul>
 </div>
 
-<pre><span id="VALdprintf"><span class="keyword">val</span> dprintf</span> : <code class="type">('a, <a href="Format.html#TYPEformatter">formatter</a>, unit, <a href="Format.html#TYPEformatter">formatter</a> -> unit) Stdlib.format4 -> 'a</code></pre><div class="info ">
+<pre><span id="VALdprintf"><span class="keyword">val</span> dprintf</span> : <code class="type">('a, <a href="Format.html#TYPEformatter">formatter</a>, unit, <a href="Format.html#TYPEformatter">formatter</a> -&gt; unit) <a href="Stdlib.html#TYPEformat4">Stdlib.format4</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Format.html#VALfprintf"><code class="code">Format.fprintf</code></a>, except the formatter is the last argument.
   <code class="code">dprintf "..." a b c</code> is a function of type
@@ -1612,7 +1616,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 </ul>
 </div>
 
-<pre><span id="VALifprintf"><span class="keyword">val</span> ifprintf</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> ('a, <a href="Format.html#TYPEformatter">formatter</a>, unit) Stdlib.format -> 'a</code></pre><div class="info ">
+<pre><span id="VALifprintf"><span class="keyword">val</span> ifprintf</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; ('a, <a href="Format.html#TYPEformatter">formatter</a>, unit) <a href="Stdlib.html#TYPEformat">Stdlib.format</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">fprintf</code> above, but does not print anything.
   Useful to ignore some material when conditionally printing.</p>
@@ -1623,14 +1627,14 @@ coupled variables, margin and maxixum indentation limit.</p>
 </div>
 <p>Formatted Pretty-Printing with continuations.</p>
 
-<pre><span id="VALkfprintf"><span class="keyword">val</span> kfprintf</span> : <code class="type">(<a href="Format.html#TYPEformatter">formatter</a> -> 'a) -><br>       <a href="Format.html#TYPEformatter">formatter</a> -> ('b, <a href="Format.html#TYPEformatter">formatter</a>, unit, 'a) Stdlib.format4 -> 'b</code></pre><div class="info ">
+<pre><span id="VALkfprintf"><span class="keyword">val</span> kfprintf</span> : <code class="type">(<a href="Format.html#TYPEformatter">formatter</a> -&gt; 'a) -&gt;<br>       <a href="Format.html#TYPEformatter">formatter</a> -&gt; ('b, <a href="Format.html#TYPEformatter">formatter</a>, unit, 'a) <a href="Stdlib.html#TYPEformat4">Stdlib.format4</a> -&gt; 'b</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">fprintf</code> above, but instead of returning immediately,
   passes the formatter to its first argument at the end of printing.</p>
 </div>
 </div>
 
-<pre><span id="VALkdprintf"><span class="keyword">val</span> kdprintf</span> : <code class="type">((<a href="Format.html#TYPEformatter">formatter</a> -> unit) -> 'a) -><br>       ('b, <a href="Format.html#TYPEformatter">formatter</a>, unit, 'a) Stdlib.format4 -> 'b</code></pre><div class="info ">
+<pre><span id="VALkdprintf"><span class="keyword">val</span> kdprintf</span> : <code class="type">((<a href="Format.html#TYPEformatter">formatter</a> -&gt; unit) -&gt; 'a) -&gt;<br>       ('b, <a href="Format.html#TYPEformatter">formatter</a>, unit, 'a) <a href="Stdlib.html#TYPEformat4">Stdlib.format4</a> -&gt; 'b</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Format.html#VALdprintf"><code class="code">Format.dprintf</code></a> above, but instead of returning immediately,
   passes the suspended printer to its first argument at the end of printing.</p>
@@ -1640,7 +1644,7 @@ coupled variables, margin and maxixum indentation limit.</p>
 </ul>
 </div>
 
-<pre><span id="VALikfprintf"><span class="keyword">val</span> ikfprintf</span> : <code class="type">(<a href="Format.html#TYPEformatter">formatter</a> -> 'a) -><br>       <a href="Format.html#TYPEformatter">formatter</a> -> ('b, <a href="Format.html#TYPEformatter">formatter</a>, unit, 'a) Stdlib.format4 -> 'b</code></pre><div class="info ">
+<pre><span id="VALikfprintf"><span class="keyword">val</span> ikfprintf</span> : <code class="type">(<a href="Format.html#TYPEformatter">formatter</a> -&gt; 'a) -&gt;<br>       <a href="Format.html#TYPEformatter">formatter</a> -&gt; ('b, <a href="Format.html#TYPEformatter">formatter</a>, unit, 'a) <a href="Stdlib.html#TYPEformat4">Stdlib.format4</a> -&gt; 'b</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">kfprintf</code> above, but does not print anything.
   Useful to ignore some material when conditionally printing.</p>
@@ -1650,14 +1654,14 @@ coupled variables, margin and maxixum indentation limit.</p>
 </ul>
 </div>
 
-<pre><span id="VALksprintf"><span class="keyword">val</span> ksprintf</span> : <code class="type">(string -> 'a) -> ('b, unit, string, 'a) Stdlib.format4 -> 'b</code></pre><div class="info ">
+<pre><span id="VALksprintf"><span class="keyword">val</span> ksprintf</span> : <code class="type">(string -&gt; 'a) -&gt; ('b, unit, string, 'a) <a href="Stdlib.html#TYPEformat4">Stdlib.format4</a> -&gt; 'b</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">sprintf</code> above, but instead of returning the string,
   passes it to the first argument.</p>
 </div>
 </div>
 
-<pre><span id="VALkasprintf"><span class="keyword">val</span> kasprintf</span> : <code class="type">(string -> 'a) -> ('b, <a href="Format.html#TYPEformatter">formatter</a>, unit, 'a) Stdlib.format4 -> 'b</code></pre><div class="info ">
+<pre><span id="VALkasprintf"><span class="keyword">val</span> kasprintf</span> : <code class="type">(string -&gt; 'a) -&gt; ('b, <a href="Format.html#TYPEformatter">formatter</a>, unit, 'a) <a href="Stdlib.html#TYPEformat4">Stdlib.format4</a> -&gt; 'b</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">asprintf</code> above, but instead of returning the string,
   passes it to the first argument.</p>
@@ -1667,9 +1671,9 @@ coupled variables, margin and maxixum indentation limit.</p>
 </ul>
 </div>
 <h2 id="1_Deprecated">Deprecated</h2>
-<pre><span id="VALbprintf"><span class="keyword">val</span> bprintf</span> : <code class="type">Stdlib.Buffer.t -> ('a, <a href="Format.html#TYPEformatter">formatter</a>, unit) Stdlib.format -> 'a</code></pre><div class="info ">
+<pre><span id="VALbprintf"><span class="keyword">val</span> bprintf</span> : <code class="type">Stdlib.Buffer.t -&gt; ('a, <a href="Format.html#TYPEformatter">formatter</a>, unit) <a href="Stdlib.html#TYPEformat">Stdlib.format</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span>This function is error prone. Do not use it.
+<span class="warning">Deprecated. </span>This function is error prone. Do not use it.
   This function is neither compositional nor incremental, since it flushes
   the pretty-printer queue at each call.
 
@@ -1678,49 +1682,49 @@ coupled variables, margin and maxixum indentation limit.</p>
   use regular calls to <code class="code">Format.fprintf</code> with formatter <code class="code">to_b</code>.</div>
 </div>
 
-<pre><span id="VALkprintf"><span class="keyword">val</span> kprintf</span> : <code class="type">(string -> 'a) -> ('b, unit, string, 'a) Stdlib.format4 -> 'b</code></pre><div class="info ">
+<pre><span id="VALkprintf"><span class="keyword">val</span> kprintf</span> : <code class="type">(string -&gt; 'a) -&gt; ('b, unit, string, 'a) <a href="Stdlib.html#TYPEformat4">Stdlib.format4</a> -&gt; 'b</code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span>An alias for <code class="code">ksprintf</code>.</div>
+<span class="warning">Deprecated. </span>An alias for <code class="code">ksprintf</code>.</div>
 </div>
 
-<pre><span id="VALset_all_formatter_output_functions"><span class="keyword">val</span> set_all_formatter_output_functions</span> : <code class="type">out:(string -> int -> int -> unit) -><br>       flush:(unit -> unit) -><br>       newline:(unit -> unit) -> spaces:(int -> unit) -> unit</code></pre><div class="info ">
+<pre><span id="VALset_all_formatter_output_functions"><span class="keyword">val</span> set_all_formatter_output_functions</span> : <code class="type">out:(string -&gt; int -&gt; int -&gt; unit) -&gt;<br>       flush:(unit -&gt; unit) -&gt;<br>       newline:(unit -&gt; unit) -&gt; spaces:(int -&gt; unit) -&gt; unit</code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span>Subsumed by <code class="code">set_formatter_out_functions</code>.</div>
+<span class="warning">Deprecated. </span>Subsumed by <code class="code">set_formatter_out_functions</code>.</div>
 </div>
 
-<pre><span id="VALget_all_formatter_output_functions"><span class="keyword">val</span> get_all_formatter_output_functions</span> : <code class="type">unit -><br>       (string -> int -> int -> unit) * (unit -> unit) * (unit -> unit) *<br>       (int -> unit)</code></pre><div class="info ">
+<pre><span id="VALget_all_formatter_output_functions"><span class="keyword">val</span> get_all_formatter_output_functions</span> : <code class="type">unit -&gt;<br>       (string -&gt; int -&gt; int -&gt; unit) * (unit -&gt; unit) * (unit -&gt; unit) *<br>       (int -&gt; unit)</code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span>Subsumed by <code class="code">get_formatter_out_functions</code>.</div>
+<span class="warning">Deprecated. </span>Subsumed by <code class="code">get_formatter_out_functions</code>.</div>
 </div>
 
-<pre><span id="VALpp_set_all_formatter_output_functions"><span class="keyword">val</span> pp_set_all_formatter_output_functions</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -><br>       out:(string -> int -> int -> unit) -><br>       flush:(unit -> unit) -><br>       newline:(unit -> unit) -> spaces:(int -> unit) -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_set_all_formatter_output_functions"><span class="keyword">val</span> pp_set_all_formatter_output_functions</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt;<br>       out:(string -&gt; int -&gt; int -&gt; unit) -&gt;<br>       flush:(unit -&gt; unit) -&gt;<br>       newline:(unit -&gt; unit) -&gt; spaces:(int -&gt; unit) -&gt; unit</code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span>Subsumed by <code class="code">pp_set_formatter_out_functions</code>.</div>
+<span class="warning">Deprecated. </span>Subsumed by <code class="code">pp_set_formatter_out_functions</code>.</div>
 </div>
 
-<pre><span id="VALpp_get_all_formatter_output_functions"><span class="keyword">val</span> pp_get_all_formatter_output_functions</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -><br>       unit -><br>       (string -> int -> int -> unit) * (unit -> unit) * (unit -> unit) *<br>       (int -> unit)</code></pre><div class="info ">
+<pre><span id="VALpp_get_all_formatter_output_functions"><span class="keyword">val</span> pp_get_all_formatter_output_functions</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt;<br>       unit -&gt;<br>       (string -&gt; int -&gt; int -&gt; unit) * (unit -&gt; unit) * (unit -&gt; unit) *<br>       (int -&gt; unit)</code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span>Subsumed by <code class="code">pp_get_formatter_out_functions</code>.</div>
+<span class="warning">Deprecated. </span>Subsumed by <code class="code">pp_get_formatter_out_functions</code>.</div>
 </div>
 <h3 id="2_Stringtags">String tags</h3>
-<pre><span id="VALpp_open_tag"><span class="keyword">val</span> pp_open_tag</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> <a href="Format.html#TYPEtag">tag</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_open_tag"><span class="keyword">val</span> pp_open_tag</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; <a href="Format.html#TYPEtag">tag</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span>Subsumed by <a href="Format.html#VALpp_open_stag"><code class="code">Format.pp_open_stag</code></a>.</div>
+<span class="warning">Deprecated. </span>Subsumed by <a href="Format.html#VALpp_open_stag"><code class="code">Format.pp_open_stag</code></a>.</div>
 </div>
 
-<pre><span id="VALopen_tag"><span class="keyword">val</span> open_tag</span> : <code class="type"><a href="Format.html#TYPEtag">tag</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALopen_tag"><span class="keyword">val</span> open_tag</span> : <code class="type"><a href="Format.html#TYPEtag">tag</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span>Subsumed by <a href="Format.html#VALopen_stag"><code class="code">Format.open_stag</code></a>.</div>
+<span class="warning">Deprecated. </span>Subsumed by <a href="Format.html#VALopen_stag"><code class="code">Format.open_stag</code></a>.</div>
 </div>
 
-<pre><span id="VALpp_close_tag"><span class="keyword">val</span> pp_close_tag</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_close_tag"><span class="keyword">val</span> pp_close_tag</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; unit</code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span>Subsumed by <a href="Format.html#VALpp_close_stag"><code class="code">Format.pp_close_stag</code></a>.</div>
+<span class="warning">Deprecated. </span>Subsumed by <a href="Format.html#VALpp_close_stag"><code class="code">Format.pp_close_stag</code></a>.</div>
 </div>
 
-<pre><span id="VALclose_tag"><span class="keyword">val</span> close_tag</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALclose_tag"><span class="keyword">val</span> close_tag</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span>Subsumed by <a href="Format.html#VALclose_stag"><code class="code">Format.close_stag</code></a>.</div>
+<span class="warning">Deprecated. </span>Subsumed by <a href="Format.html#VALclose_stag"><code class="code">Format.close_stag</code></a>.</div>
 </div>
 
 <pre><code><span id="TYPEformatter_tag_functions"><span class="keyword">type</span> <code class="type"></code>formatter_tag_functions</span> = {</code></pre><table class="typetable">
@@ -1728,58 +1732,58 @@ coupled variables, margin and maxixum indentation limit.</p>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTformatter_tag_functions.mark_open_tag">mark_open_tag</span>&nbsp;: <code class="type"><a href="Format.html#TYPEtag">tag</a> -> string</code>;</code></td>
+<code><span id="TYPEELTformatter_tag_functions.mark_open_tag">mark_open_tag</span>&nbsp;: <code class="type"><a href="Format.html#TYPEtag">tag</a> -&gt; string</code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTformatter_tag_functions.mark_close_tag">mark_close_tag</span>&nbsp;: <code class="type"><a href="Format.html#TYPEtag">tag</a> -> string</code>;</code></td>
+<code><span id="TYPEELTformatter_tag_functions.mark_close_tag">mark_close_tag</span>&nbsp;: <code class="type"><a href="Format.html#TYPEtag">tag</a> -&gt; string</code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTformatter_tag_functions.print_open_tag">print_open_tag</span>&nbsp;: <code class="type"><a href="Format.html#TYPEtag">tag</a> -> unit</code>;</code></td>
+<code><span id="TYPEELTformatter_tag_functions.print_open_tag">print_open_tag</span>&nbsp;: <code class="type"><a href="Format.html#TYPEtag">tag</a> -&gt; unit</code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTformatter_tag_functions.print_close_tag">print_close_tag</span>&nbsp;: <code class="type"><a href="Format.html#TYPEtag">tag</a> -> unit</code>;</code></td>
+<code><span id="TYPEELTformatter_tag_functions.print_close_tag">print_close_tag</span>&nbsp;: <code class="type"><a href="Format.html#TYPEtag">tag</a> -&gt; unit</code>;</code></td>
 
 </tr></table>
 <code>}</code>
 
 <div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span>Subsumed by <a href="Format.html#TYPEformatter_stag_functions"><code class="code">Format.formatter_stag_functions</code></a>.</div>
+<span class="warning">Deprecated. </span>Subsumed by <a href="Format.html#TYPEformatter_stag_functions"><code class="code">Format.formatter_stag_functions</code></a>.</div>
 </div>
 
 
-<pre><span id="VALpp_set_formatter_tag_functions"><span class="keyword">val</span> pp_set_formatter_tag_functions</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> <a href="Format.html#TYPEformatter_tag_functions">formatter_tag_functions</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALpp_set_formatter_tag_functions"><span class="keyword">val</span> pp_set_formatter_tag_functions</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; <a href="Format.html#TYPEformatter_tag_functions">formatter_tag_functions</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span>Subsumed by <a href="Format.html#VALpp_set_formatter_stag_functions"><code class="code">Format.pp_set_formatter_stag_functions</code></a>.</div>
+<span class="warning">Deprecated. </span>Subsumed by <a href="Format.html#VALpp_set_formatter_stag_functions"><code class="code">Format.pp_set_formatter_stag_functions</code></a>.</div>
 <div class="info-desc">
 <p>This function will erase non-string tag formatting functions.</p>
 </div>
 </div>
 
-<pre><span id="VALset_formatter_tag_functions"><span class="keyword">val</span> set_formatter_tag_functions</span> : <code class="type"><a href="Format.html#TYPEformatter_tag_functions">formatter_tag_functions</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALset_formatter_tag_functions"><span class="keyword">val</span> set_formatter_tag_functions</span> : <code class="type"><a href="Format.html#TYPEformatter_tag_functions">formatter_tag_functions</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span>Subsumed by <a href="Format.html#VALset_formatter_stag_functions"><code class="code">Format.set_formatter_stag_functions</code></a>.</div>
+<span class="warning">Deprecated. </span>Subsumed by <a href="Format.html#VALset_formatter_stag_functions"><code class="code">Format.set_formatter_stag_functions</code></a>.</div>
 </div>
 
-<pre><span id="VALpp_get_formatter_tag_functions"><span class="keyword">val</span> pp_get_formatter_tag_functions</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -> unit -> <a href="Format.html#TYPEformatter_tag_functions">formatter_tag_functions</a></code></pre><div class="info ">
+<pre><span id="VALpp_get_formatter_tag_functions"><span class="keyword">val</span> pp_get_formatter_tag_functions</span> : <code class="type"><a href="Format.html#TYPEformatter">formatter</a> -&gt; unit -&gt; <a href="Format.html#TYPEformatter_tag_functions">formatter_tag_functions</a></code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span>Subsumed by <a href="Format.html#VALpp_get_formatter_stag_functions"><code class="code">Format.pp_get_formatter_stag_functions</code></a>.</div>
+<span class="warning">Deprecated. </span>Subsumed by <a href="Format.html#VALpp_get_formatter_stag_functions"><code class="code">Format.pp_get_formatter_stag_functions</code></a>.</div>
 </div>
 
-<pre><span id="VALget_formatter_tag_functions"><span class="keyword">val</span> get_formatter_tag_functions</span> : <code class="type">unit -> <a href="Format.html#TYPEformatter_tag_functions">formatter_tag_functions</a></code></pre><div class="info ">
+<pre><span id="VALget_formatter_tag_functions"><span class="keyword">val</span> get_formatter_tag_functions</span> : <code class="type">unit -&gt; <a href="Format.html#TYPEformatter_tag_functions">formatter_tag_functions</a></code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span>Subsumed by <a href="Format.html#VALget_formatter_stag_functions"><code class="code">Format.get_formatter_stag_functions</code></a>.</div>
+<span class="warning">Deprecated. </span>Subsumed by <a href="Format.html#VALget_formatter_stag_functions"><code class="code">Format.get_formatter_stag_functions</code></a>.</div>
 </div>
 </body></html>

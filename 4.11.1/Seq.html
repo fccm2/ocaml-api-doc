@@ -64,14 +64,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><title>Seq</title>
 </head>
 <body>
@@ -91,7 +95,7 @@
     infinite sequences, to build sequences as we traverse them, and to transform
     them in a lazy fashion rather than upfront.</p>
 
-<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">unit -> 'a <a href="Seq.html#TYPEnode">node</a></code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = <code class="type">unit -&gt; 'a <a href="Seq.html#TYPEnode">node</a></code> </pre>
 <div class="info ">
 <div class="info-desc">
 <p>The type of delayed lists containing elements of type <code class="code">'a</code>.
@@ -132,13 +136,13 @@
 </div>
 </div>
 
-<pre><span id="VALreturn"><span class="keyword">val</span> return</span> : <code class="type">'a -> 'a <a href="Seq.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALreturn"><span class="keyword">val</span> return</span> : <code class="type">'a -&gt; 'a <a href="Seq.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>The singleton sequence containing only the given element.</p>
 </div>
 </div>
 
-<pre><span id="VALcons"><span class="keyword">val</span> cons</span> : <code class="type">'a -> 'a <a href="Seq.html#TYPEt">t</a> -> 'a <a href="Seq.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcons"><span class="keyword">val</span> cons</span> : <code class="type">'a -&gt; 'a <a href="Seq.html#TYPEt">t</a> -&gt; 'a <a href="Seq.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">cons x xs</code> is the sequence containing the element <code class="code">x</code> followed by
     the sequence <code class="code">xs</code></p>
@@ -148,7 +152,7 @@
 </ul>
 </div>
 
-<pre><span id="VALappend"><span class="keyword">val</span> append</span> : <code class="type">'a <a href="Seq.html#TYPEt">t</a> -> 'a <a href="Seq.html#TYPEt">t</a> -> 'a <a href="Seq.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALappend"><span class="keyword">val</span> append</span> : <code class="type">'a <a href="Seq.html#TYPEt">t</a> -&gt; 'a <a href="Seq.html#TYPEt">t</a> -&gt; 'a <a href="Seq.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">append xs ys</code> is the sequence <code class="code">xs</code> followed by the sequence <code class="code">ys</code></p>
 </div>
@@ -157,7 +161,7 @@
 </ul>
 </div>
 
-<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">('a -> 'b) -> 'a <a href="Seq.html#TYPEt">t</a> -> 'b <a href="Seq.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">('a -&gt; 'b) -&gt; 'a <a href="Seq.html#TYPEt">t</a> -&gt; 'b <a href="Seq.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">map f seq</code> returns a new sequence whose elements are the elements of
     <code class="code">seq</code>, transformed by <code class="code">f</code>.
@@ -167,7 +171,7 @@
 </div>
 </div>
 
-<pre><span id="VALfilter"><span class="keyword">val</span> filter</span> : <code class="type">('a -> bool) -> 'a <a href="Seq.html#TYPEt">t</a> -> 'a <a href="Seq.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALfilter"><span class="keyword">val</span> filter</span> : <code class="type">('a -&gt; bool) -&gt; 'a <a href="Seq.html#TYPEt">t</a> -&gt; 'a <a href="Seq.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Remove from the sequence the elements that do not satisfy the
     given predicate.
@@ -176,7 +180,7 @@
 </div>
 </div>
 
-<pre><span id="VALfilter_map"><span class="keyword">val</span> filter_map</span> : <code class="type">('a -> 'b option) -> 'a <a href="Seq.html#TYPEt">t</a> -> 'b <a href="Seq.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALfilter_map"><span class="keyword">val</span> filter_map</span> : <code class="type">('a -&gt; 'b option) -&gt; 'a <a href="Seq.html#TYPEt">t</a> -&gt; 'b <a href="Seq.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Apply the function to every element; if <code class="code">f x = None</code> then <code class="code">x</code> is dropped;
     if <code class="code">f x = Some y</code> then <code class="code">y</code> is returned.
@@ -185,7 +189,7 @@
 </div>
 </div>
 
-<pre><span id="VALflat_map"><span class="keyword">val</span> flat_map</span> : <code class="type">('a -> 'b <a href="Seq.html#TYPEt">t</a>) -> 'a <a href="Seq.html#TYPEt">t</a> -> 'b <a href="Seq.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALflat_map"><span class="keyword">val</span> flat_map</span> : <code class="type">('a -&gt; 'b <a href="Seq.html#TYPEt">t</a>) -&gt; 'a <a href="Seq.html#TYPEt">t</a> -&gt; 'b <a href="Seq.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Map each element to a subsequence, then return each element of this
     sub-sequence in turn.
@@ -194,7 +198,7 @@
 </div>
 </div>
 
-<pre><span id="VALfold_left"><span class="keyword">val</span> fold_left</span> : <code class="type">('a -> 'b -> 'a) -> 'a -> 'b <a href="Seq.html#TYPEt">t</a> -> 'a</code></pre><div class="info ">
+<pre><span id="VALfold_left"><span class="keyword">val</span> fold_left</span> : <code class="type">('a -&gt; 'b -&gt; 'a) -&gt; 'a -&gt; 'b <a href="Seq.html#TYPEt">t</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Traverse the sequence from left to right, combining each element with the
     accumulator using the given function.
@@ -205,7 +209,7 @@
 </div>
 </div>
 
-<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">('a -> unit) -> 'a <a href="Seq.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">('a -&gt; unit) -&gt; 'a <a href="Seq.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Iterate on the sequence, calling the (imperative) function on every element.
     The traversal happens immediately and will not terminate on infinite
@@ -213,7 +217,7 @@
 </div>
 </div>
 
-<pre><span id="VALunfold"><span class="keyword">val</span> unfold</span> : <code class="type">('b -> ('a * 'b) option) -> 'b -> 'a <a href="Seq.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALunfold"><span class="keyword">val</span> unfold</span> : <code class="type">('b -&gt; ('a * 'b) option) -&gt; 'b -&gt; 'a <a href="Seq.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Build a sequence from a step function and an initial value.
     <code class="code">unfold f u</code> returns <code class="code">empty</code> if <code class="code">f u</code> returns <code class="code">None</code>,

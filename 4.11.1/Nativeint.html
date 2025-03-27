@@ -64,14 +64,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><title>Nativeint</title>
 </head>
 <body>
@@ -125,34 +129,34 @@
 </div>
 </div>
 
-<pre><span id="VALneg"><span class="keyword">val</span> neg</span> : <code class="type">nativeint -> nativeint</code></pre><div class="info ">
+<pre><span id="VALneg"><span class="keyword">val</span> neg</span> : <code class="type">nativeint -&gt; nativeint</code></pre><div class="info ">
 <div class="info-desc">
 <p>Unary negation.</p>
 </div>
 </div>
 
-<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type">nativeint -> nativeint -> nativeint</code></pre><div class="info ">
+<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type">nativeint -&gt; nativeint -&gt; nativeint</code></pre><div class="info ">
 <div class="info-desc">
 <p>Addition.</p>
 </div>
 </div>
 
-<pre><span id="VALsub"><span class="keyword">val</span> sub</span> : <code class="type">nativeint -> nativeint -> nativeint</code></pre><div class="info ">
+<pre><span id="VALsub"><span class="keyword">val</span> sub</span> : <code class="type">nativeint -&gt; nativeint -&gt; nativeint</code></pre><div class="info ">
 <div class="info-desc">
 <p>Subtraction.</p>
 </div>
 </div>
 
-<pre><span id="VALmul"><span class="keyword">val</span> mul</span> : <code class="type">nativeint -> nativeint -> nativeint</code></pre><div class="info ">
+<pre><span id="VALmul"><span class="keyword">val</span> mul</span> : <code class="type">nativeint -&gt; nativeint -&gt; nativeint</code></pre><div class="info ">
 <div class="info-desc">
 <p>Multiplication.</p>
 </div>
 </div>
 
-<pre><span id="VALdiv"><span class="keyword">val</span> div</span> : <code class="type">nativeint -> nativeint -> nativeint</code></pre><div class="info ">
+<pre><span id="VALdiv"><span class="keyword">val</span> div</span> : <code class="type">nativeint -&gt; nativeint -&gt; nativeint</code></pre><div class="info ">
 <div class="info-desc">
 <p>Integer division. This division rounds the real quotient of
-   its arguments towards zero, as specified for <code class="code">Stdlib.(/)</code>.</p>
+   its arguments towards zero, as specified for <a href="Stdlib.html#VAL(/)"><code class="code">Stdlib.(/)</code></a>.</p>
 </div>
 <ul class="info-attributes">
 <li><b>Raises</b> <code>Division_by_zero</code> if the second
@@ -160,7 +164,7 @@
 </ul>
 </div>
 
-<pre><span id="VALunsigned_div"><span class="keyword">val</span> unsigned_div</span> : <code class="type">nativeint -> nativeint -> nativeint</code></pre><div class="info ">
+<pre><span id="VALunsigned_div"><span class="keyword">val</span> unsigned_div</span> : <code class="type">nativeint -&gt; nativeint -&gt; nativeint</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Nativeint.html#VALdiv"><code class="code">Nativeint.div</code></a>, except that arguments and result are interpreted as <em>    unsigned</em> native integers.</p>
 </div>
@@ -169,7 +173,7 @@
 </ul>
 </div>
 
-<pre><span id="VALrem"><span class="keyword">val</span> rem</span> : <code class="type">nativeint -> nativeint -> nativeint</code></pre><div class="info ">
+<pre><span id="VALrem"><span class="keyword">val</span> rem</span> : <code class="type">nativeint -&gt; nativeint -&gt; nativeint</code></pre><div class="info ">
 <div class="info-desc">
 <p>Integer remainder.  If <code class="code">y</code> is not zero, the result
    of <code class="code">Nativeint.rem x y</code> satisfies the following properties:
@@ -180,7 +184,7 @@
 </div>
 </div>
 
-<pre><span id="VALunsigned_rem"><span class="keyword">val</span> unsigned_rem</span> : <code class="type">nativeint -> nativeint -> nativeint</code></pre><div class="info ">
+<pre><span id="VALunsigned_rem"><span class="keyword">val</span> unsigned_rem</span> : <code class="type">nativeint -&gt; nativeint -&gt; nativeint</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Nativeint.html#VALrem"><code class="code">Nativeint.rem</code></a>, except that arguments and result are interpreted as <em>    unsigned</em> native integers.</p>
 </div>
@@ -189,21 +193,21 @@
 </ul>
 </div>
 
-<pre><span id="VALsucc"><span class="keyword">val</span> succ</span> : <code class="type">nativeint -> nativeint</code></pre><div class="info ">
+<pre><span id="VALsucc"><span class="keyword">val</span> succ</span> : <code class="type">nativeint -&gt; nativeint</code></pre><div class="info ">
 <div class="info-desc">
 <p>Successor.
    <code class="code">Nativeint.succ x</code> is <code class="code">Nativeint.add x Nativeint.one</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALpred"><span class="keyword">val</span> pred</span> : <code class="type">nativeint -> nativeint</code></pre><div class="info ">
+<pre><span id="VALpred"><span class="keyword">val</span> pred</span> : <code class="type">nativeint -&gt; nativeint</code></pre><div class="info ">
 <div class="info-desc">
 <p>Predecessor.
    <code class="code">Nativeint.pred x</code> is <code class="code">Nativeint.sub x Nativeint.one</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALabs"><span class="keyword">val</span> abs</span> : <code class="type">nativeint -> nativeint</code></pre><div class="info ">
+<pre><span id="VALabs"><span class="keyword">val</span> abs</span> : <code class="type">nativeint -&gt; nativeint</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the absolute value of its argument.</p>
 </div>
@@ -232,31 +236,31 @@
 </div>
 </div>
 
-<pre><span id="VALlogand"><span class="keyword">val</span> logand</span> : <code class="type">nativeint -> nativeint -> nativeint</code></pre><div class="info ">
+<pre><span id="VALlogand"><span class="keyword">val</span> logand</span> : <code class="type">nativeint -&gt; nativeint -&gt; nativeint</code></pre><div class="info ">
 <div class="info-desc">
 <p>Bitwise logical and.</p>
 </div>
 </div>
 
-<pre><span id="VALlogor"><span class="keyword">val</span> logor</span> : <code class="type">nativeint -> nativeint -> nativeint</code></pre><div class="info ">
+<pre><span id="VALlogor"><span class="keyword">val</span> logor</span> : <code class="type">nativeint -&gt; nativeint -&gt; nativeint</code></pre><div class="info ">
 <div class="info-desc">
 <p>Bitwise logical or.</p>
 </div>
 </div>
 
-<pre><span id="VALlogxor"><span class="keyword">val</span> logxor</span> : <code class="type">nativeint -> nativeint -> nativeint</code></pre><div class="info ">
+<pre><span id="VALlogxor"><span class="keyword">val</span> logxor</span> : <code class="type">nativeint -&gt; nativeint -&gt; nativeint</code></pre><div class="info ">
 <div class="info-desc">
 <p>Bitwise logical exclusive or.</p>
 </div>
 </div>
 
-<pre><span id="VALlognot"><span class="keyword">val</span> lognot</span> : <code class="type">nativeint -> nativeint</code></pre><div class="info ">
+<pre><span id="VALlognot"><span class="keyword">val</span> lognot</span> : <code class="type">nativeint -&gt; nativeint</code></pre><div class="info ">
 <div class="info-desc">
 <p>Bitwise logical negation.</p>
 </div>
 </div>
 
-<pre><span id="VALshift_left"><span class="keyword">val</span> shift_left</span> : <code class="type">nativeint -> int -> nativeint</code></pre><div class="info ">
+<pre><span id="VALshift_left"><span class="keyword">val</span> shift_left</span> : <code class="type">nativeint -&gt; int -&gt; nativeint</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Nativeint.shift_left x y</code> shifts <code class="code">x</code> to the left by <code class="code">y</code> bits.
    The result is unspecified if <code class="code">y &lt; 0</code> or <code class="code">y &gt;= bitsize</code>,
@@ -265,7 +269,7 @@
 </div>
 </div>
 
-<pre><span id="VALshift_right"><span class="keyword">val</span> shift_right</span> : <code class="type">nativeint -> int -> nativeint</code></pre><div class="info ">
+<pre><span id="VALshift_right"><span class="keyword">val</span> shift_right</span> : <code class="type">nativeint -&gt; int -&gt; nativeint</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Nativeint.shift_right x y</code> shifts <code class="code">x</code> to the right by <code class="code">y</code> bits.
    This is an arithmetic shift: the sign bit of <code class="code">x</code> is replicated
@@ -274,7 +278,7 @@
 </div>
 </div>
 
-<pre><span id="VALshift_right_logical"><span class="keyword">val</span> shift_right_logical</span> : <code class="type">nativeint -> int -> nativeint</code></pre><div class="info ">
+<pre><span id="VALshift_right_logical"><span class="keyword">val</span> shift_right_logical</span> : <code class="type">nativeint -&gt; int -&gt; nativeint</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Nativeint.shift_right_logical x y</code> shifts <code class="code">x</code> to the right
    by <code class="code">y</code> bits.
@@ -284,14 +288,14 @@
 </div>
 </div>
 
-<pre><span id="VALof_int"><span class="keyword">val</span> of_int</span> : <code class="type">int -> nativeint</code></pre><div class="info ">
+<pre><span id="VALof_int"><span class="keyword">val</span> of_int</span> : <code class="type">int -&gt; nativeint</code></pre><div class="info ">
 <div class="info-desc">
 <p>Convert the given integer (type <code class="code">int</code>) to a native integer
    (type <code class="code">nativeint</code>).</p>
 </div>
 </div>
 
-<pre><span id="VALto_int"><span class="keyword">val</span> to_int</span> : <code class="type">nativeint -> int</code></pre><div class="info ">
+<pre><span id="VALto_int"><span class="keyword">val</span> to_int</span> : <code class="type">nativeint -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Convert the given native integer (type <code class="code">nativeint</code>) to an
    integer (type <code class="code">int</code>).  The high-order bit is lost during
@@ -299,7 +303,7 @@
 </div>
 </div>
 
-<pre><span id="VALunsigned_to_int"><span class="keyword">val</span> unsigned_to_int</span> : <code class="type">nativeint -> int option</code></pre><div class="info ">
+<pre><span id="VALunsigned_to_int"><span class="keyword">val</span> unsigned_to_int</span> : <code class="type">nativeint -&gt; int option</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Nativeint.html#VALto_int"><code class="code">Nativeint.to_int</code></a>, but interprets the argument as an <em>unsigned</em> integer.
     Returns <code class="code">None</code> if the unsigned value of the argument cannot fit into an
@@ -310,7 +314,7 @@
 </ul>
 </div>
 
-<pre><span id="VALof_float"><span class="keyword">val</span> of_float</span> : <code class="type">float -> nativeint</code></pre><div class="info ">
+<pre><span id="VALof_float"><span class="keyword">val</span> of_float</span> : <code class="type">float -&gt; nativeint</code></pre><div class="info ">
 <div class="info-desc">
 <p>Convert the given floating-point number to a native integer,
    discarding the fractional part (truncate towards 0).
@@ -320,20 +324,20 @@
 </div>
 </div>
 
-<pre><span id="VALto_float"><span class="keyword">val</span> to_float</span> : <code class="type">nativeint -> float</code></pre><div class="info ">
+<pre><span id="VALto_float"><span class="keyword">val</span> to_float</span> : <code class="type">nativeint -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Convert the given native integer to a floating-point number.</p>
 </div>
 </div>
 
-<pre><span id="VALof_int32"><span class="keyword">val</span> of_int32</span> : <code class="type">int32 -> nativeint</code></pre><div class="info ">
+<pre><span id="VALof_int32"><span class="keyword">val</span> of_int32</span> : <code class="type">int32 -&gt; nativeint</code></pre><div class="info ">
 <div class="info-desc">
 <p>Convert the given 32-bit integer (type <code class="code">int32</code>)
    to a native integer.</p>
 </div>
 </div>
 
-<pre><span id="VALto_int32"><span class="keyword">val</span> to_int32</span> : <code class="type">nativeint -> int32</code></pre><div class="info ">
+<pre><span id="VALto_int32"><span class="keyword">val</span> to_int32</span> : <code class="type">nativeint -&gt; int32</code></pre><div class="info ">
 <div class="info-desc">
 <p>Convert the given native integer to a
    32-bit integer (type <code class="code">int32</code>).  On 64-bit platforms,
@@ -343,7 +347,7 @@
 </div>
 </div>
 
-<pre><span id="VALof_string"><span class="keyword">val</span> of_string</span> : <code class="type">string -> nativeint</code></pre><div class="info ">
+<pre><span id="VALof_string"><span class="keyword">val</span> of_string</span> : <code class="type">string -&gt; nativeint</code></pre><div class="info ">
 <div class="info-desc">
 <p>Convert the given string to a native integer.
    The string is read in decimal (by default, or if the string
@@ -362,7 +366,7 @@
 </ul>
 </div>
 
-<pre><span id="VALof_string_opt"><span class="keyword">val</span> of_string_opt</span> : <code class="type">string -> nativeint option</code></pre><div class="info ">
+<pre><span id="VALof_string_opt"><span class="keyword">val</span> of_string_opt</span> : <code class="type">string -&gt; nativeint option</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">of_string</code>, but return <code class="code">None</code> instead of raising.</p>
 </div>
@@ -371,7 +375,7 @@
 </ul>
 </div>
 
-<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type">nativeint -> string</code></pre><div class="info ">
+<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type">nativeint -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the string representation of its argument, in decimal.</p>
 </div>
@@ -385,16 +389,16 @@
 </div>
 
 
-<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Nativeint.html#TYPEt">t</a> -> <a href="Nativeint.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Nativeint.html#TYPEt">t</a> -&gt; <a href="Nativeint.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>The comparison function for native integers, with the same specification as
-    <code class="code">Stdlib.compare</code>.  Along with the type <code class="code">t</code>, this function <code class="code">compare</code>
+    <a href="Stdlib.html#VALcompare"><code class="code">Stdlib.compare</code></a>.  Along with the type <code class="code">t</code>, this function <code class="code">compare</code>
     allows the module <code class="code">Nativeint</code> to be passed as argument to the functors
     <a href="Set.Make.html"><code class="code">Set.Make</code></a> and <a href="Map.Make.html"><code class="code">Map.Make</code></a>.</p>
 </div>
 </div>
 
-<pre><span id="VALunsigned_compare"><span class="keyword">val</span> unsigned_compare</span> : <code class="type"><a href="Nativeint.html#TYPEt">t</a> -> <a href="Nativeint.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<pre><span id="VALunsigned_compare"><span class="keyword">val</span> unsigned_compare</span> : <code class="type"><a href="Nativeint.html#TYPEt">t</a> -&gt; <a href="Nativeint.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Nativeint.html#VALcompare"><code class="code">Nativeint.compare</code></a>, except that arguments are interpreted as <em>unsigned</em>
     native integers.</p>
@@ -404,7 +408,7 @@
 </ul>
 </div>
 
-<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type"><a href="Nativeint.html#TYPEt">t</a> -> <a href="Nativeint.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type"><a href="Nativeint.html#TYPEt">t</a> -&gt; <a href="Nativeint.html#TYPEt">t</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>The equal function for native ints.</p>
 </div>

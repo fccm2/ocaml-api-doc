@@ -64,14 +64,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><link title="Iterators" rel="Section" href="#1_Iterators">
 <link title="Binary encoding/decoding of integers" rel="Section" href="#1_Binaryencodingdecodingofintegers">
 <title>BytesLabels</title>
@@ -103,13 +107,13 @@
 </div>
 <hr width="100%">
 
-<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">bytes -> int</code></pre><div class="info ">
+<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">bytes -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the length (number of bytes) of the argument.</p>
 </div>
 </div>
 
-<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">bytes -> int -> char</code></pre><div class="info ">
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">bytes -&gt; int -&gt; char</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">get s n</code> returns the byte at index <code class="code">n</code> in argument <code class="code">s</code>.</p>
 </div>
@@ -118,7 +122,7 @@
 </ul>
 </div>
 
-<pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type">bytes -> int -> char -> unit</code></pre><div class="info ">
+<pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type">bytes -&gt; int -&gt; char -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">set s n c</code> modifies <code class="code">s</code> in place, replacing the byte at index <code class="code">n</code>
     with <code class="code">c</code>.</p>
@@ -128,7 +132,7 @@
 </ul>
 </div>
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">int -> bytes</code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">int -&gt; bytes</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">create n</code> returns a new byte sequence of length <code class="code">n</code>. The
     sequence is uninitialized and contains arbitrary bytes.</p>
@@ -138,7 +142,7 @@
 </ul>
 </div>
 
-<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type">int -> char -> bytes</code></pre><div class="info ">
+<pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type">int -&gt; char -&gt; bytes</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">make n c</code> returns a new byte sequence of length <code class="code">n</code>, filled with
     the byte <code class="code">c</code>.</p>
@@ -148,7 +152,7 @@
 </ul>
 </div>
 
-<pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">int -> f:(int -> char) -> bytes</code></pre><div class="info ">
+<pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">int -&gt; f:(int -&gt; char) -&gt; bytes</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">init n f</code> returns a fresh byte sequence of length <code class="code">n</code>,
     with character <code class="code">i</code> initialized to the result of <code class="code">f i</code>.</p>
@@ -164,28 +168,28 @@
 </div>
 </div>
 
-<pre><span id="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type">bytes -> bytes</code></pre><div class="info ">
+<pre><span id="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type">bytes -&gt; bytes</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return a new byte sequence that contains the same bytes as the
     argument.</p>
 </div>
 </div>
 
-<pre><span id="VALof_string"><span class="keyword">val</span> of_string</span> : <code class="type">string -> bytes</code></pre><div class="info ">
+<pre><span id="VALof_string"><span class="keyword">val</span> of_string</span> : <code class="type">string -&gt; bytes</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return a new byte sequence that contains the same bytes as the
     given string.</p>
 </div>
 </div>
 
-<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type">bytes -> string</code></pre><div class="info ">
+<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type">bytes -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return a new string that contains the same bytes as the given byte
     sequence.</p>
 </div>
 </div>
 
-<pre><span id="VALsub"><span class="keyword">val</span> sub</span> : <code class="type">bytes -> pos:int -> len:int -> bytes</code></pre><div class="info ">
+<pre><span id="VALsub"><span class="keyword">val</span> sub</span> : <code class="type">bytes -&gt; pos:int -&gt; len:int -&gt; bytes</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">sub s start len</code> returns a new byte sequence of length <code class="code">len</code>,
     containing the subsequence of <code class="code">s</code> that starts at position <code class="code">start</code>
@@ -197,13 +201,13 @@
 </ul>
 </div>
 
-<pre><span id="VALsub_string"><span class="keyword">val</span> sub_string</span> : <code class="type">bytes -> pos:int -> len:int -> string</code></pre><div class="info ">
+<pre><span id="VALsub_string"><span class="keyword">val</span> sub_string</span> : <code class="type">bytes -&gt; pos:int -&gt; len:int -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">sub</code> but return a string instead of a byte sequence.</p>
 </div>
 </div>
 
-<pre><span id="VALextend"><span class="keyword">val</span> extend</span> : <code class="type">bytes -> left:int -> right:int -> bytes</code></pre><div class="info ">
+<pre><span id="VALextend"><span class="keyword">val</span> extend</span> : <code class="type">bytes -&gt; left:int -&gt; right:int -&gt; bytes</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">extend s left right</code> returns a new byte sequence that contains
     the bytes of <code class="code">s</code>, with <code class="code">left</code> uninitialized bytes prepended and
@@ -218,7 +222,7 @@
 </ul>
 </div>
 
-<pre><span id="VALfill"><span class="keyword">val</span> fill</span> : <code class="type">bytes -> pos:int -> len:int -> char -> unit</code></pre><div class="info ">
+<pre><span id="VALfill"><span class="keyword">val</span> fill</span> : <code class="type">bytes -&gt; pos:int -&gt; len:int -&gt; char -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">fill s start len c</code> modifies <code class="code">s</code> in place, replacing <code class="code">len</code>
     characters with <code class="code">c</code>, starting at <code class="code">start</code>.</p>
@@ -229,7 +233,7 @@
 </ul>
 </div>
 
-<pre><span id="VALblit"><span class="keyword">val</span> blit</span> : <code class="type">src:bytes -> src_pos:int -> dst:bytes -> dst_pos:int -> len:int -> unit</code></pre><div class="info ">
+<pre><span id="VALblit"><span class="keyword">val</span> blit</span> : <code class="type">src:bytes -&gt; src_pos:int -&gt; dst:bytes -&gt; dst_pos:int -&gt; len:int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">blit src srcoff dst dstoff len</code> copies <code class="code">len</code> bytes from sequence
     <code class="code">src</code>, starting at index <code class="code">srcoff</code>, to sequence <code class="code">dst</code>, starting at
@@ -244,7 +248,7 @@
 </ul>
 </div>
 
-<pre><span id="VALblit_string"><span class="keyword">val</span> blit_string</span> : <code class="type">src:string -> src_pos:int -> dst:bytes -> dst_pos:int -> len:int -> unit</code></pre><div class="info ">
+<pre><span id="VALblit_string"><span class="keyword">val</span> blit_string</span> : <code class="type">src:string -&gt; src_pos:int -&gt; dst:bytes -&gt; dst_pos:int -&gt; len:int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">blit src srcoff dst dstoff len</code> copies <code class="code">len</code> bytes from string
     <code class="code">src</code>, starting at index <code class="code">srcoff</code>, to byte sequence <code class="code">dst</code>,
@@ -258,7 +262,7 @@
 </ul>
 </div>
 
-<pre><span id="VALconcat"><span class="keyword">val</span> concat</span> : <code class="type">sep:bytes -> bytes list -> bytes</code></pre><div class="info ">
+<pre><span id="VALconcat"><span class="keyword">val</span> concat</span> : <code class="type">sep:bytes -&gt; bytes list -&gt; bytes</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">concat sep sl</code> concatenates the list of byte sequences <code class="code">sl</code>,
     inserting the separator byte sequence <code class="code">sep</code> between each, and
@@ -266,7 +270,7 @@
 </div>
 </div>
 
-<pre><span id="VALcat"><span class="keyword">val</span> cat</span> : <code class="type">bytes -> bytes -> bytes</code></pre><div class="info ">
+<pre><span id="VALcat"><span class="keyword">val</span> cat</span> : <code class="type">bytes -&gt; bytes -&gt; bytes</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">cat s1 s2</code> concatenates <code class="code">s1</code> and <code class="code">s2</code> and returns the result
     as new byte sequence.</p>
@@ -278,7 +282,7 @@
 </ul>
 </div>
 
-<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">f:(char -> unit) -> bytes -> unit</code></pre><div class="info ">
+<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">f:(char -&gt; unit) -&gt; bytes -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">iter f s</code> applies function <code class="code">f</code> in turn to all the bytes of <code class="code">s</code>.
     It is equivalent to <code class="code">f (get s 0); f (get s 1); ...; f (get s
@@ -286,7 +290,7 @@
 </div>
 </div>
 
-<pre><span id="VALiteri"><span class="keyword">val</span> iteri</span> : <code class="type">f:(int -> char -> unit) -> bytes -> unit</code></pre><div class="info ">
+<pre><span id="VALiteri"><span class="keyword">val</span> iteri</span> : <code class="type">f:(int -&gt; char -&gt; unit) -&gt; bytes -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Bytes.html#VALiter"><code class="code">Bytes.iter</code></a>, but the function is applied to the index of
     the byte as first argument and the byte itself as second
@@ -294,7 +298,7 @@
 </div>
 </div>
 
-<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">f:(char -> char) -> bytes -> bytes</code></pre><div class="info ">
+<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">f:(char -&gt; char) -&gt; bytes -&gt; bytes</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">map f s</code> applies function <code class="code">f</code> in turn to all the bytes of <code class="code">s</code> and
     stores the resulting bytes in a new sequence that is returned as
@@ -302,7 +306,7 @@
 </div>
 </div>
 
-<pre><span id="VALmapi"><span class="keyword">val</span> mapi</span> : <code class="type">f:(int -> char -> char) -> bytes -> bytes</code></pre><div class="info ">
+<pre><span id="VALmapi"><span class="keyword">val</span> mapi</span> : <code class="type">f:(int -&gt; char -&gt; char) -&gt; bytes -&gt; bytes</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">mapi f s</code> calls <code class="code">f</code> with each character of <code class="code">s</code> and its
     index (in increasing index order) and stores the resulting bytes
@@ -310,7 +314,7 @@
 </div>
 </div>
 
-<pre><span id="VALtrim"><span class="keyword">val</span> trim</span> : <code class="type">bytes -> bytes</code></pre><div class="info ">
+<pre><span id="VALtrim"><span class="keyword">val</span> trim</span> : <code class="type">bytes -&gt; bytes</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return a copy of the argument, without leading and trailing
     whitespace. The bytes regarded as whitespace are the ASCII
@@ -318,14 +322,14 @@
 </div>
 </div>
 
-<pre><span id="VALescaped"><span class="keyword">val</span> escaped</span> : <code class="type">bytes -> bytes</code></pre><div class="info ">
+<pre><span id="VALescaped"><span class="keyword">val</span> escaped</span> : <code class="type">bytes -&gt; bytes</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return a copy of the argument, with special characters represented
     by escape sequences, following the lexical conventions of OCaml.</p>
 </div>
 </div>
 
-<pre><span id="VALindex"><span class="keyword">val</span> index</span> : <code class="type">bytes -> char -> int</code></pre><div class="info ">
+<pre><span id="VALindex"><span class="keyword">val</span> index</span> : <code class="type">bytes -&gt; char -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">index s c</code> returns the index of the first occurrence of byte <code class="code">c</code>
     in <code class="code">s</code>.</p>
@@ -335,7 +339,7 @@
 </ul>
 </div>
 
-<pre><span id="VALindex_opt"><span class="keyword">val</span> index_opt</span> : <code class="type">bytes -> char -> int option</code></pre><div class="info ">
+<pre><span id="VALindex_opt"><span class="keyword">val</span> index_opt</span> : <code class="type">bytes -&gt; char -&gt; int option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">index_opt s c</code> returns the index of the first occurrence of byte <code class="code">c</code>
     in <code class="code">s</code> or <code class="code">None</code> if <code class="code">c</code> does not occur in <code class="code">s</code>.</p>
@@ -345,7 +349,7 @@
 </ul>
 </div>
 
-<pre><span id="VALrindex"><span class="keyword">val</span> rindex</span> : <code class="type">bytes -> char -> int</code></pre><div class="info ">
+<pre><span id="VALrindex"><span class="keyword">val</span> rindex</span> : <code class="type">bytes -&gt; char -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">rindex s c</code> returns the index of the last occurrence of byte <code class="code">c</code>
     in <code class="code">s</code>.</p>
@@ -355,7 +359,7 @@
 </ul>
 </div>
 
-<pre><span id="VALrindex_opt"><span class="keyword">val</span> rindex_opt</span> : <code class="type">bytes -> char -> int option</code></pre><div class="info ">
+<pre><span id="VALrindex_opt"><span class="keyword">val</span> rindex_opt</span> : <code class="type">bytes -&gt; char -&gt; int option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">rindex_opt s c</code> returns the index of the last occurrence of byte <code class="code">c</code>
     in <code class="code">s</code> or <code class="code">None</code> if <code class="code">c</code> does not occur in <code class="code">s</code>.</p>
@@ -365,7 +369,7 @@
 </ul>
 </div>
 
-<pre><span id="VALindex_from"><span class="keyword">val</span> index_from</span> : <code class="type">bytes -> int -> char -> int</code></pre><div class="info ">
+<pre><span id="VALindex_from"><span class="keyword">val</span> index_from</span> : <code class="type">bytes -&gt; int -&gt; char -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">index_from s i c</code> returns the index of the first occurrence of
     byte <code class="code">c</code> in <code class="code">s</code> after position <code class="code">i</code>.  <code class="code">Bytes.index s c</code> is
@@ -378,7 +382,7 @@
 </ul>
 </div>
 
-<pre><span id="VALindex_from_opt"><span class="keyword">val</span> index_from_opt</span> : <code class="type">bytes -> int -> char -> int option</code></pre><div class="info ">
+<pre><span id="VALindex_from_opt"><span class="keyword">val</span> index_from_opt</span> : <code class="type">bytes -&gt; int -&gt; char -&gt; int option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">index_from _opts i c</code> returns the index of the first occurrence of
     byte <code class="code">c</code> in <code class="code">s</code> after position <code class="code">i</code> or <code class="code">None</code> if <code class="code">c</code> does not occur in <code class="code">s</code>
@@ -391,7 +395,7 @@
 </ul>
 </div>
 
-<pre><span id="VALrindex_from"><span class="keyword">val</span> rindex_from</span> : <code class="type">bytes -> int -> char -> int</code></pre><div class="info ">
+<pre><span id="VALrindex_from"><span class="keyword">val</span> rindex_from</span> : <code class="type">bytes -&gt; int -&gt; char -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">rindex_from s i c</code> returns the index of the last occurrence of
     byte <code class="code">c</code> in <code class="code">s</code> before position <code class="code">i+1</code>.  <code class="code">rindex s c</code> is equivalent
@@ -404,7 +408,7 @@
 </ul>
 </div>
 
-<pre><span id="VALrindex_from_opt"><span class="keyword">val</span> rindex_from_opt</span> : <code class="type">bytes -> int -> char -> int option</code></pre><div class="info ">
+<pre><span id="VALrindex_from_opt"><span class="keyword">val</span> rindex_from_opt</span> : <code class="type">bytes -&gt; int -&gt; char -&gt; int option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">rindex_from_opt s i c</code> returns the index of the last occurrence
     of byte <code class="code">c</code> in <code class="code">s</code> before position <code class="code">i+1</code> or <code class="code">None</code> if <code class="code">c</code> does not
@@ -417,13 +421,13 @@
 </ul>
 </div>
 
-<pre><span id="VALcontains"><span class="keyword">val</span> contains</span> : <code class="type">bytes -> char -> bool</code></pre><div class="info ">
+<pre><span id="VALcontains"><span class="keyword">val</span> contains</span> : <code class="type">bytes -&gt; char -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">contains s c</code> tests if byte <code class="code">c</code> appears in <code class="code">s</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALcontains_from"><span class="keyword">val</span> contains_from</span> : <code class="type">bytes -> int -> char -> bool</code></pre><div class="info ">
+<pre><span id="VALcontains_from"><span class="keyword">val</span> contains_from</span> : <code class="type">bytes -&gt; int -&gt; char -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">contains_from s start c</code> tests if byte <code class="code">c</code> appears in <code class="code">s</code> after
     position <code class="code">start</code>.  <code class="code">contains s c</code> is equivalent to <code class="code">contains_from
@@ -434,7 +438,7 @@
 </ul>
 </div>
 
-<pre><span id="VALrcontains_from"><span class="keyword">val</span> rcontains_from</span> : <code class="type">bytes -> int -> char -> bool</code></pre><div class="info ">
+<pre><span id="VALrcontains_from"><span class="keyword">val</span> rcontains_from</span> : <code class="type">bytes -&gt; int -&gt; char -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">rcontains_from s stop c</code> tests if byte <code class="code">c</code> appears in <code class="code">s</code> before
     position <code class="code">stop+1</code>.</p>
@@ -445,9 +449,9 @@
 </ul>
 </div>
 
-<pre><span id="VALuppercase"><span class="keyword">val</span> uppercase</span> : <code class="type">bytes -> bytes</code></pre><div class="info ">
+<pre><span id="VALuppercase"><span class="keyword">val</span> uppercase</span> : <code class="type">bytes -&gt; bytes</code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span>Functions operating on Latin-1 character set are deprecated.</div>
+<span class="warning">Deprecated. </span>Functions operating on Latin-1 character set are deprecated.</div>
 <div class="info-desc">
 <p>Return a copy of the argument, with all lowercase letters
    translated to uppercase, including accented letters of the ISO
@@ -455,9 +459,9 @@
 </div>
 </div>
 
-<pre><span id="VALlowercase"><span class="keyword">val</span> lowercase</span> : <code class="type">bytes -> bytes</code></pre><div class="info ">
+<pre><span id="VALlowercase"><span class="keyword">val</span> lowercase</span> : <code class="type">bytes -&gt; bytes</code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span>Functions operating on Latin-1 character set are deprecated.</div>
+<span class="warning">Deprecated. </span>Functions operating on Latin-1 character set are deprecated.</div>
 <div class="info-desc">
 <p>Return a copy of the argument, with all uppercase letters
    translated to lowercase, including accented letters of the ISO
@@ -465,25 +469,25 @@
 </div>
 </div>
 
-<pre><span id="VALcapitalize"><span class="keyword">val</span> capitalize</span> : <code class="type">bytes -> bytes</code></pre><div class="info ">
+<pre><span id="VALcapitalize"><span class="keyword">val</span> capitalize</span> : <code class="type">bytes -&gt; bytes</code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span>Functions operating on Latin-1 character set are deprecated.</div>
+<span class="warning">Deprecated. </span>Functions operating on Latin-1 character set are deprecated.</div>
 <div class="info-desc">
 <p>Return a copy of the argument, with the first character set to uppercase,
    using the ISO Latin-1 (8859-1) character set..</p>
 </div>
 </div>
 
-<pre><span id="VALuncapitalize"><span class="keyword">val</span> uncapitalize</span> : <code class="type">bytes -> bytes</code></pre><div class="info ">
+<pre><span id="VALuncapitalize"><span class="keyword">val</span> uncapitalize</span> : <code class="type">bytes -&gt; bytes</code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span>Functions operating on Latin-1 character set are deprecated.</div>
+<span class="warning">Deprecated. </span>Functions operating on Latin-1 character set are deprecated.</div>
 <div class="info-desc">
 <p>Return a copy of the argument, with the first character set to lowercase,
    using the ISO Latin-1 (8859-1) character set..</p>
 </div>
 </div>
 
-<pre><span id="VALuppercase_ascii"><span class="keyword">val</span> uppercase_ascii</span> : <code class="type">bytes -> bytes</code></pre><div class="info ">
+<pre><span id="VALuppercase_ascii"><span class="keyword">val</span> uppercase_ascii</span> : <code class="type">bytes -&gt; bytes</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return a copy of the argument, with all lowercase letters
    translated to uppercase, using the US-ASCII character set.</p>
@@ -493,7 +497,7 @@
 </ul>
 </div>
 
-<pre><span id="VALlowercase_ascii"><span class="keyword">val</span> lowercase_ascii</span> : <code class="type">bytes -> bytes</code></pre><div class="info ">
+<pre><span id="VALlowercase_ascii"><span class="keyword">val</span> lowercase_ascii</span> : <code class="type">bytes -&gt; bytes</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return a copy of the argument, with all uppercase letters
    translated to lowercase, using the US-ASCII character set.</p>
@@ -503,7 +507,7 @@
 </ul>
 </div>
 
-<pre><span id="VALcapitalize_ascii"><span class="keyword">val</span> capitalize_ascii</span> : <code class="type">bytes -> bytes</code></pre><div class="info ">
+<pre><span id="VALcapitalize_ascii"><span class="keyword">val</span> capitalize_ascii</span> : <code class="type">bytes -&gt; bytes</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return a copy of the argument, with the first character set to uppercase,
    using the US-ASCII character set.</p>
@@ -513,7 +517,7 @@
 </ul>
 </div>
 
-<pre><span id="VALuncapitalize_ascii"><span class="keyword">val</span> uncapitalize_ascii</span> : <code class="type">bytes -> bytes</code></pre><div class="info ">
+<pre><span id="VALuncapitalize_ascii"><span class="keyword">val</span> uncapitalize_ascii</span> : <code class="type">bytes -&gt; bytes</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return a copy of the argument, with the first character set to lowercase,
    using the US-ASCII character set.</p>
@@ -531,16 +535,16 @@
 </div>
 
 
-<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="BytesLabels.html#TYPEt">t</a> -> <a href="BytesLabels.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="BytesLabels.html#TYPEt">t</a> -&gt; <a href="BytesLabels.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>The comparison function for byte sequences, with the same
-    specification as <code class="code">Stdlib.compare</code>.  Along with the type <code class="code">t</code>,
+    specification as <a href="Stdlib.html#VALcompare"><code class="code">Stdlib.compare</code></a>.  Along with the type <code class="code">t</code>,
     this function <code class="code">compare</code> allows the module <code class="code">Bytes</code> to be passed as
     argument to the functors <a href="Set.Make.html"><code class="code">Set.Make</code></a> and <a href="Map.Make.html"><code class="code">Map.Make</code></a>.</p>
 </div>
 </div>
 
-<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type"><a href="BytesLabels.html#TYPEt">t</a> -> <a href="BytesLabels.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type"><a href="BytesLabels.html#TYPEt">t</a> -&gt; <a href="BytesLabels.html#TYPEt">t</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>The equality function for byte sequences.</p>
 </div>
@@ -549,7 +553,7 @@
 </ul>
 </div>
 <h2 id="1_Iterators">Iterators</h2>
-<pre><span id="VALto_seq"><span class="keyword">val</span> to_seq</span> : <code class="type"><a href="BytesLabels.html#TYPEt">t</a> -> char Stdlib.Seq.t</code></pre><div class="info ">
+<pre><span id="VALto_seq"><span class="keyword">val</span> to_seq</span> : <code class="type"><a href="BytesLabels.html#TYPEt">t</a> -&gt; char Stdlib.Seq.t</code></pre><div class="info ">
 <div class="info-desc">
 <p>Iterate on the string, in increasing index order. Modifications of the
     string during iteration will be reflected in the iterator.</p>
@@ -559,7 +563,7 @@
 </ul>
 </div>
 
-<pre><span id="VALto_seqi"><span class="keyword">val</span> to_seqi</span> : <code class="type"><a href="BytesLabels.html#TYPEt">t</a> -> (int * char) Stdlib.Seq.t</code></pre><div class="info ">
+<pre><span id="VALto_seqi"><span class="keyword">val</span> to_seqi</span> : <code class="type"><a href="BytesLabels.html#TYPEt">t</a> -&gt; (int * char) Stdlib.Seq.t</code></pre><div class="info ">
 <div class="info-desc">
 <p>Iterate on the string, in increasing order, yielding indices along chars</p>
 </div>
@@ -568,7 +572,7 @@
 </ul>
 </div>
 
-<pre><span id="VALof_seq"><span class="keyword">val</span> of_seq</span> : <code class="type">char Stdlib.Seq.t -> <a href="BytesLabels.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALof_seq"><span class="keyword">val</span> of_seq</span> : <code class="type">char Stdlib.Seq.t -&gt; <a href="BytesLabels.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Create a string from the generator</p>
 </div>
@@ -604,7 +608,7 @@
     bytes.</li>
 </ul>
 
-<pre><span id="VALget_uint8"><span class="keyword">val</span> get_uint8</span> : <code class="type">bytes -> int -> int</code></pre><div class="info ">
+<pre><span id="VALget_uint8"><span class="keyword">val</span> get_uint8</span> : <code class="type">bytes -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">get_uint8 b i</code> is <code class="code">b</code>'s unsigned 8-bit integer starting at byte index <code class="code">i</code>.</p>
 </div>
@@ -613,7 +617,7 @@
 </ul>
 </div>
 
-<pre><span id="VALget_int8"><span class="keyword">val</span> get_int8</span> : <code class="type">bytes -> int -> int</code></pre><div class="info ">
+<pre><span id="VALget_int8"><span class="keyword">val</span> get_int8</span> : <code class="type">bytes -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">get_int8 b i</code> is <code class="code">b</code>'s signed 8-bit integer starting at byte index <code class="code">i</code>.</p>
 </div>
@@ -622,7 +626,7 @@
 </ul>
 </div>
 
-<pre><span id="VALget_uint16_ne"><span class="keyword">val</span> get_uint16_ne</span> : <code class="type">bytes -> int -> int</code></pre><div class="info ">
+<pre><span id="VALget_uint16_ne"><span class="keyword">val</span> get_uint16_ne</span> : <code class="type">bytes -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">get_uint16_ne b i</code> is <code class="code">b</code>'s native-endian unsigned 16-bit integer
     starting at byte index <code class="code">i</code>.</p>
@@ -632,7 +636,7 @@
 </ul>
 </div>
 
-<pre><span id="VALget_uint16_be"><span class="keyword">val</span> get_uint16_be</span> : <code class="type">bytes -> int -> int</code></pre><div class="info ">
+<pre><span id="VALget_uint16_be"><span class="keyword">val</span> get_uint16_be</span> : <code class="type">bytes -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">get_uint16_be b i</code> is <code class="code">b</code>'s big-endian unsigned 16-bit integer
     starting at byte index <code class="code">i</code>.</p>
@@ -642,7 +646,7 @@
 </ul>
 </div>
 
-<pre><span id="VALget_uint16_le"><span class="keyword">val</span> get_uint16_le</span> : <code class="type">bytes -> int -> int</code></pre><div class="info ">
+<pre><span id="VALget_uint16_le"><span class="keyword">val</span> get_uint16_le</span> : <code class="type">bytes -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">get_uint16_le b i</code> is <code class="code">b</code>'s little-endian unsigned 16-bit integer
     starting at byte index <code class="code">i</code>.</p>
@@ -652,7 +656,7 @@
 </ul>
 </div>
 
-<pre><span id="VALget_int16_ne"><span class="keyword">val</span> get_int16_ne</span> : <code class="type">bytes -> int -> int</code></pre><div class="info ">
+<pre><span id="VALget_int16_ne"><span class="keyword">val</span> get_int16_ne</span> : <code class="type">bytes -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">get_int16_ne b i</code> is <code class="code">b</code>'s native-endian signed 16-bit integer
     starting at byte index <code class="code">i</code>.</p>
@@ -662,7 +666,7 @@
 </ul>
 </div>
 
-<pre><span id="VALget_int16_be"><span class="keyword">val</span> get_int16_be</span> : <code class="type">bytes -> int -> int</code></pre><div class="info ">
+<pre><span id="VALget_int16_be"><span class="keyword">val</span> get_int16_be</span> : <code class="type">bytes -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">get_int16_be b i</code> is <code class="code">b</code>'s big-endian signed 16-bit integer
     starting at byte index <code class="code">i</code>.</p>
@@ -672,7 +676,7 @@
 </ul>
 </div>
 
-<pre><span id="VALget_int16_le"><span class="keyword">val</span> get_int16_le</span> : <code class="type">bytes -> int -> int</code></pre><div class="info ">
+<pre><span id="VALget_int16_le"><span class="keyword">val</span> get_int16_le</span> : <code class="type">bytes -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">get_int16_le b i</code> is <code class="code">b</code>'s little-endian signed 16-bit integer
     starting at byte index <code class="code">i</code>.</p>
@@ -682,7 +686,7 @@
 </ul>
 </div>
 
-<pre><span id="VALget_int32_ne"><span class="keyword">val</span> get_int32_ne</span> : <code class="type">bytes -> int -> int32</code></pre><div class="info ">
+<pre><span id="VALget_int32_ne"><span class="keyword">val</span> get_int32_ne</span> : <code class="type">bytes -&gt; int -&gt; int32</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">get_int32_ne b i</code> is <code class="code">b</code>'s native-endian 32-bit integer
     starting at byte index <code class="code">i</code>.</p>
@@ -692,7 +696,7 @@
 </ul>
 </div>
 
-<pre><span id="VALget_int32_be"><span class="keyword">val</span> get_int32_be</span> : <code class="type">bytes -> int -> int32</code></pre><div class="info ">
+<pre><span id="VALget_int32_be"><span class="keyword">val</span> get_int32_be</span> : <code class="type">bytes -&gt; int -&gt; int32</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">get_int32_be b i</code> is <code class="code">b</code>'s big-endian 32-bit integer
     starting at byte index <code class="code">i</code>.</p>
@@ -702,7 +706,7 @@
 </ul>
 </div>
 
-<pre><span id="VALget_int32_le"><span class="keyword">val</span> get_int32_le</span> : <code class="type">bytes -> int -> int32</code></pre><div class="info ">
+<pre><span id="VALget_int32_le"><span class="keyword">val</span> get_int32_le</span> : <code class="type">bytes -&gt; int -&gt; int32</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">get_int32_le b i</code> is <code class="code">b</code>'s little-endian 32-bit integer
     starting at byte index <code class="code">i</code>.</p>
@@ -712,7 +716,7 @@
 </ul>
 </div>
 
-<pre><span id="VALget_int64_ne"><span class="keyword">val</span> get_int64_ne</span> : <code class="type">bytes -> int -> int64</code></pre><div class="info ">
+<pre><span id="VALget_int64_ne"><span class="keyword">val</span> get_int64_ne</span> : <code class="type">bytes -&gt; int -&gt; int64</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">get_int64_ne b i</code> is <code class="code">b</code>'s native-endian 64-bit integer
     starting at byte index <code class="code">i</code>.</p>
@@ -722,7 +726,7 @@
 </ul>
 </div>
 
-<pre><span id="VALget_int64_be"><span class="keyword">val</span> get_int64_be</span> : <code class="type">bytes -> int -> int64</code></pre><div class="info ">
+<pre><span id="VALget_int64_be"><span class="keyword">val</span> get_int64_be</span> : <code class="type">bytes -&gt; int -&gt; int64</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">get_int64_be b i</code> is <code class="code">b</code>'s big-endian 64-bit integer
     starting at byte index <code class="code">i</code>.</p>
@@ -732,7 +736,7 @@
 </ul>
 </div>
 
-<pre><span id="VALget_int64_le"><span class="keyword">val</span> get_int64_le</span> : <code class="type">bytes -> int -> int64</code></pre><div class="info ">
+<pre><span id="VALget_int64_le"><span class="keyword">val</span> get_int64_le</span> : <code class="type">bytes -&gt; int -&gt; int64</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">get_int64_le b i</code> is <code class="code">b</code>'s little-endian 64-bit integer
     starting at byte index <code class="code">i</code>.</p>
@@ -742,7 +746,7 @@
 </ul>
 </div>
 
-<pre><span id="VALset_uint8"><span class="keyword">val</span> set_uint8</span> : <code class="type">bytes -> int -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALset_uint8"><span class="keyword">val</span> set_uint8</span> : <code class="type">bytes -&gt; int -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">set_uint8 b i v</code> sets <code class="code">b</code>'s unsigned 8-bit integer starting at byte index
     <code class="code">i</code> to <code class="code">v</code>.</p>
@@ -752,7 +756,7 @@
 </ul>
 </div>
 
-<pre><span id="VALset_int8"><span class="keyword">val</span> set_int8</span> : <code class="type">bytes -> int -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALset_int8"><span class="keyword">val</span> set_int8</span> : <code class="type">bytes -&gt; int -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">set_int8 b i v</code> sets <code class="code">b</code>'s signed 8-bit integer starting at byte index
     <code class="code">i</code> to <code class="code">v</code>.</p>
@@ -762,7 +766,7 @@
 </ul>
 </div>
 
-<pre><span id="VALset_uint16_ne"><span class="keyword">val</span> set_uint16_ne</span> : <code class="type">bytes -> int -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALset_uint16_ne"><span class="keyword">val</span> set_uint16_ne</span> : <code class="type">bytes -&gt; int -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">set_uint16_ne b i v</code> sets <code class="code">b</code>'s native-endian unsigned 16-bit integer
     starting at byte index <code class="code">i</code> to <code class="code">v</code>.</p>
@@ -772,7 +776,7 @@
 </ul>
 </div>
 
-<pre><span id="VALset_uint16_be"><span class="keyword">val</span> set_uint16_be</span> : <code class="type">bytes -> int -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALset_uint16_be"><span class="keyword">val</span> set_uint16_be</span> : <code class="type">bytes -&gt; int -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">set_uint16_be b i v</code> sets <code class="code">b</code>'s big-endian unsigned 16-bit integer
     starting at byte index <code class="code">i</code> to <code class="code">v</code>.</p>
@@ -782,7 +786,7 @@
 </ul>
 </div>
 
-<pre><span id="VALset_uint16_le"><span class="keyword">val</span> set_uint16_le</span> : <code class="type">bytes -> int -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALset_uint16_le"><span class="keyword">val</span> set_uint16_le</span> : <code class="type">bytes -&gt; int -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">set_uint16_le b i v</code> sets <code class="code">b</code>'s little-endian unsigned 16-bit integer
     starting at byte index <code class="code">i</code> to <code class="code">v</code>.</p>
@@ -792,7 +796,7 @@
 </ul>
 </div>
 
-<pre><span id="VALset_int16_ne"><span class="keyword">val</span> set_int16_ne</span> : <code class="type">bytes -> int -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALset_int16_ne"><span class="keyword">val</span> set_int16_ne</span> : <code class="type">bytes -&gt; int -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">set_int16_ne b i v</code> sets <code class="code">b</code>'s native-endian signed 16-bit integer
     starting at byte index <code class="code">i</code> to <code class="code">v</code>.</p>
@@ -802,7 +806,7 @@
 </ul>
 </div>
 
-<pre><span id="VALset_int16_be"><span class="keyword">val</span> set_int16_be</span> : <code class="type">bytes -> int -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALset_int16_be"><span class="keyword">val</span> set_int16_be</span> : <code class="type">bytes -&gt; int -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">set_int16_be b i v</code> sets <code class="code">b</code>'s big-endian signed 16-bit integer
     starting at byte index <code class="code">i</code> to <code class="code">v</code>.</p>
@@ -812,7 +816,7 @@
 </ul>
 </div>
 
-<pre><span id="VALset_int16_le"><span class="keyword">val</span> set_int16_le</span> : <code class="type">bytes -> int -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALset_int16_le"><span class="keyword">val</span> set_int16_le</span> : <code class="type">bytes -&gt; int -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">set_int16_le b i v</code> sets <code class="code">b</code>'s little-endian signed 16-bit integer
     starting at byte index <code class="code">i</code> to <code class="code">v</code>.</p>
@@ -822,7 +826,7 @@
 </ul>
 </div>
 
-<pre><span id="VALset_int32_ne"><span class="keyword">val</span> set_int32_ne</span> : <code class="type">bytes -> int -> int32 -> unit</code></pre><div class="info ">
+<pre><span id="VALset_int32_ne"><span class="keyword">val</span> set_int32_ne</span> : <code class="type">bytes -&gt; int -&gt; int32 -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">set_int32_ne b i v</code> sets <code class="code">b</code>'s native-endian 32-bit integer
     starting at byte index <code class="code">i</code> to <code class="code">v</code>.</p>
@@ -832,7 +836,7 @@
 </ul>
 </div>
 
-<pre><span id="VALset_int32_be"><span class="keyword">val</span> set_int32_be</span> : <code class="type">bytes -> int -> int32 -> unit</code></pre><div class="info ">
+<pre><span id="VALset_int32_be"><span class="keyword">val</span> set_int32_be</span> : <code class="type">bytes -&gt; int -&gt; int32 -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">set_int32_be b i v</code> sets <code class="code">b</code>'s big-endian 32-bit integer
     starting at byte index <code class="code">i</code> to <code class="code">v</code>.</p>
@@ -842,7 +846,7 @@
 </ul>
 </div>
 
-<pre><span id="VALset_int32_le"><span class="keyword">val</span> set_int32_le</span> : <code class="type">bytes -> int -> int32 -> unit</code></pre><div class="info ">
+<pre><span id="VALset_int32_le"><span class="keyword">val</span> set_int32_le</span> : <code class="type">bytes -&gt; int -&gt; int32 -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">set_int32_le b i v</code> sets <code class="code">b</code>'s little-endian 32-bit integer
     starting at byte index <code class="code">i</code> to <code class="code">v</code>.</p>
@@ -852,7 +856,7 @@
 </ul>
 </div>
 
-<pre><span id="VALset_int64_ne"><span class="keyword">val</span> set_int64_ne</span> : <code class="type">bytes -> int -> int64 -> unit</code></pre><div class="info ">
+<pre><span id="VALset_int64_ne"><span class="keyword">val</span> set_int64_ne</span> : <code class="type">bytes -&gt; int -&gt; int64 -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">set_int64_ne b i v</code> sets <code class="code">b</code>'s native-endian 64-bit integer
     starting at byte index <code class="code">i</code> to <code class="code">v</code>.</p>
@@ -862,7 +866,7 @@
 </ul>
 </div>
 
-<pre><span id="VALset_int64_be"><span class="keyword">val</span> set_int64_be</span> : <code class="type">bytes -> int -> int64 -> unit</code></pre><div class="info ">
+<pre><span id="VALset_int64_be"><span class="keyword">val</span> set_int64_be</span> : <code class="type">bytes -&gt; int -&gt; int64 -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">set_int64_be b i v</code> sets <code class="code">b</code>'s big-endian 64-bit integer
     starting at byte index <code class="code">i</code> to <code class="code">v</code>.</p>
@@ -872,7 +876,7 @@
 </ul>
 </div>
 
-<pre><span id="VALset_int64_le"><span class="keyword">val</span> set_int64_le</span> : <code class="type">bytes -> int -> int64 -> unit</code></pre><div class="info ">
+<pre><span id="VALset_int64_le"><span class="keyword">val</span> set_int64_le</span> : <code class="type">bytes -&gt; int -&gt; int64 -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">set_int64_le b i v</code> sets <code class="code">b</code>'s little-endian 64-bit integer
     starting at byte index <code class="code">i</code> to <code class="code">v</code>.</p>

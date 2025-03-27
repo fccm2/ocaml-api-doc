@@ -62,14 +62,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><title>Gc.Memprof</title>
 </head>
 <body>
@@ -165,35 +169,35 @@
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTtracker.alloc_minor">alloc_minor</span>&nbsp;: <code class="type"><a href="Gc.Memprof.html#TYPEallocation">allocation</a> -> 'minor option</code>;</code></td>
+<code><span id="TYPEELTtracker.alloc_minor">alloc_minor</span>&nbsp;: <code class="type"><a href="Gc.Memprof.html#TYPEallocation">allocation</a> -&gt; 'minor option</code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTtracker.alloc_major">alloc_major</span>&nbsp;: <code class="type"><a href="Gc.Memprof.html#TYPEallocation">allocation</a> -> 'major option</code>;</code></td>
+<code><span id="TYPEELTtracker.alloc_major">alloc_major</span>&nbsp;: <code class="type"><a href="Gc.Memprof.html#TYPEallocation">allocation</a> -&gt; 'major option</code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTtracker.promote">promote</span>&nbsp;: <code class="type">'minor -> 'major option</code>;</code></td>
+<code><span id="TYPEELTtracker.promote">promote</span>&nbsp;: <code class="type">'minor -&gt; 'major option</code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTtracker.dealloc_minor">dealloc_minor</span>&nbsp;: <code class="type">'minor -> unit</code>;</code></td>
+<code><span id="TYPEELTtracker.dealloc_minor">dealloc_minor</span>&nbsp;: <code class="type">'minor -&gt; unit</code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code><span id="TYPEELTtracker.dealloc_major">dealloc_major</span>&nbsp;: <code class="type">'major -> unit</code>;</code></td>
+<code><span id="TYPEELTtracker.dealloc_major">dealloc_major</span>&nbsp;: <code class="type">'major -&gt; unit</code>;</code></td>
 
 </tr></table>
 <code>}</code>
@@ -218,7 +222,7 @@
 </div>
 </div>
 
-<pre><span id="VALstart"><span class="keyword">val</span> start</span> : <code class="type">sampling_rate:float -><br>       ?callstack_size:int -> ('minor, 'major) <a href="Gc.Memprof.html#TYPEtracker">tracker</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALstart"><span class="keyword">val</span> start</span> : <code class="type">sampling_rate:float -&gt;<br>       ?callstack_size:int -&gt; ('minor, 'major) <a href="Gc.Memprof.html#TYPEtracker">tracker</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Start the sampling with the given parameters. Fails if
        sampling is already active.</p>
@@ -249,7 +253,7 @@
 </div>
 </div>
 
-<pre><span id="VALstop"><span class="keyword">val</span> stop</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALstop"><span class="keyword">val</span> stop</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Stop the sampling. Fails if sampling is not active.</p>
 

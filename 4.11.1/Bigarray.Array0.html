@@ -64,14 +64,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><title>Bigarray.Array0</title>
 </head>
 <body>
@@ -104,7 +108,7 @@
 </div>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">('a, 'b) <a href="Bigarray.html#TYPEkind">Bigarray.kind</a> -><br>       'c <a href="Bigarray.html#TYPElayout">Bigarray.layout</a> -> ('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">('a, 'b) <a href="Bigarray.html#TYPEkind">Bigarray.kind</a> -&gt;<br>       'c <a href="Bigarray.html#TYPElayout">Bigarray.layout</a> -&gt; ('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Array0.create kind layout</code> returns a new Bigarray of zero dimension.
      <code class="code">kind</code> and <code class="code">layout</code> determine the array element kind and the array
@@ -112,19 +116,19 @@
 </div>
 </div>
 
-<pre><span id="VALkind"><span class="keyword">val</span> kind</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">t</a> -> ('a, 'b) <a href="Bigarray.html#TYPEkind">Bigarray.kind</a></code></pre><div class="info ">
+<pre><span id="VALkind"><span class="keyword">val</span> kind</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">t</a> -&gt; ('a, 'b) <a href="Bigarray.html#TYPEkind">Bigarray.kind</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the kind of the given Bigarray.</p>
 </div>
 </div>
 
-<pre><span id="VALlayout"><span class="keyword">val</span> layout</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">t</a> -> 'c <a href="Bigarray.html#TYPElayout">Bigarray.layout</a></code></pre><div class="info ">
+<pre><span id="VALlayout"><span class="keyword">val</span> layout</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">t</a> -&gt; 'c <a href="Bigarray.html#TYPElayout">Bigarray.layout</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the layout of the given Bigarray.</p>
 </div>
 </div>
 
-<pre><span id="VALchange_layout"><span class="keyword">val</span> change_layout</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">t</a> -><br>       'd <a href="Bigarray.html#TYPElayout">Bigarray.layout</a> -> ('a, 'b, 'd) <a href="Bigarray.Array0.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALchange_layout"><span class="keyword">val</span> change_layout</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">t</a> -&gt;<br>       'd <a href="Bigarray.html#TYPElayout">Bigarray.layout</a> -&gt; ('a, 'b, 'd) <a href="Bigarray.Array0.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Array0.change_layout a layout</code> returns a Bigarray with the
       specified <code class="code">layout</code>, sharing the data with <code class="code">a</code>. No copying of elements
@@ -136,39 +140,39 @@
 </ul>
 </div>
 
-<pre><span id="VALsize_in_bytes"><span class="keyword">val</span> size_in_bytes</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<pre><span id="VALsize_in_bytes"><span class="keyword">val</span> size_in_bytes</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">size_in_bytes a</code> is <code class="code">a</code>'s <a href="Bigarray.html#VALkind_size_in_bytes"><code class="code">Bigarray.kind_size_in_bytes</code></a>.</p>
 </div>
 </div>
 
-<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">t</a> -> 'a</code></pre><div class="info ">
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">t</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Array0.get a</code> returns the only element in <code class="code">a</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">t</a> -> 'a -> unit</code></pre><div class="info ">
+<pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">t</a> -&gt; 'a -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Array0.set a x v</code> stores the value <code class="code">v</code> in <code class="code">a</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALblit"><span class="keyword">val</span> blit</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">t</a> -> ('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALblit"><span class="keyword">val</span> blit</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">t</a> -&gt; ('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Copy the first Bigarray to the second Bigarray.
      See <a href="Bigarray.Genarray.html#VALblit"><code class="code">Bigarray.Genarray.blit</code></a> for more details.</p>
 </div>
 </div>
 
-<pre><span id="VALfill"><span class="keyword">val</span> fill</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">t</a> -> 'a -> unit</code></pre><div class="info ">
+<pre><span id="VALfill"><span class="keyword">val</span> fill</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">t</a> -&gt; 'a -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Fill the given Bigarray with the given value.
      See <a href="Bigarray.Genarray.html#VALfill"><code class="code">Bigarray.Genarray.fill</code></a> for more details.</p>
 </div>
 </div>
 
-<pre><span id="VALof_value"><span class="keyword">val</span> of_value</span> : <code class="type">('a, 'b) <a href="Bigarray.html#TYPEkind">Bigarray.kind</a> -><br>       'c <a href="Bigarray.html#TYPElayout">Bigarray.layout</a> -> 'a -> ('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALof_value"><span class="keyword">val</span> of_value</span> : <code class="type">('a, 'b) <a href="Bigarray.html#TYPEkind">Bigarray.kind</a> -&gt;<br>       'c <a href="Bigarray.html#TYPElayout">Bigarray.layout</a> -&gt; 'a -&gt; ('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Build a zero-dimensional Bigarray initialized from the
      given value.</p>

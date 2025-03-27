@@ -64,14 +64,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><title>Printf</title>
 </head>
 <body>
@@ -88,7 +92,7 @@
 </div>
 <hr width="100%">
 
-<pre><span id="VALfprintf"><span class="keyword">val</span> fprintf</span> : <code class="type">Stdlib.out_channel -> ('a, Stdlib.out_channel, unit) Stdlib.format -> 'a</code></pre><div class="info ">
+<pre><span id="VALfprintf"><span class="keyword">val</span> fprintf</span> : <code class="type"><a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a> -&gt; ('a, <a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a>, unit) <a href="Stdlib.html#TYPEformat">Stdlib.format</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">fprintf outchan format arg1 ... argN</code> formats the arguments
    <code class="code">arg1</code> to <code class="code">argN</code> according to the format string <code class="code">format</code>, and
@@ -204,26 +208,26 @@
 </div>
 </div>
 
-<pre><span id="VALprintf"><span class="keyword">val</span> printf</span> : <code class="type">('a, Stdlib.out_channel, unit) Stdlib.format -> 'a</code></pre><div class="info ">
+<pre><span id="VALprintf"><span class="keyword">val</span> printf</span> : <code class="type">('a, <a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a>, unit) <a href="Stdlib.html#TYPEformat">Stdlib.format</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Printf.html#VALfprintf"><code class="code">Printf.fprintf</code></a>, but output on <code class="code">stdout</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALeprintf"><span class="keyword">val</span> eprintf</span> : <code class="type">('a, Stdlib.out_channel, unit) Stdlib.format -> 'a</code></pre><div class="info ">
+<pre><span id="VALeprintf"><span class="keyword">val</span> eprintf</span> : <code class="type">('a, <a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a>, unit) <a href="Stdlib.html#TYPEformat">Stdlib.format</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Printf.html#VALfprintf"><code class="code">Printf.fprintf</code></a>, but output on <code class="code">stderr</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALsprintf"><span class="keyword">val</span> sprintf</span> : <code class="type">('a, unit, string) Stdlib.format -> 'a</code></pre><div class="info ">
+<pre><span id="VALsprintf"><span class="keyword">val</span> sprintf</span> : <code class="type">('a, unit, string) <a href="Stdlib.html#TYPEformat">Stdlib.format</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Printf.html#VALfprintf"><code class="code">Printf.fprintf</code></a>, but instead of printing on an output channel,
    return a string containing the result of formatting the arguments.</p>
 </div>
 </div>
 
-<pre><span id="VALbprintf"><span class="keyword">val</span> bprintf</span> : <code class="type">Stdlib.Buffer.t -> ('a, Stdlib.Buffer.t, unit) Stdlib.format -> 'a</code></pre><div class="info ">
+<pre><span id="VALbprintf"><span class="keyword">val</span> bprintf</span> : <code class="type">Stdlib.Buffer.t -&gt; ('a, Stdlib.Buffer.t, unit) <a href="Stdlib.html#TYPEformat">Stdlib.format</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Printf.html#VALfprintf"><code class="code">Printf.fprintf</code></a>, but instead of printing on an output channel,
    append the formatted arguments to the given extensible buffer
@@ -231,7 +235,7 @@
 </div>
 </div>
 
-<pre><span id="VALifprintf"><span class="keyword">val</span> ifprintf</span> : <code class="type">'b -> ('a, 'b, 'c, unit) Stdlib.format4 -> 'a</code></pre><div class="info ">
+<pre><span id="VALifprintf"><span class="keyword">val</span> ifprintf</span> : <code class="type">'b -&gt; ('a, 'b, 'c, unit) <a href="Stdlib.html#TYPEformat4">Stdlib.format4</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Printf.html#VALfprintf"><code class="code">Printf.fprintf</code></a>, but does not print anything.
     Useful to ignore some material when conditionally printing.</p>
@@ -241,7 +245,7 @@
 </ul>
 </div>
 
-<pre><span id="VALibprintf"><span class="keyword">val</span> ibprintf</span> : <code class="type">Stdlib.Buffer.t -> ('a, Stdlib.Buffer.t, unit) Stdlib.format -> 'a</code></pre><div class="info ">
+<pre><span id="VALibprintf"><span class="keyword">val</span> ibprintf</span> : <code class="type">Stdlib.Buffer.t -&gt; ('a, Stdlib.Buffer.t, unit) <a href="Stdlib.html#TYPEformat">Stdlib.format</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <a href="Printf.html#VALbprintf"><code class="code">Printf.bprintf</code></a>, but does not print anything.
     Useful to ignore some material when conditionally printing.</p>
@@ -252,7 +256,7 @@
 </div>
 <p>Formatted output functions with continuations.</p>
 
-<pre><span id="VALkfprintf"><span class="keyword">val</span> kfprintf</span> : <code class="type">(Stdlib.out_channel -> 'd) -><br>       Stdlib.out_channel -> ('a, Stdlib.out_channel, unit, 'd) Stdlib.format4 -> 'a</code></pre><div class="info ">
+<pre><span id="VALkfprintf"><span class="keyword">val</span> kfprintf</span> : <code class="type">(<a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a> -&gt; 'd) -&gt;<br>       <a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a> -&gt; ('a, <a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a>, unit, 'd) <a href="Stdlib.html#TYPEformat4">Stdlib.format4</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">fprintf</code>, but instead of returning immediately,
    passes the out channel to its first argument at the end of printing.</p>
@@ -262,7 +266,7 @@
 </ul>
 </div>
 
-<pre><span id="VALikfprintf"><span class="keyword">val</span> ikfprintf</span> : <code class="type">('b -> 'd) -> 'b -> ('a, 'b, 'c, 'd) Stdlib.format4 -> 'a</code></pre><div class="info ">
+<pre><span id="VALikfprintf"><span class="keyword">val</span> ikfprintf</span> : <code class="type">('b -&gt; 'd) -&gt; 'b -&gt; ('a, 'b, 'c, 'd) <a href="Stdlib.html#TYPEformat4">Stdlib.format4</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">kfprintf</code> above, but does not print anything.
    Useful to ignore some material when conditionally printing.</p>
@@ -272,7 +276,7 @@
 </ul>
 </div>
 
-<pre><span id="VALksprintf"><span class="keyword">val</span> ksprintf</span> : <code class="type">(string -> 'd) -> ('a, unit, string, 'd) Stdlib.format4 -> 'a</code></pre><div class="info ">
+<pre><span id="VALksprintf"><span class="keyword">val</span> ksprintf</span> : <code class="type">(string -&gt; 'd) -&gt; ('a, unit, string, 'd) <a href="Stdlib.html#TYPEformat4">Stdlib.format4</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">sprintf</code> above, but instead of returning the string,
    passes it to the first argument.</p>
@@ -282,7 +286,7 @@
 </ul>
 </div>
 
-<pre><span id="VALkbprintf"><span class="keyword">val</span> kbprintf</span> : <code class="type">(Stdlib.Buffer.t -> 'd) -><br>       Stdlib.Buffer.t -> ('a, Stdlib.Buffer.t, unit, 'd) Stdlib.format4 -> 'a</code></pre><div class="info ">
+<pre><span id="VALkbprintf"><span class="keyword">val</span> kbprintf</span> : <code class="type">(Stdlib.Buffer.t -&gt; 'd) -&gt;<br>       Stdlib.Buffer.t -&gt; ('a, Stdlib.Buffer.t, unit, 'd) <a href="Stdlib.html#TYPEformat4">Stdlib.format4</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">bprintf</code>, but instead of returning immediately,
    passes the buffer to its first argument at the end of printing.</p>
@@ -292,7 +296,7 @@
 </ul>
 </div>
 
-<pre><span id="VALikbprintf"><span class="keyword">val</span> ikbprintf</span> : <code class="type">(Stdlib.Buffer.t -> 'd) -><br>       Stdlib.Buffer.t -> ('a, Stdlib.Buffer.t, unit, 'd) Stdlib.format4 -> 'a</code></pre><div class="info ">
+<pre><span id="VALikbprintf"><span class="keyword">val</span> ikbprintf</span> : <code class="type">(Stdlib.Buffer.t -&gt; 'd) -&gt;<br>       Stdlib.Buffer.t -&gt; ('a, Stdlib.Buffer.t, unit, 'd) <a href="Stdlib.html#TYPEformat4">Stdlib.format4</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">kbprintf</code> above, but does not print anything.
    Useful to ignore some material when conditionally printing.</p>
@@ -303,7 +307,7 @@
 </div>
 <p>Deprecated</p>
 
-<pre><span id="VALkprintf"><span class="keyword">val</span> kprintf</span> : <code class="type">(string -> 'b) -> ('a, unit, string, 'b) Stdlib.format4 -> 'a</code></pre><div class="info ">
+<pre><span id="VALkprintf"><span class="keyword">val</span> kprintf</span> : <code class="type">(string -&gt; 'b) -&gt; ('a, unit, string, 'b) <a href="Stdlib.html#TYPEformat4">Stdlib.format4</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>A deprecated synonym for <code class="code">ksprintf</code>.</p>
 </div>

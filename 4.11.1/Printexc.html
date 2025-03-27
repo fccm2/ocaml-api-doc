@@ -64,14 +64,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><link title="Raw backtraces" rel="Section" href="#1_Rawbacktraces">
 <link title="Current call stack" rel="Section" href="#1_Currentcallstack">
 <link title="Uncaught exceptions" rel="Section" href="#1_Uncaughtexceptions">
@@ -102,14 +106,14 @@
 </div>
 
 
-<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type">exn -> string</code></pre><div class="info ">
+<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type">exn -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Printexc.to_string e</code> returns a string representation of
    the exception <code class="code">e</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALto_string_default"><span class="keyword">val</span> to_string_default</span> : <code class="type">exn -> string</code></pre><div class="info ">
+<pre><span id="VALto_string_default"><span class="keyword">val</span> to_string_default</span> : <code class="type">exn -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Printexc.to_string_default e</code> returns a string representation of the
     exception <code class="code">e</code>, ignoring all registered exception printers.</p>
@@ -119,7 +123,7 @@
 </ul>
 </div>
 
-<pre><span id="VALprint"><span class="keyword">val</span> print</span> : <code class="type">('a -> 'b) -> 'a -> 'b</code></pre><div class="info ">
+<pre><span id="VALprint"><span class="keyword">val</span> print</span> : <code class="type">('a -&gt; 'b) -&gt; 'a -&gt; 'b</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Printexc.print fn x</code> applies <code class="code">fn</code> to <code class="code">x</code> and returns the result.
    If the evaluation of <code class="code">fn x</code> raises any exception, the
@@ -130,7 +134,7 @@
 </div>
 </div>
 
-<pre><span id="VALcatch"><span class="keyword">val</span> catch</span> : <code class="type">('a -> 'b) -> 'a -> 'b</code></pre><div class="info ">
+<pre><span id="VALcatch"><span class="keyword">val</span> catch</span> : <code class="type">('a -&gt; 'b) -&gt; 'a -&gt; 'b</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Printexc.catch fn x</code> is similar to <a href="Printexc.html#VALprint"><code class="code">Printexc.print</code></a>, but
    aborts the program with exit code 2 after printing the
@@ -143,7 +147,7 @@
 </div>
 </div>
 
-<pre><span id="VALprint_backtrace"><span class="keyword">val</span> print_backtrace</span> : <code class="type">Stdlib.out_channel -> unit</code></pre><div class="info ">
+<pre><span id="VALprint_backtrace"><span class="keyword">val</span> print_backtrace</span> : <code class="type"><a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Printexc.print_backtrace oc</code> prints an exception backtrace
     on the output channel <code class="code">oc</code>.  The backtrace lists the program
@@ -161,7 +165,7 @@
 </ul>
 </div>
 
-<pre><span id="VALget_backtrace"><span class="keyword">val</span> get_backtrace</span> : <code class="type">unit -> string</code></pre><div class="info ">
+<pre><span id="VALget_backtrace"><span class="keyword">val</span> get_backtrace</span> : <code class="type">unit -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Printexc.get_backtrace ()</code> returns a string containing the
     same exception backtrace that <code class="code">Printexc.print_backtrace</code> would
@@ -172,7 +176,7 @@
 </ul>
 </div>
 
-<pre><span id="VALrecord_backtrace"><span class="keyword">val</span> record_backtrace</span> : <code class="type">bool -> unit</code></pre><div class="info ">
+<pre><span id="VALrecord_backtrace"><span class="keyword">val</span> record_backtrace</span> : <code class="type">bool -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Printexc.record_backtrace b</code> turns recording of exception backtraces
     on (if <code class="code">b = true</code>) or off (if <code class="code">b = false</code>).  Initially, backtraces
@@ -184,7 +188,7 @@
 </ul>
 </div>
 
-<pre><span id="VALbacktrace_status"><span class="keyword">val</span> backtrace_status</span> : <code class="type">unit -> bool</code></pre><div class="info ">
+<pre><span id="VALbacktrace_status"><span class="keyword">val</span> backtrace_status</span> : <code class="type">unit -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Printexc.backtrace_status()</code> returns <code class="code">true</code> if exception
     backtraces are currently recorded, <code class="code">false</code> if not.</p>
@@ -194,7 +198,7 @@
 </ul>
 </div>
 
-<pre><span id="VALregister_printer"><span class="keyword">val</span> register_printer</span> : <code class="type">(exn -> string option) -> unit</code></pre><div class="info ">
+<pre><span id="VALregister_printer"><span class="keyword">val</span> register_printer</span> : <code class="type">(exn -&gt; string option) -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Printexc.register_printer fn</code> registers <code class="code">fn</code> as an exception
     printer.  The printer should return <code class="code">None</code> or raise an exception
@@ -217,7 +221,7 @@
 </ul>
 </div>
 
-<pre><span id="VALuse_printers"><span class="keyword">val</span> use_printers</span> : <code class="type">exn -> string option</code></pre><div class="info ">
+<pre><span id="VALuse_printers"><span class="keyword">val</span> use_printers</span> : <code class="type">exn -&gt; string option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Printexc.use_printers e</code> returns <code class="code">None</code> if there are no registered
     printers and <code class="code">Some s</code> with else as the resulting string otherwise.</p>
@@ -248,7 +252,7 @@
 </div>
 
 
-<pre><span id="VALget_raw_backtrace"><span class="keyword">val</span> get_raw_backtrace</span> : <code class="type">unit -> <a href="Printexc.html#TYPEraw_backtrace">raw_backtrace</a></code></pre><div class="info ">
+<pre><span id="VALget_raw_backtrace"><span class="keyword">val</span> get_raw_backtrace</span> : <code class="type">unit -&gt; <a href="Printexc.html#TYPEraw_backtrace">raw_backtrace</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Printexc.get_raw_backtrace ()</code> returns the same exception
     backtrace that <code class="code">Printexc.print_backtrace</code> would print, but in
@@ -259,7 +263,7 @@
 </ul>
 </div>
 
-<pre><span id="VALprint_raw_backtrace"><span class="keyword">val</span> print_raw_backtrace</span> : <code class="type">Stdlib.out_channel -> <a href="Printexc.html#TYPEraw_backtrace">raw_backtrace</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALprint_raw_backtrace"><span class="keyword">val</span> print_raw_backtrace</span> : <code class="type"><a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a> -&gt; <a href="Printexc.html#TYPEraw_backtrace">raw_backtrace</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Print a raw backtrace in the same format
     <code class="code">Printexc.print_backtrace</code> uses.</p>
@@ -269,7 +273,7 @@
 </ul>
 </div>
 
-<pre><span id="VALraw_backtrace_to_string"><span class="keyword">val</span> raw_backtrace_to_string</span> : <code class="type"><a href="Printexc.html#TYPEraw_backtrace">raw_backtrace</a> -> string</code></pre><div class="info ">
+<pre><span id="VALraw_backtrace_to_string"><span class="keyword">val</span> raw_backtrace_to_string</span> : <code class="type"><a href="Printexc.html#TYPEraw_backtrace">raw_backtrace</a> -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return a string from a raw backtrace, in the same format
     <code class="code">Printexc.get_backtrace</code> uses.</p>
@@ -279,7 +283,7 @@
 </ul>
 </div>
 
-<pre><span id="VALraise_with_backtrace"><span class="keyword">val</span> raise_with_backtrace</span> : <code class="type">exn -> <a href="Printexc.html#TYPEraw_backtrace">raw_backtrace</a> -> 'a</code></pre><div class="info ">
+<pre><span id="VALraise_with_backtrace"><span class="keyword">val</span> raise_with_backtrace</span> : <code class="type">exn -&gt; <a href="Printexc.html#TYPEraw_backtrace">raw_backtrace</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Reraise the exception using the given raw_backtrace for the
     origin of the exception</p>
@@ -289,7 +293,7 @@
 </ul>
 </div>
 <h2 id="1_Currentcallstack">Current call stack</h2>
-<pre><span id="VALget_callstack"><span class="keyword">val</span> get_callstack</span> : <code class="type">int -> <a href="Printexc.html#TYPEraw_backtrace">raw_backtrace</a></code></pre><div class="info ">
+<pre><span id="VALget_callstack"><span class="keyword">val</span> get_callstack</span> : <code class="type">int -&gt; <a href="Printexc.html#TYPEraw_backtrace">raw_backtrace</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Printexc.get_callstack n</code> returns a description of the top of the
     call stack on the current program point (for the current thread),
@@ -301,7 +305,7 @@
 </ul>
 </div>
 <h2 id="1_Uncaughtexceptions">Uncaught exceptions</h2>
-<pre><span id="VALdefault_uncaught_exception_handler"><span class="keyword">val</span> default_uncaught_exception_handler</span> : <code class="type">exn -> <a href="Printexc.html#TYPEraw_backtrace">raw_backtrace</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALdefault_uncaught_exception_handler"><span class="keyword">val</span> default_uncaught_exception_handler</span> : <code class="type">exn -&gt; <a href="Printexc.html#TYPEraw_backtrace">raw_backtrace</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Printexc.default_uncaught_exception_handler</code> prints the exception and
     backtrace on standard error output.</p>
@@ -311,14 +315,14 @@
 </ul>
 </div>
 
-<pre><span id="VALset_uncaught_exception_handler"><span class="keyword">val</span> set_uncaught_exception_handler</span> : <code class="type">(exn -> <a href="Printexc.html#TYPEraw_backtrace">raw_backtrace</a> -> unit) -> unit</code></pre><div class="info ">
+<pre><span id="VALset_uncaught_exception_handler"><span class="keyword">val</span> set_uncaught_exception_handler</span> : <code class="type">(exn -&gt; <a href="Printexc.html#TYPEraw_backtrace">raw_backtrace</a> -&gt; unit) -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Printexc.set_uncaught_exception_handler fn</code> registers <code class="code">fn</code> as the handler
     for uncaught exceptions. The default handler is
     <a href="Printexc.html#VALdefault_uncaught_exception_handler"><code class="code">Printexc.default_uncaught_exception_handler</code></a>.</p>
 
 <p>Note that when <code class="code">fn</code> is called all the functions registered with
-    <code class="code">Stdlib.at_exit</code> have already been called. Because of this you must
+    <a href="Stdlib.html#VALat_exit"><code class="code">Stdlib.at_exit</code></a> have already been called. Because of this you must
     make sure any output channel <code class="code">fn</code> writes on is flushed.</p>
 
 <p>Also note that exceptions raised by user code in the interactive toplevel
@@ -347,7 +351,7 @@
 </div>
 
 
-<pre><span id="VALbacktrace_slots"><span class="keyword">val</span> backtrace_slots</span> : <code class="type"><a href="Printexc.html#TYPEraw_backtrace">raw_backtrace</a> -> <a href="Printexc.html#TYPEbacktrace_slot">backtrace_slot</a> array option</code></pre><div class="info ">
+<pre><span id="VALbacktrace_slots"><span class="keyword">val</span> backtrace_slots</span> : <code class="type"><a href="Printexc.html#TYPEraw_backtrace">raw_backtrace</a> -&gt; <a href="Printexc.html#TYPEbacktrace_slot">backtrace_slot</a> array option</code></pre><div class="info ">
 <div class="info-desc">
 <p>Returns the slots of a raw backtrace, or <code class="code">None</code> if none of them
     contain useful information.</p>
@@ -436,7 +440,7 @@
 </div>
 
 
-<pre><span id="VALraw_backtrace_length"><span class="keyword">val</span> raw_backtrace_length</span> : <code class="type"><a href="Printexc.html#TYPEraw_backtrace">raw_backtrace</a> -> int</code></pre><div class="info ">
+<pre><span id="VALraw_backtrace_length"><span class="keyword">val</span> raw_backtrace_length</span> : <code class="type"><a href="Printexc.html#TYPEraw_backtrace">raw_backtrace</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">raw_backtrace_length bckt</code> returns the number of slots in the
     backtrace <code class="code">bckt</code>.</p>
@@ -446,7 +450,7 @@
 </ul>
 </div>
 
-<pre><span id="VALget_raw_backtrace_slot"><span class="keyword">val</span> get_raw_backtrace_slot</span> : <code class="type"><a href="Printexc.html#TYPEraw_backtrace">raw_backtrace</a> -> int -> <a href="Printexc.html#TYPEraw_backtrace_slot">raw_backtrace_slot</a></code></pre><div class="info ">
+<pre><span id="VALget_raw_backtrace_slot"><span class="keyword">val</span> get_raw_backtrace_slot</span> : <code class="type"><a href="Printexc.html#TYPEraw_backtrace">raw_backtrace</a> -&gt; int -&gt; <a href="Printexc.html#TYPEraw_backtrace_slot">raw_backtrace_slot</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">get_raw_backtrace_slot bckt pos</code> returns the slot in position <code class="code">pos</code> in the
     backtrace <code class="code">bckt</code>.</p>
@@ -456,7 +460,7 @@
 </ul>
 </div>
 
-<pre><span id="VALconvert_raw_backtrace_slot"><span class="keyword">val</span> convert_raw_backtrace_slot</span> : <code class="type"><a href="Printexc.html#TYPEraw_backtrace_slot">raw_backtrace_slot</a> -> <a href="Printexc.html#TYPEbacktrace_slot">backtrace_slot</a></code></pre><div class="info ">
+<pre><span id="VALconvert_raw_backtrace_slot"><span class="keyword">val</span> convert_raw_backtrace_slot</span> : <code class="type"><a href="Printexc.html#TYPEraw_backtrace_slot">raw_backtrace_slot</a> -&gt; <a href="Printexc.html#TYPEbacktrace_slot">backtrace_slot</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Extracts the user-friendly <code class="code">backtrace_slot</code> from a low-level
     <code class="code">raw_backtrace_slot</code>.</p>
@@ -466,7 +470,7 @@
 </ul>
 </div>
 
-<pre><span id="VALget_raw_backtrace_next_slot"><span class="keyword">val</span> get_raw_backtrace_next_slot</span> : <code class="type"><a href="Printexc.html#TYPEraw_backtrace_slot">raw_backtrace_slot</a> -> <a href="Printexc.html#TYPEraw_backtrace_slot">raw_backtrace_slot</a> option</code></pre><div class="info ">
+<pre><span id="VALget_raw_backtrace_next_slot"><span class="keyword">val</span> get_raw_backtrace_next_slot</span> : <code class="type"><a href="Printexc.html#TYPEraw_backtrace_slot">raw_backtrace_slot</a> -&gt; <a href="Printexc.html#TYPEraw_backtrace_slot">raw_backtrace_slot</a> option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">get_raw_backtrace_next_slot slot</code> returns the next slot inlined, if any.</p>
 
@@ -489,7 +493,7 @@
 </ul>
 </div>
 <h2 id="1_Exceptionslots">Exception slots</h2>
-<pre><span id="VALexn_slot_id"><span class="keyword">val</span> exn_slot_id</span> : <code class="type">exn -> int</code></pre><div class="info ">
+<pre><span id="VALexn_slot_id"><span class="keyword">val</span> exn_slot_id</span> : <code class="type">exn -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Printexc.exn_slot_id</code> returns an integer which uniquely identifies
     the constructor used to create the exception value <code class="code">exn</code>
@@ -500,7 +504,7 @@
 </ul>
 </div>
 
-<pre><span id="VALexn_slot_name"><span class="keyword">val</span> exn_slot_name</span> : <code class="type">exn -> string</code></pre><div class="info ">
+<pre><span id="VALexn_slot_name"><span class="keyword">val</span> exn_slot_name</span> : <code class="type">exn -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Printexc.exn_slot_name exn</code> returns the internal name of the constructor
     used to create the exception value <code class="code">exn</code>.</p>

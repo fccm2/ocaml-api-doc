@@ -63,14 +63,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><title>Spacetime.Series</title>
 </head>
 <body>
@@ -91,13 +95,13 @@
 </div>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">path:string -> <a href="Spacetime.Series.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">path:string -&gt; <a href="Spacetime.Series.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">create ~path</code> creates a series file at <code class="code">path</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALsave_event"><span class="keyword">val</span> save_event</span> : <code class="type">?time:float -> <a href="Spacetime.Series.html#TYPEt">t</a> -> event_name:string -> unit</code></pre><div class="info ">
+<pre><span id="VALsave_event"><span class="keyword">val</span> save_event</span> : <code class="type">?time:float -&gt; <a href="Spacetime.Series.html#TYPEt">t</a> -&gt; event_name:string -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">save_event</code> writes an event, which is an arbitrary string, into the
       given series file.  This may be used for identifying particular points
@@ -106,7 +110,7 @@
 </div>
 </div>
 
-<pre><span id="VALsave_and_close"><span class="keyword">val</span> save_and_close</span> : <code class="type">?time:float -> <a href="Spacetime.Series.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALsave_and_close"><span class="keyword">val</span> save_and_close</span> : <code class="type">?time:float -&gt; <a href="Spacetime.Series.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">save_and_close series</code> writes information into <code class="code">series</code> required for
       interpreting the snapshots that <code class="code">series</code> contains and then closes the

@@ -64,14 +64,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><title>Lazy</title>
 </head>
 <body>
@@ -130,7 +134,7 @@
 
 <pre><span id="EXCEPTIONUndefined"><span class="keyword">exception</span> Undefined</span></pre>
 
-<pre><span id="VALforce"><span class="keyword">val</span> force</span> : <code class="type">'a <a href="Lazy.html#TYPEt">t</a> -> 'a</code></pre><div class="info ">
+<pre><span id="VALforce"><span class="keyword">val</span> force</span> : <code class="type">'a <a href="Lazy.html#TYPEt">t</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">force x</code> forces the suspension <code class="code">x</code> and returns its result.
    If <code class="code">x</code> has already been forced, <code class="code">Lazy.force x</code> returns the
@@ -143,7 +147,7 @@
 </ul>
 </div>
 
-<pre><span id="VALforce_val"><span class="keyword">val</span> force_val</span> : <code class="type">'a <a href="Lazy.html#TYPEt">t</a> -> 'a</code></pre><div class="info ">
+<pre><span id="VALforce_val"><span class="keyword">val</span> force_val</span> : <code class="type">'a <a href="Lazy.html#TYPEt">t</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">force_val x</code> forces the suspension <code class="code">x</code> and returns its
     result.  If <code class="code">x</code> has already been forced, <code class="code">force_val x</code>
@@ -158,7 +162,7 @@
 </ul>
 </div>
 
-<pre><span id="VALfrom_fun"><span class="keyword">val</span> from_fun</span> : <code class="type">(unit -> 'a) -> 'a <a href="Lazy.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALfrom_fun"><span class="keyword">val</span> from_fun</span> : <code class="type">(unit -&gt; 'a) -&gt; 'a <a href="Lazy.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">from_fun f</code> is the same as <code class="code">lazy (f ())</code> but slightly more efficient.</p>
 
@@ -171,7 +175,7 @@
 </ul>
 </div>
 
-<pre><span id="VALfrom_val"><span class="keyword">val</span> from_val</span> : <code class="type">'a -> 'a <a href="Lazy.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALfrom_val"><span class="keyword">val</span> from_val</span> : <code class="type">'a -&gt; 'a <a href="Lazy.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">from_val v</code> returns an already-forced suspension of <code class="code">v</code>.
     This is for special purposes only and should not be confused with
@@ -182,7 +186,7 @@
 </ul>
 </div>
 
-<pre><span id="VALis_val"><span class="keyword">val</span> is_val</span> : <code class="type">'a <a href="Lazy.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALis_val"><span class="keyword">val</span> is_val</span> : <code class="type">'a <a href="Lazy.html#TYPEt">t</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">is_val x</code> returns <code class="code">true</code> if <code class="code">x</code> has already been forced and
     did not raise an exception.</p>
@@ -192,18 +196,18 @@
 </ul>
 </div>
 
-<pre><span id="VALlazy_from_fun"><span class="keyword">val</span> lazy_from_fun</span> : <code class="type">(unit -> 'a) -> 'a <a href="Lazy.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALlazy_from_fun"><span class="keyword">val</span> lazy_from_fun</span> : <code class="type">(unit -&gt; 'a) -&gt; 'a <a href="Lazy.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span>synonym for <code class="code">from_fun</code>.</div>
+<span class="warning">Deprecated. </span>synonym for <code class="code">from_fun</code>.</div>
 </div>
 
-<pre><span id="VALlazy_from_val"><span class="keyword">val</span> lazy_from_val</span> : <code class="type">'a -> 'a <a href="Lazy.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALlazy_from_val"><span class="keyword">val</span> lazy_from_val</span> : <code class="type">'a -&gt; 'a <a href="Lazy.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span>synonym for <code class="code">from_val</code>.</div>
+<span class="warning">Deprecated. </span>synonym for <code class="code">from_val</code>.</div>
 </div>
 
-<pre><span id="VALlazy_is_val"><span class="keyword">val</span> lazy_is_val</span> : <code class="type">'a <a href="Lazy.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALlazy_is_val"><span class="keyword">val</span> lazy_is_val</span> : <code class="type">'a <a href="Lazy.html#TYPEt">t</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-deprecated">
-<span class="warning">Deprecated.</span>synonym for <code class="code">is_val</code>.</div>
+<span class="warning">Deprecated. </span>synonym for <code class="code">is_val</code>.</div>
 </div>
 </body></html>

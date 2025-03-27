@@ -64,14 +64,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><title>Marshal</title>
 </head>
 <body>
@@ -170,7 +174,7 @@
 </div>
 
 
-<pre><span id="VALto_channel"><span class="keyword">val</span> to_channel</span> : <code class="type">Stdlib.out_channel -> 'a -> <a href="Marshal.html#TYPEextern_flags">extern_flags</a> list -> unit</code></pre><div class="info ">
+<pre><span id="VALto_channel"><span class="keyword">val</span> to_channel</span> : <code class="type"><a href="Stdlib.html#TYPEout_channel">Stdlib.out_channel</a> -&gt; 'a -&gt; <a href="Marshal.html#TYPEextern_flags">extern_flags</a> list -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Marshal.to_channel chan v flags</code> writes the representation
    of <code class="code">v</code> on channel <code class="code">chan</code>. The <code class="code">flags</code> argument is a
@@ -224,7 +228,7 @@
 </div>
 </div>
 
-<pre><span id="VALto_bytes"><span class="keyword">val</span> to_bytes</span> : <code class="type">'a -> <a href="Marshal.html#TYPEextern_flags">extern_flags</a> list -> bytes</code></pre><div class="info ">
+<pre><span id="VALto_bytes"><span class="keyword">val</span> to_bytes</span> : <code class="type">'a -&gt; <a href="Marshal.html#TYPEextern_flags">extern_flags</a> list -&gt; bytes</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Marshal.to_bytes v flags</code> returns a byte sequence containing
    the representation of <code class="code">v</code>.
@@ -236,14 +240,14 @@
 </ul>
 </div>
 
-<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type">'a -> <a href="Marshal.html#TYPEextern_flags">extern_flags</a> list -> string</code></pre><div class="info ">
+<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type">'a -&gt; <a href="Marshal.html#TYPEextern_flags">extern_flags</a> list -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">to_bytes</code> but return the result as a string instead of
     a byte sequence.</p>
 </div>
 </div>
 
-<pre><span id="VALto_buffer"><span class="keyword">val</span> to_buffer</span> : <code class="type">bytes -> int -> int -> 'a -> <a href="Marshal.html#TYPEextern_flags">extern_flags</a> list -> int</code></pre><div class="info ">
+<pre><span id="VALto_buffer"><span class="keyword">val</span> to_buffer</span> : <code class="type">bytes -&gt; int -&gt; int -&gt; 'a -&gt; <a href="Marshal.html#TYPEextern_flags">extern_flags</a> list -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Marshal.to_buffer buff ofs len v flags</code> marshals the value <code class="code">v</code>,
    storing its byte representation in the sequence <code class="code">buff</code>,
@@ -255,7 +259,7 @@
 </div>
 </div>
 
-<pre><span id="VALfrom_channel"><span class="keyword">val</span> from_channel</span> : <code class="type">Stdlib.in_channel -> 'a</code></pre><div class="info ">
+<pre><span id="VALfrom_channel"><span class="keyword">val</span> from_channel</span> : <code class="type"><a href="Stdlib.html#TYPEin_channel">Stdlib.in_channel</a> -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Marshal.from_channel chan</code> reads from channel <code class="code">chan</code> the
    byte representation of a structured value, as produced by
@@ -269,7 +273,7 @@
 </div>
 </div>
 
-<pre><span id="VALfrom_bytes"><span class="keyword">val</span> from_bytes</span> : <code class="type">bytes -> int -> 'a</code></pre><div class="info ">
+<pre><span id="VALfrom_bytes"><span class="keyword">val</span> from_bytes</span> : <code class="type">bytes -&gt; int -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Marshal.from_bytes buff ofs</code> unmarshals a structured value
    like <a href="Marshal.html#VALfrom_channel"><code class="code">Marshal.from_channel</code></a> does, except that the byte
@@ -282,7 +286,7 @@
 </ul>
 </div>
 
-<pre><span id="VALfrom_string"><span class="keyword">val</span> from_string</span> : <code class="type">string -> int -> 'a</code></pre><div class="info ">
+<pre><span id="VALfrom_string"><span class="keyword">val</span> from_string</span> : <code class="type">string -&gt; int -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">from_bytes</code> but take a string as argument instead of a
     byte sequence.</p>
@@ -314,13 +318,13 @@
 </div>
 </div>
 
-<pre><span id="VALdata_size"><span class="keyword">val</span> data_size</span> : <code class="type">bytes -> int -> int</code></pre><div class="info ">
+<pre><span id="VALdata_size"><span class="keyword">val</span> data_size</span> : <code class="type">bytes -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>See <a href="Marshal.html#VALheader_size"><code class="code">Marshal.header_size</code></a>.</p>
 </div>
 </div>
 
-<pre><span id="VALtotal_size"><span class="keyword">val</span> total_size</span> : <code class="type">bytes -> int -> int</code></pre><div class="info ">
+<pre><span id="VALtotal_size"><span class="keyword">val</span> total_size</span> : <code class="type">bytes -&gt; int -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>See <a href="Marshal.html#VALheader_size"><code class="code">Marshal.header_size</code></a>.</p>
 </div>

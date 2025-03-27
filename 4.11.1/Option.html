@@ -64,14 +64,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><link title="Options" rel="Section" href="#options">
 <link title="Predicates and comparisons" rel="Section" href="#preds">
 <link title="Converting" rel="Section" href="#convert">
@@ -125,19 +129,19 @@
 </div>
 </div>
 
-<pre><span id="VALsome"><span class="keyword">val</span> some</span> : <code class="type">'a -> 'a option</code></pre><div class="info ">
+<pre><span id="VALsome"><span class="keyword">val</span> some</span> : <code class="type">'a -&gt; 'a option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">some v</code> is <code class="code">Some v</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALvalue"><span class="keyword">val</span> value</span> : <code class="type">'a option -> default:'a -> 'a</code></pre><div class="info ">
+<pre><span id="VALvalue"><span class="keyword">val</span> value</span> : <code class="type">'a option -&gt; default:'a -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">value o ~default</code> is <code class="code">v</code> if <code class="code">o</code> is <code class="code">Some v</code> and <code class="code">default</code> otherwise.</p>
 </div>
 </div>
 
-<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">'a option -> 'a</code></pre><div class="info ">
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">'a option -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">get o</code> is <code class="code">v</code> if <code class="code">o</code> is <code class="code">Some v</code> and</p>
 </div>
@@ -146,77 +150,77 @@
 </ul>
 </div>
 
-<pre><span id="VALbind"><span class="keyword">val</span> bind</span> : <code class="type">'a option -> ('a -> 'b option) -> 'b option</code></pre><div class="info ">
+<pre><span id="VALbind"><span class="keyword">val</span> bind</span> : <code class="type">'a option -&gt; ('a -&gt; 'b option) -&gt; 'b option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">bind o f</code> is <code class="code">f v</code> if <code class="code">o</code> is <code class="code">Some v</code> and <code class="code">None</code> if <code class="code">o</code> is <code class="code">None</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALjoin"><span class="keyword">val</span> join</span> : <code class="type">'a option option -> 'a option</code></pre><div class="info ">
+<pre><span id="VALjoin"><span class="keyword">val</span> join</span> : <code class="type">'a option option -&gt; 'a option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">join oo</code> is <code class="code">Some v</code> if <code class="code">oo</code> is <code class="code">Some (Some v)</code> and <code class="code">None</code> otherwise.</p>
 </div>
 </div>
 
-<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">('a -> 'b) -> 'a option -> 'b option</code></pre><div class="info ">
+<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">('a -&gt; 'b) -&gt; 'a option -&gt; 'b option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">map f o</code> is <code class="code">None</code> if <code class="code">o</code> is <code class="code">None</code> and <code class="code">Some (f v)</code> is <code class="code">o</code> is <code class="code">Some v</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">none:'a -> some:('b -> 'a) -> 'b option -> 'a</code></pre><div class="info ">
+<pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">none:'a -&gt; some:('b -&gt; 'a) -&gt; 'b option -&gt; 'a</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">fold ~none ~some o</code> is <code class="code">none</code> if <code class="code">o</code> is <code class="code">None</code> and <code class="code">some v</code> if <code class="code">o</code> is
     <code class="code">Some v</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">('a -> unit) -> 'a option -> unit</code></pre><div class="info ">
+<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">('a -&gt; unit) -&gt; 'a option -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">iter f o</code> is <code class="code">f v</code> if <code class="code">o</code> is <code class="code">Some v</code> and <code class="code">()</code> otherwise.</p>
 </div>
 </div>
 <h2 id="preds">Predicates and comparisons</h2>
-<pre><span id="VALis_none"><span class="keyword">val</span> is_none</span> : <code class="type">'a option -> bool</code></pre><div class="info ">
+<pre><span id="VALis_none"><span class="keyword">val</span> is_none</span> : <code class="type">'a option -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">is_none o</code> is <code class="code">true</code> iff <code class="code">o</code> is <code class="code">None</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALis_some"><span class="keyword">val</span> is_some</span> : <code class="type">'a option -> bool</code></pre><div class="info ">
+<pre><span id="VALis_some"><span class="keyword">val</span> is_some</span> : <code class="type">'a option -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">is_some o</code> is <code class="code">true</code> iff <code class="code">o</code> is <code class="code">Some o</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type">('a -> 'a -> bool) -> 'a option -> 'a option -> bool</code></pre><div class="info ">
+<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type">('a -&gt; 'a -&gt; bool) -&gt; 'a option -&gt; 'a option -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">equal eq o0 o1</code> is <code class="code">true</code> iff <code class="code">o0</code> and <code class="code">o1</code> are both <code class="code">None</code> or if
     they are <code class="code">Some v0</code> and <code class="code">Some v1</code> and <code class="code">eq v0 v1</code> is <code class="code">true</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">('a -> 'a -> int) -> 'a option -> 'a option -> int</code></pre><div class="info ">
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type">('a -&gt; 'a -&gt; int) -&gt; 'a option -&gt; 'a option -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">compare cmp o0 o1</code> is a total order on options using <code class="code">cmp</code> to compare
     values wrapped by <code class="code">Some _</code>. <code class="code">None</code> is smaller than <code class="code">Some _</code> values.</p>
 </div>
 </div>
 <h2 id="convert">Converting</h2>
-<pre><span id="VALto_result"><span class="keyword">val</span> to_result</span> : <code class="type">none:'e -> 'a option -> ('a, 'e) Stdlib.result</code></pre><div class="info ">
+<pre><span id="VALto_result"><span class="keyword">val</span> to_result</span> : <code class="type">none:'e -&gt; 'a option -&gt; ('a, 'e) <a href="Stdlib.html#TYPEresult">Stdlib.result</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">to_result ~none o</code> is <code class="code">Ok v</code> if <code class="code">o</code> is <code class="code">Some v</code> and <code class="code">Error none</code>
     otherwise.</p>
 </div>
 </div>
 
-<pre><span id="VALto_list"><span class="keyword">val</span> to_list</span> : <code class="type">'a option -> 'a list</code></pre><div class="info ">
+<pre><span id="VALto_list"><span class="keyword">val</span> to_list</span> : <code class="type">'a option -&gt; 'a list</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">to_list o</code> is <code class="code">[]</code> if <code class="code">o</code> is <code class="code">None</code> and <code class="code">[v]</code> if <code class="code">o</code> is <code class="code">Some v</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALto_seq"><span class="keyword">val</span> to_seq</span> : <code class="type">'a option -> 'a Stdlib.Seq.t</code></pre><div class="info ">
+<pre><span id="VALto_seq"><span class="keyword">val</span> to_seq</span> : <code class="type">'a option -&gt; 'a Stdlib.Seq.t</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">to_seq o</code> is <code class="code">o</code> as a sequence. <code class="code">None</code> is the empty sequence and
     <code class="code">Some v</code> is the singleton sequence containing <code class="code">v</code>.</p>

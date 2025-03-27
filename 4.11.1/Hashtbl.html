@@ -64,14 +64,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><link title="Generic interface" rel="Section" href="#1_Genericinterface">
 <link title="Iterators" rel="Section" href="#1_Iterators">
 <link title="Functorial interface" rel="Section" href="#1_Functorialinterface">
@@ -102,7 +106,7 @@
 </div>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?random:bool -> int -> ('a, 'b) <a href="Hashtbl.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">?random:bool -&gt; int -&gt; ('a, 'b) <a href="Hashtbl.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Hashtbl.create n</code> creates a new, empty hash table, with
    initial size <code class="code">n</code>.  For best results, <code class="code">n</code> should be on the
@@ -145,14 +149,14 @@
 </ul>
 </div>
 
-<pre><span id="VALclear"><span class="keyword">val</span> clear</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALclear"><span class="keyword">val</span> clear</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Empty a hash table. Use <code class="code">reset</code> instead of <code class="code">clear</code> to shrink the
     size of the bucket table to its initial size.</p>
 </div>
 </div>
 
-<pre><span id="VALreset"><span class="keyword">val</span> reset</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALreset"><span class="keyword">val</span> reset</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Empty a hash table and shrink the size of the bucket table
     to its initial size.</p>
@@ -162,13 +166,13 @@
 </ul>
 </div>
 
-<pre><span id="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -> ('a, 'b) <a href="Hashtbl.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -&gt; ('a, 'b) <a href="Hashtbl.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return a copy of the given hashtable.</p>
 </div>
 </div>
 
-<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -> 'a -> 'b -> unit</code></pre><div class="info ">
+<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -&gt; 'a -&gt; 'b -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Hashtbl.add tbl x y</code> adds a binding of <code class="code">x</code> to <code class="code">y</code> in table <code class="code">tbl</code>.
    Previous bindings for <code class="code">x</code> are not removed, but simply
@@ -178,14 +182,14 @@
 </div>
 </div>
 
-<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -> 'a -> 'b</code></pre><div class="info ">
+<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -&gt; 'a -&gt; 'b</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Hashtbl.find tbl x</code> returns the current binding of <code class="code">x</code> in <code class="code">tbl</code>,
    or raises <code class="code">Not_found</code> if no such binding exists.</p>
 </div>
 </div>
 
-<pre><span id="VALfind_opt"><span class="keyword">val</span> find_opt</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -> 'a -> 'b option</code></pre><div class="info ">
+<pre><span id="VALfind_opt"><span class="keyword">val</span> find_opt</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -&gt; 'a -&gt; 'b option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Hashtbl.find_opt tbl x</code> returns the current binding of <code class="code">x</code> in <code class="code">tbl</code>,
     or <code class="code">None</code> if no such binding exists.</p>
@@ -195,7 +199,7 @@
 </ul>
 </div>
 
-<pre><span id="VALfind_all"><span class="keyword">val</span> find_all</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -> 'a -> 'b list</code></pre><div class="info ">
+<pre><span id="VALfind_all"><span class="keyword">val</span> find_all</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -&gt; 'a -&gt; 'b list</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Hashtbl.find_all tbl x</code> returns the list of all data
    associated with <code class="code">x</code> in <code class="code">tbl</code>.
@@ -204,13 +208,13 @@
 </div>
 </div>
 
-<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -> 'a -> bool</code></pre><div class="info ">
+<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -&gt; 'a -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Hashtbl.mem tbl x</code> checks if <code class="code">x</code> is bound in <code class="code">tbl</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -> 'a -> unit</code></pre><div class="info ">
+<pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -&gt; 'a -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Hashtbl.remove tbl x</code> removes the current binding of <code class="code">x</code> in <code class="code">tbl</code>,
    restoring the previous binding if it exists.
@@ -218,7 +222,7 @@
 </div>
 </div>
 
-<pre><span id="VALreplace"><span class="keyword">val</span> replace</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -> 'a -> 'b -> unit</code></pre><div class="info ">
+<pre><span id="VALreplace"><span class="keyword">val</span> replace</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -&gt; 'a -&gt; 'b -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Hashtbl.replace tbl x y</code> replaces the current binding of <code class="code">x</code>
    in <code class="code">tbl</code> by a binding of <code class="code">x</code> to <code class="code">y</code>.  If <code class="code">x</code> is unbound in <code class="code">tbl</code>,
@@ -228,7 +232,7 @@
 </div>
 </div>
 
-<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">('a -> 'b -> unit) -> ('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">('a -&gt; 'b -&gt; unit) -&gt; ('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Hashtbl.iter f tbl</code> applies <code class="code">f</code> to all bindings in table <code class="code">tbl</code>.
    <code class="code">f</code> receives the key as first argument, and the associated value
@@ -250,7 +254,7 @@
 </div>
 </div>
 
-<pre><span id="VALfilter_map_inplace"><span class="keyword">val</span> filter_map_inplace</span> : <code class="type">('a -> 'b -> 'b option) -> ('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -> unit</code></pre><div class="info ">
+<pre><span id="VALfilter_map_inplace"><span class="keyword">val</span> filter_map_inplace</span> : <code class="type">('a -&gt; 'b -&gt; 'b option) -&gt; ('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Hashtbl.filter_map_inplace f tbl</code> applies <code class="code">f</code> to all bindings in
     table <code class="code">tbl</code> and update each binding depending on the result of
@@ -265,7 +269,7 @@
 </ul>
 </div>
 
-<pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">('a -> 'b -> 'c -> 'c) -> ('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -> 'c -> 'c</code></pre><div class="info ">
+<pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">('a -&gt; 'b -&gt; 'c -&gt; 'c) -&gt; ('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -&gt; 'c -&gt; 'c</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Hashtbl.fold f tbl init</code> computes
    <code class="code">(f kN dN ... (f k1 d1 init)...)</code>,
@@ -289,7 +293,7 @@
 </div>
 </div>
 
-<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Hashtbl.length tbl</code> returns the number of bindings in <code class="code">tbl</code>.
    It takes constant time.  Multiple bindings are counted once each, so
@@ -298,7 +302,7 @@
 </div>
 </div>
 
-<pre><span id="VALrandomize"><span class="keyword">val</span> randomize</span> : <code class="type">unit -> unit</code></pre><div class="info ">
+<pre><span id="VALrandomize"><span class="keyword">val</span> randomize</span> : <code class="type">unit -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>After a call to <code class="code">Hashtbl.randomize()</code>, hash tables are created in
     randomized mode by default: <a href="Hashtbl.html#VALcreate"><code class="code">Hashtbl.create</code></a> returns randomized
@@ -321,7 +325,7 @@
 </ul>
 </div>
 
-<pre><span id="VALis_randomized"><span class="keyword">val</span> is_randomized</span> : <code class="type">unit -> bool</code></pre><div class="info ">
+<pre><span id="VALis_randomized"><span class="keyword">val</span> is_randomized</span> : <code class="type">unit -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>return if the tables are currently created in randomized mode by default</p>
 </div>
@@ -391,7 +395,7 @@
 </div>
 
 
-<pre><span id="VALstats"><span class="keyword">val</span> stats</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -> <a href="Hashtbl.html#TYPEstatistics">statistics</a></code></pre><div class="info ">
+<pre><span id="VALstats"><span class="keyword">val</span> stats</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -&gt; <a href="Hashtbl.html#TYPEstatistics">statistics</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Hashtbl.stats tbl</code> returns statistics about the table <code class="code">tbl</code>:
    number of buckets, size of the biggest bucket, distribution of
@@ -402,7 +406,7 @@
 </ul>
 </div>
 <h2 id="1_Iterators">Iterators</h2>
-<pre><span id="VALto_seq"><span class="keyword">val</span> to_seq</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -> ('a * 'b) Stdlib.Seq.t</code></pre><div class="info ">
+<pre><span id="VALto_seq"><span class="keyword">val</span> to_seq</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -&gt; ('a * 'b) Stdlib.Seq.t</code></pre><div class="info ">
 <div class="info-desc">
 <p>Iterate on the whole table.  The order in which the bindings
     appear in the sequence is unspecified. However, if the table contains
@@ -417,7 +421,7 @@
 </ul>
 </div>
 
-<pre><span id="VALto_seq_keys"><span class="keyword">val</span> to_seq_keys</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -> 'a Stdlib.Seq.t</code></pre><div class="info ">
+<pre><span id="VALto_seq_keys"><span class="keyword">val</span> to_seq_keys</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -&gt; 'a Stdlib.Seq.t</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">Seq.map fst (to_seq m)</code></p>
 </div>
@@ -426,7 +430,7 @@
 </ul>
 </div>
 
-<pre><span id="VALto_seq_values"><span class="keyword">val</span> to_seq_values</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -> 'b Stdlib.Seq.t</code></pre><div class="info ">
+<pre><span id="VALto_seq_values"><span class="keyword">val</span> to_seq_values</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -&gt; 'b Stdlib.Seq.t</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">Seq.map snd (to_seq m)</code></p>
 </div>
@@ -435,7 +439,7 @@
 </ul>
 </div>
 
-<pre><span id="VALadd_seq"><span class="keyword">val</span> add_seq</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -> ('a * 'b) Stdlib.Seq.t -> unit</code></pre><div class="info ">
+<pre><span id="VALadd_seq"><span class="keyword">val</span> add_seq</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -&gt; ('a * 'b) Stdlib.Seq.t -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Add the given bindings to the table, using <a href="Hashtbl.html#VALadd"><code class="code">Hashtbl.add</code></a></p>
 </div>
@@ -444,7 +448,7 @@
 </ul>
 </div>
 
-<pre><span id="VALreplace_seq"><span class="keyword">val</span> replace_seq</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -> ('a * 'b) Stdlib.Seq.t -> unit</code></pre><div class="info ">
+<pre><span id="VALreplace_seq"><span class="keyword">val</span> replace_seq</span> : <code class="type">('a, 'b) <a href="Hashtbl.html#TYPEt">t</a> -&gt; ('a * 'b) Stdlib.Seq.t -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p>Add the given bindings to the table, using <a href="Hashtbl.html#VALreplace"><code class="code">Hashtbl.replace</code></a></p>
 </div>
@@ -453,7 +457,7 @@
 </ul>
 </div>
 
-<pre><span id="VALof_seq"><span class="keyword">val</span> of_seq</span> : <code class="type">('a * 'b) Stdlib.Seq.t -> ('a, 'b) <a href="Hashtbl.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALof_seq"><span class="keyword">val</span> of_seq</span> : <code class="type">('a * 'b) Stdlib.Seq.t -&gt; ('a, 'b) <a href="Hashtbl.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Build a table from the given bindings. The bindings are added
     in the same order they appear in the sequence, using <a href="Hashtbl.html#VALreplace_seq"><code class="code">Hashtbl.replace_seq</code></a>,
@@ -520,7 +524,7 @@
 
 </div>
 <h2 id="1_Thepolymorphichashfunctions">The polymorphic hash functions</h2>
-<pre><span id="VALhash"><span class="keyword">val</span> hash</span> : <code class="type">'a -> int</code></pre><div class="info ">
+<pre><span id="VALhash"><span class="keyword">val</span> hash</span> : <code class="type">'a -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Hashtbl.hash x</code> associates a nonnegative integer to any value of
    any type. It is guaranteed that
@@ -529,7 +533,7 @@
 </div>
 </div>
 
-<pre><span id="VALseeded_hash"><span class="keyword">val</span> seeded_hash</span> : <code class="type">int -> 'a -> int</code></pre><div class="info ">
+<pre><span id="VALseeded_hash"><span class="keyword">val</span> seeded_hash</span> : <code class="type">int -&gt; 'a -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>A variant of <a href="Hashtbl.html#VALhash"><code class="code">Hashtbl.hash</code></a> that is further parameterized by
    an integer seed.</p>
@@ -539,7 +543,7 @@
 </ul>
 </div>
 
-<pre><span id="VALhash_param"><span class="keyword">val</span> hash_param</span> : <code class="type">int -> int -> 'a -> int</code></pre><div class="info ">
+<pre><span id="VALhash_param"><span class="keyword">val</span> hash_param</span> : <code class="type">int -&gt; int -&gt; 'a -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Hashtbl.hash_param meaningful total x</code> computes a hash value for <code class="code">x</code>,
    with the same properties as for <code class="code">hash</code>. The two extra integer
@@ -561,7 +565,7 @@
 </div>
 </div>
 
-<pre><span id="VALseeded_hash_param"><span class="keyword">val</span> seeded_hash_param</span> : <code class="type">int -> int -> int -> 'a -> int</code></pre><div class="info ">
+<pre><span id="VALseeded_hash_param"><span class="keyword">val</span> seeded_hash_param</span> : <code class="type">int -&gt; int -&gt; int -&gt; 'a -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>A variant of <a href="Hashtbl.html#VALhash_param"><code class="code">Hashtbl.hash_param</code></a> that is further parameterized by
    an integer seed.  Usage:

@@ -64,14 +64,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><title>Callback</title>
 </head>
 <body>
@@ -92,7 +96,7 @@
 </div>
 <hr width="100%">
 
-<pre><span id="VALregister"><span class="keyword">val</span> register</span> : <code class="type">string -> 'a -> unit</code></pre><div class="info ">
+<pre><span id="VALregister"><span class="keyword">val</span> register</span> : <code class="type">string -&gt; 'a -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Callback.register n v</code> registers the value <code class="code">v</code> under
    the name <code class="code">n</code>. C code can later retrieve a handle to <code class="code">v</code>
@@ -100,7 +104,7 @@
 </div>
 </div>
 
-<pre><span id="VALregister_exception"><span class="keyword">val</span> register_exception</span> : <code class="type">string -> exn -> unit</code></pre><div class="info ">
+<pre><span id="VALregister_exception"><span class="keyword">val</span> register_exception</span> : <code class="type">string -&gt; exn -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Callback.register_exception n exn</code> registers the
    exception contained in the exception value <code class="code">exn</code>

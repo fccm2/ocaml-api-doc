@@ -64,14 +64,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><title>Genlex</title>
 </head>
 <body>
@@ -170,7 +174,7 @@
 </div>
 
 
-<pre><span id="VALmake_lexer"><span class="keyword">val</span> make_lexer</span> : <code class="type">string list -> char Stdlib.Stream.t -> <a href="Genlex.html#TYPEtoken">token</a> Stdlib.Stream.t</code></pre><div class="info ">
+<pre><span id="VALmake_lexer"><span class="keyword">val</span> make_lexer</span> : <code class="type">string list -&gt; char Stdlib.Stream.t -&gt; <a href="Genlex.html#TYPEtoken">token</a> Stdlib.Stream.t</code></pre><div class="info ">
 <div class="info-desc">
 <p>Construct the lexer function. The first argument is the list of
    keywords. An identifier <code class="code">s</code> is returned as <code class="code">Kwd s</code> if <code class="code">s</code>

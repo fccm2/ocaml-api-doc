@@ -63,14 +63,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><title>Ephemeron.GenHashTable</title>
 </head>
 <body>
@@ -131,13 +135,13 @@
 </div>
 
 
-<pre><span id="VALhash"><span class="keyword">val</span> hash</span> : <code class="type">int -> t -> int</code></pre><div class="info ">
+<pre><span id="VALhash"><span class="keyword">val</span> hash</span> : <code class="type">int -&gt; t -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>same as <code class="code">Hashtbl.SeededHashedType</code></p>
 </div>
 </div>
 
-<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type">'a container -><br>       t -> <a href="Ephemeron.GenHashTable.html#TYPEequal">Ephemeron.GenHashTable.equal</a></code></pre><div class="info ">
+<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type">'a container -&gt;<br>       t -&gt; <a href="Ephemeron.GenHashTable.html#TYPEequal">Ephemeron.GenHashTable.equal</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>equality predicate used to compare a key with the one in a
         container. Can return <code class="code">EDead</code> if the keys in the container are
@@ -145,32 +149,32 @@
 </div>
 </div>
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">t -><br>       'a -> 'a container</code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">t -&gt;<br>       'a -&gt; 'a container</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">create key data</code> creates a container from
         some initials keys and one data</p>
 </div>
 </div>
 
-<pre><span id="VALget_key"><span class="keyword">val</span> get_key</span> : <code class="type">'a container -><br>       t option</code></pre><div class="info ">
+<pre><span id="VALget_key"><span class="keyword">val</span> get_key</span> : <code class="type">'a container -&gt;<br>       t option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">get_key cont</code> returns the keys if they are all alive</p>
 </div>
 </div>
 
-<pre><span id="VALget_data"><span class="keyword">val</span> get_data</span> : <code class="type">'a container -> 'a option</code></pre><div class="info ">
+<pre><span id="VALget_data"><span class="keyword">val</span> get_data</span> : <code class="type">'a container -&gt; 'a option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">get_data cont</code> returns the data if it is alive</p>
 </div>
 </div>
 
-<pre><span id="VALset_key_data"><span class="keyword">val</span> set_key_data</span> : <code class="type">'a container -><br>       t -> 'a -> unit</code></pre><div class="info ">
+<pre><span id="VALset_key_data"><span class="keyword">val</span> set_key_data</span> : <code class="type">'a container -&gt;<br>       t -&gt; 'a -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">set_key_data cont</code> modifies the key and data</p>
 </div>
 </div>
 
-<pre><span id="VALcheck_key"><span class="keyword">val</span> check_key</span> : <code class="type">'a container -> bool</code></pre><div class="info ">
+<pre><span id="VALcheck_key"><span class="keyword">val</span> check_key</span> : <code class="type">'a container -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">check_key cont</code> checks if all the keys contained in the data
         are alive</p>

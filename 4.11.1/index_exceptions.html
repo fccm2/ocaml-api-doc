@@ -60,14 +60,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><title>Index of exceptions</title>
 </head>
 <body>
@@ -75,6 +79,13 @@
 &nbsp;</div>
 <h1>Index of exceptions</h1>
 <table>
+<tr><td align="left"><div>A</div></td></tr>
+<tr><td><a href="Stdlib.html#EXCEPTIONAssert_failure">Assert_failure</a> [<a href="Stdlib.html">Stdlib</a>]</td>
+<td><div class="info">
+<p>Exception raised when an assertion fails.</p>
+
+</div>
+</td></tr>
 <tr><td align="left"><div>B</div></td></tr>
 <tr><td><a href="Arg.html#EXCEPTIONBad">Bad</a> [<a href="Arg.html">Arg</a>]</td>
 <td><div class="info">
@@ -90,6 +101,14 @@
 
 </div>
 </td></tr>
+<tr><td align="left"><div>D</div></td></tr>
+<tr><td><a href="Stdlib.html#EXCEPTIONDivision_by_zero">Division_by_zero</a> [<a href="Stdlib.html">Stdlib</a>]</td>
+<td><div class="info">
+<p>Exception raised by integer division and remainder operations when
+   their second argument is zero.</p>
+
+</div>
+</td></tr>
 <tr><td align="left"><div>E</div></td></tr>
 <tr><td><a href="Stack.html#EXCEPTIONEmpty">Empty</a> [<a href="Stack.html">Stack</a>]</td>
 <td><div class="info">
@@ -100,6 +119,13 @@
 <tr><td><a href="Queue.html#EXCEPTIONEmpty">Empty</a> [<a href="Queue.html">Queue</a>]</td>
 <td><div class="info">
 <p>Raised when <a href="Queue.html#VALtake"><code class="code">Queue.take</code></a> or <a href="Queue.html#VALpeek"><code class="code">Queue.peek</code></a> is applied to an empty queue.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Stdlib.html#EXCEPTIONEnd_of_file">End_of_file</a> [<a href="Stdlib.html">Stdlib</a>]</td>
+<td><div class="info">
+<p>Exception raised by input functions to signal that the end of file
+   has been reached.</p>
 
 </div>
 </td></tr>
@@ -119,11 +145,24 @@
 
 </div>
 </td></tr>
+<tr><td><a href="Stdlib.html#EXCEPTIONExit">Exit</a> [<a href="Stdlib.html">Stdlib</a>]</td>
+<td><div class="info">
+<p>The <code class="code">Exit</code> exception is not raised by any library function.</p>
+
+</div>
+</td></tr>
 <tr><td align="left"><div>F</div></td></tr>
 <tr><td><a href="Stream.html#EXCEPTIONFailure">Failure</a> [<a href="Stream.html">Stream</a>]</td>
 <td><div class="info">
 <p>Raised by parsers when none of the first components of the stream
    patterns is accepted.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Stdlib.html#EXCEPTIONFailure">Failure</a> [<a href="Stdlib.html">Stdlib</a>]</td>
+<td><div class="info">
+<p>Exception raised by library functions to signal that they are
+   undefined on the given arguments.</p>
 
 </div>
 </td></tr>
@@ -138,6 +177,38 @@
 <tr><td><a href="Arg.html#EXCEPTIONHelp">Help</a> [<a href="Arg.html">Arg</a>]</td>
 <td><div class="info">
 <p>Raised by <code class="code">Arg.parse_argv</code> when the user asks for help.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>I</div></td></tr>
+<tr><td><a href="Stdlib.html#EXCEPTIONInvalid_argument">Invalid_argument</a> [<a href="Stdlib.html">Stdlib</a>]</td>
+<td><div class="info">
+<p>Exception raised by library functions to signal that the given
+   arguments do not make sense.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>M</div></td></tr>
+<tr><td><a href="Stdlib.html#EXCEPTIONMatch_failure">Match_failure</a> [<a href="Stdlib.html">Stdlib</a>]</td>
+<td><div class="info">
+<p>Exception raised when none of the cases of a pattern-matching
+   apply.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>N</div></td></tr>
+<tr><td><a href="Stdlib.html#EXCEPTIONNot_found">Not_found</a> [<a href="Stdlib.html">Stdlib</a>]</td>
+<td><div class="info">
+<p>Exception raised by search functions when the desired object could
+   not be found.</p>
+
+</div>
+</td></tr>
+<tr><td align="left"><div>O</div></td></tr>
+<tr><td><a href="Stdlib.html#EXCEPTIONOut_of_memory">Out_of_memory</a> [<a href="Stdlib.html">Stdlib</a>]</td>
+<td><div class="info">
+<p>Exception raised by the garbage collector when there is
+   insufficient memory to complete the computation.</p>
 
 </div>
 </td></tr>
@@ -157,9 +228,43 @@
 
 </div>
 </td></tr>
+<tr><td><a href="Stdlib.html#EXCEPTIONStack_overflow">Stack_overflow</a> [<a href="Stdlib.html">Stdlib</a>]</td>
+<td><div class="info">
+<p>Exception raised by the bytecode interpreter when the evaluation
+   stack reaches its maximal size.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Stdlib.html#EXCEPTIONSys_blocked_io">Sys_blocked_io</a> [<a href="Stdlib.html">Stdlib</a>]</td>
+<td><div class="info">
+<p>A special case of Sys_error raised when no I/O is possible on a
+   non-blocking I/O channel.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="Stdlib.html#EXCEPTIONSys_error">Sys_error</a> [<a href="Stdlib.html">Stdlib</a>]</td>
+<td><div class="info">
+<p>Exception raised by the input/output functions to report an
+   operating system error.</p>
+
+</div>
+</td></tr>
 <tr><td align="left"><div>U</div></td></tr>
 <tr><td><a href="Lazy.html#EXCEPTIONUndefined">Undefined</a> [<a href="Lazy.html">Lazy</a>]</td>
 <td></td></tr>
+<tr><td><a href="Stdlib.html#EXCEPTIONUndefined_recursive_module">Undefined_recursive_module</a> [<a href="Stdlib.html">Stdlib</a>]</td>
+<td><div class="info">
+<p>Exception raised when an ill-founded recursive module definition
+   is evaluated.</p>
+
+</div>
+</td></tr>
+<tr><td><a href="UnixLabels.html#EXCEPTIONUnix_error">Unix_error</a> [<a href="UnixLabels.html">UnixLabels</a>]</td>
+<td><div class="info">
+<p>Raised by the system calls below when an error is encountered.</p>
+
+</div>
+</td></tr>
 <tr><td><a href="Unix.html#EXCEPTIONUnix_error">Unix_error</a> [<a href="Unix.html">Unix</a>]</td>
 <td><div class="info">
 <p>Raised by the system calls below when an error is encountered.</p>

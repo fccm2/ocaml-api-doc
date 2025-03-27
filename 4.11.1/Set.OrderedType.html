@@ -63,14 +63,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><title>Set.OrderedType</title>
 </head>
 <body>
@@ -94,7 +98,7 @@
 </div>
 
 
-<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Set.OrderedType.html#TYPEt">t</a> -> <a href="Set.OrderedType.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Set.OrderedType.html#TYPEt">t</a> -&gt; <a href="Set.OrderedType.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>A total ordering function over the set elements.
           This is a two-argument function <code class="code">f</code> such that
@@ -102,7 +106,7 @@
           <code class="code">f e1 e2</code> is strictly negative if <code class="code">e1</code> is smaller than <code class="code">e2</code>,
           and <code class="code">f e1 e2</code> is strictly positive if <code class="code">e1</code> is greater than <code class="code">e2</code>.
           Example: a suitable ordering function is the generic structural
-          comparison function <code class="code">Stdlib.compare</code>.</p>
+          comparison function <a href="Stdlib.html#VALcompare"><code class="code">Stdlib.compare</code></a>.</p>
 </div>
 </div>
 </body></html>

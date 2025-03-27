@@ -64,14 +64,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><link title="Element kinds" rel="Section" href="#1_Elementkinds">
 <link title="Array layouts" rel="Section" href="#1_Arraylayouts">
 <link title="Generic arrays (of arbitrarily many dimensions)" rel="Section" href="#1_Genericarraysofarbitrarilymanydimensions">
@@ -136,11 +140,11 @@
 
 <p>Bigarrays support all the OCaml ad-hoc polymorphic operations:</p>
 <ul>
-<li>comparisons (<code class="code">=</code>, <code class="code">&lt;&gt;</code>, <code class="code">&lt;=</code>, etc, as well as <code class="code">Stdlib.compare</code>);</li>
+<li>comparisons (<code class="code">=</code>, <code class="code">&lt;&gt;</code>, <code class="code">&lt;=</code>, etc, as well as <a href="Stdlib.html#VALcompare"><code class="code">Stdlib.compare</code></a>);</li>
 <li>hashing (module <code class="code">Hash</code>);</li>
 <li>and structured input-output (the functions from the
-     <a href="Marshal.html"><code class="code">Marshal</code></a> module, as well as <code class="code">Stdlib.output_value</code>
-     and <code class="code">Stdlib.input_value</code>).</li>
+     <a href="Marshal.html"><code class="code">Marshal</code></a> module, as well as <a href="Stdlib.html#VALoutput_value"><code class="code">Stdlib.output_value</code></a>
+     and <a href="Stdlib.html#VALinput_value"><code class="code">Stdlib.input_value</code></a>).</li>
 </ul>
 </div>
 </div>
@@ -520,7 +524,7 @@
 </div>
 </div>
 
-<pre><span id="VALkind_size_in_bytes"><span class="keyword">val</span> kind_size_in_bytes</span> : <code class="type">('a, 'b) <a href="Bigarray.html#TYPEkind">kind</a> -> int</code></pre><div class="info ">
+<pre><span id="VALkind_size_in_bytes"><span class="keyword">val</span> kind_size_in_bytes</span> : <code class="type">('a, 'b) <a href="Bigarray.html#TYPEkind">kind</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">kind_size_in_bytes k</code> is the number of bytes used to store
    an element of type <code class="code">k</code>.</p>
@@ -628,7 +632,7 @@
 
 </div>
 <h2 id="1_CoercionsbetweengenericBigarraysandfixeddimensionBigarrays">Coercions between generic Bigarrays and fixed-dimension Bigarrays</h2>
-<pre><span id="VALgenarray_of_array0"><span class="keyword">val</span> genarray_of_array0</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">Array0.t</a> -> ('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a></code></pre><div class="info ">
+<pre><span id="VALgenarray_of_array0"><span class="keyword">val</span> genarray_of_array0</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">Array0.t</a> -&gt; ('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the generic Bigarray corresponding to the given zero-dimensional
    Bigarray.</p>
@@ -638,28 +642,28 @@
 </ul>
 </div>
 
-<pre><span id="VALgenarray_of_array1"><span class="keyword">val</span> genarray_of_array1</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Array1.html#TYPEt">Array1.t</a> -> ('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a></code></pre><div class="info ">
+<pre><span id="VALgenarray_of_array1"><span class="keyword">val</span> genarray_of_array1</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Array1.html#TYPEt">Array1.t</a> -&gt; ('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the generic Bigarray corresponding to the given one-dimensional
    Bigarray.</p>
 </div>
 </div>
 
-<pre><span id="VALgenarray_of_array2"><span class="keyword">val</span> genarray_of_array2</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Array2.html#TYPEt">Array2.t</a> -> ('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a></code></pre><div class="info ">
+<pre><span id="VALgenarray_of_array2"><span class="keyword">val</span> genarray_of_array2</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Array2.html#TYPEt">Array2.t</a> -&gt; ('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the generic Bigarray corresponding to the given two-dimensional
    Bigarray.</p>
 </div>
 </div>
 
-<pre><span id="VALgenarray_of_array3"><span class="keyword">val</span> genarray_of_array3</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Array3.html#TYPEt">Array3.t</a> -> ('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a></code></pre><div class="info ">
+<pre><span id="VALgenarray_of_array3"><span class="keyword">val</span> genarray_of_array3</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Array3.html#TYPEt">Array3.t</a> -&gt; ('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the generic Bigarray corresponding to the given three-dimensional
    Bigarray.</p>
 </div>
 </div>
 
-<pre><span id="VALarray0_of_genarray"><span class="keyword">val</span> array0_of_genarray</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a> -> ('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">Array0.t</a></code></pre><div class="info ">
+<pre><span id="VALarray0_of_genarray"><span class="keyword">val</span> array0_of_genarray</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a> -&gt; ('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">Array0.t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the zero-dimensional Bigarray corresponding to the given
    generic Bigarray.</p>
@@ -671,7 +675,7 @@
 </ul>
 </div>
 
-<pre><span id="VALarray1_of_genarray"><span class="keyword">val</span> array1_of_genarray</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a> -> ('a, 'b, 'c) <a href="Bigarray.Array1.html#TYPEt">Array1.t</a></code></pre><div class="info ">
+<pre><span id="VALarray1_of_genarray"><span class="keyword">val</span> array1_of_genarray</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a> -&gt; ('a, 'b, 'c) <a href="Bigarray.Array1.html#TYPEt">Array1.t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the one-dimensional Bigarray corresponding to the given
    generic Bigarray.</p>
@@ -682,7 +686,7 @@
 </ul>
 </div>
 
-<pre><span id="VALarray2_of_genarray"><span class="keyword">val</span> array2_of_genarray</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a> -> ('a, 'b, 'c) <a href="Bigarray.Array2.html#TYPEt">Array2.t</a></code></pre><div class="info ">
+<pre><span id="VALarray2_of_genarray"><span class="keyword">val</span> array2_of_genarray</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a> -&gt; ('a, 'b, 'c) <a href="Bigarray.Array2.html#TYPEt">Array2.t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the two-dimensional Bigarray corresponding to the given
    generic Bigarray.</p>
@@ -693,7 +697,7 @@
 </ul>
 </div>
 
-<pre><span id="VALarray3_of_genarray"><span class="keyword">val</span> array3_of_genarray</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a> -> ('a, 'b, 'c) <a href="Bigarray.Array3.html#TYPEt">Array3.t</a></code></pre><div class="info ">
+<pre><span id="VALarray3_of_genarray"><span class="keyword">val</span> array3_of_genarray</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a> -&gt; ('a, 'b, 'c) <a href="Bigarray.Array3.html#TYPEt">Array3.t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the three-dimensional Bigarray corresponding to the given
    generic Bigarray.</p>
@@ -704,7 +708,7 @@
 </ul>
 </div>
 <h2 id="1_ReshapingBigarrays">Re-shaping Bigarrays</h2>
-<pre><span id="VALreshape"><span class="keyword">val</span> reshape</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a> -><br>       int array -> ('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a></code></pre><div class="info ">
+<pre><span id="VALreshape"><span class="keyword">val</span> reshape</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a> -&gt;<br>       int array -&gt; ('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">reshape b [|d1;...;dN|]</code> converts the Bigarray <code class="code">b</code> to a
    <code class="code">N</code>-dimensional array of dimensions <code class="code">d1</code>...<code class="code">dN</code>.  The returned
@@ -723,7 +727,7 @@
 </div>
 </div>
 
-<pre><span id="VALreshape_0"><span class="keyword">val</span> reshape_0</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a> -> ('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">Array0.t</a></code></pre><div class="info ">
+<pre><span id="VALreshape_0"><span class="keyword">val</span> reshape_0</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a> -&gt; ('a, 'b, 'c) <a href="Bigarray.Array0.html#TYPEt">Array0.t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Specialized version of <a href="Bigarray.html#VALreshape"><code class="code">Bigarray.reshape</code></a> for reshaping to
    zero-dimensional arrays.</p>
@@ -733,21 +737,21 @@
 </ul>
 </div>
 
-<pre><span id="VALreshape_1"><span class="keyword">val</span> reshape_1</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a> -> int -> ('a, 'b, 'c) <a href="Bigarray.Array1.html#TYPEt">Array1.t</a></code></pre><div class="info ">
+<pre><span id="VALreshape_1"><span class="keyword">val</span> reshape_1</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a> -&gt; int -&gt; ('a, 'b, 'c) <a href="Bigarray.Array1.html#TYPEt">Array1.t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Specialized version of <a href="Bigarray.html#VALreshape"><code class="code">Bigarray.reshape</code></a> for reshaping to
    one-dimensional arrays.</p>
 </div>
 </div>
 
-<pre><span id="VALreshape_2"><span class="keyword">val</span> reshape_2</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a> -><br>       int -> int -> ('a, 'b, 'c) <a href="Bigarray.Array2.html#TYPEt">Array2.t</a></code></pre><div class="info ">
+<pre><span id="VALreshape_2"><span class="keyword">val</span> reshape_2</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a> -&gt;<br>       int -&gt; int -&gt; ('a, 'b, 'c) <a href="Bigarray.Array2.html#TYPEt">Array2.t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Specialized version of <a href="Bigarray.html#VALreshape"><code class="code">Bigarray.reshape</code></a> for reshaping to
    two-dimensional arrays.</p>
 </div>
 </div>
 
-<pre><span id="VALreshape_3"><span class="keyword">val</span> reshape_3</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a> -><br>       int -> int -> int -> ('a, 'b, 'c) <a href="Bigarray.Array3.html#TYPEt">Array3.t</a></code></pre><div class="info ">
+<pre><span id="VALreshape_3"><span class="keyword">val</span> reshape_3</span> : <code class="type">('a, 'b, 'c) <a href="Bigarray.Genarray.html#TYPEt">Genarray.t</a> -&gt;<br>       int -&gt; int -&gt; int -&gt; ('a, 'b, 'c) <a href="Bigarray.Array3.html#TYPEt">Array3.t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Specialized version of <a href="Bigarray.html#VALreshape"><code class="code">Bigarray.reshape</code></a> for reshaping to
    three-dimensional arrays.</p>

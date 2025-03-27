@@ -64,14 +64,18 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><title>Float</title>
 </head>
 <body>
@@ -128,37 +132,37 @@
 </ul>
 </div>
 
-<pre><span id="VALneg"><span class="keyword">val</span> neg</span> : <code class="type">float -> float</code></pre><div class="info ">
+<pre><span id="VALneg"><span class="keyword">val</span> neg</span> : <code class="type">float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Unary negation.</p>
 </div>
 </div>
 
-<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type">float -> float -> float</code></pre><div class="info ">
+<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type">float -&gt; float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Floating-point addition.</p>
 </div>
 </div>
 
-<pre><span id="VALsub"><span class="keyword">val</span> sub</span> : <code class="type">float -> float -> float</code></pre><div class="info ">
+<pre><span id="VALsub"><span class="keyword">val</span> sub</span> : <code class="type">float -&gt; float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Floating-point subtraction.</p>
 </div>
 </div>
 
-<pre><span id="VALmul"><span class="keyword">val</span> mul</span> : <code class="type">float -> float -> float</code></pre><div class="info ">
+<pre><span id="VALmul"><span class="keyword">val</span> mul</span> : <code class="type">float -&gt; float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Floating-point multiplication.</p>
 </div>
 </div>
 
-<pre><span id="VALdiv"><span class="keyword">val</span> div</span> : <code class="type">float -> float -> float</code></pre><div class="info ">
+<pre><span id="VALdiv"><span class="keyword">val</span> div</span> : <code class="type">float -&gt; float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Floating-point division.</p>
 </div>
 </div>
 
-<pre><span id="VALfma"><span class="keyword">val</span> fma</span> : <code class="type">float -> float -> float -> float</code></pre><div class="info ">
+<pre><span id="VALfma"><span class="keyword">val</span> fma</span> : <code class="type">float -&gt; float -&gt; float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">fma x y z</code> returns <code class="code">x * y + z</code>, with a best effort for computing
    this expression with a single rounding, using either hardware
@@ -172,7 +176,7 @@
 </ul>
 </div>
 
-<pre><span id="VALrem"><span class="keyword">val</span> rem</span> : <code class="type">float -> float -> float</code></pre><div class="info ">
+<pre><span id="VALrem"><span class="keyword">val</span> rem</span> : <code class="type">float -&gt; float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">rem a b</code> returns the remainder of <code class="code">a</code> with respect to <code class="code">b</code>.  The returned
     value is <code class="code">a -. n *. b</code>, where <code class="code">n</code> is the quotient <code class="code">a /. b</code> rounded towards
@@ -180,7 +184,7 @@
 </div>
 </div>
 
-<pre><span id="VALsucc"><span class="keyword">val</span> succ</span> : <code class="type">float -> float</code></pre><div class="info ">
+<pre><span id="VALsucc"><span class="keyword">val</span> succ</span> : <code class="type">float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">succ x</code> returns the floating point number right after <code class="code">x</code> i.e.,
    the smallest floating-point number greater than <code class="code">x</code>.  See also
@@ -191,7 +195,7 @@
 </ul>
 </div>
 
-<pre><span id="VALpred"><span class="keyword">val</span> pred</span> : <code class="type">float -> float</code></pre><div class="info ">
+<pre><span id="VALpred"><span class="keyword">val</span> pred</span> : <code class="type">float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">pred x</code> returns the floating-point number right before <code class="code">x</code> i.e.,
    the greatest floating-point number smaller than <code class="code">x</code>.  See also
@@ -202,7 +206,7 @@
 </ul>
 </div>
 
-<pre><span id="VALabs"><span class="keyword">val</span> abs</span> : <code class="type">float -> float</code></pre><div class="info ">
+<pre><span id="VALabs"><span class="keyword">val</span> abs</span> : <code class="type">float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">abs f</code> returns the absolute value of <code class="code">f</code>.</p>
 </div>
@@ -256,7 +260,7 @@
 </div>
 </div>
 
-<pre><span id="VALis_finite"><span class="keyword">val</span> is_finite</span> : <code class="type">float -> bool</code></pre><div class="info ">
+<pre><span id="VALis_finite"><span class="keyword">val</span> is_finite</span> : <code class="type">float -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">is_finite x</code> is <code class="code">true</code> iff <code class="code">x</code> is finite i.e., not infinite and
    not <a href="Float.html#VALnan"><code class="code">Float.nan</code></a>.</p>
@@ -266,7 +270,7 @@
 </ul>
 </div>
 
-<pre><span id="VALis_infinite"><span class="keyword">val</span> is_infinite</span> : <code class="type">float -> bool</code></pre><div class="info ">
+<pre><span id="VALis_infinite"><span class="keyword">val</span> is_infinite</span> : <code class="type">float -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">is_infinite x</code> is <code class="code">true</code> iff <code class="code">x</code> is <a href="Float.html#VALinfinity"><code class="code">Float.infinity</code></a> or <a href="Float.html#VALneg_infinity"><code class="code">Float.neg_infinity</code></a>.</p>
 </div>
@@ -275,7 +279,7 @@
 </ul>
 </div>
 
-<pre><span id="VALis_nan"><span class="keyword">val</span> is_nan</span> : <code class="type">float -> bool</code></pre><div class="info ">
+<pre><span id="VALis_nan"><span class="keyword">val</span> is_nan</span> : <code class="type">float -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">is_nan x</code> is <code class="code">true</code> iff <code class="code">x</code> is not a number (see <a href="Float.html#VALnan"><code class="code">Float.nan</code></a>).</p>
 </div>
@@ -284,7 +288,7 @@
 </ul>
 </div>
 
-<pre><span id="VALis_integer"><span class="keyword">val</span> is_integer</span> : <code class="type">float -> bool</code></pre><div class="info ">
+<pre><span id="VALis_integer"><span class="keyword">val</span> is_integer</span> : <code class="type">float -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">is_integer x</code> is <code class="code">true</code> iff <code class="code">x</code> is an integer.</p>
 </div>
@@ -293,13 +297,13 @@
 </ul>
 </div>
 
-<pre><span id="VALof_int"><span class="keyword">val</span> of_int</span> : <code class="type">int -> float</code></pre><div class="info ">
+<pre><span id="VALof_int"><span class="keyword">val</span> of_int</span> : <code class="type">int -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Convert an integer to floating-point.</p>
 </div>
 </div>
 
-<pre><span id="VALto_int"><span class="keyword">val</span> to_int</span> : <code class="type">float -> int</code></pre><div class="info ">
+<pre><span id="VALto_int"><span class="keyword">val</span> to_int</span> : <code class="type">float -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>Truncate the given floating-point number to an integer.
     The result is unspecified if the argument is <code class="code">nan</code> or falls outside the
@@ -307,7 +311,7 @@
 </div>
 </div>
 
-<pre><span id="VALof_string"><span class="keyword">val</span> of_string</span> : <code class="type">string -> float</code></pre><div class="info ">
+<pre><span id="VALof_string"><span class="keyword">val</span> of_string</span> : <code class="type">string -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Convert the given string to a float.  The string is read in decimal
     (by default) or in hexadecimal (marked by <code class="code">0x</code> or <code class="code">0X</code>).
@@ -329,19 +333,19 @@
 </ul>
 </div>
 
-<pre><span id="VALof_string_opt"><span class="keyword">val</span> of_string_opt</span> : <code class="type">string -> float option</code></pre><div class="info ">
+<pre><span id="VALof_string_opt"><span class="keyword">val</span> of_string_opt</span> : <code class="type">string -&gt; float option</code></pre><div class="info ">
 <div class="info-desc">
 <p>Same as <code class="code">of_string</code>, but returns <code class="code">None</code> instead of raising.</p>
 </div>
 </div>
 
-<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type">float -> string</code></pre><div class="info ">
+<pre><span id="VALto_string"><span class="keyword">val</span> to_string</span> : <code class="type">float -&gt; string</code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the string representation of a floating-point number.</p>
 </div>
 </div>
 
-<pre><span id="TYPEfpclass"><span class="keyword">type</span> <code class="type"></code>fpclass</span> = <code class="type">Stdlib.fpclass</code> = </pre><table class="typetable">
+<pre><span id="TYPEfpclass"><span class="keyword">type</span> <code class="type"></code>fpclass</span> = <code class="type"><a href="Stdlib.html#TYPEfpclass">Stdlib.fpclass</a></code> = </pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -411,97 +415,97 @@
 </div>
 
 
-<pre><span id="VALclassify_float"><span class="keyword">val</span> classify_float</span> : <code class="type">float -> <a href="Float.html#TYPEfpclass">fpclass</a></code></pre><div class="info ">
+<pre><span id="VALclassify_float"><span class="keyword">val</span> classify_float</span> : <code class="type">float -&gt; <a href="Float.html#TYPEfpclass">fpclass</a></code></pre><div class="info ">
 <div class="info-desc">
 <p>Return the class of the given floating-point number:
     normal, subnormal, zero, infinite, or not a number.</p>
 </div>
 </div>
 
-<pre><span id="VALpow"><span class="keyword">val</span> pow</span> : <code class="type">float -> float -> float</code></pre><div class="info ">
+<pre><span id="VALpow"><span class="keyword">val</span> pow</span> : <code class="type">float -&gt; float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Exponentiation.</p>
 </div>
 </div>
 
-<pre><span id="VALsqrt"><span class="keyword">val</span> sqrt</span> : <code class="type">float -> float</code></pre><div class="info ">
+<pre><span id="VALsqrt"><span class="keyword">val</span> sqrt</span> : <code class="type">float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Square root.</p>
 </div>
 </div>
 
-<pre><span id="VALexp"><span class="keyword">val</span> exp</span> : <code class="type">float -> float</code></pre><div class="info ">
+<pre><span id="VALexp"><span class="keyword">val</span> exp</span> : <code class="type">float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Exponential.</p>
 </div>
 </div>
 
-<pre><span id="VALlog"><span class="keyword">val</span> log</span> : <code class="type">float -> float</code></pre><div class="info ">
+<pre><span id="VALlog"><span class="keyword">val</span> log</span> : <code class="type">float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Natural logarithm.</p>
 </div>
 </div>
 
-<pre><span id="VALlog10"><span class="keyword">val</span> log10</span> : <code class="type">float -> float</code></pre><div class="info ">
+<pre><span id="VALlog10"><span class="keyword">val</span> log10</span> : <code class="type">float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Base 10 logarithm.</p>
 </div>
 </div>
 
-<pre><span id="VALexpm1"><span class="keyword">val</span> expm1</span> : <code class="type">float -> float</code></pre><div class="info ">
+<pre><span id="VALexpm1"><span class="keyword">val</span> expm1</span> : <code class="type">float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">expm1 x</code> computes <code class="code">exp x -. 1.0</code>, giving numerically-accurate results
     even if <code class="code">x</code> is close to <code class="code">0.0</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALlog1p"><span class="keyword">val</span> log1p</span> : <code class="type">float -> float</code></pre><div class="info ">
+<pre><span id="VALlog1p"><span class="keyword">val</span> log1p</span> : <code class="type">float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">log1p x</code> computes <code class="code">log(1.0 +. x)</code> (natural logarithm),
     giving numerically-accurate results even if <code class="code">x</code> is close to <code class="code">0.0</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALcos"><span class="keyword">val</span> cos</span> : <code class="type">float -> float</code></pre><div class="info ">
+<pre><span id="VALcos"><span class="keyword">val</span> cos</span> : <code class="type">float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Cosine.  Argument is in radians.</p>
 </div>
 </div>
 
-<pre><span id="VALsin"><span class="keyword">val</span> sin</span> : <code class="type">float -> float</code></pre><div class="info ">
+<pre><span id="VALsin"><span class="keyword">val</span> sin</span> : <code class="type">float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Sine.  Argument is in radians.</p>
 </div>
 </div>
 
-<pre><span id="VALtan"><span class="keyword">val</span> tan</span> : <code class="type">float -> float</code></pre><div class="info ">
+<pre><span id="VALtan"><span class="keyword">val</span> tan</span> : <code class="type">float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Tangent.  Argument is in radians.</p>
 </div>
 </div>
 
-<pre><span id="VALacos"><span class="keyword">val</span> acos</span> : <code class="type">float -> float</code></pre><div class="info ">
+<pre><span id="VALacos"><span class="keyword">val</span> acos</span> : <code class="type">float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Arc cosine.  The argument must fall within the range <code class="code">[-1.0, 1.0]</code>.
     Result is in radians and is between <code class="code">0.0</code> and <code class="code">pi</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALasin"><span class="keyword">val</span> asin</span> : <code class="type">float -> float</code></pre><div class="info ">
+<pre><span id="VALasin"><span class="keyword">val</span> asin</span> : <code class="type">float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Arc sine.  The argument must fall within the range <code class="code">[-1.0, 1.0]</code>.
     Result is in radians and is between <code class="code">-pi/2</code> and <code class="code">pi/2</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALatan"><span class="keyword">val</span> atan</span> : <code class="type">float -> float</code></pre><div class="info ">
+<pre><span id="VALatan"><span class="keyword">val</span> atan</span> : <code class="type">float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Arc tangent.
     Result is in radians and is between <code class="code">-pi/2</code> and <code class="code">pi/2</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALatan2"><span class="keyword">val</span> atan2</span> : <code class="type">float -> float -> float</code></pre><div class="info ">
+<pre><span id="VALatan2"><span class="keyword">val</span> atan2</span> : <code class="type">float -&gt; float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">atan2 y x</code> returns the arc tangent of <code class="code">y /. x</code>.  The signs of <code class="code">x</code>
     and <code class="code">y</code> are used to determine the quadrant of the result.
@@ -509,7 +513,7 @@
 </div>
 </div>
 
-<pre><span id="VALhypot"><span class="keyword">val</span> hypot</span> : <code class="type">float -> float -> float</code></pre><div class="info ">
+<pre><span id="VALhypot"><span class="keyword">val</span> hypot</span> : <code class="type">float -&gt; float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">hypot x y</code> returns <code class="code">sqrt(x *. x + y *. y)</code>, that is, the length
     of the hypotenuse of a right-angled triangle with sides of length
@@ -519,25 +523,25 @@
 </div>
 </div>
 
-<pre><span id="VALcosh"><span class="keyword">val</span> cosh</span> : <code class="type">float -> float</code></pre><div class="info ">
+<pre><span id="VALcosh"><span class="keyword">val</span> cosh</span> : <code class="type">float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Hyperbolic cosine.  Argument is in radians.</p>
 </div>
 </div>
 
-<pre><span id="VALsinh"><span class="keyword">val</span> sinh</span> : <code class="type">float -> float</code></pre><div class="info ">
+<pre><span id="VALsinh"><span class="keyword">val</span> sinh</span> : <code class="type">float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Hyperbolic sine.  Argument is in radians.</p>
 </div>
 </div>
 
-<pre><span id="VALtanh"><span class="keyword">val</span> tanh</span> : <code class="type">float -> float</code></pre><div class="info ">
+<pre><span id="VALtanh"><span class="keyword">val</span> tanh</span> : <code class="type">float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Hyperbolic tangent.  Argument is in radians.</p>
 </div>
 </div>
 
-<pre><span id="VALtrunc"><span class="keyword">val</span> trunc</span> : <code class="type">float -> float</code></pre><div class="info ">
+<pre><span id="VALtrunc"><span class="keyword">val</span> trunc</span> : <code class="type">float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">trunc x</code> rounds <code class="code">x</code> to the nearest integer whose absolute value is
    less than or equal to <code class="code">x</code>.</p>
@@ -547,7 +551,7 @@
 </ul>
 </div>
 
-<pre><span id="VALround"><span class="keyword">val</span> round</span> : <code class="type">float -> float</code></pre><div class="info ">
+<pre><span id="VALround"><span class="keyword">val</span> round</span> : <code class="type">float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">round x</code> rounds <code class="code">x</code> to the nearest integer with ties (fractional
    values of 0.5) rounded away from zero, regardless of the current
@@ -559,7 +563,7 @@
 </ul>
 </div>
 
-<pre><span id="VALceil"><span class="keyword">val</span> ceil</span> : <code class="type">float -> float</code></pre><div class="info ">
+<pre><span id="VALceil"><span class="keyword">val</span> ceil</span> : <code class="type">float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Round above to an integer value.
     <code class="code">ceil f</code> returns the least integer value greater than or equal to <code class="code">f</code>.
@@ -567,7 +571,7 @@
 </div>
 </div>
 
-<pre><span id="VALfloor"><span class="keyword">val</span> floor</span> : <code class="type">float -> float</code></pre><div class="info ">
+<pre><span id="VALfloor"><span class="keyword">val</span> floor</span> : <code class="type">float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p>Round below to an integer value.
     <code class="code">floor f</code> returns the greatest integer value less than or
@@ -576,7 +580,7 @@
 </div>
 </div>
 
-<pre><span id="VALnext_after"><span class="keyword">val</span> next_after</span> : <code class="type">float -> float -> float</code></pre><div class="info ">
+<pre><span id="VALnext_after"><span class="keyword">val</span> next_after</span> : <code class="type">float -&gt; float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">next_after x y</code> returns the next representable floating-point
    value following <code class="code">x</code> in the direction of <code class="code">y</code>.  More precisely, if
@@ -594,7 +598,7 @@
 </ul>
 </div>
 
-<pre><span id="VALcopy_sign"><span class="keyword">val</span> copy_sign</span> : <code class="type">float -> float -> float</code></pre><div class="info ">
+<pre><span id="VALcopy_sign"><span class="keyword">val</span> copy_sign</span> : <code class="type">float -&gt; float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">copy_sign x y</code> returns a float whose absolute value is that of <code class="code">x</code>
     and whose sign is that of <code class="code">y</code>.  If <code class="code">x</code> is <code class="code">nan</code>, returns <code class="code">nan</code>.
@@ -603,7 +607,7 @@
 </div>
 </div>
 
-<pre><span id="VALsign_bit"><span class="keyword">val</span> sign_bit</span> : <code class="type">float -> bool</code></pre><div class="info ">
+<pre><span id="VALsign_bit"><span class="keyword">val</span> sign_bit</span> : <code class="type">float -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">sign_bit x</code> is <code class="code">true</code> iff the sign bit of <code class="code">x</code> is set.
     For example <code class="code">sign_bit 1.</code> and <code class="code">signbit 0.</code> are <code class="code">false</code> while
@@ -614,7 +618,7 @@
 </ul>
 </div>
 
-<pre><span id="VALfrexp"><span class="keyword">val</span> frexp</span> : <code class="type">float -> float * int</code></pre><div class="info ">
+<pre><span id="VALfrexp"><span class="keyword">val</span> frexp</span> : <code class="type">float -&gt; float * int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">frexp f</code> returns the pair of the significant
     and the exponent of <code class="code">f</code>.  When <code class="code">f</code> is zero, the
@@ -624,13 +628,13 @@
 </div>
 </div>
 
-<pre><span id="VALldexp"><span class="keyword">val</span> ldexp</span> : <code class="type">float -> int -> float</code></pre><div class="info ">
+<pre><span id="VALldexp"><span class="keyword">val</span> ldexp</span> : <code class="type">float -&gt; int -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">ldexp x n</code> returns <code class="code">x *. 2 ** n</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALmodf"><span class="keyword">val</span> modf</span> : <code class="type">float -> float * float</code></pre><div class="info ">
+<pre><span id="VALmodf"><span class="keyword">val</span> modf</span> : <code class="type">float -&gt; float * float</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">modf f</code> returns the pair of the fractional and integral
     part of <code class="code">f</code>.</p>
@@ -645,7 +649,7 @@
 </div>
 
 
-<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Float.html#TYPEt">t</a> -> <a href="Float.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<pre><span id="VALcompare"><span class="keyword">val</span> compare</span> : <code class="type"><a href="Float.html#TYPEt">t</a> -&gt; <a href="Float.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">compare x y</code> returns <code class="code">0</code> if <code class="code">x</code> is equal to <code class="code">y</code>, a negative integer if <code class="code">x</code>
     is less than <code class="code">y</code>, and a positive integer if <code class="code">x</code> is greater than
@@ -655,13 +659,13 @@
 </div>
 </div>
 
-<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type"><a href="Float.html#TYPEt">t</a> -> <a href="Float.html#TYPEt">t</a> -> bool</code></pre><div class="info ">
+<pre><span id="VALequal"><span class="keyword">val</span> equal</span> : <code class="type"><a href="Float.html#TYPEt">t</a> -&gt; <a href="Float.html#TYPEt">t</a> -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p>The equal function for floating-point numbers, compared using <a href="Float.html#VALcompare"><code class="code">Float.compare</code></a>.</p>
 </div>
 </div>
 
-<pre><span id="VALmin"><span class="keyword">val</span> min</span> : <code class="type"><a href="Float.html#TYPEt">t</a> -> <a href="Float.html#TYPEt">t</a> -> <a href="Float.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALmin"><span class="keyword">val</span> min</span> : <code class="type"><a href="Float.html#TYPEt">t</a> -&gt; <a href="Float.html#TYPEt">t</a> -&gt; <a href="Float.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">min x y</code> returns the minimum of <code class="code">x</code> and <code class="code">y</code>.  It returns <code class="code">nan</code>
    when <code class="code">x</code> or <code class="code">y</code> is <code class="code">nan</code>.  Moreover <code class="code">min (-0.) (+0.) = -0.</code></p>
@@ -671,7 +675,7 @@
 </ul>
 </div>
 
-<pre><span id="VALmax"><span class="keyword">val</span> max</span> : <code class="type">float -> float -> float</code></pre><div class="info ">
+<pre><span id="VALmax"><span class="keyword">val</span> max</span> : <code class="type">float -&gt; float -&gt; float</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">max x y</code> returns the maximum of <code class="code">x</code> and <code class="code">y</code>.  It returns <code class="code">nan</code>
    when <code class="code">x</code> or <code class="code">y</code> is <code class="code">nan</code>.  Moreover <code class="code">max (-0.) (+0.) = +0.</code></p>
@@ -681,7 +685,7 @@
 </ul>
 </div>
 
-<pre><span id="VALmin_max"><span class="keyword">val</span> min_max</span> : <code class="type">float -> float -> float * float</code></pre><div class="info ">
+<pre><span id="VALmin_max"><span class="keyword">val</span> min_max</span> : <code class="type">float -&gt; float -&gt; float * float</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">min_max x y</code> is <code class="code">(min x y, max x y)</code>, just more efficient.</p>
 </div>
@@ -690,7 +694,7 @@
 </ul>
 </div>
 
-<pre><span id="VALmin_num"><span class="keyword">val</span> min_num</span> : <code class="type"><a href="Float.html#TYPEt">t</a> -> <a href="Float.html#TYPEt">t</a> -> <a href="Float.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALmin_num"><span class="keyword">val</span> min_num</span> : <code class="type"><a href="Float.html#TYPEt">t</a> -&gt; <a href="Float.html#TYPEt">t</a> -&gt; <a href="Float.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">min_num x y</code> returns the minimum of <code class="code">x</code> and <code class="code">y</code> treating <code class="code">nan</code> as
    missing values.  If both <code class="code">x</code> and <code class="code">y</code> are <code class="code">nan</code>, <code class="code">nan</code> is returned.
@@ -701,7 +705,7 @@
 </ul>
 </div>
 
-<pre><span id="VALmax_num"><span class="keyword">val</span> max_num</span> : <code class="type"><a href="Float.html#TYPEt">t</a> -> <a href="Float.html#TYPEt">t</a> -> <a href="Float.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALmax_num"><span class="keyword">val</span> max_num</span> : <code class="type"><a href="Float.html#TYPEt">t</a> -&gt; <a href="Float.html#TYPEt">t</a> -&gt; <a href="Float.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">max_num x y</code> returns the maximum of <code class="code">x</code> and <code class="code">y</code> treating <code class="code">nan</code> as
    missing values.  If both <code class="code">x</code> and <code class="code">y</code> are <code class="code">nan</code> <code class="code">nan</code> is returned.
@@ -712,7 +716,7 @@
 </ul>
 </div>
 
-<pre><span id="VALmin_max_num"><span class="keyword">val</span> min_max_num</span> : <code class="type">float -> float -> float * float</code></pre><div class="info ">
+<pre><span id="VALmin_max_num"><span class="keyword">val</span> min_max_num</span> : <code class="type">float -&gt; float -&gt; float * float</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">min_max_num x y</code> is <code class="code">(min_num x y, max_num x y)</code>, just more
    efficient.  Note that in particular <code class="code">min_max_num x nan = (x, x)</code>
@@ -723,7 +727,7 @@
 </ul>
 </div>
 
-<pre><span id="VALhash"><span class="keyword">val</span> hash</span> : <code class="type"><a href="Float.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<pre><span id="VALhash"><span class="keyword">val</span> hash</span> : <code class="type"><a href="Float.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p>The hash function for floating-point numbers.</p>
 </div>

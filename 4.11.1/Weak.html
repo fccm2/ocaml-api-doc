@@ -5,7 +5,7 @@
 <meta content="text/html; charset=iso-8859-1" http-equiv="Content-Type">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="Start" href="index.html">
-<link rel="previous" href="Unix.html">
+<link rel="previous" href="UnixLabels.html">
 <link rel="Up" href="index.html">
 <link title="Index of types" rel=Appendix href="index_types.html">
 <link title="Index of extensions" rel=Appendix href="index_extensions.html">
@@ -63,20 +63,24 @@
 <link title="Spacetime" rel="Chapter" href="Spacetime.html">
 <link title="Stack" rel="Chapter" href="Stack.html">
 <link title="StdLabels" rel="Chapter" href="StdLabels.html">
+<link title="Stdlib" rel="Chapter" href="Stdlib.html">
 <link title="Str" rel="Chapter" href="Str.html">
 <link title="Stream" rel="Chapter" href="Stream.html">
 <link title="String" rel="Chapter" href="String.html">
 <link title="StringLabels" rel="Chapter" href="StringLabels.html">
 <link title="Sys" rel="Chapter" href="Sys.html">
+<link title="Thread" rel="Chapter" href="Thread.html">
+<link title="ThreadUnix" rel="Chapter" href="ThreadUnix.html">
 <link title="Uchar" rel="Chapter" href="Uchar.html">
 <link title="Unit" rel="Chapter" href="Unit.html">
 <link title="Unix" rel="Chapter" href="Unix.html">
+<link title="UnixLabels" rel="Chapter" href="UnixLabels.html">
 <link title="Weak" rel="Chapter" href="Weak.html"><link title="Low-level functions" rel="Section" href="#1_Lowlevelfunctions">
 <link title="Weak hash sets" rel="Section" href="#1_Weakhashsets">
 <title>Weak</title>
 </head>
 <body>
-<div class="navbar"><a class="pre" href="Unix.html" title="Unix">Previous</a>
+<div class="navbar"><a class="pre" href="UnixLabels.html" title="UnixLabels">Previous</a>
 &nbsp;<a class="up" href="index.html" title="Index">Up</a>
 &nbsp;</div>
 <h1>Module <a href="type_Weak.html">Weak</a></h1>
@@ -105,14 +109,14 @@
 <p>Notes:</p>
 <ul>
 <li>Integers are not allocated and cannot be stored in weak arrays.</li>
-<li>Weak arrays cannot be marshaled using <code class="code">Stdlib.output_value</code>
+<li>Weak arrays cannot be marshaled using <a href="Stdlib.html#VALoutput_value"><code class="code">Stdlib.output_value</code></a>
      nor the functions of the <a href="Marshal.html"><code class="code">Marshal</code></a> module.</li>
 </ul>
 </div>
 </div>
 
 
-<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">int -> 'a <a href="Weak.html#TYPEt">t</a></code></pre><div class="info ">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">int -&gt; 'a <a href="Weak.html#TYPEt">t</a></code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Weak.create n</code> returns a new weak array of length <code class="code">n</code>.
    All the pointers are initially empty.</p>
@@ -123,14 +127,14 @@
 </ul>
 </div>
 
-<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -> int</code></pre><div class="info ">
+<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -&gt; int</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Weak.length ar</code> returns the length (number of elements) of
    <code class="code">ar</code>.</p>
 </div>
 </div>
 
-<pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -> int -> 'a option -> unit</code></pre><div class="info ">
+<pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -&gt; int -&gt; 'a option -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Weak.set ar n (Some el)</code> sets the <code class="code">n</code>th cell of <code class="code">ar</code> to be a
    (full) pointer to <code class="code">el</code>; <code class="code">Weak.set ar n None</code> sets the <code class="code">n</code>th
@@ -142,7 +146,7 @@
 </ul>
 </div>
 
-<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -> int -> 'a option</code></pre><div class="info ">
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -&gt; int -&gt; 'a option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Weak.get ar n</code> returns None if the <code class="code">n</code>th cell of <code class="code">ar</code> is
    empty, <code class="code">Some x</code> (where <code class="code">x</code> is the value) if it is full.</p>
@@ -153,7 +157,7 @@
 </ul>
 </div>
 
-<pre><span id="VALget_copy"><span class="keyword">val</span> get_copy</span> : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -> int -> 'a option</code></pre><div class="info ">
+<pre><span id="VALget_copy"><span class="keyword">val</span> get_copy</span> : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -&gt; int -&gt; 'a option</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Weak.get_copy ar n</code> returns None if the <code class="code">n</code>th cell of <code class="code">ar</code> is
    empty, <code class="code">Some x</code> (where <code class="code">x</code> is a (shallow) copy of the value) if
@@ -171,7 +175,7 @@
 </ul>
 </div>
 
-<pre><span id="VALcheck"><span class="keyword">val</span> check</span> : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -> int -> bool</code></pre><div class="info ">
+<pre><span id="VALcheck"><span class="keyword">val</span> check</span> : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -&gt; int -&gt; bool</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Weak.check ar n</code> returns <code class="code">true</code> if the <code class="code">n</code>th cell of <code class="code">ar</code> is
    full, <code class="code">false</code> if it is empty.  Note that even if <code class="code">Weak.check ar n</code>
@@ -179,7 +183,7 @@
 </div>
 </div>
 
-<pre><span id="VALfill"><span class="keyword">val</span> fill</span> : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -> int -> int -> 'a option -> unit</code></pre><div class="info ">
+<pre><span id="VALfill"><span class="keyword">val</span> fill</span> : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -&gt; int -&gt; int -&gt; 'a option -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Weak.fill ar ofs len el</code> sets to <code class="code">el</code> all pointers of <code class="code">ar</code> from
    <code class="code">ofs</code> to <code class="code">ofs + len - 1</code>.</p>
@@ -189,7 +193,7 @@
 </ul>
 </div>
 
-<pre><span id="VALblit"><span class="keyword">val</span> blit</span> : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -> int -> 'a <a href="Weak.html#TYPEt">t</a> -> int -> int -> unit</code></pre><div class="info ">
+<pre><span id="VALblit"><span class="keyword">val</span> blit</span> : <code class="type">'a <a href="Weak.html#TYPEt">t</a> -&gt; int -&gt; 'a <a href="Weak.html#TYPEt">t</a> -&gt; int -&gt; int -&gt; unit</code></pre><div class="info ">
 <div class="info-desc">
 <p><code class="code">Weak.blit ar1 off1 ar2 off2 len</code> copies <code class="code">len</code> weak pointers
    from <code class="code">ar1</code> (starting at <code class="code">off1</code>) to <code class="code">ar2</code> (starting at <code class="code">off2</code>).
